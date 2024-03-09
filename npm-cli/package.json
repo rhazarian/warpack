@@ -29,7 +29,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "execa": "^8.0.1"
+    "execa": "^8.0.1",
+    "warpack-types": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.22",
