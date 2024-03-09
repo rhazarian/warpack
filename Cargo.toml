@@ -1,0 +1,19 @@
+[workspace]
+members = [
+    "cli",
+    "core",
+    "lua-parser",
+    "stock-data",
+    "formats",
+]
+
+[workspace.package]
+version = "0.0.1"
+authors = ["Rhazarian <rhazarian@ya.ru>", "ElusiveMori"]
+edition = "2018"
+repository = "https://github.com/rhazarian/warpack"
+license = "MIT"
+keywords = ["warcraft", "warpack", "warscript"]
+
+[profile.dev]
+opt-level = 0

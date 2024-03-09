@@ -1,0 +1,15 @@
+/*
+!.github
+!cli
+!core
+!formats
+!lua-parser
+!npm-cli
+/npm-cli/dist/
+/npm-cli/node_modules/
+!stock-data
+!.gitignore
+!Cargo.lock
+!Cargo.toml
+!LICENSE
+!rustfmt.toml

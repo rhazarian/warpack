@@ -1,0 +1,18 @@
+[package]
+name = "warpack-stock-data"
+description = "A library containing Warcraft III object data used by Warpack."
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+keywords.workspace = true
+
+[dependencies]
+warpack-formats = "0.0.1"
+bincode = "1.2.1"
+lazy_static = "1.4.0"
+
+[build-dependencies]
+warpack-formats = "0.0.1"
+bincode = "1.2.1"

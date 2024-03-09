@@ -1,0 +1,154 @@
+name: Publish dev package to NPM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-binaries:
+    name: Publish binaries
+    runs-on: ${{ matrix.build.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        build:
+          - {
+            NAME: linux-x64,
+            OS: ubuntu-22.04,
+            TARGET: x86_64-unknown-linux-gnu,
+          }
+          - {
+            NAME: linux-ia32,
+            OS: ubuntu-22.04,
+            TARGET: i686-unknown-linux-gnu,
+          }
+          - {
+            NAME: linux-arm64,
+            OS: ubuntu-22.04,
+            TARGET: aarch64-unknown-linux-gnu,
+          }
+          - {
+            NAME: win32-x64,
+            OS: windows-2022,
+            TARGET: x86_64-pc-windows-msvc,
+          }
+          - {
+            NAME: win32-ia32,
+            OS: windows-2022,
+            TARGET: i686-pc-windows-msvc,
+          }
+          - {
+            NAME: win32-arm64,
+            OS: windows-2022,
+            TARGET: aarch64-pc-windows-msvc,
+          }
+          - {
+            NAME: darwin-x64,
+            OS: macos-12,
+            TARGET: x86_64-apple-darwin,
+          }
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: ${{ matrix.build.TARGET }}
+          override: true
+      - name: Install cargo-get
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: cargo-get
+      - name: Determine version
+        shell: bash
+        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Build (Linux / MacOS)
+        if: matrix.build.OS != 'windows-2022'
+        uses: actions-rs/cargo@v1
+        with:
+          use-cross: true
+          command: build
+          args: --release --locked --target ${{ matrix.build.TARGET }}
+      - name: Build (Windows)
+        if: matrix.build.OS == 'windows-2022'
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --release --locked --target ${{ matrix.build.TARGET }}
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - name: Publish to NPM
+        shell: bash
+        run: |
+          cd npm-cli
+          bin="warpack"
+          node_os=$(echo "${{ matrix.build.NAME }}" | cut -d '-' -f1)
+          export node_os
+          node_arch=$(echo "${{ matrix.build.NAME }}" | cut -d '-' -f2)
+          export node_arch
+          if [ "${{ matrix.build.OS }}" = "windows-2022" ]; then
+            export node_pkg="windows-${node_arch}"
+          else
+            export node_pkg="${node_os}-${node_arch}"
+          fi
+          mkdir -p "${node_pkg}/bin"
+          envsubst < package.json.tmpl > "${node_pkg}/package.json"
+          if [ "${{ matrix.build.OS }}" = "windows-2022" ]; then
+            bin="${bin}.exe"
+          fi
+          cp "../target/${{ matrix.build.TARGET }}/release/${bin}" "${node_pkg}/bin"
+          cd "${node_pkg}"
+          npm version --no-git-tag-version ${{ env.VERSION }}
+          npm publish --tag dev
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-npm:
+    name: Publish the base package to NPM
+    needs: publish-binaries
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install cargo-get
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: cargo-get
+      - name: Determine version
+        shell: bash
+        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        working-directory: npm-cli
+        run: npm ci
+      - name: Set package version
+        working-directory: npm-cli
+        shell: bash
+        run: npm version --no-git-tag-version ${{ env.VERSION }}
+      - name: Replace dependencies versions
+        working-directory: npm-cli
+        shell: bash
+        run: sed -i 's/"dev"/"${{ env.VERSION }}"/g' package.json
+      - name: Build
+        working-directory: npm-cli
+        run: npm run build
+      - name: Publish to NPM
+        working-directory: npm-cli
+        run: npm publish --tag dev
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}

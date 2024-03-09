@@ -1,0 +1,224 @@
+//***************************************************************************
+[AIFunctions]
+// Defines function calls used by the AI Editor
+// Note that this section should match the format of the [TriggerCalls] section
+// in TriggerData.txt, and the strings for these functions are in TriggerStrings.txt.
+//
+// Key: Function name
+// Value 0: first game version in which this function is valid
+// Value 1: flag (0 or 1) indicating if the call can be used in events (meaningless for AI Editor)
+// Value 2: return type
+// Value 3+: argument types
+//
+
+// --- Boolean
+//   - Hero
+
+CaptainIsHome=1,0,boolean
+_CaptainIsHome_DisplayName="Attack Captain Is At Home"
+_CaptainIsHome_Parameters="Attack captain is at home"
+_CaptainIsHome_Category=TC_AI_HERO
+
+CaptainIsFull=1,0,boolean
+_CaptainIsFull_DisplayName="Attack Group Is Complete"
+_CaptainIsFull_Parameters="Attack group is complete"
+_CaptainIsFull_Category=TC_AI_HERO
+
+CaptainIsEmpty=1,0,boolean
+_CaptainIsEmpty_DisplayName="Attack Group Is Empty"
+_CaptainIsEmpty_Parameters="Attack group is empty"
+_CaptainIsEmpty_Category=TC_AI_HERO
+
+CaptainRetreating=1,0,boolean
+_CaptainRetreating_DisplayName="Attack Captain Is Retreating"
+_CaptainRetreating_Parameters="Attack captain is retreating"
+_CaptainRetreating_Category=TC_AI_HERO
+
+CaptainAtGoal=1,0,boolean
+_CaptainAtGoal_DisplayName="Attack Captain Is At Goal"
+_CaptainAtGoal_Parameters="Attack captain is at goal"
+_CaptainAtGoal_Category=TC_AI_HERO
+
+CaptainInCombat=1,0,boolean,aicaptaintype
+_CaptainInCombat_DisplayName="Captain Is In Combat"
+_CaptainInCombat_Parameters=~Captain Type," captain is in combat"
+_CaptainInCombat_Defaults=AICaptainAttack
+_CaptainInCombat_Category=TC_AI_HERO
+
+//   - Misc
+
+CreepsOnMap=1,0,boolean
+_CreepsOnMap_DisplayName="Creeps Exist Anywhere"
+_CreepsOnMap_Parameters="Creeps exist anywhere on the map"
+_CreepsOnMap_Category=TC_AI_MISC
+
+//   - Town
+
+TownThreatened=1,0,boolean
+_TownThreatened_DisplayName="Town Is Under Attack"
+_TownThreatened_Parameters="Town is under attack"
+_TownThreatened_Category=TC_AI_TOWN
+
+TownHasMine=1,0,boolean,integer
+_TownHasMine_DisplayName="Town Has Mine"
+_TownHasMine_Parameters="Town #",~Town," has an active gold mine"
+_TownHasMine_Category=TC_AI_TOWN
+
+TownHasHall=1,0,boolean,integer
+_TownHasHall_DisplayName="Town Has Hall"
+_TownHasHall_Parameters="Town #",~Town," has a town hall building"
+_TownHasHall_Category=TC_AI_TOWN
+
+ExpansionNeeded=1,0,boolean
+_ExpansionNeeded_DisplayName="Expansion Spot Needed"
+_ExpansionNeeded_Parameters="Expansion spot needed"
+_ExpansionNeeded_Category=TC_AI_TOWN
+
+// --- Integer
+
+//   - Command
+
+CommandsWaiting=1,0,integer
+_CommandsWaiting_DisplayName="Commands Waiting"
+_CommandsWaiting_Parameters="Number of commands waiting"
+_CommandsWaiting_Category=TC_AI_COMMAND
+
+CheckLastCommand=1,0,integer,aicommandpop
+_CheckLastCommand_DisplayName="Last Command"
+_CheckLastCommand_Parameters="Last command sent, ",~Option," the command"
+_CheckLastCommand_Defaults=AICommandPop
+_CheckLastCommand_Category=TC_AI_COMMAND
+
+CheckLastCommandData=1,0,integer,aicommandpop
+_CheckLastCommandData_DisplayName="Last Command Data"
+_CheckLastCommandData_Parameters="Last command data sent, ",~Option," the command"
+_CheckLastCommandData_Defaults=AICommandLeave
+_CheckLastCommandData_Category=TC_AI_COMMAND
+
+//   - Hero
+
+CaptainGroupSize=1,0,integer
+_CaptainGroupSize_DisplayName="Attack Group Size"
+_CaptainGroupSize_Parameters="Attack group size"
+_CaptainGroupSize_Category=TC_AI_HERO
+
+CaptainReadinessHP=1,0,integer
+_CaptainReadinessHP_DisplayName="Attack Group Health Level"
+_CaptainReadinessHP_Parameters="Attack group health level"
+_CaptainReadinessHP_Category=TC_AI_HERO
+
+CaptainReadinessMa=1,0,integer
+_CaptainReadinessMa_DisplayName="Attack Group Mana Level"
+_CaptainReadinessMa_Parameters="Attack group mana level"
+_CaptainReadinessMa_Category=TC_AI_HERO
+
+//   - Misc
+
+CurrentAttackWave=1,0,integer
+_CurrentAttackWave_DisplayName="Current Attack Wave"
+_CurrentAttackWave_Parameters="Current attack wave"
+_CurrentAttackWave_Category=TC_AI_MISC
+
+MeleeDifficulty=1,0,integer
+_MeleeDifficulty_DisplayName="Melee Difficulty Level"
+_MeleeDifficulty_Parameters="Melee difficulty level"
+_MeleeDifficulty_Category=TC_AI_MISC
+
+//   - Resources
+
+GetGold=1,0,integer
+_GetGold_DisplayName="Current Gold Amount"
+_GetGold_Parameters="Current gold amount"
+_GetGold_Category=TC_AI_RESOURCES
+
+GetWood=1,0,integer
+_GetWood_DisplayName="Current Lumber Amount"
+_GetWood_Parameters="Current lumber amount"
+_GetWood_Category=TC_AI_RESOURCES
+
+GetGoldOwned=1,0,integer
+_GetGoldOwned_DisplayName="Total Unmined Gold Owned"
+_GetGoldOwned_Parameters="Total unmined gold owned"
+_GetGoldOwned_Category=TC_AI_RESOURCES
+
+FoodUsed=1,0,integer
+_FoodUsed_DisplayName="Food Used"
+_FoodUsed_Parameters="Food used"
+_FoodUsed_Category=TC_AI_RESOURCES
+
+TotalFoodProduced=1,0,integer
+_TotalFoodProduced_DisplayName="Food Produced"
+_TotalFoodProduced_Parameters="Food produced"
+_TotalFoodProduced_Category=TC_AI_RESOURCES
+
+GetFoodMade=1,0,integer,unitcode
+_GetFoodMade_DisplayName="Supply Provided By Unit-Type"
+_GetFoodMade_Parameters="Supply provided by ",~Unit-Type
+_GetFoodMade_Category=TC_AI_RESOURCES
+
+//   - Town
+
+GetMinesOwned=1,0,integer
+_GetMinesOwned_DisplayName="Number of Mines Owned"
+_GetMinesOwned_Parameters="Number of mines owned"
+_GetMinesOwned_Category=TC_AI_TOWN
+
+TownWithMine=1,0,integer
+_TownWithMine_DisplayName="Town With Mine"
+_TownWithMine_Parameters="Town with a gold mine"
+_TownWithMine_Category=TC_AI_TOWN
+
+GetNextExpansion=1,0,integer
+_GetNextExpansion_DisplayName="Next Expansion Town"
+_GetNextExpansion_Parameters="Next expansion town"
+_GetNextExpansion_Category=TC_AI_TOWN
+
+//   - Unit
+
+GetUnitCount=1,0,integer,unitcode
+_GetUnitCount_DisplayName="Total Units of Type"
+_GetUnitCount_Parameters="Total number of ",~Unit Type," units"
+_GetUnitCount_Category=TC_AI_UNIT
+
+GetUnitCountDone=1,0,integer,unitcode
+_GetUnitCountDone_DisplayName="Total Units of Type - Completed Only"
+_GetUnitCountDone_Parameters="Total number of ",~Unit Type," units completed"
+_GetUnitCountDone_Category=TC_AI_UNIT
+
+GetTownUnitCount=1,0,integer,unitcode,integer,boolean
+_GetTownUnitCount_DisplayName="Total Units of Type - By Town"
+_GetTownUnitCount_Parameters="Total number of ",~Unit Type," units in town #",~Town," (completed only: ",~Option,")"
+_GetTownUnitCount_Defaults=_,0,false
+_GetTownUnitCount_Category=TC_AI_UNIT
+
+GetUnitGoldCost=1,0,integer,unitcode
+_GetUnitGoldCost_DisplayName="Gold Cost of Unit"
+_GetUnitGoldCost_Parameters="Gold cost of ",~Unit Type,"."
+_GetUnitGoldCost_Category=TC_AI_UNIT
+
+GetUnitWoodCost=1,0,integer,unitcode
+_GetUnitWoodCost_DisplayName="Lumber Cost of Unit"
+_GetUnitWoodCost_Parameters="Lumber cost of ",~Unit Type,"."
+_GetUnitWoodCost_Category=TC_AI_UNIT
+
+GetUnitBuildTime=1,0,integer,unitcode
+_GetUnitBuildTime_DisplayName="Build Time of Unit"
+_GetUnitBuildTime_Parameters="Build time of ",~Unit Type
+_GetUnitBuildTime_Category=TC_AI_UNIT
+
+//   - Upgrade
+
+GetUpgradeLevel=1,0,integer,techcode
+_GetUpgradeLevel_DisplayName="Current Upgrade Level"
+_GetUpgradeLevel_Parameters="Upgrade level of ",~Upgrade Type,"."
+_GetUpgradeLevel_Category=TC_AI_UPGRADE
+
+GetUpgradeGoldCost=1,0,integer,techcode
+_GetUpgradeGoldCost_DisplayName="Gold Cost of Upgrade"
+_GetUpgradeGoldCost_Parameters="Gold cost of the next ",~Upgrade Type," upgrade"
+_GetUpgradeGoldCost_Category=TC_AI_UPGRADE
+
+GetUpgradeWoodCost=1,0,integer,techcode
+_GetUpgradeWoodCost_DisplayName="Lumber Cost of Upgrade"
+_GetUpgradeWoodCost_Parameters="Lumber cost of the next ",~Upgrade Type," upgrade"
+_GetUpgradeWoodCost_Category=TC_AI_UPGRADE

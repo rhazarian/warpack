@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "warpack",
+  "description": "A build system for Warcraft III maps.",
+  "keywords": [
+    "warcraft",
+    "warpack",
+    "warscript"
+  ],
+  "license": "MIT",
+  "author": "rhazarian",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "main": "dist/index.js",
+  "bin": {
+    "warpack": "dist/cli.js"
+  },
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhazarian/warpack.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "execa": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.22",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  },
+  "optionalDependencies": {
+    "@warpack/darwin-arm64": "dev",
+    "@warpack/darwin-x64": "dev",
+    "@warpack/linux-arm64": "dev",
+    "@warpack/linux-x64": "dev",
+    "@warpack/windows-arm64": "dev",
+    "@warpack/windows-x64": "dev"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
