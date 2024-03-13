@@ -9,9 +9,9 @@ license.workspace = true
 keywords.workspace = true
 
 [dependencies]
-warpack-core = "0.0.1"
-warpack-formats = "0.0.1"
-warpack-lua-parser = "0.0.1"
+warpack-core = { path = "../core" }
+warpack-formats = { path = "../formats" }
+warpack-lua-parser = { path = "../lua-parser" }
 
 serde = "1.0.104"
 pest = "2.1.2"

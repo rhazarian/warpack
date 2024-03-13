@@ -9,10 +9,10 @@ license.workspace = true
 keywords.workspace = true
 
 [dependencies]
-warpack-formats = "0.0.1"
+warpack-formats = { path = "../formats" }
 bincode = "1.2.1"
 lazy_static = "1.4.0"
 
 [build-dependencies]
-warpack-formats = "0.0.1"
+warpack-formats = { path = "../formats" }
 bincode = "1.2.1"

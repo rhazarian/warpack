@@ -28,6 +28,6 @@ anyhow = "1.0.26"
 
 # internal
 ceres-mpq = "0.1.8"
-warpack-formats = "0.0.1"
-warpack-lua-parser = "0.0.1"
-warpack-stock-data = "0.0.1"
+warpack-formats = { path = "../formats" }
+warpack-lua-parser = { path = "../lua-parser" }
+warpack-stock-data = { path = "../stock-data" }

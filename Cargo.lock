@@ -807,9 +807,9 @@ dependencies = [
  "rlua",
  "ron",
  "serde",
- "warpack-core 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "warpack-formats 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "warpack-lua-parser 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "warpack-core",
+ "warpack-formats",
+ "warpack-lua-parser",
 ]
 
 [[package]]
@@ -831,59 +831,14 @@ dependencies = [
  "thiserror",
  "toml",
  "walkdir",
- "warpack-formats 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "warpack-lua-parser 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "warpack-stock-data 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "warpack-core"
-version = "0.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b6e7349df07966379c0c567e59896d53b840b3aabff0474aa44c9c94a67de58b"
-dependencies = [
- "anyhow",
- "atoi",
- "ceres-mpq",
- "indexmap",
- "itertools",
- "notify",
- "path-absolutize",
- "pest",
- "rlua",
- "serde",
- "serde_json",
- "thiserror",
- "toml",
- "walkdir",
- "warpack-formats 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "warpack-lua-parser 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "warpack-stock-data 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "warpack-formats",
+ "warpack-lua-parser",
+ "warpack-stock-data",
 ]
 
 [[package]]
 name = "warpack-formats"
 version = "0.0.1"
-dependencies = [
- "anyhow",
- "atoi",
- "bitflags",
- "byte-slice-cast",
- "byteorder",
- "indexmap",
- "lazy_static",
- "num-traits",
- "rlua",
- "serde",
- "slotmap",
- "thiserror",
-]
-
-[[package]]
-name = "warpack-formats"
-version = "0.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8fab6241e7718979cad23079b1ab5f25e7e64cb77e7ec13612bc498ef251a587"
 dependencies = [
  "anyhow",
  "atoi",
@@ -908,33 +863,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "warpack-lua-parser"
-version = "0.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad3982ff6d3dc1bd253480be6036810eed13f03c78aae744a808ea10dc0a05ce"
-dependencies = [
- "pest",
- "pest_derive",
-]
-
-[[package]]
 name = "warpack-stock-data"
 version = "0.0.1"
 dependencies = [
  "bincode",
  "lazy_static",
- "warpack-formats 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "warpack-stock-data"
-version = "0.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "222ee4717d2e2b3890e691d82ba660e20f54235d214917203c01d91a7aaa25d6"
-dependencies = [
- "bincode",
- "lazy_static",
- "warpack-formats 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "warpack-formats",
 ]
 
 [[package]]
