@@ -258,7 +258,7 @@ fn get_exists_luafn(ctx: LuaContext) -> LuaFunction {
 
 fn get_normalize_luafn(ctx: LuaContext) -> LuaFunction {
     ctx.create_function(|ctx, path: String| {
-        Ok(normalize_path(&path).to_str().unwrap())
+        Ok(ctx.create_string(normalize_path(&path).to_str().unwrap()).unwrap())
     })
         .unwrap()
 }
