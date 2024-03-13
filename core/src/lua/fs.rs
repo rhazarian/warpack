@@ -3,6 +3,7 @@ use std::path::PathBuf;
 use std::sync::{Arc, mpsc};
 use std::time::Duration;
 
+use normalize_path::NormalizePath;
 use notify::{DebouncedEvent, RecursiveMode, Watcher, watcher};
 use path_absolutize::Absolutize;
 use rlua::prelude::*;
@@ -29,8 +30,12 @@ impl From<LuaFileError> for LuaError {
     }
 }
 
+fn normalize_path(path: &str) -> PathBuf {
+    PathBuf::from(&path.replace("\\", "/")).normalize()
+}
+
 fn validate_path(path: &str) -> Result<PathBuf, LuaFileError> {
-    let path = PathBuf::from(&path);
+    let path = normalize_path(path);
 
     path.absolutize()
         .map_err(|err| LuaFileError::PathCanonizationFailed {
@@ -135,7 +140,7 @@ fn lua_copy_dir(from: &str, to: &str) -> Result<bool, anyhow::Error> {
 }
 
 fn lua_absolutize_path(path: &str) -> Result<String, anyhow::Error> {
-    let path: PathBuf = path.into();
+    let path: PathBuf = normalize_path(path);
 
     // TODO: Handle invalid UTF-8
     Ok(path.absolutize()?.to_str().unwrap().into())
@@ -226,7 +231,7 @@ fn get_readdir_luafn(ctx: LuaContext) -> LuaFunction {
 
 fn get_isdir_luafn(ctx: LuaContext) -> LuaFunction {
     ctx.create_function(|_, path: String| {
-        let path: PathBuf = path.into();
+        let path = normalize_path(&path);
 
         Ok(path.is_dir())
     })
@@ -235,7 +240,7 @@ fn get_isdir_luafn(ctx: LuaContext) -> LuaFunction {
 
 fn get_isfile_luafn(ctx: LuaContext) -> LuaFunction {
     ctx.create_function(|_, path: String| {
-        let path: PathBuf = path.into();
+        let path = normalize_path(&path);
 
         Ok(path.is_file())
     })
@@ -244,11 +249,18 @@ fn get_isfile_luafn(ctx: LuaContext) -> LuaFunction {
 
 fn get_exists_luafn(ctx: LuaContext) -> LuaFunction {
     ctx.create_function(|_, path: String| {
-        let path: PathBuf = path.into();
+        let path = normalize_path(&path);
 
         Ok(path.exists())
     })
     .unwrap()
+}
+
+fn get_normalize_luafn(ctx: LuaContext) -> LuaFunction {
+    ctx.create_function(|ctx, path: String| {
+        Ok(normalize_path(&path).to_str().unwrap())
+    })
+        .unwrap()
 }
 
 fn get_absolutize_luafn(ctx: LuaContext) -> LuaFunction {
@@ -288,6 +300,7 @@ pub fn get_fs_module(ctx: LuaContext) -> LuaTable {
     table.set("isDir", get_isdir_luafn(ctx)).unwrap();
     table.set("isFile", get_isfile_luafn(ctx)).unwrap();
     table.set("exists", get_exists_luafn(ctx)).unwrap();
+    table.set("normalize", get_normalize_luafn(ctx)).unwrap();
     table.set("absolutize", get_absolutize_luafn(ctx)).unwrap();
     table.set("copyDir", get_copydir_luafn(ctx)).unwrap();
     table.set("watchFile", get_filewatch_luafn(ctx)).unwrap();

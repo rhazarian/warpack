@@ -99,6 +99,8 @@ mapMeta.__index = mapMeta
 
 -- Reads a file from the map and returns its contents as a string if successful
 function mapMeta:readFile(path)
+    path = fs.normalize(path)
+
     local added = self.added[path]
 
     if added then
@@ -138,7 +140,7 @@ end
 -- This doesn't modify the map in any way, it only adds the file to be written when either
 -- map:writeToDir() or map:writeToMpq() is called
 function mapMeta:addFileString(path, contents)
-    self.added[path] = {
+    self.added[fs.normalize(path)] = {
         kind = "string",
         contents = contents
     }
@@ -148,7 +150,7 @@ end
 -- This doesn't modify the map in any way, it only adds the file to be written when either
 -- map:writeToDir() or map:writeToMpq() is called
 function mapMeta:addFileDisk(archivePath, filePath)
-    self.added[archivePath] = {
+    self.added[fs.normalize(archivePath)] = {
         kind = "file",
         path = filePath
     }
