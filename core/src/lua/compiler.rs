@@ -41,9 +41,9 @@ fn compile_script(ctx: LuaContext, args: LuaTable) -> Result<String, anyhow::Err
     let mut compiler = compiler::ScriptCompiler::new(ctx, target_platform, module_provider, macro_provider)?;
 
     compiler.set_map_script(map_script.to_str()?.into());
-    compiler.add_module("main", false, &Vec::default())?;
-    compiler.add_module("config", true, &Vec::default())?;
     compiler.add_module("root", true, &Vec::default())?;
+    compiler.add_module("config", true, &Vec::default())?;
+    compiler.add_module("main", false, &Vec::default())?;
 
     Ok(compiler.emit_script()?)
 }

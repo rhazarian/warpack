@@ -493,9 +493,9 @@ impl<'lua, MO: ModuleProvider, MA: MacroProvider> ScriptCompiler<'lua, MO, MA> {
                                                 continue;
                                             }
                                         };
-                                        env.set("__CERES_TMP", value)?;
-                                        let _ = self.ctx.load(format!("{} = __CERES_TMP;", var.as_str()).as_str()).set_environment(env.as_table())?.exec();
-                                        env.set("__CERES_TMP", LuaNil)?;
+                                        env.set("__WARPACK_TMP", value)?;
+                                        let _ = self.ctx.load(format!("{} = __WARPACK_TMP;", var.as_str()).as_str()).set_environment(env.as_table())?.exec();
+                                        env.set("__WARPACK_TMP", LuaNil)?;
                                     }
                                     i += 1;
                                 }
@@ -504,9 +504,9 @@ impl<'lua, MO: ModuleProvider, MA: MacroProvider> ScriptCompiler<'lua, MO, MA> {
                                 if let Ok(values) = self.ctx.load(exp.as_str()).set_environment(env.as_table())?.eval::<LuaMultiValue>() {
                                     for value in values {
                                         if let Some(var) = vars.get(i) {
-                                            env.set("__CERES_TMP", value)?;
-                                            let _ = self.ctx.load(format!("{} = __CERES_TMP;", var.as_str()).as_str()).set_environment(env.as_table())?.exec();
-                                            env.set("__CERES_TMP", LuaNil)?;
+                                            env.set("__WARPACK_TMP", value)?;
+                                            let _ = self.ctx.load(format!("{} = __WARPACK_TMP;", var.as_str()).as_str()).set_environment(env.as_table())?.exec();
+                                            env.set("__WARPACK_TMP", LuaNil)?;
                                         }
                                         i += 1;
                                     }
