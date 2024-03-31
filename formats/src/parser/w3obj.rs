@@ -147,7 +147,7 @@ pub mod write {
                         }.map(move |value| (*id, 0, 0, value))
                     ),
                 FieldKind::Leveled { values } => {
-                    if let Some(field_desc) = metadata.field_by_id((*id).clone()) {
+                    if let Some(field_desc) = metadata.field_by_id(*id) {
                         Box::new(values.iter().flat_map(move |leveled_value| {
                             match value_kind {
                                 ValueKind::Common => leveled_value.value.iter(),
@@ -172,22 +172,70 @@ pub mod write {
         })
     }
 
-    fn object_flat_fields_simple(object: &Object, value_kind: ValueKind) -> impl Iterator<Item = (ObjectId, &Value)> {
+    fn object_flat_fields_simple<'a>(
+        object: &'a Object,
+        metadata: &'a MetadataStore,
+        value_kind: ValueKind,
+    ) -> impl Iterator<Item = (ObjectId, &'a Value)> {
         object
             .fields()
-            .filter_map(move |(id, field)| match &field.kind {
-                FieldKind::Simple { value, value_sd, value_hd } => match value_kind {
-                    ValueKind::Common => value.as_ref(),
-                    ValueKind::SD => value_sd.as_ref(),
-                    ValueKind::HD => value_hd.as_ref(),
-                }.map(|value| (*id, value)),
-                FieldKind::Leveled { .. } => {
-                    eprintln!(
-                        "unexpected data field in object {} for field {}",
-                        object.id(),
-                        field.id
-                    );
-                    None
+            .filter_map(move |(id, field)| {
+                let is_profile = if let Some(field_desc) = metadata.field_by_id(*id) {
+                    field_desc.is_profile
+                } else {
+                    false
+                };
+                match &field.kind {
+                    FieldKind::Simple { value, value_sd, value_hd } => match value_kind {
+                        ValueKind::Common => value.as_ref(),
+                        // Simple profile field overrides should be written to war3mapSkin.txt.
+                        ValueKind::SD => if !is_profile { value_sd.as_ref() } else { None },
+                        ValueKind::HD => if !is_profile { value_hd.as_ref() } else { None },
+                    }.map(|value| (*id, value)),
+                    FieldKind::Leveled { .. } => {
+                        eprintln!(
+                            "unexpected data field in object {} for field {}",
+                            object.id(),
+                            field.id
+                        );
+                        None
+                    }
+                }
+            })
+    }
+
+    fn object_flat_fields_skin<'a>(
+        object: &'a Object,
+        metadata: &'a MetadataStore,
+    ) -> impl Iterator<Item = (String, &'a Value)> {
+        object
+            .fields()
+            .flat_map(move |(id, field)| {
+                if let Some(field_desc) = metadata.field_by_id(*id) {
+                    if !field_desc.is_profile {
+                        None.into_iter().chain(None.into_iter())
+                    } else {
+                        match &field.kind {
+                            FieldKind::Simple { value: _, value_sd, value_hd } => {
+                                value_sd.as_ref()
+                                    .map(|value| (format!("{}:sd", field_desc.variant.name()), value))
+                                    .into_iter()
+                                    .chain(value_hd.as_ref()
+                                        .map(|value|(format!("{}:hd", field_desc.variant.name()), value))
+                                        .into_iter())
+                            },
+                            FieldKind::Leveled { .. } => {
+                                eprintln!(
+                                    "unexpected data field in object {} for field {}",
+                                    object.id(),
+                                    field.id
+                                );
+                                None.into_iter().chain(None.into_iter())
+                            }
+                        }
+                    }
+                } else {
+                    None.into_iter().chain(None.into_iter())
                 }
             })
     }
@@ -228,8 +276,30 @@ pub mod write {
         Ok(())
     }
 
-    fn write_simple_fields<W: Write>(mut writer: W, object: &Object, value_kind: ValueKind) -> Result<(), IoError> {
-        let fields: Vec<_> = object_flat_fields_simple(object, value_kind).collect();
+    fn write_skin_fields<W: Write>(
+        mut writer: W,
+        object: &Object,
+        metadata: &MetadataStore,
+    ) -> Result<(), IoError> {
+        let fields: Vec<_> = object_flat_fields_skin(object, metadata).collect();
+
+        if !fields.is_empty() {
+            writer.write_all(format!("[{}]\r\n", object.id().to_string().unwrap()).as_bytes())?;
+            for (name, value) in fields {
+                writer.write_all(format!("{}={}\r\n", name, value_to_string(value)).as_bytes())?;
+            }
+        }
+
+        Ok(())
+    }
+
+    fn write_simple_fields<W: Write>(
+        mut writer: W,
+        object: &Object,
+        metadata: &MetadataStore,
+        value_kind: ValueKind,
+    ) -> Result<(), IoError> {
+        let fields: Vec<_> = object_flat_fields_simple(object, metadata, value_kind).collect();
 
         writer.write_u32::<LE>(fields.len() as u32)?;
         for (id, value) in fields {
@@ -260,6 +330,26 @@ pub mod write {
 
             write_value(&mut writer, value)?;
             writer.write_u32::<BE>(object.id().to_u32())?;
+        }
+
+        Ok(())
+    }
+
+    pub fn write_skin_file<W: Write>(
+        mut writer: W,
+        metadata: &MetadataStore,
+        data: &ObjectStore,
+        kind: ObjectKind,
+    ) -> Result<(), IoError> {
+        let objects: Vec<Object> = data
+            .objects()
+            .map(|o| o.read().unwrap())
+            .filter(is_obj_kind_pred(kind))
+            .map(|o| o.clone())
+            .collect();
+
+        for object in objects {
+            write_skin_fields(&mut writer, &object, metadata)?;
         }
 
         Ok(())
@@ -308,12 +398,7 @@ pub mod write {
                             .map(|v| v.clone())
                     };
                     let str_value = match value {
-                        Some(actual_value) => match actual_value {
-                            Value::Int(num) => num.to_string(),
-                            Value::Real(num) => num.to_string(),
-                            Value::Unreal(num) => num.to_string(),
-                            Value::String(val) => format!("\"{}\"", val),
-                        },
+                        Some(actual_value) => value_to_string(&actual_value),
                         None => "".to_string()
                     };
                     if !str_value.is_empty() {
@@ -351,7 +436,7 @@ pub mod write {
             if kind.is_data_type() {
                 write_data_fields(&mut writer, &object, metadata, value_kind)?;
             } else {
-                write_simple_fields(&mut writer, &object, value_kind)?;
+                write_simple_fields(&mut writer, &object, metadata, value_kind)?;
             }
         }
 
@@ -364,10 +449,19 @@ pub mod write {
             if kind.is_data_type() {
                 write_data_fields(&mut writer, &object, metadata, value_kind)?;
             } else {
-                write_simple_fields(&mut writer, &object, value_kind)?;
+                write_simple_fields(&mut writer, &object, metadata, value_kind)?;
             }
         }
 
         Ok(())
+    }
+
+    fn value_to_string(value: &Value) -> String {
+        match value {
+            Value::Int(num) => num.to_string(),
+            Value::Real(num) => num.to_string(),
+            Value::Unreal(num) => num.to_string(),
+            Value::String(val) => format!("\"{}\"", val),
+        }
     }
 }

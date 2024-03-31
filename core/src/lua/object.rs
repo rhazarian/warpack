@@ -32,6 +32,7 @@ struct StaticMethodKeys {
     obj_clone: LuaRegistryKey,
     objstore_read: LuaRegistryKey,
     objstore_write: LuaRegistryKey,
+    objstore_write_skin: LuaRegistryKey,
     objstore_setobject: LuaRegistryKey,
     objstore_getobject: LuaRegistryKey,
     objstore_newobject: LuaRegistryKey,
@@ -47,6 +48,7 @@ struct StaticMethods<'lua> {
     obj_clone: LuaFunction<'lua>,
     objstore_read: LuaFunction<'lua>,
     objstore_write: LuaFunction<'lua>,
+    objstore_write_skin: LuaFunction<'lua>,
     objstore_setobject: LuaFunction<'lua>,
     objstore_getobject: LuaFunction<'lua>,
     objstore_newobject: LuaFunction<'lua>,
@@ -60,6 +62,7 @@ impl<'lua> StaticMethods<'lua> {
             obj_clone: ctx.registry_value(&keys.obj_clone).unwrap(),
             objstore_read: ctx.registry_value(&keys.objstore_read).unwrap(),
             objstore_write: ctx.registry_value(&keys.objstore_write).unwrap(),
+            objstore_write_skin: ctx.registry_value(&keys.objstore_write_skin).unwrap(),
             objstore_getobject: ctx.registry_value(&keys.objstore_getobject).unwrap(),
             objstore_setobject: ctx.registry_value(&keys.objstore_setobject).unwrap(),
             objstore_newobject: ctx.registry_value(&keys.objstore_newobject).unwrap(),
@@ -81,6 +84,12 @@ impl<'lua> StaticMethods<'lua> {
                 let objstore_write = ctx
                     .create_registry_value(
                         ctx.create_function(LuaObjectStoreWrapper::write).unwrap(),
+                    )
+                    .unwrap();
+
+                let objstore_write_skin = ctx
+                    .create_registry_value(
+                        ctx.create_function(LuaObjectStoreWrapper::write_skin).unwrap(),
                     )
                     .unwrap();
 
@@ -150,6 +159,7 @@ impl<'lua> StaticMethods<'lua> {
                     obj_clone,
                     objstore_read,
                     objstore_write,
+                    objstore_write_skin,
                     objstore_getobject,
                     objstore_setobject,
                     objstore_newobject,
@@ -189,6 +199,12 @@ impl<'lua> StaticMethods<'lua> {
     fn objstore_write_fn(ctx: LuaContext) -> LuaValue {
         Self::with(ctx, |_ctx, methods| {
             LuaValue::Function(methods.objstore_write)
+        })
+    }
+
+    fn objstore_write_skin_fn(ctx: LuaContext) -> LuaValue {
+        Self::with(ctx, |_ctx, methods| {
+            LuaValue::Function(methods.objstore_write_skin)
         })
     }
 
@@ -424,6 +440,21 @@ impl LuaObjectStoreWrapper {
         Ok(LuaValue::String(ctx.create_string(&buf)?))
     }
 
+    fn write_skin<'lua>(
+        ctx: LuaContext<'lua>,
+        data: LuaAnyUserData<'lua>,
+    ) -> Result<LuaValue<'lua>, LuaError> {
+        let data = data.borrow::<LuaObjectStoreWrapper>()?;
+        let kind = data.kind;
+        let data = &data.inner;
+
+        let mut buf = Vec::new();
+        w3obj::write::write_skin_file(&mut buf, w3data::metadata(), &data, kind)
+            .map_err(LuaError::external)?;
+
+        Ok(LuaValue::String(ctx.create_string(&buf)?))
+    }
+
     fn object_or_new(
         data: &mut ObjectStore,
         kind: ObjectKind,
@@ -585,6 +616,7 @@ impl LuaObjectStoreWrapper {
                 b"all" => return Self::objects(ctx, data_inner, kind),
                 b"readFromString" => return Ok(StaticMethods::objstore_read_fn(ctx)),
                 b"writeToString" => return Ok(StaticMethods::objstore_write_fn(ctx)),
+                b"writeSkinToString" => return Ok(StaticMethods::objstore_write_skin_fn(ctx)),
                 b"getObject" => return Ok(StaticMethods::objstore_getobject_fn(ctx)),
                 b"setObject" => return Ok(StaticMethods::objstore_setobject_fn(ctx)),
                 b"newObject" => return Ok(StaticMethods::objstore_newobject_fn(ctx)),

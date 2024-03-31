@@ -258,6 +258,7 @@ function mapMeta:commitObjectStorage(storage)
             self:addFileString("war3mapSkin." .. storage.ext, dataSD)
             local dataHD = storage:writeToString("hd")
             self:addFileString("_HD.w3mod\\war3mapSkin." .. storage.ext, dataHD)
+            self:addFileString("war3mapSkin.txt", (self:readFile("war3mapSkin.txt") or "") .. storage:writeSkinToString())
         end
     end
 end
