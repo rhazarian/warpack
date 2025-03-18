@@ -101,7 +101,7 @@ do
                 return module.cached
             end
         elseif not optional then
-            error("module not found")
+            error("module not found " .. name)
         end
     end
 
