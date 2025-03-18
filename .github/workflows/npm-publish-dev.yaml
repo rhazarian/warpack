@@ -43,11 +43,6 @@ jobs:
             OS: windows-2022,
             TARGET: aarch64-pc-windows-msvc,
           }
-          - {
-            NAME: darwin-x64,
-            OS: macos-12,
-            TARGET: x86_64-apple-darwin,
-          }
     steps:
       - name: Checkout
         uses: actions/checkout@v4
