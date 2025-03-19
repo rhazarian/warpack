@@ -33,6 +33,7 @@ pub mod read {
         source: &mut &[u8],
         object: &mut Object,
         uses_extra_ints: bool,
+        value_kind: ValueKind,
     ) -> Result<(), ObjParseError> {
         let field_id = source.read_u32::<BE>().map(ObjectId::new)?;
         let field_type = source.read_u32::<LE>()?;
@@ -40,16 +41,16 @@ pub mod read {
         if !uses_extra_ints {
             let value = read_value(source, field_type)?;
 
-            object.set_simple_field(field_id, value, ValueKind::Common);
+            object.set_simple_field(field_id, value, value_kind);
         } else {
             let level = source.read_u32::<LE>()?;
             source.read_u32::<LE>()?;
             let value = read_value(source, field_type)?;
 
             if level == 0 {
-                object.set_simple_field(field_id, value, ValueKind::Common);
+                object.set_simple_field(field_id, value, value_kind);
             } else {
-                object.set_leveled_field(field_id, level, value, ValueKind::Common);
+                object.set_leveled_field(field_id, level, value, value_kind);
             }
         }
 
@@ -64,6 +65,7 @@ pub mod read {
         version: u32,
         data: &mut ObjectStore,
         kind: ObjectKind,
+        value_kind: ValueKind,
     ) -> Result<(), ObjParseError> {
         let obj_amount = source.read_u32::<LE>()?;
 
@@ -71,15 +73,26 @@ pub mod read {
             let original_id = source.read_u32::<BE>().map(ObjectId::new)?;
             let new_id = source.read_u32::<BE>().map(ObjectId::new)?;
 
-            let mut object = if new_id.to_u32() != 0 {
-                Object::with_parent(new_id, original_id, kind)
+            let id = if new_id.to_u32() != 0 {
+                new_id
             } else {
-                Object::new(original_id, kind)
+                original_id
             };
 
-            let aliased_id = data.object(original_id)
-                .and_then(|object| object.read().unwrap().aliased_id());
-            object.set_aliased_id(aliased_id);
+            let mut object = if let Some(existing_object) = data.object(id) {
+                existing_object.write().unwrap()
+            } else {
+                let mut new_object = if new_id.to_u32() != 0 {
+                    Object::with_parent(new_id, original_id, kind)
+                } else {
+                    Object::new(original_id, kind)
+                };
+                let aliased_id = data.object(original_id)
+                    .and_then(|object| object.read().unwrap().aliased_id());
+                new_object.set_aliased_id(aliased_id);
+                data.insert_object(new_object);
+                data.object(id).unwrap().write().unwrap()
+            };
 
             if version >= 3 {
                 let bytes = source.read_u32::<LE>()?;
@@ -90,10 +103,8 @@ pub mod read {
 
             let mod_amount = source.read_u32::<LE>()?;
             for _ in 0..mod_amount {
-                read_field(source, &mut object, kind.is_data_type())?;
+                read_field(source, &mut object, kind.is_data_type(), value_kind)?;
             }
-
-            data.insert_object(object);
         }
 
         Ok(())
@@ -106,11 +117,12 @@ pub mod read {
         mut source: &[u8],
         data: &mut ObjectStore,
         kind: ObjectKind,
+        value_kind: ValueKind,
     ) -> Result<(), ObjParseError> {
         let version = source.read_u32::<LE>()?;
 
-        read_object_table(&mut source, version, data, kind)?;
-        read_object_table(&mut source, version, data, kind)?;
+        read_object_table(&mut source, version, data, kind, value_kind)?;
+        read_object_table(&mut source, version, data, kind, value_kind)?;
 
         Ok(())
     }

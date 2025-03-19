@@ -220,11 +220,20 @@ local objectExtensions = {
 }
 
 function mapMeta:initObjectStorage(ext)
-    local result = self:readFile("war3map." .. ext)
+    local data = self:readFile("war3map." .. ext)
+    local dataSD = self:readFile("war3mapSkin." .. ext)
+    local dataHD = self:readFile("_HD.w3mod\\war3mapSkin." .. ext)
+
     local storage = objdata.newStore(ext)
 
-    if result then
-        storage:readFromString(result)
+    if data then
+        storage:readFromString(data)
+    end
+    if dataSD then
+        storage:readFromString(dataSD, dataHD and "sd" or nil)
+    end
+    if dataHD then
+        storage:readFromString(dataHD, "hd")
     end
 
     return storage

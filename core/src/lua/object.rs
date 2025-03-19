@@ -402,14 +402,24 @@ struct LuaObjectStoreWrapper {
 impl LuaObjectStoreWrapper {
     fn read<'lua>(
         ctx: LuaContext<'lua>,
-        (data, value): (LuaAnyUserData<'lua>, LuaValue<'lua>),
+        (data, value, value_kind_lua): (LuaAnyUserData<'lua>, LuaValue<'lua>, LuaValue<'lua>),
     ) -> Result<LuaValue<'lua>, LuaError> {
         let mut data = data.borrow_mut::<LuaObjectStoreWrapper>()?;
         let kind = data.kind;
         let data = &mut data.inner;
         let value = LuaString::from_lua(value, ctx)?;
+        let value_kind = if let LuaValue::Nil = value_kind_lua {
+            ValueKind::Common
+        } else {
+            let value_kind = LuaString::from_lua(value_kind_lua, ctx)?.to_str()?.to_string();
+            match value_kind.to_lowercase().as_str() {
+                "sd" => ValueKind::SD,
+                "hd" => ValueKind::HD,
+                _ => Err(LuaError::external(anyhow!("unknown value kind '{}'", value_kind)))?,
+            }
+        };
 
-        w3obj::read::read_object_file(value.as_bytes(), data, kind).map_err(LuaError::external)?;
+        w3obj::read::read_object_file(value.as_bytes(), data, kind, value_kind).map_err(LuaError::external)?;
         data.reset_dirty();
 
         Ok(LuaValue::Nil)
@@ -666,7 +676,7 @@ fn open_store_from_str(
     kind: ObjectKind,
 ) -> Result<LuaObjectStoreWrapper, anyhow::Error> {
     let mut data = ObjectStore::default();
-    w3obj::read::read_object_file(source, &mut data, kind)?;
+    w3obj::read::read_object_file(source, &mut data, kind, ValueKind::Common)?;
     data.reset_dirty();
 
     Ok(LuaObjectStoreWrapper { inner: data, kind })

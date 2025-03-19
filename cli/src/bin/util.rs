@@ -104,6 +104,7 @@ fn run(matches: clap::ArgMatches) -> Result<()> {
             &fs::read(&file_path)?,
             &mut data,
             ObjectKind::from_ext(&kind),
+            ValueKind::Common,
         )?;
 
         serialize_obj(&data, format);
@@ -118,6 +119,7 @@ fn run(matches: clap::ArgMatches) -> Result<()> {
             &fs::read(&file_path)?,
             &mut data,
             ObjectKind::from_ext(&kind),
+            ValueKind::Common,
         )?;
 
         parser::w3obj::write::write_object_file(
