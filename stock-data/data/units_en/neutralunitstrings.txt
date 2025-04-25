@@ -73,12 +73,12 @@ Ubertip="Light melee unit with Shadowmeld. |n|n|cffffcc00Attacks land units.|r"
 Name=Enforcer
 Hotkey=E
 Tip=Hire Enforcer
-Ubertip="Light melee unit with Shadowmeld and Evasion. |n|n|cffffcc00Attacks land units.|r"
+Ubertip="Light melee unit with Evasion. |n|n|cffffcc00Attacks land units.|r"
 
 [nbld]
 Name=Bandit Lord
 Tip=Hire Bandit Lord
-Ubertip="Heavy melee unit with Shadowmeld and Devotion Aura. Can cast Divine Shield. |n|n|cffffcc00Attacks land units.|r"
+Ubertip="Heavy melee unit with Devotion Aura. Can cast Divine Shield. |n|n|cffffcc00Attacks land units.|r"
 
 [nass]
 Name=Assassin
@@ -259,9 +259,13 @@ Ubertip="Light melee unit. |n|n|cffffcc00Attacks land units.|r"
 
 [ncks]
 Name=Centaur Sorcerer
+Name:hd=Centaur Sorceress
 Name:custom,V0=Centaur Sorceror
+Name:custom,hd,V0=Centaur Sorceress
 Tip=Hire Centaur Sorcerer
+Tip:hd=Hire Centaur Sorceress
 Tip:custom,V0=Hire Centaur Sorceror
+Tip:custom,hd,V0=Hire Centaur Sorceress
 Ubertip="Medium ranged unit that hurls fiery missiles. Casts Abolish Magic and Bloodlust. |n|n|cffffcc00Attacks land and air units.|r"
 Ubertip:custom,V0=Medium ranged unit that hurls fiery missles. Casts Abolish Magic and Bloodlust. |n|n|cffffcc00Attacks land and air units.|r
 

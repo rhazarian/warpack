@@ -49,7 +49,7 @@ CanDeactivateCorporealForm=1
 CanDeactivateDefend=1
 CanDeactivateDivineShield=0
 CanDeactivateImmolation=1
-CanDeactivateManaFlare=0
+CanDeactivateManaFlare=1
 CanDeactivateManaShield=1
 CanDeactivateMetamorphosis=0
 CanDeactivateRavenForm=1
@@ -104,7 +104,7 @@ ReviveLevelFactor=.10
 ReviveBaseLumberFactor=0
 ReviveLumberLevelFactor=0
 ReviveMaxFactor=4.0
-ReviveTimeFactor=0.65
+ReviveTimeFactor=0.60
 ReviveMaxTimeFactor=2.0
 
 AwakenBaseFactor=.80

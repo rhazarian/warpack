@@ -402,10 +402,10 @@ FogColorImage_Size=38,16
 // Preferences dialog
 //--------------------------------------------------------------------------
 [PrefsDialog]
-Dlg_Size=474,400
+Dlg_Size=474,600
 Tabs_Pos=5,5
-Tabs_Size=462,365
-Reset_Pos=5,378
+Tabs_Size=462,565
+Reset_Pos=5,578
 Reset_Size=270,20
 Pane_Pos=5,25
 
@@ -439,14 +439,25 @@ AutoScrollText_Pos=80,252
 AutoScrollText_Size=55,16
 AutoScrollSlider_Pos=135,250
 AutoScrollSlider_Size=230,20
-AssetModeLabel_Pos=10,280
-AssetModeLabel_Size=95,16
-AssetModeMenu_Pos=105,278
-AssetModeMenu_Size=100,18
-TeenDataLabel_Pos=10,304
+GeneralDivider_Pos=10,280
+GeneralDivider_Size=440,1
+TeenDataLabel_Pos=10,290
 TeenDataLabel_Size=95,16
-TeenDataMenu_Pos=105,302
+TeenDataMenu_Pos=105,288
 TeenDataMenu_Size=100,18
+AssetModeLabel_Pos=10,314
+AssetModeLabel_Size=95,16
+AssetModeMenu_Pos=105,312
+AssetModeMenu_Size=100,18
+BuildingsCheck_Pos=10,340
+EnvironmentCheck_Pos=10,360
+EnvOldCheck_Pos=20,380
+HeroesCheck_Pos=10,400
+IconsCheck_Pos=150,340
+UnitsCheck_Pos=150,360
+VfxCheck_Pos=150,380
+AssetFinePrint_Pos=10,500
+AssetFinePrint_Size=400,32
 
 [Prefs_Visual]
 FixDNCCheck_Pos=10,10
@@ -535,11 +546,15 @@ ParticleLabel_Pos=10,80
 ParticleLabel_Size=100,16
 ParticleMenu_Pos=110,76
 ParticleMenu_Size=100,20
-LightsLabel_Pos=10,102
+FoliageLabel_Pos=10,102
+FoliageLabel_Size=100,16
+FoliageMenu_Pos=110,98
+FoliageMenu_Size=100,20
+LightsLabel_Pos=10,124
 LightsLabel_Size=100,16
-LightsMenu_Pos=110,98
+LightsMenu_Pos=110,120
 LightsMenu_Size=100,20
-MatchWar3Check_Pos=10,124
+MatchWar3Check_Pos=10,146
 
 [Prefs_Sound]
 VolumeBase_Pos=10,10
@@ -1636,6 +1651,7 @@ BottomH=222
 
 ButtonIDColW=30
 ButtonInitVisColW=45
+ButtonIsCinematicColW=45
 ButtonFileColW=150
 ButtonChapterColW=200
 ButtonTitleColW=200
@@ -1650,10 +1666,10 @@ ScreenNone_Size=110,18
 ScreenGame_Pos=0,45
 ScreenGame_Size=110,18
 ScreenImpo_Pos=0,68
-ScreenImpo_Size=110,18
-ScreenMenuGame_Pos=110,43
+ScreenImpo_Size=130,18
+ScreenMenuGame_Pos=130,43
 ScreenMenuGame_Size=210,20
-ScreenMenuImpo_Pos=110,66
+ScreenMenuImpo_Pos=130,66
 ScreenMenuImpo_Size=210,20
 CursorLabel_Pos=18,94
 CursorLabel_Size=110,16
@@ -1693,6 +1709,7 @@ FileLabel_Size=60,16
 FileMenu_Pos=65,48
 FileMenu_Size=201,20
 InitVisCheck_Pos=5,73
+IsCinematicCheck_Pos=5,93
 
 //--------------------------------------------------------------------------
 // AI Editor module
