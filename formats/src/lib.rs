@@ -30,6 +30,10 @@ impl ObjectId {
         ObjectId { id }
     }
 
+    pub fn from_str(str: &str) -> Option<Self> {
+        Self::from_bytes(str.as_bytes())
+    }
+
     pub fn from_bytes(bytes: &[u8]) -> Option<Self> {
         if bytes.len() > 4 {
             None

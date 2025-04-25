@@ -254,10 +254,18 @@ impl MetadataStore {
         };
 
         let exclusive = exclusive.map(|e| {
-            let list = e
-                .split(|c| c == ',' || c == '.')
+            let mut list = e
+                .split(&[',', '.'][..])
                 .filter_map(|s| ObjectId::from_bytes(s.as_bytes()))
                 .collect::<Vec<_>>();
+
+            if basic_info.field_id.to_string().is_some_and(|id| id == "Idam") {
+                list.push(ObjectId::from_str("AIf2").unwrap());
+                list.push(ObjectId::from_str("AIft").unwrap());
+            } else if basic_info.field_id.to_string().is_some_and(|id| id == "Iob5") {
+                list.push(ObjectId::from_str("AIf2").unwrap());
+                list.push(ObjectId::from_str("AIft").unwrap());
+            }
 
             for object_id in &list {
                 self.objects_with_data
