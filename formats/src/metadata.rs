@@ -255,7 +255,7 @@ impl MetadataStore {
 
         let exclusive = exclusive.map(|e| {
             let list = e
-                .split(',')
+                .split(&[',', '.'][..])
                 .filter_map(|s| ObjectId::from_bytes(s.as_bytes()))
                 .collect::<Vec<_>>();
 
