@@ -256,7 +256,7 @@ impl MetadataStore {
         let exclusive = exclusive.map(|e| {
             let mut list = e
                 .split(&[',', '.'][..])
-                .filter_map(|s| ObjectId::from_bytes(s.as_bytes()))
+                .filter_map(|s| ObjectId::from_str(s))
                 .collect::<Vec<_>>();
 
             if basic_info.field_id.to_string().is_some_and(|id| id == "Idam") {
