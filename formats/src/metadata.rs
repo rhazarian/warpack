@@ -28,6 +28,11 @@ struct BasicInfo {
 
 fn read_basic_info<'src>(row: &slk::Row<'src>, legend: &slk::Legend<'src>) -> BasicInfo {
     let field_id = read_row_str(&row, legend, "ID").unwrap();
+    let field_id = if (field_id == "Crs") {
+        "Crs1"
+    } else {
+        field_id
+    };
     let field_name: String = read_row_str(&row, legend, "field").unwrap().into();
     let value_ty: String = read_row_str(&row, legend, "type").unwrap().into();
     let index: i8 = read_row_num(&row, legend, "index").unwrap_or(-1);
