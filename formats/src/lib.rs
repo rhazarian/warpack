@@ -43,6 +43,9 @@ impl ObjectId {
                 value <<= 8;
                 value += u32::from(*i);
             }
+            for i in bytes.len()..4 {
+                value <<= 8;
+            }
 
             Some(ObjectId { id: value })
         }
