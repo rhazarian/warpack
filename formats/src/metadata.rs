@@ -717,6 +717,261 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
+            id:           ObjectId::from_bytes(b"soid").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "SoundName".to_string(),
+            },
+            value_ty:     ValueType::String,
+            value_ty_raw: "string".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"saec").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "AnimationEventCode".to_string(),
+            },
+            value_ty:     ValueType::String,
+            value_ty_raw: "string".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"sfns").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "FileNames".to_string(),
+            },
+            value_ty:     ValueType::String,
+            value_ty_raw: "string".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"svol").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "Volume".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"svlv").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "VolumeVariance".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"sptc").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "Pitch".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"sptv").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "PitchVariance".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"smci").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "MaximumConcurrentInstances".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"spri").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "Priority".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"schn").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "Channel".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"sflg").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "Flags".to_string(),
+            },
+            value_ty:     ValueType::String,
+            value_ty_raw: "string".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"smnd").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "MinDistance".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"smxd").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "MaxDistance".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"sdco").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "DistanceCutoff".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"seax").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "EAXFlags".to_string(),
+            },
+            value_ty:     ValueType::String,
+            value_ty_raw: "string".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"sver").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "version".to_string(),
+            },
+            value_ty:     ValueType::Int,
+            value_ty_raw: "int".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
+            id:           ObjectId::from_bytes(b"srop").unwrap(),
+            index:        0,
+            variant:      FieldVariant::Normal {
+                name: "RolloffPoints".to_string(),
+            },
+            value_ty:     ValueType::String,
+            value_ty_raw: "string".to_string(),
+            exclusive:    None,
+            kind:         ObjectKind::SOUND,
+            is_profile:   false,
+        }
+    );
+
+    metadata.add_field(
+        FieldDesc {
             id:           ObjectId::from_bytes(b"uvox").unwrap(),
             index:        0,
             variant:      FieldVariant::Normal {

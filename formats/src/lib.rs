@@ -164,6 +164,7 @@ bitflags! {
         const ITEM = 0b1000000;
         const DOODAD = 0b10000000;
         const LIGHTNING = 0b100000000; // fake
+        const SOUND = 0b1000000000; // fake
     }
 }
 
@@ -180,6 +181,7 @@ impl ObjectKind {
             "w3h" => ObjectKind::BUFF,
             "w3q" => ObjectKind::UPGRADE,
             "lightning" => ObjectKind::LIGHTNING,
+            "sound" => ObjectKind::LIGHTNING,
             _ => ObjectKind::empty(),
         }
     }
@@ -194,6 +196,7 @@ impl ObjectKind {
             ObjectKind::BUFF => "w3h",
             ObjectKind::UPGRADE => "w3q",
             ObjectKind::LIGHTNING => "lightning",
+            ObjectKind::SOUND => "sound",
             _ => "none",
         }
     }
@@ -219,6 +222,7 @@ impl ObjectKind {
             ObjectKind::BUFF => "buff",
             ObjectKind::UPGRADE => "upgrade",
             ObjectKind::LIGHTNING => "lightning",
+            ObjectKind::SOUND => "sound",
             _ => "none",
         }
     }

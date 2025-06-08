@@ -375,7 +375,7 @@ pub mod write {
         kind: ObjectKind,
         value_kind: ValueKind,
     ) -> Result<(), IoError> {
-        if kind == ObjectKind::LIGHTNING {
+        if kind == ObjectKind::LIGHTNING || kind == ObjectKind::SOUND {
             let fields: Vec<_> = metadata.fields()
                 .filter(|f| f.kind == kind)
                 .filter(|f| !f.is_profile)

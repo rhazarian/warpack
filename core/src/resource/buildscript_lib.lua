@@ -251,6 +251,9 @@ function mapMeta:initObjects()
 
     local lightningData = objdata.newStore("lightning")
     objects[lightningData.typestr] = lightningData
+
+    local soundData = objdata.newStore("sound")
+    objects[soundData.typestr] = soundData
 end
 
 function mapMeta:commitObjectStorage(storage)
@@ -260,6 +263,11 @@ function mapMeta:commitObjectStorage(storage)
             self:addFileString("Splats\\LightningData.slk", dataSD)
             local dataHD = storage:writeToString("hd")
             self:addFileString("_HD.w3mod\\Splats\\LightningData.slk", dataHD)
+        else if storage.typestr == "sound" then
+            local dataSD = storage:writeToString("sd")
+            self:addFileString("UI\\SoundInfo\\AbilitySounds.slk", dataSD)
+            local dataHD = storage:writeToString("hd")
+            self:addFileString("_HD.w3mod\\UI\\SoundInfo\\AbilitySounds.slk", dataHD)
         else
             local data = storage:writeToString()
             self:addFileString("war3map." .. storage.ext, data)
