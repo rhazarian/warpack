@@ -263,7 +263,7 @@ function mapMeta:commitObjectStorage(storage)
             self:addFileString("Splats\\LightningData.slk", dataSD)
             local dataHD = storage:writeToString("hd")
             self:addFileString("_HD.w3mod\\Splats\\LightningData.slk", dataHD)
-        else if storage.typestr == "sound" then
+        elseif storage.typestr == "sound" then
             local dataSD = storage:writeToString("sd")
             self:addFileString("UI\\SoundInfo\\AbilitySounds.slk", dataSD)
             local dataHD = storage:writeToString("hd")
