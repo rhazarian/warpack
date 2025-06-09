@@ -188,7 +188,7 @@ impl ObjectKind {
             "w3h" => ObjectKind::BUFF,
             "w3q" => ObjectKind::UPGRADE,
             "lightning" => ObjectKind::LIGHTNING,
-            "sound" => ObjectKind::LIGHTNING,
+            "sound" => ObjectKind::SOUND,
             _ => ObjectKind::empty(),
         }
     }
