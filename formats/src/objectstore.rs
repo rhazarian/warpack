@@ -97,7 +97,7 @@ impl ObjectStore {
 
         let id = first_cell
             .and_then(|c| c.value().as_str())
-            .map(|id| ObjectId::from_bytes(id.as_bytes()))?;
+            .and_then(|id| ObjectId::from_str(id))?;
 
         let object = if kind == ObjectKind::empty() {
             self.objects.get_mut(&id)?
@@ -113,7 +113,7 @@ impl ObjectStore {
         if has_aliased_id {
             let aliased_id = row.cells.get(1)
                 .and_then(|c| c.value().as_str())
-                .map(|id| ObjectId::from_bytes(id.as_bytes()))?;
+                .and_then(|id| ObjectId::from_str(id))?;
             object.write().unwrap().set_aliased_id(Some(aliased_id));
         }
 
@@ -129,7 +129,7 @@ impl ObjectStore {
     }
 
     fn insert_func_entry(&mut self, entry: profile::Entry, metadata: &MetadataStore) -> Option<()> {
-        let id = ObjectId::from_bytes(entry.id.as_bytes());
+        let id = ObjectId::from_str(entry.id)?;
         let object = self.objects.get_mut(&id)?;
 
         for (key, values) in entry.values {

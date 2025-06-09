@@ -287,7 +287,7 @@ impl LuaObjectWrapper {
 
         // check if the field is in the form of 'XXXX' or 'XXXX+Y'
         if (field_bytes.len() == 4) || (field_bytes.len() > 5 && field_bytes[4] == b'+') {
-            let object_id = ObjectId::from_bytes(&field_bytes[0..4]);
+            let object_id = ObjectId::from_bytes(&field_bytes[0..4]).unwrap();
 
             if let Some(field_desc) = w3data::metadata().query_object_field(object_id, object) {
                 let level = if field_bytes.len() > 5 {

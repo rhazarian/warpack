@@ -42,12 +42,16 @@ impl ObjectId {
         true
     }
 
-    pub fn from_str(str: &str) -> Self {
+    pub fn from_str(str: &str) -> Option<Self> {
         Self::from_bytes(str.as_bytes())
     }
 
-    pub fn from_bytes(bytes: &[u8]) -> Self {
-        ObjectId { id: bytes.to_vec() }
+    pub fn from_bytes(bytes: &[u8]) -> Option<Self> {
+        if bytes.len() == 0 || bytes == b" " || bytes == b"_" || bytes == b"-" {
+            None
+        } else {
+            Some(ObjectId { id: bytes.to_vec() })
+        }
     }
 
     pub fn to_u32(&self) -> Option<u32> {
@@ -108,7 +112,13 @@ impl From<u32> for ObjectId {
 impl<'lua> FromLua<'lua> for ObjectId {
     fn from_lua(value: LuaValue<'lua>, _ctx: LuaContext<'lua>) -> Result<Self, LuaError> {
         match value {
-            LuaValue::String(value) => Ok(ObjectId::from_bytes(value.as_bytes())),
+            LuaValue::String(value) => ObjectId::from_bytes(value.as_bytes()).ok_or_else(|| {
+                LuaError::FromLuaConversionError {
+                    from:    "string",
+                    to:      "objectid",
+                    message: Some("invalid byte sequence for object id".into()),
+                }
+            }),
             LuaValue::Integer(value) => Ok(ObjectId::new(value as u32)),
             _ => Err(LuaError::external(anyhow!(
                 "only strings and integers can be converted to object ids"

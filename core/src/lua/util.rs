@@ -133,7 +133,8 @@ where
 
 pub fn lvalue_to_objid(value: LuaValue) -> Result<ObjectId, LuaError> {
     match value {
-        LuaValue::String(value) => Ok(ObjectId::from_bytes(value.as_bytes())),
+        LuaValue::String(value) => ObjectId::from_bytes(value.as_bytes())
+            .ok_or_else(|| StringError::new("invalid byte sequence for id").into()),
         LuaValue::Integer(value) => Ok(ObjectId::new(value as u32)),
         _ => Err(StringError::new("cannot coerce type to object id").into()),
     }

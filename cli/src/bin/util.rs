@@ -109,7 +109,7 @@ fn run(matches: clap::ArgMatches) -> Result<()> {
 
         serialize_obj(&data, format);
     } else if let Some(_arg) = matches.subcommand_matches("dbg") {
-        dbg!(meta.field_by_id(ObjectId::from_bytes(b"amac")));
+        dbg!(meta.field_by_id(ObjectId::from_bytes(b"amac").unwrap()));
     } else if let Some(arg) = matches.subcommand_matches("rwobj") {
         let file_path: PathBuf = arg.value_of("FILE").unwrap().into();
         let kind = file_path.extension().unwrap().to_string_lossy();
