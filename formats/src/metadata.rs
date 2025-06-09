@@ -256,7 +256,7 @@ impl MetadataStore {
         let exclusive = exclusive.map(|e| {
             let mut list = e
                 .split(&[',', '.'][..])
-                .filter(|e| !e.is_empty() && *e != "_")
+                .filter(|e| !e.is_empty() && *e != "_" && *e != "-")
                 .map(|s| ObjectId::from_str(s))
                 .collect::<Vec<_>>();
 
