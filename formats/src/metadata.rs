@@ -33,7 +33,7 @@ fn read_basic_info<'src>(row: &slk::Row<'src>, legend: &slk::Legend<'src>) -> Ba
     let index: i8 = read_row_num(&row, legend, "index").unwrap_or(-1);
     let slk = read_row_str(&row, legend, "slk").unwrap();
 
-    let field_id = ObjectId::from_bytes(field_id.as_bytes()).unwrap();
+    let field_id = ObjectId::from_bytes(field_id.as_bytes());
 
     BasicInfo {
         field_id,
@@ -147,7 +147,7 @@ impl MetadataStore {
     }
 
     fn add_field(&mut self, field: FieldDesc) {
-        let id = field.id;
+        let id = field.id.clone();
         let name = field.variant.name().to_ascii_lowercase();
         let key = self.fields.insert(field);
         self.ids_to_keys.insert(id, key);
@@ -256,22 +256,23 @@ impl MetadataStore {
         let exclusive = exclusive.map(|e| {
             let mut list = e
                 .split(&[',', '.'][..])
-                .filter_map(|s| ObjectId::from_str(s))
+                .filter(|e| !e.is_empty() && *e != "_")
+                .map(|s| ObjectId::from_str(s))
                 .collect::<Vec<_>>();
 
-            if basic_info.field_id.to_string().is_some_and(|id| id == "Idam") {
-                list.push(ObjectId::from_str("AIf2").unwrap());
-                list.push(ObjectId::from_str("AIft").unwrap());
-            } else if basic_info.field_id.to_string().is_some_and(|id| id == "Iob5") {
-                list.push(ObjectId::from_str("AIf2").unwrap());
-                list.push(ObjectId::from_str("AIft").unwrap());
+            if basic_info.field_id.clone().to_string().is_some_and(|id| id == "Idam") {
+                list.push(ObjectId::from_str("AIf2"));
+                list.push(ObjectId::from_str("AIft"));
+            } else if basic_info.field_id.clone().to_string().is_some_and(|id| id == "Iob5") {
+                list.push(ObjectId::from_str("AIf2"));
+                list.push(ObjectId::from_str("AIft"));
             }
 
             for object_id in &list {
                 self.objects_with_data
-                    .entry(*object_id)
+                    .entry(object_id.clone())
                     .or_default()
-                    .push(basic_info.field_id);
+                    .push(basic_info.field_id.clone());
             }
 
             list
@@ -487,7 +488,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"liid").unwrap(),
+            id:           ObjectId::from_bytes(b"liid"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Name".to_string(),
@@ -502,7 +503,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lnam").unwrap(),
+            id:           ObjectId::from_bytes(b"lnam"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "comment".to_string(),
@@ -517,7 +518,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"ldir").unwrap(),
+            id:           ObjectId::from_bytes(b"ldir"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Dir".to_string(),
@@ -532,7 +533,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lfil").unwrap(),
+            id:           ObjectId::from_bytes(b"lfil"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "file".to_string(),
@@ -547,7 +548,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lasl").unwrap(),
+            id:           ObjectId::from_bytes(b"lasl"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "AvgSegLen".to_string(),
@@ -562,7 +563,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lwid").unwrap(),
+            id:           ObjectId::from_bytes(b"lwid"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Width".to_string(),
@@ -577,7 +578,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lred").unwrap(),
+            id:           ObjectId::from_bytes(b"lred"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "R".to_string(),
@@ -592,7 +593,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lgrn").unwrap(),
+            id:           ObjectId::from_bytes(b"lgrn"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "G".to_string(),
@@ -607,7 +608,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lblu").unwrap(),
+            id:           ObjectId::from_bytes(b"lblu"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "B".to_string(),
@@ -622,7 +623,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lalp").unwrap(),
+            id:           ObjectId::from_bytes(b"lalp"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "A".to_string(),
@@ -637,7 +638,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lnsc").unwrap(),
+            id:           ObjectId::from_bytes(b"lnsc"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "NoiseScale".to_string(),
@@ -652,7 +653,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"ltcs").unwrap(),
+            id:           ObjectId::from_bytes(b"ltcs"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "TexCoordScale".to_string(),
@@ -667,7 +668,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"ldur").unwrap(),
+            id:           ObjectId::from_bytes(b"ldur"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Duration".to_string(),
@@ -682,7 +683,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lver").unwrap(),
+            id:           ObjectId::from_bytes(b"lver"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "version".to_string(),
@@ -697,7 +698,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"lfxf").unwrap(),
+            id:           ObjectId::from_bytes(b"lfxf"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "FxFile".to_string(),
@@ -712,7 +713,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"soid").unwrap(),
+            id:           ObjectId::from_bytes(b"soid"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "SoundName".to_string(),
@@ -727,7 +728,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"saec").unwrap(),
+            id:           ObjectId::from_bytes(b"saec"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "AnimationEventCode".to_string(),
@@ -742,7 +743,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"sfns").unwrap(),
+            id:           ObjectId::from_bytes(b"sfns"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "FileNames".to_string(),
@@ -757,7 +758,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"svol").unwrap(),
+            id:           ObjectId::from_bytes(b"svol"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Volume".to_string(),
@@ -772,7 +773,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"svlv").unwrap(),
+            id:           ObjectId::from_bytes(b"svlv"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "VolumeVariance".to_string(),
@@ -787,7 +788,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"sptc").unwrap(),
+            id:           ObjectId::from_bytes(b"sptc"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Pitch".to_string(),
@@ -802,7 +803,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"sptv").unwrap(),
+            id:           ObjectId::from_bytes(b"sptv"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "PitchVariance".to_string(),
@@ -817,7 +818,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"smci").unwrap(),
+            id:           ObjectId::from_bytes(b"smci"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "MaximumConcurrentInstances".to_string(),
@@ -832,7 +833,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"spri").unwrap(),
+            id:           ObjectId::from_bytes(b"spri"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Priority".to_string(),
@@ -847,7 +848,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"schn").unwrap(),
+            id:           ObjectId::from_bytes(b"schn"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Channel".to_string(),
@@ -862,7 +863,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"sflg").unwrap(),
+            id:           ObjectId::from_bytes(b"sflg"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "Flags".to_string(),
@@ -877,7 +878,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"smnd").unwrap(),
+            id:           ObjectId::from_bytes(b"smnd"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "MinDistance".to_string(),
@@ -892,7 +893,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"smxd").unwrap(),
+            id:           ObjectId::from_bytes(b"smxd"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "MaxDistance".to_string(),
@@ -907,7 +908,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"sdco").unwrap(),
+            id:           ObjectId::from_bytes(b"sdco"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "DistanceCutoff".to_string(),
@@ -922,7 +923,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"seax").unwrap(),
+            id:           ObjectId::from_bytes(b"seax"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "EAXFlags".to_string(),
@@ -937,7 +938,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"sver").unwrap(),
+            id:           ObjectId::from_bytes(b"sver"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "version".to_string(),
@@ -952,7 +953,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"srop").unwrap(),
+            id:           ObjectId::from_bytes(b"srop"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "RolloffPoints".to_string(),
@@ -967,7 +968,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"uvox").unwrap(),
+            id:           ObjectId::from_bytes(b"uvox"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "projectileVisOffsetX".to_string(),
@@ -982,7 +983,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     metadata.add_field(
         FieldDesc {
-            id:           ObjectId::from_bytes(b"uvoy").unwrap(),
+            id:           ObjectId::from_bytes(b"uvoy"),
             index:        0,
             variant:      FieldVariant::Normal {
                 name: "projectileVisOffsetY".to_string(),
@@ -997,7 +998,7 @@ pub fn read_metadata_dir<P: AsRef<Path>>(path: P) -> MetadataStore {
 
     // string id field for unit names
     metadata.add_field(FieldDesc {
-        id:           ObjectId::from_bytes(b"siid").unwrap(),
+        id:           ObjectId::from_bytes(b"siid"),
         index:        0,
         variant:      FieldVariant::Normal {
             name: "name".to_string(),

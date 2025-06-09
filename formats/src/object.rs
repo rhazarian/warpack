@@ -108,7 +108,7 @@ impl Object {
     }
 
     pub fn id(&self) -> ObjectId {
-        self.id
+        self.id.clone()
     }
 
     pub fn set_id(&mut self, id: ObjectId) {
@@ -116,7 +116,7 @@ impl Object {
     }
 
     pub fn aliased_id(&self) -> Option<ObjectId> {
-        self.aliased_id
+        self.aliased_id.clone()
     }
 
     pub fn set_aliased_id(&mut self, aliased_id: Option<ObjectId>) {
@@ -124,7 +124,7 @@ impl Object {
     }
 
     pub fn parent_id(&self) -> Option<ObjectId> {
-        self.parent_id
+        self.parent_id.clone()
     }
 
     pub fn set_parent_id(&mut self, parent_id: Option<ObjectId>) {
@@ -151,8 +151,8 @@ impl Object {
         self.fields.get(&id)
     }
 
-    pub fn simple_field(&self, id: ObjectId, value_kind: ValueKind) -> Option<&Value> {
-        self.fields.get(&id).and_then(|field| match &field.kind {
+    pub fn simple_field(&self, id: &ObjectId, value_kind: ValueKind) -> Option<&Value> {
+        self.fields.get(id).and_then(|field| match &field.kind {
             FieldKind::Simple { value, value_sd, value_hd } =>
                 match value_kind {
                     ValueKind::Common => value.as_ref(),
@@ -163,8 +163,8 @@ impl Object {
         })
     }
 
-    pub fn leveled_field(&self, id: ObjectId, level: u32, value_kind: ValueKind) -> Option<&Value> {
-        self.fields.get(&id).and_then(|field| match &field.kind {
+    pub fn leveled_field(&self, id: &ObjectId, level: u32, value_kind: ValueKind) -> Option<&Value> {
+        self.fields.get(id).and_then(|field| match &field.kind {
             FieldKind::Leveled { values } => values
                 .iter()
                 .find(|value| value.level == level)
@@ -177,27 +177,27 @@ impl Object {
         })
     }
 
-    pub fn unset_simple_field(&mut self, id: ObjectId) {
+    pub fn unset_simple_field(&mut self, id: &ObjectId) {
         self.dirty = true;
 
-        self.fields.remove(&id);
+        self.fields.remove(id);
     }
 
-    pub fn unset_leveled_field(&mut self, id: ObjectId, level: u32) {
+    pub fn unset_leveled_field(&mut self, id: &ObjectId, level: u32) {
         self.dirty = true;
 
-        if let Some(field) = self.fields.get_mut(&id) {
+        if let Some(field) = self.fields.get_mut(id) {
             if let FieldKind::Leveled { values } = &mut field.kind {
                 values.retain(|dv| dv.level != level)
             }
         }
     }
 
-    pub fn set_simple_field(&mut self, id: ObjectId, value: Value, value_kind: ValueKind) {
+    pub fn set_simple_field(&mut self, id: &ObjectId, value: Value, value_kind: ValueKind) {
         self.dirty = true;
 
-        let field = self.fields.entry(id).or_insert_with(|| Field {
-            id,
+        let field = self.fields.entry(id.clone()).or_insert_with(|| Field {
+            id: id.clone(),
             kind: FieldKind::Simple {
                 value: None,
                 value_sd: None,
@@ -220,11 +220,11 @@ impl Object {
         }
     }
 
-    pub fn set_leveled_field(&mut self, id: ObjectId, level: u32, value: Value, value_kind: ValueKind) {
+    pub fn set_leveled_field(&mut self, id: &ObjectId, level: u32, value: Value, value_kind: ValueKind) {
         self.dirty = true;
 
-        let field = self.fields.entry(id).or_insert_with(|| Field {
-            id,
+        let field = self.fields.entry(id.clone()).or_insert_with(|| Field {
+            id: id.clone(),
             kind: FieldKind::Leveled {
                 values: Default::default(),
             },
@@ -276,7 +276,7 @@ impl Object {
         self.dirty = true;
 
         for (id, field) in &other.fields {
-            self.fields.insert(*id, field.clone());
+            self.fields.insert(id.clone(), field.clone());
         }
     }
 
@@ -289,12 +289,11 @@ impl Object {
         let (field_meta, level) = metadata.query_slk_field(name, &self)?;
 
         let value = Value::from_str_and_ty(value.as_inner()?, field_meta.value_ty)?;
-        let field_id = field_meta.id;
 
         match field_meta.variant {
-            FieldVariant::Normal { .. } => self.set_simple_field(field_id, value, ValueKind::Common),
+            FieldVariant::Normal { .. } => self.set_simple_field(&field_meta.id, value, ValueKind::Common),
             FieldVariant::Leveled { .. } | FieldVariant::Data { .. } => self.set_leveled_field(
-                field_id,
+                &field_meta.id,
                 level.expect("field must have level specified"),
                 value,
                 ValueKind::Common,
@@ -318,9 +317,9 @@ impl Object {
         let value = Value::from_str_and_ty(value, field_meta.value_ty)?;
 
         if let Some(level) = level {
-            self.set_leveled_field(field_meta.id, level, value, value_kind)
+            self.set_leveled_field(&field_meta.id, level, value, value_kind)
         } else {
-            self.set_simple_field(field_meta.id, value, value_kind)
+            self.set_simple_field(&field_meta.id, value, value_kind)
         }
 
         Some(())

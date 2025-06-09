@@ -80,7 +80,7 @@ impl ObjectStore {
                 object.write().unwrap().add_from(&other_object.read().unwrap());
             } else {
                 let cloned = other_object.read().unwrap().clone();
-                self.objects.insert(*id, Arc::new(RwLock::new(cloned)));
+                self.objects.insert(id.clone(), Arc::new(RwLock::new(cloned)));
             }
         }
     }
@@ -97,13 +97,13 @@ impl ObjectStore {
 
         let id = first_cell
             .and_then(|c| c.value().as_str())
-            .and_then(|id| ObjectId::from_bytes(id.as_bytes()))?;
+            .map(|id| ObjectId::from_bytes(id.as_bytes()))?;
 
         let object = if kind == ObjectKind::empty() {
             self.objects.get_mut(&id)?
         } else {
             self.objects
-                .entry(id)
+                .entry(id.clone())
                 .or_insert_with(|| Arc::new(RwLock::new(Object::new(id, kind))))
         };
 
@@ -113,7 +113,7 @@ impl ObjectStore {
         if has_aliased_id {
             let aliased_id = row.cells.get(1)
                 .and_then(|c| c.value().as_str())
-                .and_then(|id| ObjectId::from_bytes(id.as_bytes()))?;
+                .map(|id| ObjectId::from_bytes(id.as_bytes()))?;
             object.write().unwrap().set_aliased_id(Some(aliased_id));
         }
 
@@ -129,7 +129,7 @@ impl ObjectStore {
     }
 
     fn insert_func_entry(&mut self, entry: profile::Entry, metadata: &MetadataStore) -> Option<()> {
-        let id = ObjectId::from_bytes(entry.id.as_bytes())?;
+        let id = ObjectId::from_bytes(entry.id.as_bytes());
         let object = self.objects.get_mut(&id)?;
 
         for (key, values) in entry.values {

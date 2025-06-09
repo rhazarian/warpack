@@ -1,5 +1,8 @@
+use std::rc::Rc;
+use std::sync::Arc;
 use rlua::prelude::*;
 use serde::{Deserialize, Serialize};
+use imstr::ImString;
 
 use anyhow::anyhow;
 use bitflags::bitflags;
@@ -16,63 +19,69 @@ pub mod metadata;
 pub mod object;
 pub mod objectstore;
 
-#[derive(Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(Clone, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 /// A WC3 object id, which is conceptually a simple 32-bit integer,
 /// but often represented as a 4-char ASCII string.
 ///
 /// Provides conversion to/from byte arrays for this reason.
 pub struct ObjectId {
-    id: u32,
+    id: Vec<u8>,
 }
 
 impl ObjectId {
     pub fn new(id: u32) -> ObjectId {
-        ObjectId { id }
+        ObjectId { id: id.to_be_bytes().iter().copied().collect() }
     }
 
-    pub fn from_str(str: &str) -> Option<Self> {
+    pub fn is_zero(&self) -> bool {
+        for i in &self.id {
+            if *i != 0 {
+                return false;
+            }
+        }
+        true
+    }
+
+    pub fn from_str(str: &str) -> Self {
         Self::from_bytes(str.as_bytes())
     }
 
-    pub fn from_bytes(bytes: &[u8]) -> Option<Self> {
-        if bytes.len() > 4 {
+    pub fn from_bytes(bytes: &[u8]) -> Self {
+        ObjectId { id: bytes.to_vec() }
+    }
+
+    pub fn to_u32(&self) -> Option<u32> {
+        if self.id.len() > 4 {
             None
         } else {
             let mut value = 0;
-            for i in bytes {
+            for i in &self.id {
                 value <<= 8;
                 value += u32::from(*i);
             }
-            for i in bytes.len()..4 {
+            for i in self.id.len()..4 {
                 value <<= 8;
             }
-
-            Some(ObjectId { id: value })
+            Some(value)
         }
     }
 
-    pub fn to_u32(self) -> u32 {
-        self.id
-    }
-
-    pub fn to_string(self) -> Option<String> {
-        let bytes: Vec<u8> = (&self.id.to_be_bytes()).iter().copied().collect();
-        String::from_utf8(bytes).ok()
+    pub fn to_string(&self) -> Option<String> {
+        String::from_utf8(self.id.clone()).ok()
     }
 }
 
 impl std::fmt::Debug for ObjectId {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        if self.id == 0 {
+        if self.is_zero() {
             write!(f, "ObjectID(NULL)")
         } else {
-            let bytes = self.id.to_be_bytes();
-            let pretty = std::str::from_utf8(&bytes).ok();
+            let pretty = std::str::from_utf8(&self.id).ok();
 
             if let Some(pretty) = pretty {
                 write!(f, "ObjectID({})", pretty)
             } else {
-                write!(f, "ObjectID({})", self.id)
+                write!(f, "ObjectID({})", self.to_u32().unwrap())
             }
         }
     }
@@ -80,11 +89,10 @@ impl std::fmt::Debug for ObjectId {
 
 impl std::fmt::Display for ObjectId {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        if self.id == 0 {
+        if self.is_zero() {
             write!(f, "NULL")
         } else {
-            let bytes = self.id.to_be_bytes();
-            let pretty = String::from_utf8_lossy(&bytes);
+            let pretty = String::from_utf8_lossy(&self.id);
 
             write!(f, "{}", pretty)
         }
@@ -93,20 +101,14 @@ impl std::fmt::Display for ObjectId {
 
 impl From<u32> for ObjectId {
     fn from(other: u32) -> Self {
-        Self { id: other }
+        ObjectId::new(other)
     }
 }
 
 impl<'lua> FromLua<'lua> for ObjectId {
     fn from_lua(value: LuaValue<'lua>, _ctx: LuaContext<'lua>) -> Result<Self, LuaError> {
         match value {
-            LuaValue::String(value) => ObjectId::from_bytes(value.as_bytes()).ok_or_else(|| {
-                LuaError::FromLuaConversionError {
-                    from:    "string",
-                    to:      "objectid",
-                    message: Some("invalid byte sequence for object id".into()),
-                }
-            }),
+            LuaValue::String(value) => Ok(ObjectId::from_bytes(value.as_bytes())),
             LuaValue::Integer(value) => Ok(ObjectId::new(value as u32)),
             _ => Err(LuaError::external(anyhow!(
                 "only strings and integers can be converted to object ids"
@@ -119,8 +121,10 @@ impl<'lua> ToLua<'lua> for ObjectId {
     fn to_lua(self, ctx: LuaContext<'lua>) -> Result<LuaValue<'lua>, LuaError> {
         if let Some(value) = self.to_string() {
             Ok(LuaValue::String(ctx.create_string(&value)?))
+        } else if let Some(value) = self.to_u32() {
+            Ok(LuaValue::Integer(value as i64))
         } else {
-            Ok(LuaValue::Integer(self.id as i64))
+            Err(LuaError::external(anyhow!("an unrepresentable object id")))
         }
     }
 }

@@ -253,7 +253,7 @@ impl LuaObjectWrapper {
     fn fields<'lua>(ctx: LuaContext<'lua>, object: &Object) -> Result<LuaValue<'lua>, LuaError> {
         let fields: Vec<_> = w3data::metadata()
             .query_all_object_fields(&object)
-            .map(|field_desc| field_desc.id)
+            .map(|field_desc| field_desc.id.clone())
             .collect();
 
         Ok(fields.to_lua(ctx)?)
@@ -287,7 +287,7 @@ impl LuaObjectWrapper {
 
         // check if the field is in the form of 'XXXX' or 'XXXX+Y'
         if (field_bytes.len() == 4) || (field_bytes.len() > 5 && field_bytes[4] == b'+') {
-            let object_id = ObjectId::from_bytes(&field_bytes[0..4]).unwrap();
+            let object_id = ObjectId::from_bytes(&field_bytes[0..4]);
 
             if let Some(field_desc) = w3data::metadata().query_object_field(object_id, object) {
                 let level = if field_bytes.len() > 5 {
@@ -317,9 +317,9 @@ impl LuaObjectWrapper {
 
         if let Some((field_desc, level, hd)) = Self::translate_field_name(ctx, key, &object)? {
             let field = if let Some(level) = level {
-                get_field_for(&object, |o| o.leveled_field(field_desc.id, level, hd))
+                get_field_for(&object, |o| o.leveled_field(&field_desc.id, level, hd))
             } else {
-                get_field_for(&object, |o| o.simple_field(field_desc.id, hd))
+                get_field_for(&object, |o| o.simple_field(&field_desc.id, hd))
             };
 
             if let Some(field) = field {
@@ -339,16 +339,16 @@ impl LuaObjectWrapper {
         if let Some((field_desc, level, hd)) = Self::translate_field_name(ctx, key, object)? {
             if let LuaValue::Nil = value {
                 if let Some(level) = level {
-                    object.unset_leveled_field(field_desc.id, level)
+                    object.unset_leveled_field(&field_desc.id, level)
                 } else {
-                    object.unset_simple_field(field_desc.id)
+                    object.unset_simple_field(&field_desc.id)
                 }
             } else {
                 let value = lvalue_to_value(ctx, value, field_desc)?;
                 if let Some(level) = level {
-                    object.set_leveled_field(field_desc.id, level, value, hd)
+                    object.set_leveled_field(&field_desc.id, level, value, hd)
                 } else {
-                    object.set_simple_field(field_desc.id, value, hd)
+                    object.set_simple_field(&field_desc.id, value, hd)
                 }
             }
 
@@ -468,18 +468,18 @@ impl LuaObjectStoreWrapper {
     fn object_or_new(
         data: &mut ObjectStore,
         kind: ObjectKind,
-        id: ObjectId,
+        id: &ObjectId,
     ) -> Option<Arc<RwLock<Object>>> {
-        data.object(id).map(|object| Arc::clone(object)).or_else(|| {
+        data.object(id.clone()).map(|object| Arc::clone(object)).or_else(|| {
             w3data::data()
-                .object(id)
+                .object(id.clone())
                 .filter(|object| kind.contains(object.kind()))
                 .map(|object| {
                     let mut object = Object::new(object.id(), object.kind());
                     object.set_dirty(false);
                     data.insert_object(object);
 
-                    Arc::clone(data.object(id).unwrap())
+                    Arc::clone(data.object(id.clone()).unwrap())
                 })
         })
     }
@@ -501,9 +501,9 @@ impl LuaObjectStoreWrapper {
 
         set.extend(data.objects().map(|o| o.read().unwrap().id()));
 
-        for id in set {
+        for id in &set {
             let object = Self::object_or_new(data, kind, id).unwrap();
-            table.set(id, LuaObjectWrapper { inner: object })?;
+            table.set(id.clone(), LuaObjectWrapper { inner: object })?;
         }
 
         Ok(LuaValue::Table(table))
@@ -517,7 +517,7 @@ impl LuaObjectStoreWrapper {
         let data = &mut data.inner;
 
         if let Ok(id) = ObjectId::from_lua(key, ctx) {
-            return Self::object_or_new(data, kind, id)
+            return Self::object_or_new(data, kind, &id)
                 .map(|object| LuaObjectWrapper { inner: object })
                 .to_lua(ctx);
         }
@@ -539,7 +539,7 @@ impl LuaObjectStoreWrapper {
                 let object = value.borrow::<LuaObjectWrapper>()?;
                 let object = object.inner.read().unwrap();
 
-                if w3data::data().object(id).is_some() {
+                if w3data::data().object(id.clone()).is_some() {
                     if id == object.id() {
                         let object_clone = object.clone();
                         data.insert_object(object_clone);
@@ -578,8 +578,8 @@ impl LuaObjectStoreWrapper {
 
         if let Ok(id) = ObjectId::from_lua(id.clone(), ctx) {
             if let Ok(parent_id) = ObjectId::from_lua(parent_id.clone(), ctx) {
-                if let Some(parent) = w3data::data().object(parent_id).filter(|object| kind.contains(object.kind())) {
-                    data.insert_object(Object::with_parent(id, parent_id, kind));
+                if let Some(parent) = w3data::data().object(parent_id.clone()).filter(|object| kind.contains(object.kind())) {
+                    data.insert_object(Object::with_parent(id.clone(), parent_id.clone(), kind));
 
                     if let Some(new_object_ref) = data.object(id) {
                         new_object_ref.write().unwrap().set_aliased_id(parent.aliased_id());

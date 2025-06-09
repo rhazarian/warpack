@@ -41,16 +41,16 @@ pub mod read {
         if !uses_extra_ints {
             let value = read_value(source, field_type)?;
 
-            object.set_simple_field(field_id, value, value_kind);
+            object.set_simple_field(&field_id, value, value_kind);
         } else {
             let level = source.read_u32::<LE>()?;
             source.read_u32::<LE>()?;
             let value = read_value(source, field_type)?;
 
             if level == 0 {
-                object.set_simple_field(field_id, value, value_kind);
+                object.set_simple_field(&field_id, value, value_kind);
             } else {
-                object.set_leveled_field(field_id, level, value, value_kind);
+                object.set_leveled_field(&field_id, level, value, value_kind);
             }
         }
 
@@ -73,19 +73,19 @@ pub mod read {
             let original_id = source.read_u32::<BE>().map(ObjectId::new)?;
             let new_id = source.read_u32::<BE>().map(ObjectId::new)?;
 
-            let id = if new_id.to_u32() != 0 {
-                new_id
+            let id = if !new_id.clone().is_zero() {
+                new_id.clone()
             } else {
-                original_id
+                original_id.clone()
             };
 
-            let mut object = if let Some(existing_object) = data.object(id) {
+            let mut object = if let Some(existing_object) = data.object(id.clone()) {
                 existing_object.write().unwrap()
             } else {
-                let mut new_object = if new_id.to_u32() != 0 {
-                    Object::with_parent(new_id, original_id, kind)
+                let mut new_object = if !new_id.clone().is_zero() {
+                    Object::with_parent(new_id, original_id.clone(), kind)
                 } else {
-                    Object::new(original_id, kind)
+                    Object::new(original_id.clone(), kind)
                 };
                 let aliased_id = data.object(original_id)
                     .and_then(|object| object.read().unwrap().aliased_id());
@@ -156,10 +156,10 @@ pub mod write {
                             ValueKind::Common => value.iter(),
                             ValueKind::SD => value_sd.iter(),
                             ValueKind::HD => value_hd.iter(),
-                        }.map(move |value| (*id, 0, 0, value))
+                        }.map(move |value| (id.clone(), 0, 0, value))
                     ),
                 FieldKind::Leveled { values } => {
-                    if let Some(field_desc) = metadata.field_by_id(*id) {
+                    if let Some(field_desc) = metadata.field_by_id(id.clone()) {
                         Box::new(values.iter().flat_map(move |leveled_value| {
                             match value_kind {
                                 ValueKind::Common => leveled_value.value.iter(),
@@ -167,7 +167,7 @@ pub mod write {
                                 ValueKind::HD => leveled_value.value_hd.iter(),
                             }.map(move |value|
                                 (
-                                    *id,
+                                    id.clone(),
                                     field_desc.variant.data_id().unwrap_or(0),
                                     leveled_value.level,
                                     value,
@@ -192,7 +192,7 @@ pub mod write {
         object
             .fields()
             .filter_map(move |(id, field)| {
-                let is_profile = if let Some(field_desc) = metadata.field_by_id(*id) {
+                let is_profile = if let Some(field_desc) = metadata.field_by_id(id.clone()) {
                     field_desc.is_profile
                 } else {
                     false
@@ -203,7 +203,7 @@ pub mod write {
                         // Simple profile field overrides should be written to war3mapSkin.txt.
                         ValueKind::SD => if !is_profile { value_sd.as_ref() } else { None },
                         ValueKind::HD => if !is_profile { value_hd.as_ref() } else { None },
-                    }.map(|value| (*id, value)),
+                    }.map(|value| (id.clone(), value)),
                     FieldKind::Leveled { .. } => {
                         eprintln!(
                             "unexpected data field in object {} for field {}",
@@ -223,7 +223,7 @@ pub mod write {
         object
             .fields()
             .flat_map(move |(id, field)| {
-                if let Some(field_desc) = metadata.field_by_id(*id) {
+                if let Some(field_desc) = metadata.field_by_id(id.clone()) {
                     if !field_desc.is_profile {
                         None.into_iter().chain(None.into_iter())
                     } else {
@@ -315,11 +315,11 @@ pub mod write {
 
         writer.write_u32::<LE>(fields.len() as u32)?;
         for (id, value) in fields {
-            writer.write_u32::<BE>(id.to_u32())?;
+            writer.write_u32::<BE>(id.to_u32().unwrap())?;
             writer.write_u32::<LE>(value.type_id())?;
 
             write_value(&mut writer, value)?;
-            writer.write_u32::<BE>(object.id().to_u32())?;
+            writer.write_u32::<BE>(object.id().to_u32().unwrap())?;
         }
 
         Ok(())
@@ -335,13 +335,13 @@ pub mod write {
 
         writer.write_u32::<LE>(fields.len() as u32)?;
         for (id, data_id, level, value) in fields {
-            writer.write_u32::<BE>(id.to_u32())?;
+            writer.write_u32::<BE>(id.to_u32().unwrap())?;
             writer.write_u32::<LE>(value.type_id())?;
             writer.write_u32::<LE>(level)?;
             writer.write_u32::<LE>(data_id as u32)?;
 
             write_value(&mut writer, value)?;
-            writer.write_u32::<BE>(object.id().to_u32())?;
+            writer.write_u32::<BE>(object.id().to_u32().unwrap())?;
         }
 
         Ok(())
@@ -404,9 +404,9 @@ pub mod write {
                     let value = if index == 0 {
                         Some(Value::String(object.id().to_string().unwrap()))
                     } else {
-                        object.simple_field(field.id, value_kind).or_else(
+                        object.simple_field(&field.id, value_kind).or_else(
                             || stock_data.object_prototype(&object)
-                                .and_then(|proto| proto.simple_field(field.id, value_kind)))
+                                .and_then(|proto| proto.simple_field(&field.id, value_kind)))
                             .map(|v| v.clone())
                     };
                     let str_value = match value {
@@ -442,7 +442,7 @@ pub mod write {
         // write stock objects
         writer.write_u32::<LE>(stock_objs.len() as u32)?;
         for object in stock_objs {
-            writer.write_u32::<BE>(object.id().to_u32())?;
+            writer.write_u32::<BE>(object.id().to_u32().unwrap())?;
             writer.write_u32::<BE>(0)?;
 
             if kind.is_data_type() {
@@ -455,8 +455,8 @@ pub mod write {
         // write custom objects
         writer.write_u32::<LE>(custom_objs.len() as u32)?;
         for object in custom_objs {
-            writer.write_u32::<BE>(object.parent_id().unwrap().to_u32())?;
-            writer.write_u32::<BE>(object.id().to_u32())?;
+            writer.write_u32::<BE>(object.parent_id().unwrap().to_u32().unwrap())?;
+            writer.write_u32::<BE>(object.id().to_u32().unwrap())?;
 
             if kind.is_data_type() {
                 write_data_fields(&mut writer, &object, metadata, value_kind)?;
