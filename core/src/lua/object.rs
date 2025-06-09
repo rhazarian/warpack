@@ -286,12 +286,13 @@ impl LuaObjectWrapper {
         };
 
         // check if the field is in the form of 'XXXX' or 'XXXX+Y'
-        if (field_bytes.len() == 4) || (field_bytes.len() > 5 && field_bytes[4] == b'+') {
-            let object_id = ObjectId::from_bytes(&field_bytes[0..4]).unwrap();
+        let plus_position = field_bytes.iter().position(|&b| b == b'+');
+        if field_bytes.len() <= 4 || plus_position.is_some_and(|plus_position| plus_position <= 4) {
+            let object_id = ObjectId::from_bytes(&field_bytes[0..plus_position.unwrap_or_else(|| field_bytes.len())]).unwrap();
 
             if let Some(field_desc) = w3data::metadata().query_object_field(object_id, object) {
-                let level = if field_bytes.len() > 5 {
-                    atoi::<u32>(&field_bytes[5..])
+                let level = if let Some(plus_position) = plus_position {
+                    atoi::<u32>(&field_bytes[(plus_position + 1)..])
                 } else {
                     None
                 };

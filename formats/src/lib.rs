@@ -50,7 +50,11 @@ impl ObjectId {
         if bytes.len() == 0 || bytes == b" " || bytes == b"_" || bytes == b"-" {
             None
         } else {
-            Some(ObjectId { id: bytes.to_vec() })
+            let mut vec = bytes.to_vec();
+            for i in vec.len()..4 {
+                vec.push(0);
+            }
+            Some(ObjectId { id: vec })
         }
     }
 
@@ -62,9 +66,6 @@ impl ObjectId {
             for i in &self.id {
                 value <<= 8;
                 value += u32::from(*i);
-            }
-            for i in self.id.len()..4 {
-                value <<= 8;
             }
             Some(value)
         }
