@@ -414,7 +414,7 @@ local function stringTransformer(func, ...)
         strings._strings[newId] = function(tbl)
             local localeArgs = {}
             for i = 1, #args do
-                localeArgs[i] = localize(arg, tbl)
+                localeArgs[i] = localize(args[i], tbl)
             end
             return func(table.unpack(localeArgs))
         end
