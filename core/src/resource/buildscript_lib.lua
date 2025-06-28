@@ -352,6 +352,27 @@ local function resolveString(s, tbl)
     return type(s) == "function" and s(tbl) or s
 end
 
+local function localize(arg, tbl)
+    if type(arg) == "string" then
+        local id = string.match(arg, "^TRIGSTR_(%d+)$")
+        if id then
+            id = tonumber(id)
+            return resolveString(tbl[id] or strings._strings[id], tbl) or arg
+        end
+    elseif type(arg) == "table" then
+        local localeTable = {}
+        for key, value in pairs(arg) do
+            localeTable[key] = localize(value)
+        end
+        return localeTable
+    elseif type(arg) == "function" then
+        return function(...)
+            return localize(arg(...), tbl)
+        end
+    end
+    return arg
+end
+
 local stringFormat = string.format
 local function stringTransformer(func, ...)
     local defaultRest = { ... }
@@ -379,6 +400,9 @@ local function stringTransformer(func, ...)
                 if localized then
                     break
                 end
+            elseif type(arg) == "function" then
+                localized = true
+                break
             end
         end
         if not localized or not currentMap then
@@ -390,30 +414,7 @@ local function stringTransformer(func, ...)
         strings._strings[newId] = function(tbl)
             local localeArgs = {}
             for i = 1, #args do
-                local arg = args[i]
-                if type(arg) == "string" then
-                    local id = string.match(arg, "^TRIGSTR_(%d+)$")
-                    if id then
-                        id = tonumber(id)
-                        localeArgs[i] = resolveString(tbl[id] or strings._strings[id], tbl) or arg
-                    else
-                        localeArgs[i] = arg
-                    end
-                elseif type(arg) == "table" then
-                    local localeTable = {}
-                    for key, value in pairs(arg) do
-                        local id = string.match(value, "^TRIGSTR_(%d+)$")
-                        if id then
-                            id = tonumber(id)
-                            localeTable[key] = resolveString(tbl[id] or strings._strings[id], tbl) or value
-                        else
-                            localeTable[key] = value
-                        end
-                    end
-                    localeArgs[i] = localeTable
-                else
-                    localeArgs[i] = arg
-                end
+                localeArgs[i] = localize(arg, tbl)
             end
             return func(table.unpack(localeArgs))
         end
