@@ -352,7 +352,7 @@ local function resolveString(s, tbl)
     return type(s) == "function" and s(tbl) or s
 end
 
-local function localize(arg, tbl)
+local function localize(arg, tbl, strings)
     if type(arg) == "string" then
         local id = string.match(arg, "^TRIGSTR_(%d+)$")
         if id then
@@ -362,12 +362,12 @@ local function localize(arg, tbl)
     elseif type(arg) == "table" then
         local localeTable = {}
         for key, value in pairs(arg) do
-            localeTable[key] = localize(value)
+            localeTable[key] = localize(value, tbl, strings)
         end
         return localeTable
     elseif type(arg) == "function" then
         return function(...)
-            return localize(arg(...), tbl)
+            return localize(arg(...), tbl, strings)
         end
     end
     return arg
@@ -414,7 +414,7 @@ local function stringTransformer(func, ...)
         strings._strings[newId] = function(tbl)
             local localeArgs = {}
             for i = 1, #args do
-                localeArgs[i] = localize(args[i], tbl)
+                localeArgs[i] = localize(args[i], tbl, strings)
             end
             return func(table.unpack(localeArgs))
         end
