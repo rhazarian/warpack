@@ -150,22 +150,8 @@ CampaignItemName:deDE=0.014
 CampaignItemName:itIT=0.013
 
 [Hotkeys]
-QuickSave='S'           // Alt-S
-QuickLoad='L'           // Alt-L
-QuickHelp='H'           // Alt-H
-QuickOptions='O'        // Alt-O
-QuickQuit='Q'           // Alt-Q
-MusicToggle='M'         // Ctrl-M
-SfxToggle='S'           // Ctrl-S
-UnitCenter='C'          // Ctrl-C and Alt-C
-MinimapSignal='G'       // Alt-G
 MinimapSignal:esES='N'
-MinimapTerrain='T'      // Alt-T
 MinimapTerrain:deDE='K'
-MinimapColors='A'       // Alt-A
-MinimapCreeps='R'       // Alt-R
-FormationToggle='F'     // Alt-F
-ResetZoomLevel=116      //F5
 
 // hotkeys for scripted dialogs
 // NOTE: these need to match the "higlighted" chars
@@ -219,17 +205,3 @@ KEY_ENTERCHAT:deDE='E'
 KEY_ENTERCHAT:esES,itIT='H'
 KEY_ENTERCHAT:frFR='M'
 KEY_CLANTAB='C'
-
-ObserverUnitToggle='S'
-ObserverTimeOfDayToggle='D'
-ObserverMinimapToggle='M'
-ObserverVisionToggle='C'	
-ObserverStatisticsToggle='T'
-ObserverAllToggle='A'
-ObserverFogOfWar=100 		// Numpad 4
-ObserverActionCam=101		// Numpad 5 
-ObserverHeroToggle='H'
-ObserverReplayToggle='R'
-ObserverProductionToggle='Q'
-ObserverProductionMode='P'      // Alt-P
-ObserverUnitsMode='U'           // Alt-U

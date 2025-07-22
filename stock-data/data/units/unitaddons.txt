@@ -1775,7 +1775,7 @@ addon=Environment
 addon=Environment
 
 [nfoh]
-addon=Environment
+addon=Buildings
 
 [nfr1]
 addon=Environment
@@ -1796,7 +1796,7 @@ addon=Environment
 addon=Environment
 
 [ngol]
-addon=Environment
+addon=Buildings
 
 [ngt2]
 addon=Environment
@@ -1823,7 +1823,7 @@ addon=Environment
 addon=Environment
 
 [nmoo]
-addon=Environment
+addon=Buildings
 
 [nmr0]
 addon=Buildings
@@ -1901,7 +1901,7 @@ addon=Environment
 addon=Environment
 
 [nwgt]
-addon=Environment
+addon=Buildings
 
 [Ecen]
 addon=Heroes
@@ -2303,7 +2303,7 @@ addon=Heroes
 addon=Buildings
 
 [nbfl]
-addon=Environment
+addon=Buildings
 
 [nbse]
 addon=Environment
@@ -2342,7 +2342,7 @@ addon=Buildings
 addon=Buildings
 
 [ndfl]
-addon=Environment
+addon=Buildings
 
 [ndgt]
 addon=Buildings
@@ -2408,7 +2408,7 @@ addon=Buildings
 addon=Buildings
 
 [nfnp]
-addon=Environment
+addon=Buildings
 
 [nfrm]
 addon=Environment

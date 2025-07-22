@@ -196,10 +196,10 @@ Pane_Pos=5,25
 // Map Properties dialog
 //--------------------------------------------------------------------------
 [MapPropsDialog]
-Dlg_Size=514,521
+Dlg_Size=514,587
 Tabs_Pos=5,5
-Tabs_Size=502,476
-Reset_Pos=5,498
+Tabs_Size=502,542
+Reset_Pos=5,564
 Reset_Size=295,20
 Pane_Pos=5,25
 
@@ -242,7 +242,7 @@ OptionsLabel_Pos=10,10
 OptionsLabel_Size=150,16
 Checks_Pos=10,26
 CheckH=18
-ChecksTotalH=126
+ChecksTotalH=144
 
 // Relative to bottom of last flag checkbox
 FogCheck_Pos=10,0
@@ -277,6 +277,15 @@ ModeLabel_Pos=20,276
 ModeLabel_Size=88,16
 ModeMenu_Pos=160,273
 ModeMenu_Size=250,20
+CameraDefaultZoomOverrideCheck_Pos=10,300
+CameraDefaultZoomEdit_Pos=160,300
+CameraDefaultZoomEdit_Size=250,20
+CameraMinZoomOverrideCheck_Pos=10,324
+CameraMinZoomEdit_Pos=160,324
+CameraMinZoomEdit_Size=250,20
+CameraMaxZoomOverrideCheck_Pos=10,348
+CameraMaxZoomEdit_Pos=160,348
+CameraMaxZoomEdit_Size=250,20
 
 [MP_Size]
 ImageSize=200 // Square
@@ -1671,10 +1680,14 @@ ScreenMenuGame_Pos=130,43
 ScreenMenuGame_Size=210,20
 ScreenMenuImpo_Pos=130,66
 ScreenMenuImpo_Size=210,20
-CursorLabel_Pos=18,94
+CursorLabel_Pos=18,117
 CursorLabel_Size=110,16
-CursorMenu_Pos=110,90
+CursorMenu_Pos=110,115
 CursorMenu_Size=120,20
+BackgroundVersionLabel_Pos=0,94
+BackgroundVersionLabel_Size=128,16
+BackgroundVersionMenu_Pos=130,90
+BackgroundVersionMenu_Size=210,20
 
 SoundGroup_Pos=3,90
 SoundLabel_Pos=0,5
@@ -2368,10 +2381,10 @@ Pane_Pos=42,42
 // Map Properties dialog
 //--------------------------------------------------------------------------
 [MapPropsDialogMac]
-Dlg_Size=600,546
+Dlg_Size=600,564
 Tabs_Pos=20,12
-Tabs_Size=560,476
-Reset_Pos=20,506
+Tabs_Size=560,494
+Reset_Pos=20,524
 Reset_Size=280,20
 Pane_Pos=42,42
 
@@ -2414,7 +2427,7 @@ OptionsLabel_Pos=10,10
 OptionsLabel_Size=150,16
 Checks_Pos=10,26
 CheckH=18
-ChecksTotalH=126
+ChecksTotalH=144
 
 // Relative to bottom of last flag checkbox
 FogCheck_Pos=10,0

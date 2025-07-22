@@ -1428,16 +1428,16 @@ Name=Life Regeneration
 Name=Select Hero
 Tip=Select Hero
 Untip=Deselect Hero
-Hotkey=H
-Unhotkey=H
+Hotkey=J
+Unhotkey=J
 
 // select any unit, for buildings
 [Ane2]
 Name=Select Unit
 Tip=Select Unit
 Untip=Deselect Unit
-Hotkey=U
-Unhotkey=U
+Hotkey=J
+Unhotkey=J
 
 // Inferno
 [ANin]
@@ -1805,7 +1805,7 @@ EditorSuffix=(Neutral Hostile)
 [ACba]
 Name=Brilliance Aura
 Tip=Brilliance Aura
-Ubertip="Gives additional mana regeneration to nearby friendly units of <ACba,DataA1> mana per second."
+Ubertip="Gives additional mana regeneration to nearby friendly units of <ACba,DataA1,.> mana per second."
 EditorSuffix=(Neutral Hostile)
 
 // bash

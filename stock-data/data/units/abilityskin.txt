@@ -5042,6 +5042,10 @@ Casterart=Abilities\Spells\NightElf\SpiritOfVengeance\SpiritOfVengeanceBirthMiss
 Casterattach=weapon,right
 
 // Moon Glaive
+[Amgi]
+skinType=ability
+
+// Moon Glaive
 [Amgr]
 skinType=ability
 Art=ReplaceableTextures\PassiveButtons\PASBTNUpgradeMoonGlaive.blp
@@ -6416,6 +6420,12 @@ Art=ReplaceableTextures\CommandButtons\BTNPossession.blp
 Missileart=Abilities\Spells\Undead\Possession\PossessionMissile.mdl
 
 [AUan]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAnimateDead.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNAnimateDead.blp
+Specialart=Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl
+
+[AUa2]
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNAnimateDead.blp
 Researchart=ReplaceableTextures\CommandButtons\BTNAnimateDead.blp
