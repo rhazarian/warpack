@@ -161,7 +161,7 @@ do
                     elseif __TS__InstanceOf(result, __TS__Promise) then
                         return true, result:catch(handlePromiseError)
                     end
-                    return true, success
+                    return true, result
                 end
                 warpack.safeCall = safeCall
             end
