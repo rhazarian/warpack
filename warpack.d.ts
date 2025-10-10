@@ -11,7 +11,7 @@ declare namespace warpack {
         f: (this: This, ...args: Args) => R,
         context: This,
         ...args: Args
-    ): R
+    ): LuaMultiReturn<[false] | [true, R]>
 
     /**
      * Simple alternative to `pcall`, will safely call the
@@ -19,7 +19,7 @@ declare namespace warpack {
      * or return the function result if succeeded.
      * @runtime
      */
-    function safeCall<Args extends any[], R>(f: (...args: Args) => R, ...args: Args): R
+    function safeCall<Args extends any[], R>(f: (...args: Args) => R, ...args: Args): LuaMultiReturn<[false] | [true, R]>
 
     /**
      * Wraps the provided function in a `safeCall`, such that
