@@ -53,8 +53,9 @@ do
 
         if not success then
             handleError(err)
+            return false
         else
-            return err
+            return true, err
         end
     end
 
@@ -156,9 +157,11 @@ do
                     local success, result = pcall(callback, ...)
                     if not success then
                         handleError(result)
+                        return false
                     elseif __TS__InstanceOf(result, __TS__Promise) then
-                        result:catch(handlePromiseError)
+                        return true, result:catch(handlePromiseError)
                     end
+                    return true, success
                 end
                 warpack.safeCall = safeCall
             end
