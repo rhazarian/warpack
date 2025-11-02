@@ -685,9 +685,23 @@ function warpack.buildMap(buildCommand)
             scriptingLanguage, pos = string.unpack("<i", loadedInfo, pos)
         end
 
-        local playersPrefix = nil
+        local graphics = nil
+        local gameDataVersion = nil
         if w3iVersion >= 31 then
-            playersPrefix, pos = string.unpack("<c8", loadedInfo, pos)
+            graphics, pos = string.unpack("<i", loadedInfo, pos)
+            gameDataVersion, pos = string.unpack("<i", loadedInfo, pos)
+        end
+
+        local forceDefaultCameraZoom = nil
+        local forceMaxCameraZoom = nil
+        if w3iVersion >= 32 then
+            forceDefaultCameraZoom, pos = string.unpack("<i", loadedInfo, pos)
+            forceMaxCameraZoom, pos = string.unpack("<i", loadedInfo, pos)
+        end
+
+        local forceMinCameraZoom = nil
+        if w3iVersion >= 33 then
+            forceMinCameraZoom, pos = string.unpack("<i", loadedInfo, pos)
         end
 
         local maxPlayers, pos = string.unpack("<i", loadedInfo, pos)
@@ -917,7 +931,15 @@ function warpack.buildMap(buildCommand)
             table.insert(w3i, string.pack("<i", 1)) -- scripting language: Lua
         end
         if w3iVersion >= 31 then
-            table.insert(w3i, string.pack("<c8", map.playersPrefix or "\0\0\0\0\0\0\0\0"))
+            table.insert(w3i, string.pack("<i", graphics or 3))
+            table.insert(w3i, string.pack("<i", gameDataVersion or 1))
+        end
+        if w3iVersion >= 32 then
+            table.insert(w3i, string.pack("<i", forceDefaultCameraZoom or 0))
+            table.insert(w3i, string.pack("<i", forceMaxCameraZoom or 0))
+        end
+        if w3iVersion >= 33 then
+            table.insert(w3i, string.pack("<i", forceMinCameraZoom or 0))
         end
         table.insert(w3i, string.pack("<i", #players))
         table.insert(w3i, table.concat(players))
