@@ -15,18 +15,24 @@ use warpack_formats::parser::w3obj;
 use crate::error::StringError;
 use crate::lua::util::*;
 
+fn get_field_default_for<C>(object: &Object, field_getter: C) -> Option<&Value>
+    where
+        C: Fn(&Object) -> Option<&Value>,
+{
+    w3data::data()
+        .object_prototype(&object)
+        .and_then(|proto| field_getter(proto))
+}
+
 fn get_field_for<C>(object: &Object, field_getter: C) -> Option<&Value>
     where
         C: Fn(&Object) -> Option<&Value>,
 {
-    field_getter(object).or_else(|| {
-        w3data::data()
-            .object_prototype(&object)
-            .and_then(|proto| field_getter(proto))
-    })
+    field_getter(object).or_else(|| get_field_default_for(object, field_getter))
 }
 
 struct StaticMethodKeys {
+    obj_getfielddefault: LuaRegistryKey,
     obj_getfield: LuaRegistryKey,
     obj_setfield: LuaRegistryKey,
     obj_clone: LuaRegistryKey,
@@ -43,6 +49,7 @@ thread_local! {
 }
 
 struct StaticMethods<'lua> {
+    obj_getfielddefault: LuaFunction<'lua>,
     obj_getfield: LuaFunction<'lua>,
     obj_setfield: LuaFunction<'lua>,
     obj_clone: LuaFunction<'lua>,
@@ -57,6 +64,7 @@ struct StaticMethods<'lua> {
 impl<'lua> StaticMethods<'lua> {
     fn new(ctx: LuaContext<'lua>, keys: &StaticMethodKeys) -> StaticMethods<'lua> {
         StaticMethods {
+            obj_getfielddefault: ctx.registry_value(&keys.obj_getfielddefault).unwrap(),
             obj_getfield: ctx.registry_value(&keys.obj_getfield).unwrap(),
             obj_setfield: ctx.registry_value(&keys.obj_setfield).unwrap(),
             obj_clone: ctx.registry_value(&keys.obj_clone).unwrap(),
@@ -153,9 +161,20 @@ impl<'lua> StaticMethods<'lua> {
                     )
                     .unwrap();
 
+                let obj_getfielddefault = ctx
+                    .create_registry_value(
+                        ctx.create_function(|ctx, (object, key): (LuaAnyUserData, LuaValue)| {
+                            let object = object.borrow::<LuaObjectWrapper>()?;
+                            LuaObjectWrapper::get_field_default(ctx, (&object, key))
+                        })
+                            .unwrap(),
+                    )
+                    .unwrap();
+
                 *keys.borrow_mut() = Some(StaticMethodKeys {
                     obj_setfield,
                     obj_getfield,
+                    obj_getfielddefault,
                     obj_clone,
                     objstore_read,
                     objstore_write,
@@ -171,6 +190,12 @@ impl<'lua> StaticMethods<'lua> {
             let methods = StaticMethods::new(ctx, keys);
 
             callback(ctx, methods)
+        })
+    }
+
+    fn obj_getfielddefault_fn(ctx: LuaContext) -> LuaValue {
+        Self::with(ctx, |_ctx, methods| {
+            LuaValue::Function(methods.obj_getfielddefault)
         })
     }
 
@@ -310,6 +335,27 @@ impl LuaObjectWrapper {
         Ok(result.map(|(field_desc, level)| (field_desc, level, value_kind)))
     }
 
+    fn get_field_default<'lua>(
+        ctx: LuaContext<'lua>,
+        (object, key): (&LuaObjectWrapper, LuaValue<'lua>),
+    ) -> Result<impl ToLua<'lua>, LuaError> {
+        let object = object.inner.read().unwrap();
+
+        if let Some((field_desc, level, hd)) = Self::translate_field_name(ctx, key, &object)? {
+            let field = if let Some(level) = level {
+                get_field_default_for(&object, |o| o.leveled_field(&field_desc.id, level, hd))
+            } else {
+                get_field_default_for(&object, |o| o.simple_field(&field_desc.id, hd))
+            };
+
+            if let Some(field) = field {
+                return Ok(value_to_lvalue(ctx, field));
+            }
+        }
+
+        Ok(LuaValue::Nil)
+    }
+
     fn get_field<'lua>(
         ctx: LuaContext<'lua>,
         (object, key): (&LuaObjectWrapper, LuaValue<'lua>),
@@ -376,6 +422,7 @@ impl LuaObjectWrapper {
                 b"clone" => return Ok(StaticMethods::obj_clone_fn(ctx)),
                 b"setField" => return Ok(StaticMethods::obj_setfield_fn(ctx)),
                 b"getField" => return Ok(StaticMethods::obj_getfield_fn(ctx)),
+                b"getFieldDefault" => return Ok(StaticMethods::obj_getfielddefault_fn(ctx)),
                 b"id" => return Ok(object_inner.id().to_lua(ctx)?),
                 b"parentId" => return Ok(object_inner.parent_id().to_lua(ctx)?),
                 b"type" => return Ok(object_inner.kind().to_typestr().to_lua(ctx)?),
