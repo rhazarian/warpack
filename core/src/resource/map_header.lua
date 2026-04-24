@@ -87,7 +87,7 @@ do
                 return module.cached or module.error and error(module.error)
             else
                 module.initialized = true
-                local compiled, err = load(module.source, "module " .. name)
+                local compiled, err = load(module.source, "=" .. name:sub(-59))
                 if not compiled then
                     module.error = "failed to compile module " .. name .. ": " .. err
                     error(module.error)
