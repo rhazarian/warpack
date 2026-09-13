@@ -109,17 +109,8 @@ fn split_by_digits(input: &str) -> Option<(&str, &str)> {
 }
 
 fn data_char_to_id(input: u8) -> u8 {
-    match input {
-        b'a' | b'A' => 1,
-        b'b' | b'B' => 2,
-        b'c' | b'C' => 3,
-        b'd' | b'D' => 4,
-        b'e' | b'E' => 5,
-        b'f' | b'F' => 6,
-        b'g' | b'G' => 7,
-        b'h' | b'H' => 8,
-        b'i' | b'I' => 9,
-        b'j' | b'J' => 10,
+    match input.to_ascii_lowercase() {
+        c @ b'a'..=b'z' => c - b'a' + 1,
         _ => panic!("unknown data field id"),
     }
 }
