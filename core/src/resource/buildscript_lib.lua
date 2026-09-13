@@ -635,7 +635,13 @@ function warpack.buildMap(buildCommand)
 
         local bounds, flags, mainGroundType, pos = string.unpack("<c56iB", loadedInfo, pos)
 
-        local loadingScreenId, loadingScreenPath, loadingScreenText, loadingScreenTitle, loadingScreenSubtitle, pos = string.unpack("<izzzz", loadedInfo, pos)
+        local loadingScreenId, pos = string.unpack("<i", loadedInfo, pos)
+        -- Reforged 3.0 (w3i version 39) inserted an unknown int here; observed value 0x80.
+        local loadingScreenUnknown = nil
+        if w3iVersion >= 39 then
+            loadingScreenUnknown, pos = string.unpack("<c4", loadedInfo, pos)
+        end
+        local loadingScreenPath, loadingScreenText, loadingScreenTitle, loadingScreenSubtitle, pos = string.unpack("<zzzz", loadedInfo, pos)
         local loadingScreen = {}
         loadingScreen.type = loadingScreenId == -1 and (loadingScreenPath == "" and "default" or "custom") or "campaign"
         loadingScreen.id = loadingScreenId
@@ -645,7 +651,7 @@ function warpack.buildMap(buildCommand)
         loadingScreen.path = loadingScreenPath
 
         local dataSetId, pos = string.unpack("<i", loadedInfo, pos)
-        local dataSet = dataSetId == 0 and "default" or (dataSetId == "1" and "custom" or "melee")
+        local dataSet = dataSetId == 0 and "default" or (dataSetId == 1 and "custom" or "melee")
 
         local prologuePath, prologueText, prologueTitle, prologueSubtitle, pos = string.unpack("<zzzz", loadedInfo, pos)
         local prologue = {}
@@ -661,7 +667,7 @@ function warpack.buildMap(buildCommand)
             zEnd = forEndZ,
             density = fogDensity,
             color = {
-                reg = fogRed,
+                red = fogRed,
                 green = fogGreen,
                 blue = fogBlue,
                 alpha = fogAlpha
@@ -669,6 +675,13 @@ function warpack.buildMap(buildCommand)
         }
 
         local weatherId, pos = string.unpack("<i", loadedInfo, pos)
+
+        -- Reforged 3.0 (w3i version 39) inserted 24 unknown bytes here (looks like int, float, float, float, int, int;
+        -- observed 0, 10000.0, 10000.0, 1.0, 0, 0). Kept as an opaque block.
+        local weatherUnknown = nil
+        if w3iVersion >= 39 then
+            weatherUnknown, pos = string.unpack("<c24", loadedInfo, pos)
+        end
 
         local soundEnv, lightEnv, pos = string.unpack("<zB", loadedInfo, pos)
 
@@ -685,10 +698,19 @@ function warpack.buildMap(buildCommand)
             scriptingLanguage, pos = string.unpack("<i", loadedInfo, pos)
         end
 
+        -- Supported graphics modes, a bit mask: SD = 0x1, HD = 0x2, DE (Reforged 3.0) = 0x4.
         local graphics = nil
+        local graphicsUnknownBits = 0
         local gameDataVersion = nil
         if w3iVersion >= 31 then
-            graphics, pos = string.unpack("<i", loadedInfo, pos)
+            local graphicsMask
+            graphicsMask, pos = string.unpack("<i", loadedInfo, pos)
+            graphics = {
+                sd = graphicsMask & 0x1 ~= 0,
+                hd = graphicsMask & 0x2 ~= 0,
+                de = graphicsMask & 0x4 ~= 0,
+            }
+            graphicsUnknownBits = graphicsMask & ~0x7
             gameDataVersion, pos = string.unpack("<i", loadedInfo, pos)
         end
 
@@ -704,10 +726,23 @@ function warpack.buildMap(buildCommand)
             forceMinCameraZoom, pos = string.unpack("<i", loadedInfo, pos)
         end
 
+        -- Reforged 3.0 (w3i version 39) inserted 10 unknown ints here
+        -- (observed 0, 100, 10, 0, 50, 20, 100, 0, 100, -1). Kept as an opaque block.
+        local cameraUnknown = nil
+        if w3iVersion >= 39 then
+            cameraUnknown, pos = string.unpack("<c40", loadedInfo, pos)
+        end
+
         local maxPlayers, pos = string.unpack("<i", loadedInfo, pos)
         local players = {}
         for _ = 1, maxPlayers do
-            local id, controllerId, raceId, fixedStart, playerName, startX, startY, allyLow, allyHigh, newPos = string.unpack("<iiiizffii", loadedInfo, pos)
+            local id, controllerId, raceId, newPos = string.unpack("<iii", loadedInfo, pos)
+            -- Reforged 3.0 (w3i version 39) inserted an unknown int here; observed value 0x40 for every player.
+            local playerUnknown = nil
+            if w3iVersion >= 39 then
+                playerUnknown, newPos = string.unpack("<c4", loadedInfo, newPos)
+            end
+            local fixedStart, playerName, startX, startY, allyLow, allyHigh, newPos = string.unpack("<izffii", loadedInfo, newPos)
             local enemyLow, enemyHigh = nil, nil
             if w3iVersion >= 31 then
                 enemyLow, enemyHigh, newPos = string.unpack("<ii", loadedInfo, newPos)
@@ -723,6 +758,7 @@ function warpack.buildMap(buildCommand)
                 allyHigh = allyHigh,
                 enemyLow = enemyLow,
                 enemyHigh = enemyHigh,
+                unknown = playerUnknown,
             }
             pos = newPos
         end
@@ -766,14 +802,23 @@ function warpack.buildMap(buildCommand)
         loadedMap.flags = flags
         loadedMap.mainGroundType = mainGroundType
         loadedMap.loadingScreen = loadingScreen
+        loadedMap.infoLoadingScreenUnknown = loadingScreenUnknown
         loadedMap.dataSet = dataSet
         loadedMap.prologue = prologue
         loadedMap.terrainFog = terrainFog
         loadedMap.globalWeatherId = weatherId
+        loadedMap.infoWeatherUnknown = weatherUnknown
         loadedMap.customSoundEnvironment = soundEnv
         loadedMap.customLightEnvironment = lightEnv
         loadedMap.waterTintingColor = waterTintingColor
         loadedMap.scriptingLanguage = scriptingLanguage
+        loadedMap.graphics = graphics
+        loadedMap.graphicsUnknownBits = graphicsUnknownBits
+        loadedMap.gameDataVersion = gameDataVersion
+        loadedMap.forceDefaultCameraZoom = forceDefaultCameraZoom
+        loadedMap.forceMaxCameraZoom = forceMaxCameraZoom
+        loadedMap.forceMinCameraZoom = forceMinCameraZoom
+        loadedMap.infoCameraUnknown = cameraUnknown
         loadedMap.playersPrefix = playersPrefix
         loadedMap.players = players
         loadedMap.forces = forces
@@ -827,10 +872,16 @@ function warpack.buildMap(buildCommand)
         for id, player in pairs(map.players) do
             local playerStr = {}
             table.insert(playerStr, string.pack(
-                "<iiiizffii",
+                "<iii",
                 id,
                 controllerIds[player.controller],
-                raceIds[player.race],
+                raceIds[player.race]
+            ))
+            if map.w3iVersion >= 39 then
+                table.insert(playerStr, player.unknown or "\x40\0\0\0")
+            end
+            table.insert(playerStr, string.pack(
+                "<izffii",
                 player.fixedStartLocation and 1 or 0,
                 player.name,
                 player.startLocationX,
@@ -893,7 +944,7 @@ function warpack.buildMap(buildCommand)
             table.insert(w3i, string.pack("<c16", map.warcraftVersion or "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"))
         end
         table.insert(w3i, string.pack(
-            "zzzzc56iBizzzzizzzzifffBBBBizBBBBB",
+            "zzzzc56iBi",
             map.name,
             map.author,
             map.description,
@@ -901,7 +952,13 @@ function warpack.buildMap(buildCommand)
             map.bounds,
             map.flags,
             map.mainGroundType,
-            loadingScreen.type == "campaign" and map.loadingScreen.id or -1,
+            loadingScreen.type == "campaign" and map.loadingScreen.id or -1
+        ))
+        if w3iVersion >= 39 then
+            table.insert(w3i, map.infoLoadingScreenUnknown or "\x80\0\0\0")
+        end
+        table.insert(w3i, string.pack(
+            "zzzzizzzzifffBBBBi",
             loadingScreen.path or "",
             loadingScreen.text or "",
             loadingScreen.title or "",
@@ -919,7 +976,13 @@ function warpack.buildMap(buildCommand)
             terrainFogColor.green or 255,
             terrainFogColor.blue or 255,
             terrainFogColor.alpha or 255,
-            map.globalWeatherId,
+            map.globalWeatherId
+        ))
+        if w3iVersion >= 39 then
+            table.insert(w3i, map.infoWeatherUnknown or string.pack("<ifffii", 0, 10000, 10000, 1, 0, 0))
+        end
+        table.insert(w3i, string.pack(
+            "zBBBBB",
             map.customSoundEnvironment,
             map.customLightEnvironment,
             waterTintingColor.red or 255,
@@ -931,15 +994,29 @@ function warpack.buildMap(buildCommand)
             table.insert(w3i, string.pack("<i", 1)) -- scripting language: Lua
         end
         if w3iVersion >= 31 then
-            table.insert(w3i, string.pack("<i", graphics or 3))
-            table.insert(w3i, string.pack("<i", gameDataVersion or 1))
+            local graphics = map.graphics or { sd = true, hd = true }
+            local graphicsMask = map.graphicsUnknownBits or 0
+            if graphics.sd then
+                graphicsMask = graphicsMask | 0x1
+            end
+            if graphics.hd then
+                graphicsMask = graphicsMask | 0x2
+            end
+            if graphics.de then
+                graphicsMask = graphicsMask | 0x4
+            end
+            table.insert(w3i, string.pack("<i", graphicsMask))
+            table.insert(w3i, string.pack("<i", map.gameDataVersion or 1))
         end
         if w3iVersion >= 32 then
-            table.insert(w3i, string.pack("<i", forceDefaultCameraZoom or 0))
-            table.insert(w3i, string.pack("<i", forceMaxCameraZoom or 0))
+            table.insert(w3i, string.pack("<i", map.forceDefaultCameraZoom or 0))
+            table.insert(w3i, string.pack("<i", map.forceMaxCameraZoom or 0))
         end
         if w3iVersion >= 33 then
-            table.insert(w3i, string.pack("<i", forceMinCameraZoom or 0))
+            table.insert(w3i, string.pack("<i", map.forceMinCameraZoom or 0))
+        end
+        if w3iVersion >= 39 then
+            table.insert(w3i, map.infoCameraUnknown or string.pack("<iiiiiiiiii", 0, 100, 10, 0, 50, 20, 100, 0, 100, -1))
         end
         table.insert(w3i, string.pack("<i", #players))
         table.insert(w3i, table.concat(players))
