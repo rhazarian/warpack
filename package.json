@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/package",
   "name": "warpack",
   "description": "A build system for Warcraft III maps.",
-  "version": "0.0.1",
+  "version": "0.0.1-dev.f87edfb",
   "keywords": [
     "warcraft",
     "warpack",
@@ -25,26 +25,15 @@
     "type": "git",
     "url": "git+https://github.com/rhazarian/warpack.git"
   },
-  "scripts": {
-    "lint": "eslint npm-cli",
-    "lint:fix": "eslint npm-cli --fix",
-    "build": "tsc -p npm-cli",
-    "prepare": "npm run build"
-  },
   "dependencies": {
     "execa": "^9.5.1",
     "warpack-types": "0.0.5"
   },
-  "devDependencies": {
-    "@types/node": "^22.9.0",
-    "@typescript-eslint/eslint-plugin": "^8.13.0",
-    "@typescript-eslint/parser": "^8.13.0",
-    "eslint": "^9.14.0",
-    "tsup": "^8.3.5",
-    "typescript": "^5.6.3"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "prepare": "node npm-cli/scripts/prune-binaries.js"
   }
 }
