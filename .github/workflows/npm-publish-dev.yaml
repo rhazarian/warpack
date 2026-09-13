@@ -5,9 +5,16 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+env:
+  NODE_PKGS: darwin-arm64 darwin-x64 linux-arm64 linux-x64 windows-arm64 windows-x64
+
 jobs:
-  publish-binaries:
-    name: Publish binaries
+  build:
+    name: Build binaries
     runs-on: ${{ matrix.build.os }}
     strategy:
       fail-fast: false
@@ -15,36 +22,43 @@ jobs:
         build:
           - {
             NAME: linux-x64,
+            PKG: linux-x64,
             OS: ubuntu-22.04,
             TARGET: x86_64-unknown-linux-gnu,
           }
           - {
             NAME: linux-ia32,
+            PKG: linux-ia32,
             OS: ubuntu-22.04,
             TARGET: i686-unknown-linux-gnu,
           }
           - {
             NAME: linux-arm64,
+            PKG: linux-arm64,
             OS: ubuntu-22.04,
             TARGET: aarch64-unknown-linux-gnu,
           }
           - {
             NAME: win32-x64,
+            PKG: windows-x64,
             OS: windows-2022,
             TARGET: x86_64-pc-windows-msvc,
           }
           - {
             NAME: win32-ia32,
+            PKG: windows-ia32,
             OS: windows-2022,
             TARGET: i686-pc-windows-msvc,
           }
           - {
             NAME: win32-arm64,
+            PKG: windows-arm64,
             OS: windows-2022,
             TARGET: aarch64-pc-windows-msvc,
           }
           - {
             NAME: darwin-arm64,
+            PKG: darwin-arm64,
             OS: macos-latest,
             TARGET: aarch64-apple-darwin,
           }
@@ -57,14 +71,6 @@ jobs:
           toolchain: stable
           target: ${{ matrix.build.TARGET }}
           override: true
-      - name: Install cargo-get
-        uses: actions-rs/cargo@v1
-        with:
-          command: install
-          args: cargo-get
-      - name: Determine version
-        shell: bash
-        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       - name: Build (Linux / MacOS)
         if: matrix.build.OS != 'windows-2022'
         uses: actions-rs/cargo@v1
@@ -78,31 +84,127 @@ jobs:
         with:
           command: build
           args: --release --locked --target ${{ matrix.build.TARGET }}
+      - name: Collect binary
+        shell: bash
+        run: |
+          bin="warpack"
+          if [ "${{ matrix.build.OS }}" = "windows-2022" ]; then
+            bin="${bin}.exe"
+          fi
+          mkdir -p "bin/${{ matrix.build.PKG }}"
+          cp "target/${{ matrix.build.TARGET }}/release/${bin}" "bin/${{ matrix.build.PKG }}"
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.build.PKG }}
+          path: bin/${{ matrix.build.PKG }}
+          if-no-files-found: error
+
+  release:
+    name: Commit binaries to the release branch
+    needs: build
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install cargo-get
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: cargo-get
+      - name: Determine version
+        shell: bash
+        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies and build
+        run: npm ci
+      - name: Download binaries
+        uses: actions/download-artifact@v4
+        with:
+          path: bin
+      - name: Prepare release manifest
+        shell: bash
+        run: |
+          chmod +x bin/*/warpack*
+          npm version --no-git-tag-version ${{ env.VERSION }}
+          # dist and bin are committed, so installing only needs to drop the other platforms' binaries.
+          npm pkg delete scripts devDependencies
+          npm pkg set scripts.prepare="node npm-cli/scripts/prune-binaries.js"
+      - name: Commit and push
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          parents="-p ${GITHUB_SHA}"
+          if git fetch --depth=1 origin release; then
+            parents="-p $(git rev-parse FETCH_HEAD) ${parents}"
+          fi
+          git add -f bin dist package.json
+          git update-index --chmod=+x bin/*/warpack*
+          tree=$(git write-tree)
+          commit=$(git commit-tree ${tree} ${parents} -m "Release ${{ env.VERSION }}: $(git log -1 --format=%s ${GITHUB_SHA})")
+          git push origin "${commit}:refs/heads/release"
+
+  publish-binaries:
+    name: Publish binaries
+    needs: build
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        build:
+          - { NAME: linux-x64, PKG: linux-x64 }
+          - { NAME: linux-ia32, PKG: linux-ia32 }
+          - { NAME: linux-arm64, PKG: linux-arm64 }
+          - { NAME: win32-x64, PKG: windows-x64 }
+          - { NAME: win32-ia32, PKG: windows-ia32 }
+          - { NAME: win32-arm64, PKG: windows-arm64 }
+          - { NAME: darwin-arm64, PKG: darwin-arm64 }
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install cargo-get
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: cargo-get
+      - name: Determine version
+        shell: bash
+        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
       - name: Install Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+      - name: Download binary
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ matrix.build.PKG }}
+          path: npm-cli/${{ matrix.build.PKG }}/bin
       - name: Publish to NPM
         shell: bash
         run: |
           cd npm-cli
-          bin="warpack"
           node_os=$(echo "${{ matrix.build.NAME }}" | cut -d '-' -f1)
           export node_os
           node_arch=$(echo "${{ matrix.build.NAME }}" | cut -d '-' -f2)
           export node_arch
-          if [ "${{ matrix.build.OS }}" = "windows-2022" ]; then
-            export node_pkg="windows-${node_arch}"
-          else
-            export node_pkg="${node_os}-${node_arch}"
-          fi
-          mkdir -p "${node_pkg}/bin"
+          export node_pkg="${{ matrix.build.PKG }}"
           envsubst < package.json.tmpl > "${node_pkg}/package.json"
-          if [ "${{ matrix.build.OS }}" = "windows-2022" ]; then
-            bin="${bin}.exe"
-          fi
-          cp "../target/${{ matrix.build.TARGET }}/release/${bin}" "${node_pkg}/bin"
+          chmod +x "${node_pkg}/bin/"*
           cd "${node_pkg}"
           npm version --no-git-tag-version ${{ env.VERSION }}
           npm publish --tag dev
@@ -127,28 +229,26 @@ jobs:
           args: cargo-get
       - name: Determine version
         shell: bash
-        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
       - name: Install Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - name: Install dependencies
-        working-directory: npm-cli
-        run: npm ci
+        run: npm ci --ignore-scripts
       - name: Set package version
-        working-directory: npm-cli
         shell: bash
         run: npm version --no-git-tag-version ${{ env.VERSION }}
-      - name: Replace dependencies versions
-        working-directory: npm-cli
+      - name: Pin binary packages
         shell: bash
-        run: sed -i 's/"dev"/"${{ env.VERSION }}"/g' package.json
+        run: |
+          for node_pkg in ${{ env.NODE_PKGS }}; do
+            npm pkg set "optionalDependencies.@warpack/${node_pkg}=${{ env.VERSION }}"
+          done
       - name: Build
-        working-directory: npm-cli
         run: npm run build
       - name: Publish to NPM
-        working-directory: npm-cli
         run: npm publish --tag dev
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

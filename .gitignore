@@ -5,12 +5,12 @@
 !formats
 !lua-parser
 !npm-cli
-/npm-cli/dist/
-/npm-cli/node_modules/
 !stock-data
 !tstl-types
 !.gitignore
 !Cargo.lock
 !Cargo.toml
 !LICENSE
+!package.json
+!package-lock.json
 !rustfmt.toml
