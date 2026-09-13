@@ -40,6 +40,26 @@ ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-paladin.blp
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-paladin.blp
 
+//Garek hero
+[Hctr]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-Garek.blp
+
+//Garek hero before arthas
+[Hct1]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-Garek.blp
+
+//captain landen hero
+[Hctl]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-Landen.blp
+
+//captain landen undead hero
+[Uctl]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-Landen.blp
+
 [Hmgd]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-paladin.blp
@@ -78,6 +98,26 @@ MissileHoming=1
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-sorceror.blp
 
+// Ilastar
+[Hjsm]
+Buttonpos=0,1
+Missileart=Abilities\Weapons\IlastarMissile\IlastarMissile.mdl
+Missilearc=0.15
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-Ilastar.blp
+
+// Ilastar Undead
+[Ujsm]
+Buttonpos=0,1
+Missileart=Abilities\Weapons\IllidanMissile\IllidanMissile.mdl
+Missilearc=0.15
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-IlastarUndead.blp
+
 // Lady Vashj
 [Hvsh]
 Buttonpos=0,0
@@ -103,6 +143,14 @@ Specialart=Objects\Spawnmodels\NightElf\NECancelDeath\NECancelDeath.mdl
 
 [hcth]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+
+//City Guard
+[hctg]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+
+//dummy
+[ndum]
+Specialart=
 
 [hhes]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
@@ -327,9 +375,33 @@ Missilespeed=900
 Attachmentanimprops=large
 
 // Undead Units
+
+//cult zealot
+[ucze]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+//cult assassin
+[uass]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+//blight weaver
+[ublw]
+Buttonpos=0,0
+Missileart=Abilities\Spells\Other\AcidBomb\BottleMissile.mdl
+Missilearc=0.1
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Casterupgradeart=UI\Widgets\Console\Human\infocard-necromancer.blp
+
 [Uear]
 Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
 Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-deathknight.blp
+
+[Ubtr]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=
 ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-deathknight.blp
 
 [Uktl]
@@ -1330,3 +1402,339 @@ Buttonpos=0,2
 Missileart=Abilities\Weapons\LichMissile\LichMissile.mdl
 Missilearc=0.15
 Missilespeed=900
+
+// Anya
+[Uany]
+Buttonpos=0,0
+Specialart=Objects\Spawnmodels\Demon\DemonLargeDeathExplode\DemonLargeDeathExplode.mdl
+Missileart=Abilities\Weapons\Arrow\ArrowMissile.mdl
+Missilearc=0.15
+Missilespeed=900
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-Anya.blp
+
+//garek
+[Ugrk]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-GarekUndead.blp
+
+[Ugr2]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-GarekT2.blp
+
+[Ugr3]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-GarekT3.blp
+
+[Uarf]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-deathknight.blp
+
+//SC footman
+[sfoo]	
+Buttonpos=0,0
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+
+//SC Knight
+[scru]
+Requires=hcas,hbla
+Buttonpos=2,0
+MovementSoundLabel=HumanKnightMovement
+LoopingSoundFadeIn=512
+LoopingSoundFadeOut=512
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+Attachmentanimprops=medium
+
+//SC Huntsman
+[sarc]
+Missileart=Abilities\Weapons\Arrow\ArrowMissile.mdl
+Missilearc=0.15
+Missilespeed=1200
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+
+//SC Cleric
+[scle]
+Buttonpos=1,0
+Missileart=Abilities\Weapons\ClericMissile\ClericMissile.mdl
+Missilearc=0.00
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+
+//SC Inquisitor
+[sinq]
+Buttonpos=0,0
+Missileart=Abilities/Weapons/InquisitorMissile/InquisitorMissile.mdl
+Missilearc=0.00
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+
+//forsaken ranger
+[fdkr]
+Missileart=Abilities\Weapons\Arrow\ArrowMissile.mdl
+Missilearc=0.15
+Missilespeed=1200
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+//forsaken apothecary
+[fapo]
+Buttonpos=0,0
+Missileart=Abilities\Weapons\ChimaeraAcidMissile\ChimaeraAcidMissile.mdl
+Missilearc=0
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+//forsaken laborer
+[flab]
+Buttonpos=0,0
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+//forsaken deathguard
+[fdtg]
+Buttonpos=0,0
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+//leonid hero
+[Hleo]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-paladin.blp
+
+// forsaken villager male
+[fvil]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+// forsaken villager female
+[fvlw]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+//bern
+[fber]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+// Infectious Ghoul
+[uigh]
+Buttonpos=0,0
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+// Banshees Wail Banshee
+[ufrb]
+Buttonpos=1,0
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Missileart=Abilities\Spells\Undead\BansheesWail\BansheesWailImpact.mdl
+Missilearc=0.0
+Missilespeed=0
+
+// Banshees Wail Banshee Curse
+[ufr2]
+Buttonpos=1,0
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Missileart=Abilities\Spells\Undead\BansheesWail\BansheesWailImpact.mdl
+Missilearc=0.0
+Missilespeed=0
+
+// putress
+[Uput]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-Putress.blp
+Missileart=Abilities\Spells\Other\AcidBomb\BottleMissile.mdl
+Missilearc=0.15
+Missilespeed=900
+MissileHoming=1
+
+// Totem of Battle
+[iomw]
+Buttonpos=0,0
+
+// raise the banner
+[hcta]
+
+// Sally Whitemane
+[Sswm]
+Missileart=Abilities\Weapons\IlastarMissile\IlastarMissile.mdl
+Missilearc=0
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-Whitemane.blp
+
+//Renault Mograine
+[Srmg]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-renaultmograine.blp
+
+//Baron Rivendare (Death Knight)
+[Ubru]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-RivendareUndead.blp
+
+//Baron Rivendare (Human)
+[Ubtr]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-RivendareUndead.blp
+
+// SC captain hero
+[Scth]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-paladin.blp
+
+// Item Moonglaive Dummy
+[oimd]
+Buttonpos=0,0
+Missileart=Abilities\Weapons\SentinelMissile\SentinelMissile.mdl
+Missilearc=0.10
+Missilespeed=900
+
+// Gravelight Soul
+[oigs]
+Missileart=Abilities\Weapons\SpiritOfVengeanceMissile\SpiritOfVengeanceMissile.mdl
+Missilearc=0.15
+Missilespeed=500
+
+// Item Essencium Dummy Blizzard
+[oie1]
+Buttonpos=0,0
+Missilespeed=10000
+
+// Item Essencium Dummy Rain of Fire
+[oie2]
+Buttonpos=0,0
+Missilespeed=10000
+
+// Item Essencium Dummy Chain Lightning
+[oie3]
+Buttonpos=0,0
+Missilespeed=10000
+
+// Item Essencium Dummy Crushing Wave
+[oie4]
+Buttonpos=0,0
+Missilespeed=10000
+
+// Roaming Fireball
+[oirf]
+Missileart=Abilities\Weapons\LordofFlameMissile\LordofFlameMissile.mdl
+Missilearc=0.15
+Missilespeed=500
+
+// Forsaken Banshee
+[oidb]
+Buttonpos=1,0
+Missileart=Abilities\Weapons\BansheeMissile\BansheeMissile.mdl
+Missilearc=0.00
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+//Ras frostwhisper mounted
+[Urfm]
+Buttonpos=0,2
+Missileart=Abilities\Weapons\LichMissile\LichMissile.mdl
+Missilearc=0
+Missilespeed=900
+MissileHoming=1
+MovementSoundLabel=HumanHeroArchMageMovement
+LoopingSoundFadeIn=512
+LoopingSoundFadeOut=512
+Requirescount=3
+Requires=
+Requires1=unp1
+Requires2=unp2
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-archmage.blp
+
+//Ras Frostwhisper Lich
+[Urfu]
+Buttonpos=0,2
+Missileart=Abilities\Weapons\LichMissile\LichMissile.mdl
+Missilearc=0.0
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-lich.blp
+
+//Ras frostwhisper foot
+[Urff]
+Buttonpos=0,2
+Missileart=Abilities\Weapons\LichMissile\LichMissile.mdl
+Missilearc=0.00
+Missilespeed=900
+MissileHoming=1
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-archmage.blp
+
+[Nglx]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-tinker.blp
+
+[Htmx]
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-paladin.blp
+
+[ugbo]
+Specialart=Units\Undead\Abomination\AbominationExplosion.mdl
+Attachmentanimprops=large
+
+[Ugr2]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-deathknight.blp
+
+[Ugr3]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-deathknight.blp
+
+[Uzkf]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-deathknight.blp
+
+[Uzkm]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-deathknight.blp
+
+[Uzrm]
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-deathknight.blp
+
+// Item Skeleton Warrior
+[oisk]
+
+// Item Spitting Spider
+[oisp]
+Missileart=Abilities\Weapons\ChimaeraAcidMissileSmall\ChimaeraAcidMissileSmall.mdl
+Missilearc=0.15
+Missilespeed=1200
+Specialart=Objects\Spawnmodels\Demon\DemonLargeDeathExplode\DemonLargeDeathExplode.mdl
+
+// Item forsaken deathguard
+[oidg]
+Buttonpos=0,0
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+// Item forsaken ranger
+[oifr]
+Missileart=Abilities\Weapons\Arrow\ArrowMissile.mdl
+Missilearc=0.15
+Missilespeed=1200
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+
+// Item skeletal marksman
+[oism]
+Missileart=Abilities\Weapons\Arrow\ArrowMissile.mdl
+Missilearc=0.15
+Missilespeed=900
+
+// Item giant skeleton
+[oisg]

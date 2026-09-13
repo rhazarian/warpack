@@ -115,6 +115,14 @@ Hotkey=T
 Bufftip=Taunt
 Buffubertip="This unit has been taunted and is now immune."
 
+[Btab]
+Bufftip=Taunt
+Buffubertip="This unit has been taunted and is now immune."
+
+[Btad]
+Bufftip=Taunt
+Buffubertip="This unit has been taunted and is now immune."
+
 // Blink
 [AEbl]
 Name=Blink

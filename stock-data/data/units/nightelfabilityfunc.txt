@@ -87,6 +87,12 @@ Order=taunt
 
 [Btau]
 
+// Taunt Attack Bonus Buff
+[Btab]
+
+// Taunt Defense Bonus Buff
+[Btad]
+
 // Blink
 [AEbl]
 Buttonpos=1,2

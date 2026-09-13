@@ -177,6 +177,7 @@ PawnItemRate=0.60
 // combat related entries
 CallForHelp=600
 CreepCallForHelp=600
+AICallForHelp=900
 DefenseArmor=0.06
 
 // Damage bonus lists: SMALL, MEDIUM, LARGE, FORT, NORMAL, HERO, DIVINE, NONE
@@ -216,3 +217,6 @@ ConstructionLifeDrainRate=10.0	// hp per second drained when building constructi
 MissDamageReduction=0.5
 ShowHideUnitsInTransport=1
 NeutralBuildingPollPeriod=0.5
+
+BaseMeleeCritDamage=150
+BaseSpellCritDamage=150

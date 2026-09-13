@@ -1741,12 +1741,22 @@ skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
 
 //improved attack speed
-[AIs2]
+[AIsy]
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
 
 // vampiric life steal ability
 [AIva]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// vampiric life steal ability stacking
+[AIvx]
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
 // target art played on hero carrying item
@@ -2229,6 +2239,11 @@ Specialattach=origin
 
 // Spell Damage Reduction
 [AIsr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Spell Damage Reduction Stacking
+[AIss]
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
 
@@ -3503,6 +3518,18 @@ Art=ReplaceableTextures\CommandButtons\BTNBasicStruct.blp
 [AInv]
 skinType=ability
 
+// Enhanced Inventory
+[AInx]
+skinType=ability
+
+// Talents
+[ATal]
+skinType=ability
+
+// Grant Talent Point
+[ATap]
+skinType=ability
+
 // Thorns
 [ANth]
 skinType=ability
@@ -3752,6 +3779,7 @@ Effectart=Abilities\Spells\Human\Polymorph\PolyMorphFallingSheepArt.mdl
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNPossession.blp
 Missileart=Abilities\Spells\Undead\Possession\PossessionMissile.mdl
+LightningEffect=POSS
 
 // creep purge
 [ACpu]
@@ -4959,6 +4987,16 @@ Casterart=Abilities\Spells\NightElf\Taunt\TauntCaster.mdl
 skinType=buff
 Buffart=ReplaceableTextures\CommandButtons\BTNTaunt.blp
 
+// Taunt Attack Bonus Buff
+[Btab]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNTaunt.blp
+
+// Taunt Defense Bonus Buff
+[Btad]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNTaunt.blp
+
 // Blink
 [AEbl]
 skinType=ability
@@ -5038,7 +5076,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNVorpalBlades.blp
 [Amgl]
 skinType=ability
 Art=ReplaceableTextures\PassiveButtons\PASBTNUpgradeMoonGlaive.blp
-Casterart=Abilities\Spells\NightElf\SpiritOfVengeance\SpiritOfVengeanceBirthMissile.mdl
+Casterart=Abilities/Spells/NightElf/MoonGlaive/MoonGlaiveCaster.mdl
 Casterattach=weapon,right
 
 // Moon Glaive
@@ -5049,7 +5087,7 @@ skinType=ability
 [Amgr]
 skinType=ability
 Art=ReplaceableTextures\PassiveButtons\PASBTNUpgradeMoonGlaive.blp
-Casterart=Abilities\Spells\NightElf\SpiritOfVengeance\SpiritOfVengeanceBirthMissile.mdl
+Casterart=Abilities/Spells/NightElf/MoonGlaive/MoonGlaiveCaster.mdl
 Casterattach=weapon,right
 
 // Slow poison
@@ -5168,6 +5206,7 @@ skinType=ability
 UnitSkinID=egol
 Art=ReplaceableTextures\CommandButtons\BTNGoldMine.blp
 Casterart=Abilities\Spells\NightElf\EntangleMine\Roots.mdl
+Casterart:de= 
 Casterattach=origin
 
 // Entangled Gold Mine Cargo
@@ -6418,6 +6457,8 @@ Buffart=ReplaceableTextures\CommandButtons\BTNUnholyFrenzy.blp
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNPossession.blp
 Missileart=Abilities\Spells\Undead\Possession\PossessionMissile.mdl
+Animnames=spell,looping
+LightningEffect=POSS
 
 [AUan]
 skinType=ability
@@ -6739,6 +6780,10 @@ Targetattach=head
 Buffart=ReplaceableTextures\CommandButtons\BTNPlagueCloud.blp
 
 [Apts]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNPlagueCloud.blp
+
+[Apbw]
 skinType=ability
 Art=ReplaceableTextures\PassiveButtons\PASBTNPlagueCloud.blp
 
@@ -7085,3 +7130,4750 @@ Art=ReplaceableTextures\CommandButtons\BTNOrbofSlowness.blp
 Unart=
 Casterart=Abilities\Spells\Human\Slow\SlowCaster.mdl
 
+[AIhs]
+skinType=ability
+skinnableID=AIhs
+
+[AEhl]
+skinType=ability
+skinnableID=AEhl
+
+[AEpb]
+skinType=ability
+skinnableID=AEpb
+
+// REBIRTH ABILITIES
+
+// Sweeping Strike
+[AHsw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSweepingStrike.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSweepingStrike.blp
+Casterart=Abilities\Spells\Human\SweepingStrike\SweepingStrike.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\SweepingStrike\SweepingStrikeTarget.mdl
+Targetattachcount=1
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+// Sweeping Strike talent 1
+[AHs1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSweepingStrike.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSweepingStrike.blp
+Casterart=Abilities\Spells\Human\SweepingStrike\SweepingStrike.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\SweepingStrike\SweepingStrikeTarget.mdl
+Targetattachcount=1
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+// Sweeping Strike talent 2
+[AHs2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSweepingStrike.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSweepingStrike.blp
+Casterart=Abilities\Spells\Human\SweepingStrike\SweepingStrike.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\SweepingStrike\SweepingStrikeTarget.mdl
+Targetattachcount=1
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+// Sweeping Strike - talent 3
+[AHs3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSweepingStrike.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSweepingStrike.blp
+Casterart=Abilities\Spells\Human\SweepingStrike\SweepingStrike.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\SweepingStrike\SweepingStrikeTarget.mdl
+Targetattachcount=1
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+// Challenging Call
+[AHnt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNChallengingCall.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNChallengingCall.blp
+Casterart=Abilities\Spells\NightElf\BattleRoar\RoarCaster.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell
+
+// Heroic Slash
+[AHhs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeroicSlash.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeroicSlash.blp
+TargetArt=Abilities\Spells\Human\HeroicSlash\HeroicSlashTarget.mdl
+Targetattach=chest
+Effectart=
+Animnames=attack
+
+// Heroic Slash
+[AHv1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeroicSlash.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeroicSlash.blp
+TargetArt=Abilities\Spells\Human\HeroicSlash\HeroicSlashTarget.mdl
+Targetattach=chest
+Effectart=
+Animnames=attack
+
+// Heroic Slash
+[AHv2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeroicSlash.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeroicSlash.blp
+TargetArt=Abilities\Spells\Human\HeroicSlash\HeroicSlashTarget.mdl
+Targetattach=chest
+Effectart=
+Animnames=attack
+
+// Heroic Slash
+[AHv3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeroicSlash.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeroicSlash.blp
+TargetArt=Abilities\Spells\Human\HeroicSlash\HeroicSlashTarget.mdl
+Targetattach=chest
+Effectart=
+Animnames=attack
+
+// Valiant Charge
+[AHch]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Casterart=Abilities\Spells\Human\valiantcharge\valiantcharge.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+// Valiant Charge - talent 1
+[AHc1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Casterart=Abilities\Spells\Human\valiantcharge\valiantcharge.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+// Valiant Charge - talent 2
+[AHc2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Casterart=Abilities\Spells\Human\valiantcharge\valiantcharge.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+// Valiant Charge - talent 3
+[AHc3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Casterart=Abilities\Spells\Human\valiantcharge\valiantcharge.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+//valiant charge buff
+[BHch]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNValiantCharge.blp
+Targetart=Abilities\Spells\Human\valiantcharge\valiantchargehands.mdl
+Targetattachcount=2
+Targetattach=hand,left
+Targetattach1=hand,right
+
+// Inspire Courage
+[AHic]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Casterart=Abilities\Spells\Human\InspireCourage\InspireCourageCaster.mdl
+Animnames=spell,one
+
+// Inspire Courage talent 1
+[AHi1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Casterart=Abilities\Spells\Human\InspireCourage\InspireCourageCaster.mdl
+Animnames=spell,one
+
+// Inspire Courage talent 2
+[AHi2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Casterart=Abilities\Spells\Human\InspireCourage\InspireCourageCaster.mdl
+Animnames=spell,one
+
+// Inspire Courage talent 3
+[AHi3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Casterart=Abilities\Spells\Human\InspireCourage\InspireCourageCaster.mdl
+Animnames=spell,one
+
+//inspire courage buff
+[BHic]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+Targetart=Abilities\Spells\Human\InspireCourage\InspireCourageTarget.mdl
+Targetattach=overhead
+
+// Aura - Raise the Banner 
+[Aaca]
+skinType=ability
+Targetart=Abilities\Spells\Human\DevotionAura\DevotionAura.mdl
+Targetattach=origin
+Animnames=spell,two
+
+// Buff - Raise the Banner 
+[Baca]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNRaisethebanner.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Raise the Banner  summon
+[AHct]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRaisethebanner.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNRaisethebanner.blp
+
+// Talent Mana eff 15
+[ATme]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Talent CDR 25
+[ATcr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+
+// Talent Cleave 25
+[ATce]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCleavingAttack.blp
+Specialart=Abilities\Spells\Other\Cleave\CleaveDamageTarget.mdl
+Specialattach=chest
+
+// Item Ability Lifesteal 1
+[ALs1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// Item Life Bonus 25
+[AIl3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Attack Speed Bonus 5
+[AIsq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Mana Efficiency 2
+[AImq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Item Mana Efficiency 5
+[AImw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Item Life Bonus 100
+[AIlq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Attack Speed Bonus 15
+[AASq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Ability Speed 50
+[AIcr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Ability Speed 12
+[ACDq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Ability Amp 10
+[AIap]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Ability Amp 12
+[AAPq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Ability Vamp 25
+[AIsv]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// Item Ability Vamp 5
+[ASVq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// Item Resolve 30
+[AIlv]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// Item Resolve 10
+[AIRq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// Item Critical Chance 10
+[ACSq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Movement Speed Bonus 10
+[AMSq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBootsOfSpeed.blp
+
+// Item Maximum Mana Bonus 25
+[AMMq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPendantOfMana.blp
+
+// Item Ability Speed 3
+[ACDw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Hardened Skin 100 2 MT RT
+[AHSq]
+skinType=ability
+skinnableID=AHSq
+
+// Item Ability Amp 5
+[AAPw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Ability Speed 5
+[ACDt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Attack Speed Bonus 9
+[AASw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Ability Amp 3
+[AAPe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Resolve 8
+[AIRw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// Item Spell Resistance 7
+[ASRq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Item Spell Resistance 3
+[ASRw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Item Critical Chance 3
+[ACSe]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Ability Speed 4
+[ACDy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Movement Speed Bonus -15
+[AMSw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBootsOfSpeed.blp
+
+// Item Life Bonus 50
+[AILw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Critical Chance 2
+[ACSr]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Critical Chance 5
+[ACSy]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Band of the Skeletal Mage Orb
+[Asmo]
+skinType=ability
+UnitSkinID=Asmn
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfFrost.blp
+
+// Band of the Skeletal Mage Frost Nova
+[Asmn]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
+Effectart=Abilities\Spells\Undead\FrostNova\FrostNovaTarget.mdl
+
+// Item Attack Speed Bonus 8
+[AASe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Health Regeneration -3
+[AHRq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Item Ability Amp 8
+[AAPr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Ability Vamp 2
+[ASVw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// Signet of Decay
+[AIsd]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDeathAndDecay.blp
+
+// Signet of Decay buff
+[BIsd]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNDeathAndDecay.blp
+Targetart=Abilities\Spells\Human\Banish\BanishTarget.mdl
+Specialart=Abilities\Spells\Undead\DeathandDecay\DeathandDecayDamage.mdl
+Specialattach=head
+
+// Plaguebearer Shortsword
+[Apbs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDaggerOfEscape.blp
+
+// Item Attack Speed Bonus 10
+[AASr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Ability Damage 3
+[AADq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Lionskin Helmet of Precision
+[Alhp]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Ability Speed 6
+[ACDu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Spell Resistance 5
+[ASRe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Item Feedback 4
+[AFBq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNFeedBack.blp
+Specialart=Abilities\Spells\Human\Feedback\SpellBreakerAttack.mdl
+
+// Item Aura Command 8
+[AIcq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDrum.blp
+
+// Item Ability Damage 5
+[AADw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Item Health Regeneration 3
+[AHRw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Item Vampiric Aura 4
+[AVAq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
+Targetattach=origin
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+
+// Item Ability Amp 13
+[AAPt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Attack Speed Bonus 6
+[AASy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Movement Speed Bonus 20
+[AMSe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBootsOfSpeed.blp
+
+// Item Mana Efficiency 7
+[AMEq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Item Health Regeneration Aura 1
+[AARq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeal.blp
+
+// Item Critical Chance 4
+[ACSu]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Armor Bonus -1
+[AIAq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHumanArmorUpOne.blp
+
+// Item Attack Speed Bonus 16
+[AASu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Armor Corrupt 2
+[AACq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+Missileart=Abilities\Spells\Items\OrbCorruption\OrbCorruptionMissile.mdl
+Missilehoming=1
+Targetart=Abilities\Spells\Items\OrbCorruption\OrbCorruption.mdl
+Targetattach=weapon
+Specialart=Abilities\Spells\Items\OrbCorruption\OrbCorruptionSpecialArt.mdl
+Specialattach=chest
+
+// Item Ability Amp 7
+[AAPy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Ability Lifesteal 4
+[ALs4]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// Item Mana Efficiency 6
+[AMEw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Malachite Sword Orb
+[Amso]
+skinType=ability
+UnitSkinID=Amsc
+Art=ReplaceableTextures\CommandButtons\BTNMalachiteShortsword.blp
+
+// Malachite Sword Curse
+[Amsc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMalachiteShortsword.blp
+
+// Malachite Sword Buff
+[Bmss]
+skinType=buff
+Targetart=Abilities\Spells\Undead\Curse\CurseTarget.mdl
+Targetattach=overhead
+Buffart=ReplaceableTextures\CommandButtons\BTNMalachiteShortsword.blp
+
+// Item Critical Chance 8
+[ACSo]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Attack Speed Bonus 12
+[AASi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Talisman of Nightmares Orb
+[Atno]
+skinType=ability
+UnitSkinID=Atns
+Art=ReplaceableTextures\CommandButtons\BTNCurse.blp
+
+// Talisman of Nightmares Sleep
+[Atns]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSleep.blp
+
+// Item Spell Resistance 14
+[ASRt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Item Critical Chance 7
+[ACSd]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Heart of the Firebender Orb
+[Ahfo]
+skinType=ability
+UnitSkinID=Ahfb
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfFire.blp
+
+// Heart of the Firebender BoF
+[Ahfb]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBreathOfFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNBreathOfFire.blp
+Missileart=Abilities\Spells\Other\BreathOfFire\BreathOfFireMissile.mdl
+Missilespeed=1050
+Animnames=spell,slam
+
+// Item Attack Speed Bonus 25
+[AASo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Ability Lifesteal 5
+[ALs5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// Item Attack Speed Bonus 20
+[AASp]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Attack Speed Bonus -10
+[AASa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Butchers Aura 1
+[Aba1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
+Targetattach=origin
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// Butchers Aura 2
+[Aba2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// Lich Orb
+[AIlo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAnkh.blp
+Effectart=Abilities\Spells\Orc\Reincarnation\ReincarnationTarget.mdl
+
+// Item Health Regeneration -5
+[AHRt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Item Critical Chance 30
+[ACSg]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Spell Shield 15
+[Assq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSpellShieldAmulet.blp
+Casterart=Abilities\Spells\Items\SpellShieldAmulet\SpellShieldCaster.mdl
+Casterattach=origin
+
+// Item Health Regeneration 4
+[AHRy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Item Mana Regeneration 100
+[AMRq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Item Health Regeneration Aura 2
+[AARw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeal.blp
+
+// Item Spell Resistance 8
+[ASRy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Tiara of the Kirin'Tor
+[Atkt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNTiaraoftheKirinTor.blp
+Missileart=Abilities\Weapons\DruidoftheTalonMissile\DruidoftheTalonMissile.mdl
+
+// Tiara Buff
+[Btkt]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNTiaraoftheKirinTor.blp
+Targetart=Abilities\Spells\Undead\DeathandDecay\DeathandDecayDamage.mdl
+
+// Item Ability Damage 8
+[AADe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Item Ability Speed 8
+[ACDi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Ability Amp 18
+[AAPu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Mana Regeneration -50
+[AMRw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Blue Dragon Figurine
+[Abdf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBlueDragonFigurine.blp
+Missileart=Abilities\Spells\Other\BreathOfFrost\BreathOfFrostMissile.mdl
+Animnames=spell,slam
+
+// Edric's Eye (Forsaken Gaze)
+[AIee]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEdricsEye.blp
+Unart=ReplaceableTextures\CommandButtons\BTNEdricsEye.blp
+
+// Edric's Eye Buff
+[BIee]
+skinType=buff
+Targetart=Abilities\Spells\NightElf\FaerieFire\FaerieFireTarget.mdl
+Targetattach=head
+Buffart=ReplaceableTextures\CommandButtons\BTNEdricsEye.blp
+
+// Cursed Golden Ring Crit
+[Acgr]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Armor Bonus -2
+[AIAw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHumanArmorUpOne.blp
+
+// Item Bash (15, 25, 1)
+[AIBq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNBash.blp
+
+// Lesser Mark of the Forsaken
+[Almf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNLesserMarkoftheForsaken.blp
+Missileart=Abilities\Spells\Undead\DeathCoil\DeathCoilMissile.mdl
+Specialart=Abilities\Spells\Undead\DeathCoil\DeathCoilSpecialArt.mdl
+
+// Essence of the Spider Queen
+[Aesq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEssenceoftheSpiderQueen.blp
+Casterart=Abilities\Spells\Items\VampiricPotion\VampPotionCaster.mdl
+Casterattach=origin
+
+// AgilityBonus (+7)
+[AIa7]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBoots.blp
+
+[ASpc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSpecInterface.blp
+
+[AIni]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBackpack.blp
+
+// Item Mana Efficiency 4
+[AMEr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Phalanx Shield Aura
+[Apsq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPhalanxShield.blp
+Targetart=Abilities\Spells\Human\DevotionAura\DevotionAura.mdl
+Targetattach=origin
+
+// Knight's Javelin
+[Atkj]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNThoriumRanged.blp
+Missileart=Abilities\Weapons\Banditmissile\Banditmissile.mdl
+Animnames=spell,throw
+
+// Forsaken Fangs
+[Atff]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCannibalize.blp
+Animnames=stand,victory
+
+// Item Resolve 6
+[AIRy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// Strength Bonus (+20)
+[AS20]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGauntletsOfOgrePower.blp
+
+// Strength Bonus (+8)
+[AIs8]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGauntletsOfOgrePower.blp
+
+// Item Cleave 15
+[Aclq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCleavingAttack.blp
+Specialart=Abilities\Spells\Other\Cleave\CleaveDamageTarget.mdl
+Specialattach=chest
+
+// Item Life Bonus 280
+[AILe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Critical Chance 6
+[ACSj]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Health Regeneration 6
+[AHRu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Item Health Regeneration 8
+[AHRo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Item Mana Regeneration 70
+[AMRe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Item Health Regeneration Aura 3
+[AARe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeal.blp
+
+// Headpiece of the High Inquisitor
+[Ahhi]
+skinType=ability
+Targetart=Abilities\Spells\Undead\UnholyAura\UnholyAura.mdl
+Art=ReplaceableTextures\CommandButtons\BTNHeadpieceoftheScarletCrusade.blp
+Targetattach=origin
+
+// Consecration Aura (Headpiece of the High Inquisitor)
+[Bhhi]
+skinType=buff
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+Buffart=ReplaceableTextures\CommandButtons\BTNConsecration.blp
+
+// Item Life Bonus 60
+[AILr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Attack Speed Increase 3
+[AASs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Ability Speed 10
+[ACDo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Life Bonus 200
+[AILt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Ability Speed 2
+[ACDp]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Life Bonus 20
+[AILy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Life Bonus 40
+[AILi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Ability Damage 4
+[AADr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Item Health Regeneration 5
+[AHRa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Intelligence Bonus (+8)
+[AIi8]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRobeOfTheMagi.blp
+
+// Item Ability Amp 4
+[AAPi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Attack Speed Increase 4
+[AASd]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Mana Efficiency 4
+[AMEr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Item Spell Resistance 4
+[ASRu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Item Critical Chance 25
+[ACSz]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Attack Speed Increase 24
+[AASf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Armor Corrupt 3
+[AACw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+Missileart=Abilities\Spells\Items\OrbCorruption\OrbCorruptionMissile.mdl
+Missilehoming=1
+Targetart=Abilities\Spells\Items\OrbCorruption\OrbCorruption.mdl
+Targetattach=weapon
+Specialart=Abilities\Spells\Items\OrbCorruption\OrbCorruptionSpecialArt.mdl
+Specialattach=chest
+
+// Item Ability Amp 6
+[AAPo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Ability Lifesteal 3
+[ALs3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// Lesser Mark of Time
+[ALmt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSlowOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNSlowOff.blp
+Casterart=Abilities\Spells\Human\Slow\SlowCaster.mdl
+
+// Bag of Dust (Ability)
+[Atbd]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBagofDust.blp
+Unart=ReplaceableTextures\CommandButtonsDisabled\DISBTNBagofDust.blp
+
+// Bag of Dust (Buff)
+[Btbd]
+skinType=buff
+Targetart=Abilities\Spells\Orc\StasisTrap\StasisTotemTarget.mdl
+Targetattach=overhead
+Buffart=ReplaceableTextures\CommandButtons\BTNDustOfAppearance.blp
+
+// Talents HGarek
+[AThg]
+skinType=ability
+
+// Talents Landen
+[AThl]
+skinType=ability
+
+// Talents Ilastar
+[AThi]
+skinType=ability
+
+// Talents UGarek
+[ATug]
+skinType=ability
+
+// Talents Anya
+[ATua]
+skinType=ability
+
+// Talents Leonid
+[ATul]
+skinType=ability
+
+// Garek Talent Tier 1a
+[GT1a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCripplingBlow.blp
+
+// Garek Talent Tier 1b
+[GT1b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSunderingBlades.blp
+
+// Garek Talent Tier 1c
+[GT1c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNStormofSteel.blp
+
+// Garek Talent Tier 2a
+[GT2a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRetaliation.blp
+
+// Garek Talent Tier 2b
+[GT2b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRiposte.blp
+
+// Garek Talent Tier 2c
+[GT2c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBlademastery.blp
+
+// Garek Talent Tier 3a
+[GT3a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNIntotheFray.blp
+
+// Garek Talent Tier 3b
+[GT3b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNShoulderBash.blp
+
+// Garek Talent Tier 3c
+[GT3c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+
+// Garek Talent Tier 4a
+[GT4a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAvatar.blp
+
+// Garek Talent Tier 4b
+[GT4b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCombatTempo.blp
+
+// Garek Talent Tier 4c
+[GT4c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBattleRoar.blp
+
+// Landen Talent Tier 1a
+[LT1a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNValorsReward.blp
+
+// Landen Talent Tier 1b
+[LT1b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNJudgement.blp
+
+// Landen Talent Tier 1c
+[LT1c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPresstheAttack.blp
+
+// Landen Talent Tier 2a
+[LT2a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMassArrest.blp
+
+// Landen Talent Tier 2b
+[LT2b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWeightedNet.blp
+
+// Landen Talent Tier 2c
+[LT2c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNExposedDefenses2.blp
+
+// Landen Armor Bonus Talent
+[LT3a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRally.blp
+
+// Landen Attack Bonus Talent
+[LT3b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSecondWind.blp
+
+// Landen Resolve Bonus Talent
+[LT3c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDivineShieldOff.blp
+
+// Landen Talent Tier 4a
+[LT4a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRegenerate.blp
+
+// Landen Talent Tier 4b
+[LT4b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAgainstAllOdds.blp
+
+// Landen Talent Tier 4c
+[LT4c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEnchantedBears.blp
+
+// Ilastar Talent Tier 1a
+[IT1a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNImmolationOn.blp
+
+// Ilastar Talent Tier 1b
+[IT1b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWallOfFire.blp
+
+// Ilastar Talent Tier 1c
+[IT1c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeal.blp
+
+// Ilastar Talent Tier 2a
+[IT2a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSelfDestruct.blp
+
+// Ilastar Talent Tier 2b
+[IT2b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCharm.blp
+
+// Ilastar Talent Tier 2c
+[IT2c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNVoiceofAuthority.blp
+
+// Ilastar Armor Bonus Talent
+[IT3a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPurge.blp
+
+// Ilastar Attack Bonus Talent
+[IT3b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNClarityofMind.blp
+
+// Ilastar Resolve Bonus Talent
+[IT3c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNManaRecharge.blp
+
+// Ilastar Talent Tier 4a
+[IT4a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Ilastar Talent Tier 4b
+[IT4b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNResurrection.blp
+
+// Ilastar Talent Tier 4c
+[IT4c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
+
+// UGarek Talent Tier 1a
+[UT1a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNImprovedUnholyStrength.blp
+
+// UGarek Talent Tier 1b
+[UT1b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBloodthirst.blp
+
+// UGarek Talent Tier 1c
+[UT1c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWhirlwind.blp
+
+// UGarek Talent Tier 2a
+[UT2a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCounterAttack.blp
+
+// UGarek Talent Tier 2b
+[UT2b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHoldPosition.blp
+
+// UGarek Talent Tier 2c
+[UT2c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNTheBestDefense.blp
+
+// UGarek Armor Bonus Talent
+[UT3a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBerserk.blp
+
+// UGarek Attack Bonus Talent
+[UT3b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCriticalStrike.blp
+
+// UGarek Resolve Bonus Talent
+[UT3c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNShoulderBash.blp
+
+// UGarek Talent Tier 4a
+[UT4a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNInnerFire.blp
+
+// UGarek Talent Tier 4b
+[UT4b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDevourMagic.blp
+
+// UGarek Talent Tier 4c
+[UT4c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnholyFrenzy.blp
+
+// UGarek Talent Tier 5a
+[UT5a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHumanArmorUpThree.blp
+
+// UGarek Talent Tier 5b
+[UT5b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSwordsmanship.blp
+
+// UGarek Talent Tier 5c
+[UT5c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// UGarek Talent Tier 6a
+[UT6a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCleavingAttack.blp
+
+// UGarek Talent Tier 6b
+[UT6b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNQuickRecovery.blp
+
+// UGarek Talent Tier 6c
+[UT6c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnholyAura.blp
+
+// Anya Talent Tier 1a
+[AT1a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRainofArrows.blp
+
+// Anya Talent Tier 1b
+[AT1b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDeathMark.blp
+
+// Anya Talent Tier 1c
+[AT1c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNimpalingbolt.blp
+
+// Anya Talent Tier 2a
+[AT2a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNLifeDrain.blp
+
+// Anya Talent Tier 2b
+[AT2b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWraithGuard.blp
+
+// Anya Talent Tier 2c
+[AT2c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGuidingLight.blp
+
+// Anya Armor Bonus Talent
+[AT3a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSacrificialSkull.blp
+
+// Anya Attack Bonus Talent
+[AT3b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNFlowState.blp
+
+// Anya Resolve Bonus Talent
+[AT3c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNTheBlackArrow.blp
+
+// Anya Talent Tier 4a
+[AT4a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDarkSummoning.blp
+
+// Anya Talent Tier 4b
+[AT4b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCurse.blp
+
+// Anya Talent Tier 4c
+[AT4c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNLament.blp
+
+// Anya Talent Tier 5a
+[AT5a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMarksmanship.blp
+
+// Anya Talent Tier 5b
+[AT5b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNTrueShot.blp
+
+// Anya Talent Tier 5c
+[AT5c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEnvenomedSpear.blp
+
+// Anya Talent Tier 6a
+[AT6a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRangersDexterity.blp
+
+// Anya Talent Tier 6b
+[AT6b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Anya Talent Tier 6c
+[AT6c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPossession.blp
+
+// Leonid Talent Tier 1a
+[BT1a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrcMeleeUpThree.blp
+
+// Leonid Talent Tier 1b
+[BT1b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNStaggeringImpact.blp
+
+// Leonid Talent Tier 1c
+[BT1c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNThunderClap.blp
+
+// Leonid Talent Tier 2a
+[BT2a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRecklessAbandon.blp
+
+// Leonid Talent Tier 2b
+[BT2b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNThornShield.blp
+
+// Leonid Talent Tier 2c
+[BT2c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNInspireCourage.blp
+
+// Leonid Armor Bonus Talent
+[BT3a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDeathPact.blp
+
+// Leonid Attack Bonus Talent
+[BT3b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnbreakableSpirit.blp
+
+// Leonid Resolve Bonus Talent
+[BT3c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// Leonid Talent Tier 4a
+[BT4a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNLastStand.blp
+
+// Leonid Talent Tier 4b
+[BT4b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMartialMastery.blp
+
+// Leonid Talent Tier 4c
+[BT4c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHandofJustice.blp
+
+// Leonid Talent Tier 5a
+[BT5a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHumanArmorUpTwo.blp
+
+// Leonid Talent Tier 5b
+[BT5b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNVeteransResilience.blp
+
+// Leonid Talent Tier 5c
+[BT5c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAnimateDead.blp
+
+// Leonid Talent Tier 6a
+[BT6a]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNJuggernaut.blp
+
+// Leonid Talent Tier 6b
+[BT6b]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNResistantSkin.blp
+
+// Leonid Talent Tier 6c
+[BT6c]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDiscipline.blp
+
+// Item Critical Strike System
+[AIxr]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Critical Damage 5
+[ACXq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Critical Damage 15
+[ACXw]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Critical Damage 10
+[ACXe]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Critical Damage 13
+[ACXr]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// glixs bomb
+[Aglx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNFragmentationBombs.blp
+Missileart=Abilities\Spells\Other\AcidBomb\BottleMissile.mdl
+Missilearc=0.3
+Animnamescount=1
+Animnames=spell,one
+
+// Item Critical Chance 15
+[ACSx]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Critical Damage 30
+[ACXt]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Damage 20
+[AD20]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+
+// Item Hero Damage x1.25
+[AHDq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNDemolish.blp
+
+// Item Unit Damage x1.25
+[AUDq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNDemolish.blp
+
+// Item Cleave 30
+[ACLw]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCleavingAttack.blp
+Specialart=Abilities\Spells\Other\Cleave\CleaveDamageTarget.mdl
+Specialattach=chest
+
+// Kris Incinerate
+[AIki]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNIncinerate.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNIncinerate.blp
+Missileart=Abilities\Weapons\LordofFlameMissile\LordofFlameMissile.mdl
+Missilearc=0.35
+
+// Drunken Haze (Pint of Ale)
+[Apoa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNStrongDrink.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNStrongDrink.blp
+Missileart=Abilities\Spells\Other\StrongDrink\BrewmasterMissile.mdl
+Missilearc=0.15
+
+// Item Spell Resistance 10
+[ASRi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Infectious Claws
+[Auic]
+skinType=ability
+UnitSkinID=uigh
+Art=ReplaceableTextures\CommandButtons\BTNGhoulFrenzy.blp
+Unart=ReplaceableTextures\CommandButtons\BTNGhoulFrenzy.blp
+Animnames=attack
+
+// Summon Infectious Ghoul
+[Asic]
+skinType=ability
+UnitSkinID=uigh
+Art=ReplaceableTextures\CommandButtons\BTNGhoul.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGhoul.blp
+Specialart=Abilities\Spells\Undead\RaiseSkeletonWarrior\RaiseSkeleton.mdl
+
+// Necromancer's Plaguegreaves
+[AInp]
+skinType=ability
+UnitSkinID=uigh
+Art=ReplaceableTextures\CommandButtons\BTNNecromancersPlaguegreaves.blp
+Unart=ReplaceableTextures\CommandButtons\BTNNecromancersPlaguegreaves.blp
+// Item Ability Vamp 7
+[ASVe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// Item Ability Vamp 3
+[ASVr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// AgilityBonus (+8)
+[AIa8]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBoots.blp
+
+// Item Evasion 2
+[AIEq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Item Evasion 4
+[AIEw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Item Evasion 5
+[AIEr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Item Evasion 7
+[AIEt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Item Evasion 8
+[AIEy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Item Evasion 10
+[AIEu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Item Evasion 12
+[AIEi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Item Resolve 16
+[AIRu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// Item Life Bonus 250
+[AILa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+
+// Item Ability Amp 15
+[AAPp]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Hardened Skin 100 7 MT RT
+[AHSe]
+skinType=ability
+skinnableID=AHSq
+
+// Item Ability Vamp 4
+[ASVt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// Sacred Flame aka light's mercy
+[AHsf]
+skinType=ability
+Researchart=ReplaceableTextures\CommandButtons\BTNLightsMercy.blp
+Specialart=Abilities\Spells\Human\LightsMercy\LightsMercy.mdl
+Art=ReplaceableTextures\CommandButtons\BTNLightsMercy.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// light's mercy talent 1
+[AHm1]
+skinType=ability
+Researchart=ReplaceableTextures\CommandButtons\BTNLightsMercy.blp
+Specialart=Abilities\Spells\Human\LightsMercy\LightsMercy.mdl
+Art=ReplaceableTextures\CommandButtons\BTNLightsMercy.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// light's mercy talent 2
+[AHm2]
+skinType=ability
+Researchart=ReplaceableTextures\CommandButtons\BTNLightsMercy.blp
+Specialart=Abilities\Spells\Human\LightsMercy\LightsMercy.mdl
+Art=ReplaceableTextures\CommandButtons\BTNLightsMercy.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// light's mercy talent 3
+[AHm3]
+skinType=ability
+Researchart=ReplaceableTextures\CommandButtons\BTNLightsMercy.blp
+Specialart=Abilities\Spells\Human\LightsMercy\LightsMercy.mdl
+Art=ReplaceableTextures\CommandButtons\BTNLightsMercy.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+//sacred flame buff
+[BHsf]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNFire.blp
+Targetart=Abilities\Spells\Human\LightsMercy\LightsMercyTarget.mdl
+
+// Mind Control
+[AHmc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Targetart=Abilities\Spells\Human\MindControl\MindControl.mdl
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+Targetattach=overhead
+
+//mind control talent 1
+[AHz1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Targetart=Abilities\Spells\Human\MindControl\MindControl.mdl
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+Targetattach=overhead
+
+//mind control talent 2
+[AHz2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Targetart=Abilities\Spells\Human\MindControl\MindControl.mdl
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+Targetattach=overhead
+
+//mind control talent 3
+[AHz3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Targetart=Abilities\Spells\Human\MindControl\MindControl.mdl
+Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
+Targetattach=overhead
+
+//Mind control buff
+[BHmc]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNMindControl.blp
+Specialart=Abilities\Spells\Other\Incinerate\FireLordDeathExplode.mdl
+Targetart=Abilities\Spells\Human\MindControl\MindControlTarget.mdl
+Targetattach=head
+
+// Apprehend single target
+[AHen]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Missileart=Abilities\Spells\Orc\Ensnare\EnsnareMissile.mdl
+Animnames=spell,throw
+
+// Apprehend aoe talent 1
+[AHap]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Missileart=Abilities\Spells\Orc\Ensnare\EnsnareMissile.mdl
+Animnames=spell,throw
+
+// Apprehend talent 2
+[AHe2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Missileart=Abilities\Spells\Orc\Ensnare\EnsnareMissile.mdl
+Animnames=spell,throw
+
+// Apprehend talent 2
+[AHe3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Missileart=Abilities\Spells\Orc\Ensnare\EnsnareMissile.mdl
+Animnames=spell,throw
+
+// Apprehend buff
+[BHap]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Targetart=Abilities\Spells\Orc\Ensnare\ensnareTarget.mdl
+Targetattach=origin
+
+// Apprehend buff on ground units
+[BHag]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNApprehend.blp
+Targetart=Abilities\Spells\Orc\Ensnare\ensnareTarget.mdl
+
+// Sacred Aura buff
+[BHas]
+skinType=buff
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+Buffart=ReplaceableTextures\CommandButtons\BTNSacredAura.blp
+
+//sacred aura
+[AHas]
+skinType=ability
+Targetart=Abilities/Spells/Other/SacredAura/SacredAura.mdl
+Targetattach=origin
+Art=ReplaceableTextures\PassiveButtons\PASBTNSacredAura.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSacredAura.blp
+
+// sacred aura talent 1
+[AHa1]
+skinType=ability
+Targetart=Abilities/Spells/Other/SacredAura/SacredAura.mdl
+Targetattach=origin
+Art=ReplaceableTextures\PassiveButtons\PASBTNSacredAura.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSacredAura.blp
+
+// sacred aura talent 2
+[AHa2]
+skinType=ability
+Targetart=Abilities/Spells/Other/SacredAura/SacredAura.mdl
+Targetattach=origin
+Art=ReplaceableTextures\PassiveButtons\PASBTNSacredAura.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSacredAura.blp
+
+// sacred aura talent 3
+[AHa3]
+skinType=ability
+Targetart=Abilities/Spells/Other/SacredAura/SacredAura.mdl
+Targetattach=origin
+Art=ReplaceableTextures\PassiveButtons\PASBTNSacredAura.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSacredAura.blp
+
+// Headsplitter
+[AHhr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Animnames=attack,slam
+Targetart=Abilities\Spells\Other\Headsplitter\HeadsplitterTarget.mdl
+Targetattach=head
+
+// Headsplitter talent 1
+[AHh1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Animnames=attack,slam
+Targetart=Abilities\Spells\Other\Headsplitter\HeadsplitterTarget.mdl
+Targetattach=head
+
+// Headsplitter talent 2
+[AHh2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Animnames=attack,slam
+Targetart=Abilities\Spells\Other\Headsplitter\HeadsplitterTarget.mdl
+Targetattach=head
+
+// Headsplitter talent 3
+[AHh3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Animnames=attack,slam
+Targetart=Abilities\Spells\Other\Headsplitter\HeadsplitterTarget.mdl
+Targetattach=head
+Areaeffectart=Abilities\Spells\Human\Thunderclap\ThunderClapCaster.mdl
+
+// Headsplitter Attack Buff
+[BHhr]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+Targetart=Abilities\Weapons\SpiritOfVengeanceMissile\SpiritOfVengeanceMissile.mdl
+Targetattachcount=1
+Targetattach=weapon
+
+// Headsplitter On Hit Buff
+[BHhh]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNHeadsplitter.blp
+
+// Grit
+[AHgr]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNGrit.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGrit.blp
+
+// Grit talent 1
+[AHg1]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNGrit.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGrit.blp
+
+// Grit talent 2
+[AHg2]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNGrit.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGrit.blp
+
+// Grit talent 3
+[AHg3]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNGrit.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGrit.blp
+
+// Grit Buff
+[BHgr]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNGrit.blp
+Specialart=Abilities\Spells\Other\Grit\GritCaster.mdl
+Specialattach=chest
+
+// Blade Dance aka unyielding guard
+[AHbd]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Specialart=Abilities\Spells\Human\BladeDance\BladeDanceTarget.mdl
+Specialattach=origin
+Animnames=spell,one
+
+// Blade Dance aka unyielding guard - talent 1
+[AHb1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Specialart=Abilities\Spells\Human\BladeDance\BladeDanceTarget.mdl
+Specialattach=origin
+Animnames=spell,one
+
+// Blade Dance aka unyielding guard - talent 2
+[AHb2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Specialart=Abilities\Spells\Human\BladeDance\BladeDanceTarget.mdl
+Specialattach=origin
+Animnames=spell,one
+
+// Blade Dance aka unyielding guard - talent 3
+[AHb3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Specialart=Abilities\Spells\Human\BladeDance\BladeDanceTarget.mdl
+Specialattach=origin
+Animnames=spell,one
+
+// Blade Dance Buff
+[BHbt]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Targetart=Abilities/Spells/Human/UnyieldingGuard/UnyieldingGuard.mdl
+Targetattachcount=1
+Targetattach=chest
+
+// Blade Dance On Hit Buff
+[BHbo]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Targetart=Abilities\Spells\Human\BladeDance\BladeDanceCaster.mdl
+Targetattach=overhead
+
+// Blade Dance On Hit Buff Undead
+[BUbo]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Targetart=Abilities\Spells\undead\undyingdefiance\undyingdefiancecaster.mdl
+Targetattach=overhead
+
+// Undying Defiance
+[BUbt]
+skinType=buff
+BuffArt=ReplaceableTextures\CommandButtons\BTNUnyieldingGuard.blp
+Targetart=Abilities/Spells/Undead/UndyingDefiance/UndyingDefiance.mdl
+Targetattachcount=1
+Targetattach=chest
+
+
+// Warcry
+[AHwc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Casterart=Abilities\Spells\Human\WarCry\WarCryCaster.mdl
+Casterattach=origin
+Animnames=spell,one
+
+// Warcry - Talent 1
+[AHw1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Casterart=Abilities\Spells\Human\WarCry\WarCryCaster.mdl
+Casterattach=origin
+Animnames=spell,one
+
+// Warcry - Talent 2
+[AHw2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Casterart=Abilities\Spells\Human\WarCry\WarCryCaster.mdl
+Casterattach=origin
+Animnames=spell,one
+
+// Warcry - Talent 3
+[AHw3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Casterart=Abilities\Spells\Human\WarCry\WarCryCaster.mdl
+Casterattach=origin
+Animnames=spell,one
+
+// Garek Warcry Cleave
+[AGca]
+skinType=ability
+
+// Garek Warcry lifesteal
+[AGls]
+skinType=ability
+
+// Garek Warcry spell vamp
+[AGsv]
+skinType=ability
+
+//Garek Warcry Magic Immunity
+[AHw4]
+skinType=ability
+
+//Garek Warcry Spell Crit
+[AHw5]
+skinType=ability
+
+//Garek Warcry lifesteal super
+[AHw6]
+skinType=ability
+
+//Garek Warcry damage 
+[AHw7]
+skinType=ability
+
+//Garek Warcry super cleave
+[AHw8]
+skinType=ability
+
+//Garek warcry ability speed
+[AHw9]
+skinType=ability
+
+// Warcry Buff
+[BHwc]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Targetart=Abilities\Spells\Human\WarCry\WarCryTarget.mdl
+Targetattachcount=1
+Targetattach=head
+
+// Warcry Buff T1
+[BHw1]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Targetart=Abilities\Spells\Human\WarCry\WarCryTarget.mdl
+Targetattachcount=1
+Targetattach=head
+
+
+// Warcry Buff T2
+[BHw2]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Targetart=Abilities\Spells\Human\WarCry\WarCryTarget.mdl
+Targetattachcount=1
+Targetattach=head
+
+
+// Warcry Buff T3
+[BHw3]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNWarcry.blp
+Targetart=Abilities\Spells\Human\WarCry\WarCryTarget.mdl
+Targetattachcount=1
+Targetattach=head
+
+// relentless cleave
+[AUsw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
+Casterart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleave.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\RelentlessCleave\RelentlessCleaveTarget.mdl
+Targetattachcount=1
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+// relentless cleave - talent 1
+[AUs1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
+Casterart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleave.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleaveTarget.mdl
+Targetattachcount=1
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+// relentless cleave - talent 2
+[AUs2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
+Casterart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleave.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleaveTarget.mdl
+Targetattachcount=1
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+// relentless cleave - talent 3
+[AUs3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
+Casterart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleave.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleave.mdl
+Targetattachcount=1
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+//relentless cleave armor  debuff
+[Bder]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNSunderingBlades.blp
+Targetart=Abilities\Spells\undead\relentlesscleave\relentlesscleavearmor.mdl
+Targetattachcount=1
+Targetattach=overhead
+
+//bleed
+[BHsw]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNGhoulFrenzy.blp
+Targetart=Objects\Spawnmodels\Other\OrcBloodCinematicEffect\OrcBloodCinematicEffect.mdl
+Targetattachcount=1
+Targetattach=chest
+
+// Undying Defiance 
+[AUbd]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnyieldingGuardU.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuardU.blp
+Specialart=Abilities\Spells\Undead\UndyingDefiance\UndyingDefianceTarget.mdl
+Specialattach=origin
+Animnames=spell,one
+
+// Undying Defiance talent 1
+[AUb1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnyieldingGuardU.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuardU.blp
+Specialart=Abilities\Spells\Undead\UndyingDefiance\UndyingDefianceTarget.mdl
+Specialattach=origin
+Animnames=spell,one
+
+// Undying Defiance talent 2
+[AUb2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnyieldingGuardU.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuardU.blp
+Specialart=Abilities\Spells\Undead\UndyingDefiance\UndyingDefianceTarget.mdl
+Specialattach=origin
+Animnames=spell,one
+
+// Undying Defiance talent 3
+[AUb3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnyieldingGuardU.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNUnyieldingGuardU.blp
+Specialart=Abilities\Spells\Undead\UndyingDefiance\UndyingDefianceTarget.mdl
+Specialattach=origin
+Animnames=spell,one
+
+// Battering Ram
+[AUbr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Casterart=Abilities\Spells\undead\batteringram\batteringram.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+// Battering Ram - talent 1
+[AUr1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Casterart=Abilities\Spells\undead\batteringram\batteringram.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+// Battering Ram - talent 2
+[AUr2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Casterart=Abilities\Spells\undead\batteringram\batteringram.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+// Battering Ram - talent 3
+[AUr3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Casterart=Abilities\Spells\undead\batteringram\batteringram.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+// Battering Ram Buff
+[BUbr]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNbatteringram.blp
+Targetart=Abilities\Spells\undead\batteringram\batteringramhands.mdl
+Targetattachcount=2
+Targetattach=hand,left
+Targetattach1=hand,right
+
+
+// Undead Vengenance Grim Conviction
+[AUvg]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Casterart=Abilities\Spells\undead\grimconviction\grimconvictioncaster.mdl
+Animnames=spell
+
+// Grim Conviction Talent 1
+[AUv1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Casterart=Abilities\Spells\undead\grimconviction\grimconvictioncaster.mdl
+Animnames=spell
+
+// Grim Conviction Talent 2
+[AUv2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Casterart=Abilities\Spells\undead\grimconviction\grimconvictioncaster.mdl
+Animnames=spell
+
+// Grim Conviction Talent 3
+[AUv3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Casterart=Abilities\Spells\undead\grimconviction\grimconvictioncaster.mdl
+Animnames=spell
+
+// Undead Vengenance Buff
+[BUvg]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNVengeance.blp
+Targetart=Abilities\Spells\undead\grimconviction\grimconvictiontarget.mdl
+Targetattach=head
+
+
+// Avatar of Light
+[AHal]
+skinType=ability
+Art=ReplaceableTextures\commandButtons\BTNAvatarOfLight.blp
+Researchart=ReplaceableTextures\commandButtons\BTNAvatarOfLight.blp
+Casterart=Abilities\Spells\other\avataroflight\avataroflightCaster.mdl
+Animnames=spell
+
+// Avatar of Light Buff
+[BHal]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNAvatarOfLight.blp
+Targetart=Abilities\Spells\other\avataroflight\avataroflighttarget.mdl
+Targetattach=head
+
+// Heroic Challenge aka provoke
+[AHhc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Casterart=Abilities\Spells\Other\HeroicChallenge\HeroicChallengeCaster.mdl
+
+[AHu1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Casterart=Abilities\Spells\Other\HeroicChallenge\HeroicChallengeCaster.mdl
+
+[AHu2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Casterart=Abilities\Spells\Other\HeroicChallenge\HeroicChallengeCaster.mdl
+
+[AHu3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Casterart=Abilities\Spells\Other\HeroicChallenge\HeroicChallengeCaster.mdl
+
+// Heroic Challenge Taunt Buff
+[BHht]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Targetart=Abilities\Spells\Other\HeroicChallenge\HeroicChallengeTaunt.mdl
+Targetattachcount=1
+Targetattach=overhead
+
+
+// Heroic Challenge Shield Buff
+[BHhc]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNHeroicChallenge.blp
+Targetart=Abilities\Spells\Other\HeroicChallenge\HeroicChallengeShield.mdl
+Targetattachcount=1
+Targetattach=chest
+
+// Guiding Hand
+[AHgh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+Unart=ReplaceableTextures\CommandButtons\BTNGuidingHandOff.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+
+[AHq1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+Unart=ReplaceableTextures\CommandButtons\BTNGuidingHandOff.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+
+[AHq2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+Unart=ReplaceableTextures\CommandButtons\BTNGuidingHandOff.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+
+[AHq3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+Unart=ReplaceableTextures\CommandButtons\BTNGuidingHandOff.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+
+// Guiding Hand Caster Buff
+[BHgh]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+Targetart=Abilities\Spells\Other\GuidingHand\GuidingHandCaster.mdl
+Targetattach=origin
+
+// Guiding Hand Unit Buff
+[BHgu]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNGuidingHand.blp
+Targetart=Abilities\Spells\Other\GuidingHand\GuidingHandTarget.mdl
+Targetattach=head
+
+// Consecration
+[AHcr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNConsecration.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNConsecration.blp
+Areaeffectart=Abilities\Spells\Other\Consecration\Consecration.mdl
+Animnames=spell
+
+// Consecration Ally Buff
+[BHcf]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNConsecration.blp
+Targetart=Abilities\Spells\Other\ANrm\ANrmTarget.mdl
+Targetattach=origin
+
+// Consecration Enemy Buff
+[BHce]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNConsecration.blp
+Targetart=Abilities\Spells\Other\CleansingFire\CleansingFiretarget.mdl
+Targetattach=origin
+
+// Cleansing Fire
+[AHcl]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCleansingFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNCleansingFire.blp
+Areaeffectart=Abilities\Spells\Other\CleansingFire\CleansingFireCaster.mdl
+Animnames=spell
+
+// Cleansing Fire Buff
+[BHcl]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNCleansingFire.blp
+Targetart=Abilities\Spells\Other\CleansingFire\CleansingFiretarget.mdl
+Targetattach=origin
+
+// Righteous Fury
+[ANcp]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRighteousFury.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNRighteousFury.blp
+Casterart=Abilities\Spells\Other\RighteousFury\RighteousFury.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,fast
+
+// Righteous Fury Slow Buff
+[BNrs]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNRighteousFury.blp
+Targetart=Abilities\Spells\Orc\StasisTrap\StasisTotemTarget.mdl
+Targetattach=overhead
+
+// Purifier Blade aka holy wrath
+[AHpb]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNholywrath.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNholywrath.blp
+Casterart=Abilities\Spells\other\purifierblade\purifierblade.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\other\purifierblade\purifierbladetarget.mdl
+Targetattach=chest
+Effectart=
+Animnames=spell,slam
+
+// Purifier Blade Burn Debuff
+[BHpb]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNholywrath.blp
+Targetart=Abilities\Spells\other\purifierblade\purifierbladeburn.mdl
+Targetattach=chest
+
+// Soul Lantern
+[AUla]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNSoulLanternOff.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+LightningEffect=VLST
+Effectsoundlooped=DrainLoop
+
+// Soul Lantern t1
+[AUl1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNSoulLanternOff.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+LightningEffect=VLST
+Effectsoundlooped=DrainLoop
+
+// Soul Lantern t2
+[AUl2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNSoulLanternOff.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+LightningEffect=VLST
+Effectsoundlooped=DrainLoop
+
+// Soul Lantern t3
+[AUl3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNSoulLanternOff.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+LightningEffect=VLST
+Effectsoundlooped=DrainLoop
+
+// Soul Lantern Caster Buff
+[BUlc]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+Targetart=Abilities\Spells\Undead\SoulLantern\SoulLanternCaster.mdl
+Targetattach=chest
+
+// Soul Lantern Ally Buff
+[BUla]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+Targetart=Abilities\Spells\Undead\SoulLantern\SoulLanternAlly.mdl
+Targetattach=chest
+
+// Soul Lantern Enemy Buff
+[BUle]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNSoulLanternOn.blp
+Targetart=Abilities\Spells\Undead\SoulLantern\SoulLanternEnemy.mdl
+Targetattach=chest
+
+// Withering Fire
+[AUwf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Missileart=Abilities\Spells\Undead\WitheringFire\WitheringFireMissile.mdl
+Animnames=attack
+
+// Withering Fire t1
+[AUw1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Missileart=Abilities\Spells\Undead\WitheringFire\WitheringFireMissile.mdl
+Animnames=attack
+
+// Withering Fire t2
+[AUw2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Missileart=Abilities\Spells\Undead\WitheringFire\WitheringFireMissile.mdl
+Animnames=attack
+
+// Withering Fire t3
+[AUw3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Missileart=Abilities\Spells\Undead\WitheringFire\WitheringFireMissile.mdl
+Animnames=attack
+
+// Withering Fire Debuff
+[BUwf]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNWitheringFire.blp
+Targetart=Abilities\Spells\Undead\WitheringFire\WitheringFireTarget.mdl
+Targetattach=chest
+
+// Item Hero Damage x1.15
+[AHDw]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNDemolish.blp
+
+// AgilityBonus (+12)
+[AA12]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBoots.blp
+
+// Thornguard Rapier Rejuvenation
+[Atrr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRejuvenation.blp
+
+// Thornguard Rapier Attack
+[Atra]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Poison Nettle ER
+[Apne]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEntanglingRoots.blp
+
+// Poison Nettle Attack
+[Apna]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Maximum Mana Bonus 150
+[AMMw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPendantOfMana.blp
+
+// Item Damage Reflect 15%
+[ADRq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNThornShield.blp
+
+// High Templar's Visage IF
+[AHTi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNInnerFireOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNInnerFireOff.blp
+Casterart=
+Effectsound=InnerFireCast
+
+// High Templar's Visage Attack
+[AHTv]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Resolve 20
+[AIRo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// High Templar's Conqueror Heal
+[AHTh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// High Templar's Conqueror Attack
+[AHTq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+[BHTf]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNHighTemplarsConqueror.blp
+Specialart=Abilities\Spells\Other\Incinerate\FireLordDeathExplode.mdl
+Targetart=Abilities\Spells\Other\Incinerate\IncinerateBuff.mdl
+Targetattach=chest
+
+// High Templar's Flame Incinerate
+[AHTf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHighTemplarsConqueror.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHighTemplarsConqueror.blp
+Missileart=Abilities\Weapons\FireBallMissile\FireBallMissile.mdl
+Missilearc=0.35
+
+// Item Spell Shield 12
+[Assw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSpellShieldAmulet.blp
+Casterart=Abilities\Spells\Items\SpellShieldAmulet\SpellShieldCaster.mdl
+Casterattach=origin
+
+// Item Movement Speed Bonus 30
+[AMSr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBootsOfSpeed.blp
+
+// Item Movement Speed Bonus 40
+[AMSt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBootsOfSpeed.blp
+
+// High Templar's Judgment Shockwave
+[AHTs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNShockWave.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNShockWave.blp
+Missileart=Abilities\Spells\Orc\Shockwave\ShockwaveMissile.mdl
+Animnames=attack,slam
+
+// High Templar's Judgment Attack
+[AHTj]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Ability Vamp 10
+[ASVy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// Chronomaster's Gloves Ally
+[ACGa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNChronomastersGloves.blp
+Targetart=Abilities\Spells\Orc\CommandAura\CommandAura.mdl
+Targetattach=origin
+
+// Chronomaster's Gloves Enemy
+[ACGe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNChronomastersGloves.blp
+
+// Chronomaster's Gloves Buff
+[BCGb]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNChronomastersGloves.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Gnomish Zapper's FL
+[AGZf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMonsoon.blp
+Specialart=Abilities\Weapons\Bolt\BoltImpact.mdl
+LightningEffect=FORK
+
+// Gnomish Zapper Attack
+[AGZa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Ability Vamp 6
+[ASVu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// Item Mana Efficiency 8
+[AMEt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Item Maximum Mana Bonus 120
+[AMMe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPendantOfMana.blp
+
+// Item Attack Speed Increase 30
+[AASg]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Item Spell Resistance 25
+[ASRo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Item Ability Amp 20
+[AAPa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Intelligence Bonus (+12)
+[AI12]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRobeOfTheMagi.blp
+
+// Ogre Warclub Stats
+[AIow]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOgreWarclub.blp
+
+// Item Ability Speed 25
+[ACDa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item All Stats +7
+[AIx7]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHelmutPurple.blp
+
+// Item All Stats +10
+[AX10]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHelmutPurple.blp
+
+//Attack Bonus +45
+[AD45]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+
+// Item Attack Speed Increase -20
+[AASh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+// Surge of Light
+[AHsl]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Casterart=Abilities\Spells\Human\SurgeOfLight\SurgeOfLightCast.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl
+
+// Surge of Light talent 1
+[AHl1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Casterart=Abilities\Spells\Human\SurgeOfLight\SurgeOfLightCast.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl
+
+// Surge of Light talent 2
+[AHl2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Casterart=Abilities\Spells\Human\SurgeOfLight\SurgeOfLightCast.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl
+
+// Surge of Light talent 3
+[AHl3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Casterart=Abilities\Spells\Human\SurgeOfLight\SurgeOfLightCast.mdl
+Casterattach=origin
+Targetart=Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl
+
+// Surge of Light Ally Passive
+[BHsa]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Targetart=Abilities\Spells\Human\SurgeOfLight\SurgeOfLightRegen.mdl
+Targetattach=chest
+
+// Surge of Light Caster Passive
+[BHss]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
+Targetart=Abilities\Spells\Human\SurgeOfLight\SurgeOfLightHalo.mdl
+Targetattach=head
+
+// Item Damage Reflect 20%
+[ADRw]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNThornShield.blp
+
+// Item Splash Damage 4
+[ASD4]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfFire.blp
+Missileart=Abilities\Weapons\FireBallMissile\FireBallMissile.mdl
+Missilehoming=1
+Targetart=Abilities\Spells\Items\AIfb\AIfbTarget.mdl
+Targetattach=weapon
+Specialart=Abilities\Spells\Items\AIfb\AIfbSpecialArt.mdl
+Specialattach=chest
+
+//Attack Bonus -5
+[ADN5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+
+// Arcane Spellblade
+[Aasb]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNArcaneSpellblade.blp
+Missileart=Abilities\Weapons\DruidoftheTalonMissile\DruidoftheTalonMissile.mdl
+
+// Item Ability Amp 10
+[AAPs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+// Item Ability Vamp 8
+[ASVi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp
+
+// Blade of Frozen Hunger Heal
+[Abfh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Blade of Frozen Hunger Attack
+[Abfa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Mana Efficiency 10
+[AMEy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Item Mana Efficiency 15
+[AMEu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Item Mana Refund 5
+[AMFq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Ring of the Firelands CR
+[Arfc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingoftheFirelands.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNRingoftheFirelands.blp
+Missileart=Abilities\Weapons\FireBallMissile\FireBallMissile.mdl
+Missilearc=0.5
+Animnamescount=1
+Animnames=spell,one
+
+// Ring of the Firelands Attack
+[Arfa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Ability Lifesteal 8
+[ALs8]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// Forsaken Paladin - Sacred Aura
+[AHpa]
+skinType=ability
+Targetart=Abilities/Spells/Other/SacredAura/SacredAura.mdl
+Targetattach=origin
+Art=ReplaceableTextures\PassiveButtons\PASBTNSacredAura.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNSacredAura.blp
+
+// Evasion Stackable
+[AHes]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNEvasion.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNEvasion.blp
+
+// Hardened Skin (Stacking)
+[AHss]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNHardenedSkin.blp
+Casterart=
+
+// Thorny Shield (Stacking)
+[AUss]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNThornShield.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNThornShield.blp
+
+// Item Dark Commander's Aura
+[ADCa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBansheeRanger.blp
+Targetart=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
+Targetattach=origin
+
+// Item Dark Mistress' Aura
+[ADMa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBansheeRanger.blp
+Targetart=Abilities\Spells\Orc\CommandAura\CommandAura.mdl
+Targetattach=origin
+
+// Buff Dark Commander's Aura
+[BDCa]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNBansheeRanger.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Buff Dark Mistress' Aura
+[BDMa]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNBansheeRanger.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Dark Ranger's Bracers Summon
+[AFRq]
+skinType=ability
+UnitSkinID=oidb
+Art=ReplaceableTextures\CommandButtons\BTNDarkRangersBracers.blp
+
+// Dark Ranger's Insignia Summon
+[AFRw]
+skinType=ability
+UnitSkinID=oidb
+Art=ReplaceableTextures\CommandButtons\BTNDarkRangersInsignia.blp
+Effectart=Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl
+
+// Item Dark Ranger's Bracers Attack
+[AFRx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Banshee's Wail
+[AUwc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Effectsoundlooped=BansheesWailSwarmLoop
+Casterart=Abilities\Spells\Undead\BansheesWail\BansheesWailCaster.mdl
+
+// Banshee's Wail
+[AUi1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Effectsoundlooped=BansheesWailSwarmLoop
+Casterart=Abilities\Spells\Undead\BansheesWail\BansheesWailCaster.mdl
+
+// Banshee's Wail
+[AUi2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Effectsoundlooped=BansheesWailSwarmLoop
+Casterart=Abilities\Spells\Undead\BansheesWail\BansheesWailCaster.mdl
+
+// Banshee's Wail
+[AUi3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Effectsoundlooped=BansheesWailSwarmLoop
+Casterart=Abilities\Spells\Undead\BansheesWail\BansheesWailCaster.mdl
+
+[Abns]
+skinType=ability
+skinnableID=Abns
+
+[Aacr]
+skinType=ability
+skinnableID=Aacr
+
+[Absc]
+skinType=ability
+skinnableID=Absc
+
+// Magic Damage Amp
+[Amda]
+skinType=ability
+
+[Bmda]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNBansheesCall.blp
+Targetart=Abilities\Spells\Undead\BansheesWail\BansheesWailMark.mdl
+Targetattach=head
+
+// Deathseeker arrows
+[AUdb]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNDeathSeekerArrows.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNDeathSeekerArrows.blp
+
+// Deathseeker arrows t1
+[AUd1]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNDeathSeekerArrows.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNDeathSeekerArrows.blp
+
+// Deathseeker arrows t2
+[AUd2]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNDeathSeekerArrows.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNDeathSeekerArrows.blp
+
+// Deathseeker arrows t3
+[AUd3]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNDeathSeekerArrows.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNDeathSeekerArrows.blp
+
+// Deathseeker Bow Buff
+// First target art is the proc VFX. Every other one is for 1 stack, 2 stacks, etc.
+[BUdb]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNDeathSeekerArrows.blp
+Targetart=Abilities\Spells\Undead\DeathseekerBow\DeathseekerBowTarget,Abilities\Spells\Undead\DeathseekerBow\DeathseekerBowMark1,Abilities\Spells\Undead\DeathseekerBow\DeathseekerBowMark2,Abilities\Spells\Undead\DeathseekerBow\DeathseekerBowMark3
+Targetattachcount=4
+Targetattach=chest
+Targetattach1=origin
+Targetattach2=origin
+Targetattach3=origin
+
+// Endless Flask Rejuvenation
+[Aefr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRejuvenation.blp
+
+// Item Portable Lightning Rod CL
+[Alrc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNChainLightning.blp
+Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
+Targetart=Abilities\Weapons\Bolt\BoltImpact.mdl
+LightningEffect=CLPB,CLSB
+
+// Item Portable Lightning Rod Attack
+[Alra]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Earthen Signet WS
+[Aesw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWarStomp.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWarStomp.blp
+Casterart=Abilities\Spells\Orc\WarStomp\WarStompCaster.mdl
+Animnames=spell,slam
+
+// Item Earthen Signet Attack
+[Aesa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Tome of the Spiderkind Summon
+[Asks]
+skinType=ability
+UnitSkinID=oisp
+Art=ReplaceableTextures\CommandButtons\BTNSpiderBlue.blp
+Effectart=Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl
+
+// Item Tome of the Spiderkind Attack
+[Aska]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Spell Crit Chance 15
+[ASCq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Item Spell Crit Damage 20
+[ASDq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTMasterTraining.blp
+
+// Item Armor Bonus (+6)
+[AId6]
+skinType=ability
+
+// Item Ability Damage 10
+[AADt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Item Elixir of Cunning
+[Acec]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNElixirofCunning.blp
+Targetart=Abilities\Spells\Items\AIim\AIimTarget.mdl
+Targetattach=origin
+
+// Item Elixir of the Monster Hunter
+[Acem]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNElixirofMonsterHunting.blp
+Targetart=Abilities\Spells\Items\AIsm\AIsmTarget.mdl
+Targetattach=origin
+
+// Item Spell Crit Chance 10
+[ASCw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Item Bracers Ogre Magi CL
+[Aomc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNChainLightning.blp
+Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
+Targetart=Abilities\Weapons\Bolt\BoltImpact.mdl
+LightningEffect=CLPB,CLSB
+
+// Item Bracers Ogre Magi HW
+[Aomh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealingWave.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHealingWave.blp
+Targetart=Abilities\Spells\Orc\HealingWave\HealingWaveTarget.mdl
+Animnames=spell,throw
+LightningEffect=HWPB,HWSB
+
+// Item Bracers Ogre Magi Attack 1
+[Aomz]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Bracers Ogre Magi Attack 2
+[Aomx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Totem Ogre Magi Bloodlust
+[Aomb]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBloodLustOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNBloodLustOff.blp
+
+// Item Totem Ogre Magi Summon
+[Aoms]
+skinType=ability
+UnitSkinID=iomw
+Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
+Effectart=Abilities\Spells\NightElf\BattleRoar\RoarCaster.mdl
+
+// Item Totem Ogre Magi Attack
+[Aoma]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Summoned Unit Buff
+[BIsu]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNPolymorph.blp
+
+// Item Finger of Death 12
+[AFDq]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCorpseExplode.blp
+
+// Item Lance of the Dawn Attack
+[ALDa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Critical Chance 12
+[ACSc]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Critical Chance 18
+[ACSv]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Spell Crit Chance 12
+[ASCe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Item Spell Crit Chance 18
+[ASCr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Item Spell Crit Chance 6
+[ASCt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Item Daybreaker FS
+[ADBf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWallOfFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWallOfFire.blp
+// Beware art
+Effectart=Abilities\Spells\Human\FlameStrike\FlameStrikeTarget.mdl
+// Impact art
+Specialart=Abilities\Spells\Human\FlameStrike\FlameStrike1.mdl,Abilities\Spells\Human\FlameStrike\FlameStrike2.mdl,Abilities\Spells\Human\FlameStrike\FlameStrike.mdl
+Animnames=spell,channel
+
+// Item Daybreaker Attack
+[ADBa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+//Attack Bonus +24
+[AD24]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+
+// Item Critical Damage 40
+[ACXy]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Golden Necklace Spellcast
+[Agns]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Golden Necklace Heal
+[Agnh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Coldbringer's Reach Attack
+[Acrx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Coldbringer's Reach Frost Nova
+[Acrz]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
+Effectart=Abilities\Spells\Undead\FrostNova\FrostNovaTarget.mdl
+
+// Item Plaguewrought Poison
+[Apwp]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDaggerOfEscape.blp
+
+// Item Plaguewrought CS
+[Apws]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCarrionSwarm.blp
+Animnames=attack,slam
+Researchart=ReplaceableTextures\CommandButtons\BTNCarrionSwarm.blp
+Specialart=Abilities\Spells\Undead\CarrionSwarm\CarrionSwarmDamage.mdl
+Missileart=Abilities\Spells\Undead\CarrionSwarm\CarrionSwarmMissile.mdl
+
+// Item Plaguewrought Attack
+[Apwa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Ability Damage 12
+[AADy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Item Manuscript of the Forsaken Summon
+[Amfs]
+skinType=ability
+UnitSkinID=oidg
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerMaster.blp
+Effectart=Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl
+
+// Item Aura of Darkness
+[Aadx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPossession.blp
+Targetart=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
+Targetattach=origin
+
+// Item Aura of Darkness Buff
+[Badx]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNPossession.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Item Scepter of Darkness Summon
+[Asdd]
+skinType=ability
+UnitSkinID=oidg
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerMaster.blp
+Effectart=Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl
+
+// Item Scepter of Darkness Spellcast
+[Asdx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Ability Speed 15
+[ACDd]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Spell Crit Damage 15
+[ASDw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTMasterTraining.blp
+
+// Item Critical Damage 25
+[ACXu]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Zandalari Giantcrusher WS
+[Azgw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWarStomp.blp
+Casterart=Abilities\Spells\Orc\WarStomp\WarStompCaster.mdl
+Animnames=slam
+
+// Item Zandalari Giantcrusher Attack
+[Azgx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+[Bhrz]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNFrost.blp
+Targetart=Abilities\Spells\Other\FrostDamage\FrostDamage.mdl
+
+// Item Helm of the Rimelord TC
+[Ahrz]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNFrost.blp
+Casterart=Abilities\Spells\Undead\FrostNova\FrostNovaTarget.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,slam
+
+// Item Helm of the Rimelord Spellcast
+[Ahrx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Critical Chance 20
+[ACSb]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Kaldorei Moonglaive Summon
+[Akms]
+skinType=ability
+UnitSkinID=oimd
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerMaster.blp
+
+// Item Kaldorei Moonglaive Attack
+[Akma]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Gift of Greed Pillage
+[Aggp]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNPillage.blp
+
+// Item Health Regeneration 7
+[AHRs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Gift of Sloth Slow
+[Aggs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSlow.blp
+Targetart=Abilities\Spells\Orc\CommandAura\CommandAura.mdl
+Targetattach=origin
+
+// Gift of Sloth Buff
+[Bggs]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNSlow.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Gift of Wrath Buff
+[Bggw]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNBloodLust.blp
+Targetart=Abilities\Spells\Orc\Bloodlust\BloodlustTarget.mdl,Abilities\Spells\Orc\Bloodlust\BloodlustSpecial.mdl
+Targetattachcount=2
+Targetattach=hand,left
+Targetattach1=hand,right
+
+// Item Gift of Wrath Bloodlust
+[Aggw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBloodLustOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNBloodLustOff.blp
+
+// Item Gift of Wrath Attack
+[Agga]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item All Stats +6
+[AIx6]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHelmutPurple.blp
+
+// Item Curse of Pride
+[Aggx]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNRegenerationAura.blp
+Targetart=Abilities\Spells\Undead\RegenerationAura\ObsidianRegenAura.mdl
+Targetattach=origin
+
+// Item Curse of Pride Buff
+[Bggx]
+skinType=buff
+Buffart=ReplaceableTextures\PassiveButtons\PASBTNRegenerationAura.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Item Mark of the Phoenix BoF
+[Ampb]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBreathOfFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNBreathOfFire.blp
+Missileart=Abilities\Spells\Other\BreathOfFire\BreathOfFireMissile.mdl
+Missilespeed=1050
+Animnames=spell,slam
+
+// Item Deepsea Bag CW
+[Adbw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
+Missileart=Abilities\Spells\Other\CrushingWave\CrushingWaveMissile.mdl
+Missilespeed=900
+Specialart=Abilities\Spells\Other\CrushingWave\CrushingWaveDamage.mdl
+Animnames=attack,slam
+
+// Item Gloves of the Phoenix Damage
+[Agpd]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMarkOfFire.blp
+Targetart=Abilities\Spells\Other\BreathOfFire\BreathOfFireDamage.mdl
+
+// Item Gloves of the Phoenix Spellcast
+[Agpa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Sword of the Ghostlands HoT
+[Asgh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHowlOfTerror.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHowlOfTerror.blp
+Casterart=Abilities\Spells\Other\HowlOfTerror\HowlCaster.mdl
+Animnames=spell,slam
+
+// Item Sword of the Ghostlands Attack
+[Asga]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Shield of the Scarlet Crusade Heal
+[Asch]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Shield of the Scarlet Crusade Attack
+[Asca]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Elixir of Lesser Intelligence
+[Acli]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNElixirofCunning.blp
+Targetart=Abilities\Spells\Items\AIim\AIimTarget.mdl
+Targetattach=origin
+
+// Item Elixir of Greater Intelligence
+[Acgi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNElixirofCunning.blp
+Targetart=Abilities\Spells\Items\AIim\AIimTarget.mdl
+Targetattach=origin
+
+// Item Hammer of the Silver Hand Heal
+[Ahsh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Hammer of the Silver Hand Attack
+[Ahsa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Bash (10, 25, 2)
+[AIBw]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNBash.blp
+
+// Item Protector SH Stun
+[Apsx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNStormBolt.blp
+Targetart=Abilities\Spells\Human\Defend\DefendCaster.mdl
+Animnames=spell,throw
+
+// Item Protector SH Attack
+[Apsz]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Sanctified Chestplate Immo
+[Asci]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMarkOfFire.blp
+
+// Item Sanctified Chestplate Immo buff
+[Bsci]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNMarkOfFire.blp
+Targetart=Abilities\Spells\Other\ImmolationRed\ImmolationRedTarget.mdl
+Targetattach=chest
+Specialart=Abilities\Spells\Human\FlameStrike\FlameStrikeEmbers.mdl
+Specialattach=head
+
+// Item Sanctified Chestplate Heal
+[Asc1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Sanctified Chestplate Spellcast
+[Asc2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Mana Efficiency 12
+[AMEi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+
+// Item Sanctified Gauntlets Impale
+[Asg1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
+Specialart=Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl
+
+// Item Sanctified Gauntlets Impale Buff
+[Bsg1]
+skinType=buff
+Targetart=Abilities\Spells\Human\Thunderclap\ThunderclapTarget.mdl
+Buffart=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
+Targetattach=overhead
+
+// Item Sanctified Gauntlets Attack
+[Asg2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Boots of the Icewalker BoF
+[Abi1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBreathOfFrost.blp
+Missileart=Abilities\Spells\Other\BreathOfFrost\BreathOfFrostMissile.mdl
+Animnames=spell,slam
+
+// Item Boots of the Icewalker Attack
+[Abi2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Strength Bonus (+7)
+[AIs7]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGauntletsOfOgrePower.blp
+
+//Attack Bonus +18
+[AD18]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+
+// Item Ability Damage 6
+[AADu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Item Ability Speed 20
+[ACDf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Strength Bonus (+12)
+[AS12]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGauntletsOfOgrePower.blp
+
+// Item Critical Chance 16
+[ACSn]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Staff CH TC
+[Ach1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAbomination.blp
+Casterart=Abilities\Spells\Other\Stampede\StampedeMissileDeath.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,slam
+
+// Item Staff CH Spellcast
+[Ach2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Blade CH Damage
+[Ach3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCorpseExplode.blp
+Targetart=Abilities\Spells\Other\Stampede\StampedeMissileDeath.mdl
+
+// Item Blade CH Heal
+[Ach4]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Blade CH Attack 1
+[Ach5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Blade CH Attack 2
+[Ach6]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// ItemHeal (Ultimate)
+[AIh4]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPotionGreen.blp
+Targetart=Abilities\Spells\Items\AIhe\AIheTarget.mdl
+Targetattach=origin
+
+// ItemHeal (Final)
+[AIh5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPotionGreen.blp
+Targetart=Abilities\Spells\Items\AIhe\AIheTarget.mdl
+Targetattach=origin
+
+// ItemManaRestore (Ultimate)
+[AIm4]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPotionBlueBig.blp
+Casterart=Abilities\Spells\Items\AIma\AImaTarget.mdl
+Casterattach=origin
+
+// Item Consecrated Mixture
+[Accm]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNElixirofCunning.blp
+Targetart=Abilities\Spells\Items\AIim\AIimTarget.mdl
+Targetattach=origin
+
+// Item Health Regeneration 10
+[AHRd]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Item Bindings of Helya CW
+[Abh1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
+Missileart=Abilities\Spells\Other\CrushingWave\CrushingWaveMissile.mdl
+Missilespeed=900
+Specialart=Abilities\Spells\Other\CrushingWave\CrushingWaveDamage.mdl
+Animnames=attack,slam
+
+// Item Bindings of Helya Attack
+[Abh2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Icecrown Ring Frost Nova
+[Aic1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
+Effectart=Abilities\Spells\Undead\FrostNova\FrostNovaTarget.mdl
+
+// Item Icecrown Ring Attack
+[Aic2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Strength Bonus (+10)
+[AS10]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGauntletsOfOgrePower.blp
+
+// Item Armor Corrupt 5
+[AACe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+Missileart=Abilities\Spells\Items\OrbCorruption\OrbCorruptionMissile.mdl
+Missilehoming=1
+Targetart=Abilities\Spells\Items\OrbCorruption\OrbCorruption.mdl
+Targetattach=weapon
+Specialart=Abilities\Spells\Items\OrbCorruption\OrbCorruptionSpecialArt.mdl
+Specialattach=chest
+
+// Item Vestments Storm King MS
+[Ask1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMonsoon.blp
+
+// Item Vestments Storm King Spellcast
+[Ask2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Deathbringer's Plague (Buff)
+[Bdb1]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNPlagueCloud.blp
+Targetart=Units\Undead\PlagueCloud\PlagueCloudtarget.mdl
+Targetattach=head
+
+// Item Deathbringer's Boots Parasite
+[Adb1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPlagueCloud.blp
+Unart=ReplaceableTextures\CommandButtons\BTNPlagueCloud.blp
+MissileHoming=1
+
+// Item Deathbringer's Boots Attack
+[Adb2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Twisted Bones (Buff)
+[Bbcs]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNSacrificialSkull.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Item Bone Commander's Skull Aura (Twisted Bones)
+[Abcs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSacrificialSkull.blp
+Targetart=Abilities\Spells\Undead\RegenerationAura\ObsidianRegenAura.mdl
+Targetattach=origin
+
+// Item Lost Forsaken Quiver Summon
+[Alfq]
+skinType=ability
+UnitSkinID=oifr
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerMaster.blp
+Effectart=Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl
+
+// Anya poison arrows
+[BApa]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNEnvenomedSpear.blp
+Targetart=Abilities\Weapons\PoisonSting\PoisonStingTarget.mdl
+
+// Attribute Bonus
+[Aaml]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNStatUp.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNStatUp.blp
+
+// cleric Heal
+[Asea]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// cleric Dispel Magic
+[Asdi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDispelMagic.blp
+Casterart=
+Targetart=Abilities\Spells\Human\DispelMagic\DispelMagicTarget.mdl
+Specialart=Abilities\Spells\Human\DispelMagic\DispelMagicTarget.mdl
+
+// cleric Inner Fire
+[Asif]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNInnerFireOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNInnerFireOff.blp
+Casterart=
+Effectsound=InnerFireCast
+
+// inquisitor Flame Strike
+[Asfs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWallOfFire.blp
+// Beware art
+Effectart=Abilities\Spells\Human\FlameStrike\FlameStrikeTarget.mdl
+// Impact art
+Specialart=Abilities\Spells\Human\FlameStrike\FlameStrike1.mdl,Abilities\Spells\Human\FlameStrike\FlameStrike2.mdl,Abilities\Spells\Human\FlameStrike\FlameStrike.mdl
+Animnames=spell,channel
+
+// inquisitor Soul Burn
+[Assb]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSoulBurn.blp
+
+// apothecary Healing Spray
+[Afhs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealingSpray.blp
+Missileart=Abilities/Spells/Other/HealingSpray/HealBottleMissileGreen.mdl
+Missilearc=.1
+Casterart=
+Animnames=stand,channel
+
+// apothecary Acid Bomb
+[Afab]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAcidBomb.blp
+Missileart=Abilities\Spells\Other\AcidBomb\BottleMissile.mdl
+Missilearc=0.4
+Animnames=Attack,two,Spell
+
+// apothecary chemical frenzy
+[Afuf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNUnholyFrenzy.blp
+
+// apothecary chemical frenzy
+[Bfcf]
+skinType=buff
+Targetart=Abilities\Spells\Undead\UnholyFrenzy\UnholyFrenzyTarget.mdl
+Targetattach=overhead
+Buffart=ReplaceableTextures\CommandButtons\BTNUnholyFrenzy.blp
+
+// Item Selene Starfall
+[Ass1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNStarfall.blp
+Animnames=spell
+
+// Item Selene Spellcast
+[Ass2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Finger of Death 15
+[AFDw]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCorpseExplode.blp
+
+// Item Razorice Attack 1
+[Ari1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Razorice Attack 2
+[Ari2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfFrost.blp
+Missileart=Abilities\Weapons\LichMissile\LichMissile.mdl
+Targetart=Abilities\Spells\Items\AIob\AIobTarget.mdl
+Missilehoming=1
+Targetattach=weapon
+Specialart=Abilities\Spells\Items\AIob\AIobSpecialArt.mdl
+Specialattach=chest
+
+// Item Razorice BoF
+[Ari3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBreathOfFrost.blp
+Missileart=Abilities\Spells\Other\BreathOfFrost\BreathOfFrostMissile.mdl
+Animnames=spell,slam
+
+// Item Razorice Attack 4
+[Ari4]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Gravelight DoT
+[Agr1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNZigguratUpgrade.blp
+
+// GL Poison Sting Non Stack Buff
+[Bgr1]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNPossession.blp
+Targetart=Abilities\Spells\Human\FlameStrike\FlameStrikeDamageTarget.mdl
+
+// GL Poison Sting Stack Buff
+[Bgr2]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNPossession.blp
+Targetart=Abilities\Spells\Human\FlameStrike\FlameStrikeDamageTarget.mdl
+
+// Item Gravelight Main Swarm
+[Agr2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNZigguratUpgrade.blp
+Effectsoundlooped=MonsoonLoop
+
+// Item Gravelight Side Swarm
+[Agr3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNZigguratUpgrade.blp
+Effectsoundlooped=MonsoonLoop
+
+// Item Gravelight Attack Main
+[Agr4]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Gravelight Attack Side
+[Agr5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Essencium Main Summon
+[Aes1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNEarthquake.blp
+Effectart=Abilities\Spells\Demon\DarkPortal\DarkPortalTarget.mdl
+
+// Item Essencium Blizzard
+[Aes2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBlizzard.blp
+Casterart=
+Animnames=spell,looping
+
+// Item Essencium Rain of Fire
+[Aes3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNFire.blp
+Casterart=
+Animnames=spell,looping
+
+// Item Essencium Chain Lightning
+[Aes4]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNChainLightning.blp
+Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
+Targetart=Abilities\Weapons\Bolt\BoltImpact.mdl
+LightningEffect=CLPB,CLSB
+
+// Item Essencium Crushing Wave
+[Aes5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
+Missileart=Abilities\Spells\Other\CrushingWave\CrushingWaveMissile.mdl
+Missilespeed=900
+Specialart=Abilities\Spells\Other\CrushingWave\CrushingWaveDamage.mdl
+Animnames=attack,slam
+
+// Item Essencium Attack 1
+[Aes6]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Essencium Attack 2
+[Aes7]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Essencium Attack 3
+[Aes8]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Essencium Attack 4
+[Aes9]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Heal modifier
+[Ahem]
+skinType=ability
+
+// Item Spell Crit Chance 30
+[ASCy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Item The Screecher HoT
+[Ats1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHowlOfTerror.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNHowlOfTerror.blp
+Casterart=Abilities\Spells\Other\HowlOfTerror\HowlCaster.mdl
+Animnames=spell,slam
+
+// Item The Screecher Attack
+[Ats2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Scythe of Frost Aura
+[Asof]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
+Targetart=Abilities\Spells\Human\Brilliance\Brilliance.mdl
+Targetattach=origin
+
+// Item Scythe of Frost Buff
+[Bsof]
+skinType=buff
+Buffart=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+
+// Item Orb Chill 3s
+[Aoc3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfFrost.blp
+Missileart=Abilities\Weapons\LichMissile\LichMissile.mdl
+Targetart=Abilities\Spells\Items\AIob\AIobTarget.mdl
+Missilehoming=1
+Targetattach=weapon
+Specialart=Abilities\Spells\Items\AIob\AIobSpecialArt.mdl
+Specialattach=chest
+
+// Item Lance of the Frozen Phoenix
+[Alfp]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
+Missileart=Abilities\Weapons\LichMissile\LichMissile.mdl
+
+// Item Critical Damage 20
+[ACXi]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Ring of Holy Fire Immo
+[Arf1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMarkOfFire.blp
+
+// Item Ring of Holy Fire FL
+[Arf2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMarkOfFire.blp
+Specialart=Abilities\Spells\Items\AIfb\AIfbSpecialArt.mdl
+
+// Item Ring of Holy Fire Attack
+[Arf3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Ability Damage 7
+[AADi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Item Gloves of the Flamewalker Swarm
+[Afm1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMarkOfFire.blp
+Effectsoundlooped=
+
+// Item Gloves of the Flamewalker Attack 
+[Afm2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Robes of Revenge Attack 
+[Arr1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Intelligence Bonus (+10)
+[AI10]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRobeOfTheMagi.blp
+
+// Item Resolve 12
+[AIRp]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// Item Stormwalkers TC
+[Asw1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNThunderclap.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNThunderclap.blp
+Casterart=Abilities\Spells\Human\Thunderclap\ThunderClapCaster.mdl
+Casterattach=origin
+Effectart=
+Animnames=spell,slam
+
+// Item Stormwalkers Spellcast 
+[Asw2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Blade of Inferno Rain of Fire
+[Ain1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNFire.blp
+Casterart=
+Animnames=spell,looping
+
+// Item Blade of Inferno Attack 
+[Ain2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Aviana's Talons Mana
+[Aat1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPotionBlueBig.blp
+Casterart=Abilities\Spells\Undead\ReplenishMana\SpiritTouchTarget.mdl
+Casterattach=origin
+
+// Item Finger of Death 8
+[AFDe]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNCorpseExplode.blp
+
+// Item Aviana's Talons Attack 1
+[Aat2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Aviana's Talons Attack 2
+[Aat3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Health Regeneration 15
+[AHRf]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+// Item Armor of Reanimation Summon
+[Aar1]
+skinType=ability
+UnitSkinID=oism
+Art=ReplaceableTextures\CommandButtons\BTNSkeletonArcher.blp
+Specialart=Abilities\Spells\Undead\RaiseSkeletonWarrior\RaiseSkeleton.mdl
+
+// Item Armor of Reanimation Attack
+[Aar2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Diamond Ring CDR
+[Ardr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNReincarnation.blp
+
+// Item Spell Resistance 33
+[ASRp]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+
+// Item Critical Damage 12
+[ACXo]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
+
+// Item Handful of Throwing Knives
+[Ahtk]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
+Casterart=
+Effectart=Abilities\Spells\NightElf\FanOfKnives\FanOfKnivesCaster.mdl
+Missileart=Abilities\Spells\NightElf\FanOfKnives\FanOfKnivesMissile.mdl
+MissileArc=0.10
+Animnames=spell,slam
+
+// Item Mana Bauble
+[Atmb]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNAbsorbMagic.blp
+Missileart=Abilities\Spells\Undead\AbsorbMana\AbsorbManaBirthMissile.mdl
+
+// Item Rune of Fire
+[Arof]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNFireBolt.blp
+Missileart=Abilities\Weapons\FireBallMissile\FireBallMissile.mdl
+Animnames=spell,throw
+
+// Item Nevermelting Ice
+[Anmi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNColdArrowsOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNColdArrowsOff.blp
+Missileart=Abilities\Weapons\ColdArrow\ColdArrowMissile.mdl
+Missilearc=0.15
+Animnames=attack
+
+// Item Agitating Totem
+[Aagt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBloodLustOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNBloodLustOff.blp
+
+// Item Bottled Storm
+[Abos]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMonsoon.blp
+
+// Item Shepherd's Curse
+[Ashc]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPolymorph.blp
+Casterart=
+Specialart=Abilities\Spells\Human\Polymorph\PolyMorphTarget.mdl
+Effectart=Abilities\Spells\Human\Polymorph\PolyMorphFallingSheepArt.mdl
+
+// Item Restorative Balm
+[Arba]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealingWave.blp
+Targetart=Abilities\Spells\Orc\HealingWave\HealingWaveTarget.mdl
+Animnames=spell,throw
+LightningEffect=HWPB,HWSB
+
+// Item Deathbloom Leaves
+[Adbl]
+skinType=ability
+UnitSkinID=oisg
+Art=ReplaceableTextures\CommandButtons\BTNRaiseDeadOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNRaiseDeadOff.blp
+Effectart=Abilities\Spells\Undead\RaiseSkeletonWarrior\RaiseSkeleton.mdl
+
+// Item Glacial Shard
+[Agsh]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBlizzard.blp
+Casterart=
+Animnames=stand,channel
+
+// Item Forgotten Frost Lotus
+[Affl]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNFrostArmorOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNFrostArmorOff.blp
+
+// Item Flame of Al'ar
+[Afoa]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWallOfFire.blp
+Researchart=ReplaceableTextures\CommandButtons\BTNWallOfFire.blp
+// Beware art
+Effectart=Abilities\Spells\Human\FlameStrike\FlameStrikeTarget.mdl
+// Impact art
+Specialart=Abilities\Spells\Human\FlameStrike\FlameStrike1.mdl,Abilities\Spells\Human\FlameStrike\FlameStrike2.mdl,Abilities\Spells\Human\FlameStrike\FlameStrike.mdl
+Animnames=spell,channel
+
+// Item Ability Lifesteal 10
+[AL10]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+// target art played on hero carrying item
+Targetart=
+// special art played on hero when ability fires
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
+
+// Item Gloves of Necromancy Summon
+[Agn1]
+skinType=ability
+UnitSkinID=oisk
+Art=ReplaceableTextures\CommandButtons\BTNSkeletonArcher.blp
+Specialart=Abilities\Spells\Undead\RaiseSkeletonWarrior\RaiseSkeleton.mdl
+
+// Item Gloves of Necromancy Attack
+[Agn2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Wildhammer Breastplate CL
+[Asx1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNChainLightning.blp
+Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
+Targetart=Abilities\Weapons\Bolt\BoltImpact.mdl
+LightningEffect=CLPB,CLSB
+
+// Item Monastery Mace Heal
+[Amm1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Monastery Mace Attack
+[Amm2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Vestments Wave Heal
+[Avm1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Vestments Wave Spellcast
+[Avm2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Borelgore Attack
+[Abx1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Armor SC Heal
+[Aac1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHealOn.blp
+Unart=ReplaceableTextures\CommandButtons\BTNHealOff.blp
+Casterart=
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Armor SC Attack
+[Aac2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Dark Ranger's Hood Spellcast
+[AFRy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Mordo's Club Buff
+// First target art is the proc VFX. Every other one is for 1 stack, 2 stacks, etc.
+[BImc]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNStormBolt.blp
+Targetart=Abilities\Spells\Orc\StasisTrap\StasisTotemTarget.mdl,Abilities\Spells\Orc\StasisTrap\StasisTotemTarget.mdl,Abilities\Spells\Orc\StasisTrap\StasisTotemTarget.mdl
+Targetattachcount=3
+Targetattach=origin
+Targetattach1=origin
+Targetattach2=origin
+
+// Item Mordo's Club
+[Amcx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Helm Cenarion Heal
+[Ace1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Helm Cenarion Attack
+[Ace2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Helm Cenarion Spellcast
+[Ace3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Bloodstone Heal
+[Avs1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Lost Spirits Heal
+[Avb1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
+Targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+
+// Item Bloodstone Attack
+[Avs2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Lost Spirits Spellcast
+[Avb2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp
+
+// Item Mana Regeneration 35
+[AMRt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Item Mana Regeneration 25
+[AMRy]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Item Mana Regeneration 30
+[AMRu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Item Mana Regeneration 75
+[AMRi]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Item Mana Regeneration 65
+[AMRo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Item Mana Regeneration 40
+[AMRp]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+
+// Item Unit Damage x1.15
+[AUDw]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNDemolish.blp
+
+// Item Soulstealer Mana
+[Asr1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNPotionBlueBig.blp
+Casterart=Abilities\Spells\Undead\ReplenishMana\SpiritTouchTarget.mdl
+Casterattach=origin
+
+// Item Soulstealer Attack
+[Asr2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Resolve 5
+[AIR5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+// Buff Corruption 2
+[BIc2]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+
+// Buff Corruption 3
+[BIc3]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+
+// Buff Corruption 5
+[BIc5]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+
+// Item Armor Corrupt Spell 2
+[Aas2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+
+// Item Armor Corrupt Spell 3
+[Aas3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+
+// Item Armor Corrupt Spell 5
+[Aas5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+
+// Item Armor Corrupt Attack 2
+[Aah2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Armor Corrupt Attack 3
+[Aah3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Armor Corrupt Attack 5
+[Aah5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Chill Nova 3
+[Asc3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
+
+// Item Chill Nova 5
+[Asc5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
+
+// Item Chill Attack 3
+[Aac3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Chill Attack 5
+[Aac5]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Brimstone Buff
+[Brim]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNOrbOfFire.blp
+Targetart=Abilities\Spells\Items\AIfb\AIfbSpecialArt.mdl
+
+// Item Brimstone Spell 1
+[Abr1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfFire.blp
+
+// Item Brimstone Attack 1
+[Abz1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Brimstone Spell 2
+[Abr2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfFire.blp
+
+// Item Brimstone Attack 2
+[Abz2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// altar of darkness  hpregeneration
+[ADhr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeal.blp
+
+// altar of darkness mana regeneration
+[ADmr]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNHeal.blp
+
+// Item Essence of the Spider Queen Buff
+[BIqh]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNEssenceoftheSpiderQueen.blp
+Targetart=Abilities\Spells\Items\VampiricPotion\VampPotionCaster.mdl
+Targetattach=origin
+Specialart=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
+Specialattach=origin
+
+// Intelligence Bonus (+11)
+[AI11]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRobeOfTheMagi.blp
+
+// Item Ability Amp 26
+[AAPx]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp
+
+//shop bag vfx
+[AVsb]
+skinType=ability
+Targetart=Abilities/Spells/Other/Shop/ShopBag.mdl
+Targetattach=overhead
+
+//inquisitor flaming hands
+[AViq]
+skinType=ability
+Targetart=Abilities\Weapons\FireBallMissile\FireBallMissile2.mdl
+Targetattach=hand,right
+Targetattach1=hand,left
+Targetattachcount=2
+
+// Item Ability Damage 2
+[AADo]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+
+// Item Disease Cloud 1
+[ADCq]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNPlagueCloud.blp
+Targetart=Abilities\Spells\Undead\PlagueCloud\PlagueCloudCaster.mdl
+
+// Item Huge Flail WS
+[Ahf1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNWarStomp.blp
+Casterart=Abilities\Spells\Orc\WarStomp\WarStompCaster.mdl
+Animnames=slam
+
+// Item Huge Flail Attack
+[Ahf2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Plaguegreaves Spell
+[Apl1]
+skinType=ability
+Art=ReplaceableTextures\PassiveButtons\PASBTNPlagueCloud.blp
+
+// Item Plaguegreaves Attack
+[Apl2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Spell Crit Chance 4
+[ASCu]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Item Spell Crit Chance 8
+[ASC8]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Item Bottled Storm CL
+[Abs1]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNChainLightning.blp
+Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
+Targetart=Abilities\Weapons\Bolt\BoltImpact.mdl
+LightningEffect=CLPB,CLSB
+
+// Item Bottled Storm Attack
+[Abs2]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+// Item Spell Crit Chance 5
+[ASCs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp
+
+// Infected Buff
+[Buic]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNGhoul.blp
+Targetart=Abilities\Spells\Other\Parasite\ParasiteTarget.mdl
+
+//On Hit Simple Spell
+[Aals]
+Art=ReplaceableTextures\CommandButtons\BTNTomeBrown.blp

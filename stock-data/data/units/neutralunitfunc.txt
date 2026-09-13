@@ -1,6 +1,6 @@
 // permits dependencies upon heroes
 [HERO]
-DependencyOr=Hamg,Hblm,Hmkg,Hpal,Obla,Ofar,Oshd,Otch,Edem,Ekee,Emoo,Ewar,Ucrl,Udea,Udre,Ulic,Npbm,Nbrn,Nngs,Nplh,Nbst,Nalc,Ntin,Nfir
+DependencyOr=Hamg,Hblm,Hmkg,Hpal,Obla,Ofar,Oshd,Otch,Edem,Ekee,Emoo,Ewar,Ucrl,Udea,Udre,Ulic,Npbm,Nbrn,Nngs,Nplh,Nbst,Nalc,Ntin,Nfir,Npal
 
 [nwad]
 
@@ -860,7 +860,7 @@ Sellunits=ndrm,nfgb,nvdw,nsog
 
 // Tavern
 [ntav]
-Sellunits=Nalc,Ntin,Nfir,Nngs,Nbrn,Npbm,Nplh,Nbst
+Sellunits=Nalc,Ntin,Nfir,Nngs,Nbrn,Npbm,Nplh,Nbst,Npal
 
 // Fountain of Power
 [nmoo]
@@ -2719,3 +2719,14 @@ ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-thaloriendawnseeker.blp
 Buttonpos=0,0
 Specialart=Objects\Spawnmodels\Orc\OrcLargeDeathExplode\OrcLargeDeathExplode.mdl
 Attachmentanimprops=medium
+
+// Forsaken Paladin
+[Npal]
+Buttonpos=3,0
+Specialart=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExplode.mdl
+Attachmentanimprops=medium
+Requirescount=3
+Requires=TALT
+Requires1=TWN2,TALT
+Requires2=TWN3,TALT
+ScoreScreenIcon=UI\Glues\ScoreScreen\scorescreen-hero-forsakenpaladin.blp

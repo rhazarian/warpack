@@ -4,6 +4,7 @@ B=WESTRING_LOCALE_BARRENS,TerrainArt\Blight\Barrens_Blight
 //#LINENOBETA
 K=WESTRING_LOCALE_BLACKCITADEL,TerrainArt\Blight\Citadel_Blight
 Y=WESTRING_LOCALE_CITYSCAPE,TerrainArt\Blight\Village_Blight
+P=WESTRING_LOCALE_CITYSCAPE_RUINS,TerrainArt\Blight\Village_Blight
 X=WESTRING_LOCALE_DALARAN,TerrainArt\Blight\Village_Blight
 //#LINENOBETA
 J=WESTRING_LOCALE_DALARANRUINS,TerrainArt\Blight\DRuins_Blight
@@ -11,6 +12,8 @@ D=WESTRING_LOCALE_DUNGEON,TerrainArt\Blight\Cave_Blight
 C=WESTRING_LOCALE_FELWOOD,TerrainArt\Blight\Felwood_Blight
 //#LINENOBETA
 I=WESTRING_LOCALE_ICECROWN,TerrainArt\Blight\Ice_Blight
+e=WESTRING_LOCALE_LORDAERON_CAPITAL,TerrainArt\Blight\Village_Blight
+R=WESTRING_LOCALE_LORDAERON_CAPITAL_RUINS,TerrainArt\Blight\Village_Blight
 F=WESTRING_LOCALE_LORDAERON_FALL,TerrainArt\Blight\Lordf_Blight
 L=WESTRING_LOCALE_LORDAERON_SUMMER,TerrainArt\Blight\Lords_Blight
 W=WESTRING_LOCALE_LORDAERON_WINTER,TerrainArt\Blight\Lordw_Blight
@@ -21,6 +24,8 @@ Z=WESTRING_LOCALE_RUINS,TerrainArt\Blight\Ruins_Blight
 G=WESTRING_LOCALE_DUNGEON2,TerrainArt\Blight\Dungeon_Blight
 V=WESTRING_LOCALE_VILLAGE,TerrainArt\Blight\Village_Blight
 Q=WESTRING_LOCALE_VILLAGEFALL,TerrainArt\Blight\VillageFall_Blight
+u=WESTRING_LOCALE_UNDERCITY,TerrainArt\Blight\Village_Blight
+M=WESTRING_MISCSET
 
 //***************************************************************//
 // Note do not delete these for the following time.  
@@ -75,6 +80,10 @@ O=Environment\DNC\DNCLordaeron\DNCLordaeronTerrain\DNCLordaeronTerrain.mdl
 K=Environment\DNC\DNCLordaeron\DNCLordaeronTerrain\DNCLordaeronTerrain.mdl
 //#LINENOBETA
 J=Environment\DNC\DNCDalaran\DNCDalaranTerrain\DNCDalaranTerrain.mdl
+u=Environment\DNC\DNCUnderground\DNCUndergroundTerrain\DNCUndergroundTerrain.mdl
+e=Environment\DNC\DNCLordaeron\DNCLordaeronTerrain\DNCLordaeronTerrain.mdl
+P=Environment\DNC\DNCDalaran\DNCDalaranTerrain\DNCDalaranTerrain.mdl
+R=Environment\DNC\DNCDalaran\DNCDalaranTerrain\DNCDalaranTerrain.mdl
 
 [UnitLights]
 L=Environment\DNC\DNCLordaeron\DNCLordaeronUnit\DNCLordaeronUnit.mdl
@@ -99,6 +108,10 @@ O=Environment\DNC\DNCLordaeron\DNCLordaeronUnit\DNCLordaeronUnit.mdl
 K=Environment\DNC\DNCLordaeron\DNCLordaeronUnit\DNCLordaeronUnit.mdl
 //#LINENOBETA
 J=Environment\DNC\DNCDalaran\DNCDalaranUnit\DNCDalaranUnit.mdl
+e=Environment\DNC\DNCLordaeron\DNCLordaeronUnit\DNCLordaeronUnit.mdl
+u=Environment\DNC\DNCUnderground\DNCUndergroundUnit\DNCUndergroundUnit.mdl
+P=Environment\DNC\DNCDalaran\DNCDalaranUnit\DNCDalaranUnit.mdl
+R=Environment\DNC\DNCDalaran\DNCDalaranUnit\DNCDalaranUnit.mdl
 
 [DoodadCategories]
 O=WESTRING_DTYPE_PROPS,ReplaceableTextures\WorldEditUI\Doodad-Prop
@@ -138,6 +151,7 @@ B=WESTRING_DTYPE_BRIDGE,ReplaceableTextures\WorldEditUI\Doodad-Bridge
 19=Environment\Sky\NorthrendSky\NorthrendSky.mdl,WESTRING_SKYMODEL_SKY20
 20=Environment\Sky\VillageFallSky\VillageFallSky.mdl,WESTRING_SKYMODEL_SKY21
 21=Environment\Sky\VillageSky\VillageSky.mdl,WESTRING_SKYMODEL_SKY22
+22=Environment\Sky\ArcaneSky\ArcaneSky.mdl,WESTRING_SKYMODEL_SKY23
 
 [DayAmbience]
 L=LordaeronSummerDay
@@ -299,7 +313,7 @@ J=Default
 // Value 2: Integer indicating which animation sequence to use
 // Value 3: Model file for screen graphics
 [LoadingScreens]
-NumScreens=101
+NumScreens=121
 00=0,WESTRING_LOADINGSCREEN_TUTORIAL01,0,UI\Glues\Loading\Backgrounds\Campaigns\TutorialBackground.mdl
 01=0,WESTRING_LOADINGSCREEN_TUTORIAL02,1,UI\Glues\Loading\Backgrounds\Campaigns\TutorialBackground.mdl
 02=0,WESTRING_LOADINGSCREEN_HUMAN01,0,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
@@ -453,13 +467,33 @@ NumScreens=101
 98=1,WESTRING_LOADINGSCREEN_TUTORIAL03,1,UI\Glues\Loading\Backgrounds\Campaigns\TutorialBackground.mdl
 99=1,WESTRING_LOADINGSCREEN_TUTORIAL04,1,UI\Glues\Loading\Backgrounds\Campaigns\TutorialBackground.mdl
 100=1,WESTRING_LOADINGSCREEN_TUTORIAL05,1,UI\Glues\Loading\Backgrounds\Campaigns\TutorialBackground.mdl
+101=1,WESTRING_LOADINGSCREEN_HUMANR01,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+102=1,WESTRING_LOADINGSCREEN_HUMANR02,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+103=1,WESTRING_LOADINGSCREEN_HUMANR03_INTERLUDE,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+104=1,WESTRING_LOADINGSCREEN_HUMANR03,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+105=1,WESTRING_LOADINGSCREEN_HUMANR04,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+106=1,WESTRING_LOADINGSCREEN_UNDEADR01,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+107=1,WESTRING_LOADINGSCREEN_UNDEADR01_02,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+108=1,WESTRING_LOADINGSCREEN_UNDEADR01_03,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+109=1,WESTRING_LOADINGSCREEN_UNDEADR01_04,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+110=1,WESTRING_LOADINGSCREEN_UNDEADR01_05,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+111=1,WESTRING_LOADINGSCREEN_UNDEADR01_06,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+112=1,WESTRING_LOADINGSCREEN_UNDEADR02,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+113=1,WESTRING_LOADINGSCREEN_UNDEADR02_01,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+114=1,WESTRING_LOADINGSCREEN_UNDEADR02_02,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+115=1,WESTRING_LOADINGSCREEN_UNDEADR02_03,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+116=1,WESTRING_LOADINGSCREEN_UNDEADR02_04,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+117=1,WESTRING_LOADINGSCREEN_UNDEADR02_06,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+118=1,WESTRING_LOADINGSCREEN_UNDEADR03_INTERLUDE,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+119=1,WESTRING_LOADINGSCREEN_UNDEADR03A,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
+120=1,WESTRING_LOADINGSCREEN_UNDEADR03B,1,UI\Glues\Loading\Backgrounds\Campaigns\LordaeronBackground.mdl
 
 [PrologueScreens]
 NumScreens=1
 00=0,WESTRING_UNKNOWN,0,UI\Glues\Loading\LoadGlue.mdl
 
 [CampaignScreens]
-NumScreens=12
+NumScreens=14
 00=0,WESTRING_CAMPAIGNSCREEN_TUTORIAL,0,UI\Glues\SinglePlayer\TutorialCampaign3D\TutorialCampaign3D.mdl
 01=0,WESTRING_CAMPAIGNSCREEN_HUMAN,0,UI\Glues\SinglePlayer\HumanCampaign3D\HumanCampaign3D.mdl
 02=0,WESTRING_CAMPAIGNSCREEN_ORC,0,UI\Glues\SinglePlayer\OrcCampaign3D\OrcCampaign3D.mdl
@@ -476,6 +510,10 @@ NumScreens=12
 10=1,WESTRING_CAMPAIGNSCREEN_UNDEADEXPANSION,0,UI\Glues\SinglePlayer\Undead3D_Exp\Undead3D_Exp.mdl
 //#LINENOBETA
 11=1,WESTRING_CAMPAIGNSCREEN_ORCEXPANSION,0,UI\Glues\SinglePlayer\Orc_Exp\Orc_Exp.mdl
+//#LINENOBETA
+12=1,WESTRING_CAMPAIGNSCREEN_HUMANREBIRTH,0,UI\Glues\SinglePlayer\HumanRECampaign3D\HumanRECampaign3D.mdl
+//#LINENOBETA
+13=1,WESTRING_CAMPAIGNSCREEN_UNDEADREBIRTH,0,UI\Glues\SinglePlayer\UndeadRECampaign3D\UndeadRECampaign3D.mdl
 
 [CampaignScreenTags]
 // Optional extra entries for each CampaignScreens entry to reference data from
@@ -577,6 +615,8 @@ ShallowWater=WESTRING_SHALLOWWATER,ReplaceableTextures\WorldEditUI\CliffBrush01
 Blight=WESTRING_BLIGHT,TerrainArt\Blight\Lords_Blight
 Nothing=WESTRING_NOTHINGTILE,ReplaceableTextures\WorldEditUI\BoundaryPlace
 Unnothing=WESTRING_REMOVENOTHINGTILE,ReplaceableTextures\WorldEditUI\BoundaryRemove
+Alpha=WESTRING_ALPHATILE,ReplaceableTextures\WorldEditUI\AlphaBrush
+
 
 [BrushShapes]
 0=WESTRING_BRUSH_CIRCLE,ReplaceableTextures\WorldEditUI\TextureBrush03
@@ -816,6 +856,15 @@ SnEIcon_SoundCategoryOpen=ReplaceableTextures\WorldEditUI\Editor-TriggerGroup-Op
 SnEIcon_SoundFile=ReplaceableTextures\WorldEditUI\SoundEditor-UseSound
 SnEIcon_MusicFile=ReplaceableTextures\WorldEditUI\SoundEditor-UseMusic
 
+// Light Editor icons
+LightEIcon_Category=ReplaceableTextures\WorldEditUI\Editor-TriggerGroup.blp
+LightEIcon_CategoryOpen=ReplaceableTextures\WorldEditUI\Editor-TriggerGroup-Open.blp
+LightEIcon_File=ReplaceableTextures\WorldEditUI\LightEditor-Light.blp
+
+// Object Group Editor Icons
+OGEIcon_Group=ReplaceableTextures\WorldEditUI\Editor-TriggerGroup.blp
+OGEIcon_Unit=ReplaceableTextures\WorldEditUI\Actions-Unit.blp
+
 // Campaign Editor icons
 CEIcon_Campaign=ReplaceableTextures\WorldEditUI\Editor-Campaign
 CEIcon_Map=ReplaceableTextures\WorldEditUI\CampaignEditor-Map
@@ -876,6 +925,8 @@ ToolBarIcon_Module_AIEditor=ReplaceableTextures\WorldEditUI\Editor-Toolbar-AIEdi
 ToolBarIcon_Module_ObjectManager=ReplaceableTextures\WorldEditUI\Editor-Toolbar-ObjectManager.blp
 ToolBarIcon_Module_AssetManager=ReplaceableTextures\WorldEditUI\Editor-Toolbar-ImportManager
 ToolBarIcon_Module_SoundSet=ReplaceableTextures\WorldEditUI\Editor-Toolbar-SoundSetManager
+ToolBarIcon_Module_LightEditor=ReplaceableTextures\WorldEditUI\LightEditor-Light.blp
+ToolBarIcon_Module_ObjectGroupEditor=ReplaceableTextures\WorldEditUI\Editor-MultipleDoodads.blp
 ToolBarIcon_TestMap=ReplaceableTextures\WorldEditUI\Editor-TestMap.blp
 ToolBarIcon_SE_Variables=ReplaceableTextures\WorldEditUI\Editor-ScriptVariable.blp
 ToolBarIcon_SE_NewCategory=ReplaceableTextures\WorldEditUI\Editor-TriggerGroup.blp
@@ -1045,3 +1096,9 @@ Default=Environment/EnvironmentMap/LordaeronSummer/night_ibl.tif
 [PortraitEnvironmentMap]
 //A=Environment/EnvironmentMap/Ashenvale/night_ibl.tif
 Default=Environment/EnvironmentMap/Portraits/PortraitDefault_IBL.tif
+
+[DayWaterEnvironmentMap]
+Default=Environment/EnvironmentMap/LordaeronSummer/water_ibl.tif
+
+[NightWaterEnvironmentMap]
+Default=Environment/EnvironmentMap/LordaeronSummer/water_ibl.tif

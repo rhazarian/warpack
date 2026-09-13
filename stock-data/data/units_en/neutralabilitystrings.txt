@@ -924,6 +924,31 @@ Hotkey=E
 Name=Inventory
 EditorSuffix= (Hero)
 
+// Equipment Inventory
+[AInx]
+Name=Equipment Inventory
+EditorSuffix= (Hero)
+
+// Talents
+[ATal]
+Name=Talents
+EditorSuffix= (Hero)
+
+// Hero preview
+[Aequ]
+Name=Equipment Slots
+EditorSuffix= (Hero)
+
+// Grant Talent Point
+[ATap]
+Name=Grant Talent Point
+EditorSuffix= (Hero)
+
+// Stats
+[ASde]
+Name=Stat Details
+EditorSuffix= (Hero)
+
 // Spiked Shell
 [ANth]
 Name=Spiked Shell
@@ -2641,3 +2666,78 @@ EditorName=Cluster Rockets (Effect)
 
 [XNhs]
 EditorName=Healing Spray (Effect)
+
+[AIni]
+Name=Expanded Inventory
+Ubertip="Click to open an expanded inventory."
+
+
+// Sacred Aura - forsaken paladin
+[AHpa]
+Name=Sacred Aura
+Tip=Sacred Aura - [|cffffcc00Level 1|r],Sacred Aura - [|cffffcc00Level 2|r],Sacred Aura - [|cffffcc00Level 3|r]
+UberTip="Gives <AHpa,DataA1,%>% Magic Resistance and <AHpa,DataB1>% increased healing received to nearby friendly units.","Gives <AHpa,DataA2,%>% Magic Resistance and <AHpa,DataB2>% increased healing received to nearby friendly units.","Gives <AHpa,DataA3,%>% Magic Resistance and <AHpa,DataB3>% increased healing recieved to nearby friendly units."
+Hotkey=E
+Researchtip="Learn Sacred Aura - [|cffffcc00Level %d|r]"
+Researchubertip="Gives additional Magic Resistance and increased healing received to nearby friendly units. |n|n|cffffcc00Level 1|r - <AHpa,DataA1,%>% Magic Resistance, <AHpa,DataB1>% increased healing received. |n|cffffcc00Level 2|r - <AHpa,DataA2,%>% Magic Resistance, <AHpa,DataB2>% increased healing received. |n|cffffcc00Level 3|r - <AHpa,DataA3,%>% Magic Resistance, <AHpa,DataB3>% increased healing received."
+Researchhotkey=E
+
+// Sacred Aura Buff
+[BHas]
+Bufftip=Sacred Aura
+Buffubertip="This unit has increased Magic Resistance and receives greater healing."
+EditorSuffix= (Friendly)
+
+
+// Consecration
+[AHcr]
+Name=Consecration
+Tip=Consecration - [|cffffcc00Level 1|r],Consecration - [|cffffcc00Level 2|r],Consecration - [|cffffcc00Level 3|r]
+UberTip="Bless the ground, healing nearby friendly living units for <AHcr,DataA1> hit points per second. Enemy Undead units take <AHcr,DataB1> damage per second and have incoming healing reduced by <AHcr,DataC1>%. |nLasts <AHcr,Dur1> seconds.","Bless the ground, healing nearby friendly living units for <AHcr,DataA2> hit points per second. Enemy Undead units take <AHcr,DataB2> damage per second and have incoming healing reduced by <AHcr,DataC2>%. |nLasts <AHcr,Dur2> seconds.","Bless the ground, healing nearby friendly living units for <AHcr,DataA3> hit points per second. Enemy Undead units take <AHcr,DataB3> damage per second and have incoming healing reduced by <AHcr,DataC3>%. |nLasts <AHcr,Dur3> seconds."
+Hotkey=C
+Researchtip="Learn Consecration - [|cffffcc00Level %d|r]"
+Researchubertip="Bless the ground, healing living allies and burning enemy Undead while reducing their healing received. |n|n|cffffcc00Level 1|r - Heals <AHcr,DataA1> hit points per second, deals <AHcr,DataB1> damage per second, reduces healing by <AHcr,DataC1>%. Lasts <AHcr,Dur1> seconds. |n|cffffcc00Level 2|r - Heals <AHcr,DataA2> hit points per second, deals <AHcr,DataB2> damage per second, reduces healing by <AHcr,DataC2>%. Lasts <AHcr,Dur2> seconds. |n|cffffcc00Level 3|r - Heals <AHcr,DataA3> hit points per second, deals <AHcr,DataB3> damage per second, reduces healing by <AHcr,DataC3>%. Lasts <AHcr,Dur3> seconds."
+Researchhotkey=C
+
+// Consecration Ally
+[BHcf]
+Bufftip=Consecration
+Buffubertip="This unit is standing on holy ground; it is healing every second."
+EditorSuffix= (Friendly)
+
+// Consecration Enemy
+[BHce]
+Bufftip=Consecration
+Buffubertip="This unit is standing on holy ground; it is taking damage every second and receives less healing."
+EditorSuffix= (Hostile)
+
+// Righteous Fury
+[ANcp]
+Name=Righteous Fury
+Tip=Righteous Fury - [|cffffcc00Level 1|r],Righteous Fury - [|cffffcc00Level 2|r],Righteous Fury - [|cffffcc00Level 3|r]
+UberTip="Dashes towards a target point up to <ANcp,Rng1> range away, dealing <AHch,DataB1> damage to enemy land units hit along the way, and slowing their movement by <ANcp,DataI1,%>% and attack rate by <ANcp,DataJ1,%>%.","Dashes towards a target point up to <ANcp,Rng2> range away, dealing <ANcp,DataB2> damage to enemy land units hit along the way, and slowing their movement by <ANcp,DataI2,%>% and attack rate by <ANcp,DataJ2,%>%.","Dashes towards a target point up to <ANcp,Rng3> range away, dealing <ANcp,DataB3> damage to enemy land units hit along the way, and slowing their movement by <ANcp,DataI3,%>% and attack rate by <ANcp,DataJ3,%>%."
+Hotkey=F
+Researchtip="Learn Righteous Fury - [|cffffcc00Level %d|r]"
+Researchubertip="Dash towards a target point, dealing damage to and slowing the movement speed and attack rate of enemy land units passed through.|n|n|cffffcc00Level 1|r - <ANcp,Rng1> range, <ANcp,DataB1> damage, <ANcp,DataI1,%>% movement speed, <ANcp,DataJ1,%>% attack rate. |n|cffffcc00Level 2|r - <ANcp,Rng2> range, <ANcp,DataB2> damage, <ANcp,DataI2,%>% movement speed, <ANcp,DataJ2,%>% attack rate. |n|cffffcc00Level 3|r - <ANcp,Rng3> range, <ANcp,DataB3> damage, <ANcp,DataI3,%>% movement speed, <ANcp,DataJ3,%>% attack rate."
+Researchhotkey=F
+
+// Righteous Fury Slow Buff
+[BNrs]
+Bufftip=Righteous Fury
+Buffubertip="This unit has been hit by Righteous Fury; its movement speed and attack rate are reduced."
+
+// Cleansing Fire
+[AHcl]
+Name=Cleansing Fire
+Tip=Cleansing Fire
+UberTip="Call upon the Light, removing all debuffs from nearby friendly units and all buffs from nearby enemy units. Friendly units are healed for <AHcl,DataA1> hit points, and gain <AHcl,DataD1>% bonus to damage for <AHcl,DataC1> seconds. For each debuff removed from a friendly unit, that unit heals an additional <AHcl,DataB1> hitpoints and gains an additional <AHcl,DataE1>% bonus to damage. Enemy units are stunned for <AHcl,DataF1> seconds.|n|cffffcc00Deals <AHcl,DataG1> damage to summoned units.|r"
+Hotkey=R
+Researchtip="Learn Cleansing Fire"
+Researchubertip="Call upon the Light, removing all debuffs from nearby friendly units and all buffs from nearby enemy units. Friendly units are healed for <AHcl,DataA1> hit points, and gain <AHcl,DataD1>% bonus to damage for <AHcl,DataC1> seconds. For each debuff removed from a friendly unit, that unit heals an additional <AHcl,DataB1> hitpoints and gains an additional <AHcl,DataE1>% bonus to damage.Enemy units are stunned for <AHcl,DataF1> seconds.|n|cffffcc00Deals <AHcl,DataG1> damage to summoned units.|r"
+Researchhotkey=R
+
+// Cleansing Fire Buff
+[BHcl]
+Bufftip=Cleansing Fire
+Buffubertip="This unit has been cleansed; it has increased damage."
+

@@ -586,6 +586,15 @@ Order=build
 // Inventory
 [AInv]
 
+// Enhanced Inventory
+[AInx]
+
+// Talents
+[ATal]
+
+// Grant Talent Point
+[ATap]
+
 // Thorns
 [ANth]
 Buttonpos=1,2
@@ -1590,3 +1599,30 @@ Buttonpos=0,2
 Order=forkedlightning
 
 [BIhm]
+
+// Consecration
+[AHcr]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=consecration
+
+// Cleansing Fire
+[AHcl]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=cleansingfire
+
+
+// Righteous Fury
+[ANcp]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=righteousfury
+
+// Sacred Aura - Forsaken Paladin
+[AHpa]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+//Sacred Aura buff
+[BHas]

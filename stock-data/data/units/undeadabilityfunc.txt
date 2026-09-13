@@ -256,7 +256,6 @@ Requires=Rupc
 
 [Aap2]
 Buttonpos=0,2
-Requires=Rupc
 
 [Aap3]
 Buttonpos=1,2

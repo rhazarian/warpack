@@ -15,6 +15,9 @@ Order=spiritwolf
 Buttonpos=0,2
 Order=Serpentward
 
+// Disease Cloud (blightweaver)
+[Apbw]
+Buttonpos=2,2
 
 // Avatar (garithos)
 [ANav]
@@ -248,3 +251,1470 @@ Order=elementalfury
 Missilespeed=150
 
 // Voodoo Spirits (Rokhan)
+
+// -------------------------------------
+// ---------REBIRTH ABILITIES-----------
+// -------------------------------------
+
+// Sacred Flame aka Lights Mercy
+[AHsf]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=lightsmercy
+
+//lights mercy talent 1
+[AHm1]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=lightsmercy
+
+//lights mercy talent 2
+[AHm2]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=lightsmercy
+
+//lights mercy talent 3
+[AHm3]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=lightsmercy
+
+//sacred fire buff
+[BHsf]
+
+// Mind Control
+[AHmc]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=mindcontrol
+
+//mind control talent 1
+[AHz1]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=mindcontrol
+
+//mind control talent 2
+[AHz2]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=mindcontrol
+
+//mind control talent 3
+[AHz3]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=mindcontrol
+
+//Mind control buff
+[BHmc]
+
+// Sacred Aura
+[AHas]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Sacred Aura talent 1
+[AHa1]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Sacred Aura talent 2
+[AHa2]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Sacred Aura talent 3
+[AHa3]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+//Sacred Aura buff
+[BHas]
+
+// Surge of Light
+[AHsl]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=surgeoflight
+
+// Surge of Light talent 1
+[AHl1]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=surgeoflight
+
+// Surge of Light talent 2
+[AHl2]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=surgeoflight
+
+// Surge of Light talent 3
+[AHl3]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=surgeoflight
+
+// Challenging Call
+[AHnt]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=challengingcall
+
+//Sweeping Strike
+[AHsw]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=sweepingstrike
+
+//Sweeping Strike - talent 1
+[AHs1]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=sweepingstrike
+
+//Sweeping Strike - talent 3
+[AHs2]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=sweepingstrike
+
+//Sweeping Strike - talent 3
+[AHs3]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=sweepingstrike
+
+//relentless cleave
+[AUsw]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=relentlesscleave
+
+//relentless cleave - talent 1
+[AUs1]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=relentlesscleave
+
+//relentless cleave - talent 2
+[AUs2]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=relentlesscleave
+
+//relentless cleave - talent 3
+[AUs3]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=relentlesscleave
+
+// Heroic Slash
+[AHhs]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=heroicslash
+
+// Heroic Slash talent 1
+[AHv1]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=heroicslash
+
+// Heroic Slash talent 2
+[AHv2]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=heroicslash
+
+// Heroic Slash talent 3
+[AHv3]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=heroicslash
+
+// Inspire Courage
+[AHic]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=inspirecourage
+
+// Inspire Courage talent 1
+[AHi1]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=inspirecourage
+
+// Inspire Courage talent 2
+[AHi2]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=inspirecourage
+
+// Inspire Courage talent 3
+[AHi3]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=inspirecourage
+
+// Raise the Banner  Aura
+[Aaca]
+Buttonpos=0,-11
+
+// Headsplitter
+[AHhr]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=headsplitter
+
+// Headsplitter talent 1
+[AHh1]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=headsplitter
+
+// Headsplitter talent 2
+[AHh2]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=headsplitter
+
+// Headsplitter talent 3
+[AHh3]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=headsplitter
+
+// Grit
+[AHgr]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Grit talent 1
+[AHg1]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Grit talent 2
+[AHg2]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Grit talent 3
+[AHg3]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Blade Dance aka unyielding guard
+[AHbd]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=unyieldingguard
+
+// unyielding guard - talent 1
+[AHb1]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=unyieldingguard
+
+// unyielding guard - talent 2
+[AHb2]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=unyieldingguard
+
+// unyielding guard - talent 3
+[AHb3]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=unyieldingguard
+
+// Blade Dance aka undying defiance
+[AUbd]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=unyieldingguard
+
+// undying defiance - talent 1
+[AUb1]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=unyieldingguard
+
+// undying defiance - talent 2
+[AUb2]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=unyieldingguard
+
+// undying defiance - talent 3
+[AUb3]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=unyieldingguard
+
+// Warcry
+[AHwc]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=warcry
+
+// Warcry - t1
+[AHw1]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=warcry
+
+// Warcry - t2
+[AHw2]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=warcry
+
+// Warcry - t3
+[AHw3]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=warcry
+
+// Undead Vengenance aka grim conviction
+[AUvg]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=grimconviction
+
+// grim conviction - talent 1
+[AUv1]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=grimconviction
+
+// grim conviction - talent 2
+[AUv2]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=grimconviction
+
+// grim conviction - talent 3
+[AUv3]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=grimconviction
+
+// Avatar of light
+[AHal]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=undeadvengeance
+
+// Battering Ram
+[AUbr]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=batteringram
+
+// Battering Ram - talent 1
+[AUr1]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=batteringram
+
+// Battering Ram - talent 2
+[AUr2]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=batteringram
+
+// Battering Ram - talent 3
+[AUr3]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=batteringram
+
+// Battering Ram - talent 1
+[AUb1]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=batteringram
+
+// Holy Wrath
+[AHpb]
+Buttonpos=0,2
+Researchbuttonpos=0,0
+Order=holywrath
+
+// Heroic Challenge
+[AHhc]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=heroicchallenge
+
+// Heroic Challenge talent 1
+[AHu1]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=heroicchallenge
+
+// Heroic Challenge talent 2
+[AHu2]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=heroicchallenge
+
+// Heroic Challenge talent 3
+[AHu3]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Order=heroicchallenge
+
+// Guiding Hand
+[AHgh]
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+Orderon=guidinghand
+Orderoff=unguidinghand
+
+// Guiding Hand talent 1
+[AHq1]
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+Orderon=guidinghand
+Orderoff=unguidinghand
+
+// Guiding Hand talent 2
+[AHq2]
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+Orderon=guidinghand
+Orderoff=unguidinghand
+
+// Guiding Hand talent 3
+[AHq3]
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+Orderon=guidinghand
+Orderoff=unguidinghand
+
+// Soul Lantern
+[AUla]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Researchbuttonpos=1,0
+Orderon=soullantern
+Orderoff=unsoullantern
+
+// Soul Lantern t1
+[AUl1]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Researchbuttonpos=1,0
+Orderon=soullantern
+Orderoff=unsoullantern
+
+// Soul Lantern t2
+[AUl2]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Researchbuttonpos=1,0
+Orderon=soullantern
+Orderoff=unsoullantern
+
+// Soul Lantern t3
+[AUl3]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Researchbuttonpos=1,0
+Orderon=soullantern
+Orderoff=unsoullantern
+
+// Raise the Banner  summon
+[AHct]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=raisethebanner
+
+
+// Blue Dragon Figurine
+[Abdf]
+Buttonpos=2,1
+Missilespeed=1050
+MissileHoming=0
+Order=channel
+
+// Edric's Eye (Forsaken Gaze)
+[AIee]
+Buttonpos=2,1
+Unbuttonpos=2,1
+Missilespeed=0
+MissileHoming=0
+Orderon=faeriefireon
+Orderoff=faeriefireoff
+Order=channel
+
+// Lesser Mark of the Forsaken
+[Almf]
+Buttonpos=2,1
+Unbuttonpos=2,1
+Missilespeed=1100
+MissileHoming=1
+Order=channel
+
+// Essence of the Spider Queen
+[Aesq]
+Buttonpos=2,1
+Unbuttonpos=2,1
+Order=channel
+
+// Knight's javelin
+[Atkj]
+Buttonpos=2,1
+Unbuttonpos=2,1
+Missilespeed=1000
+MissileHoming=1
+Order=channel
+
+// Forsaken Fangs
+[Atff]
+Buttonpos=2,1
+Unbuttonpos=2,1
+Order=channel
+
+// Lesser Mark of Time
+[ALmt]
+Buttonpos=2,1
+Unbuttonpos=2,1
+Order=slow
+Orderon=slowon
+Orderoff=slowoff
+
+// Bag of Dust
+[Atbd]
+Buttonpos=2,1
+Unbuttonpos=2,1
+Order=curse
+Orderon=curseon
+Orderoff=curseoff
+
+// On Hit Lightning Attack
+[Aohl]
+Buttonpos=2,1
+Unbuttonpos=2,1
+Order=curse
+Orderon=curseon
+Orderoff=curseoff
+
+// Garek Talent Tier 1a
+[GT1a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Talent Tier 1b
+[GT1b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Talent Tier 1c
+[GT1c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Talent Tier 2a
+[GT2a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Talent Tier 2b
+[GT2b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Talent Tier 2c
+[GT2c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Armor Bonus Talent
+[GT3a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Attack Bonus Talent
+[GT3b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Resolve Bonus Talent
+[GT3c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Talent Tier 4a
+[GT4a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Talent Tier 4b
+[GT4b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Garek Talent Tier 4c
+[GT4c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 1a
+[LT1a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 1b
+[LT1b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 1c
+[LT1c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 2a
+[LT2a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 2b
+[LT2b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 2c
+[LT2c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Armor Bonus Talent
+[LT3a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Attack Bonus Talent
+[LT3b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Resolve Bonus Talent
+[LT3c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 4a
+[LT4a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 4b
+[LT4b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Landen Talent Tier 4c
+[LT4c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 1a
+[IT1a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 1b
+[IT1b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 1c
+[IT1c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 2a
+[IT2a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 2b
+[IT2b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 2c
+[IT2c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Armor Bonus Talent
+[IT3a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Attack Bonus Talent
+[IT3b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Resolve Bonus Talent
+[IT3c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 4a
+[IT4a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 4b
+[IT4b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Ilastar Talent Tier 4c
+[IT4c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 1a
+[UT1a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 1b
+[UT1b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 1c
+[UT1c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 2a
+[UT2a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 2b
+[UT2b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 2c
+[UT2c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent
+[UT3a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent
+[UT3b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent
+[UT3c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 4a
+[UT4a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 4b
+[UT4b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 4c
+[UT4c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 5a
+[UT5a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 5b
+[UT5b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 5c
+[UT5c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 6a
+[UT6a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 6b
+[UT6b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// UGarek Talent Tier 6c
+[UT6c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 1a
+[AT1a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 1b
+[AT1b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 1c
+[AT1c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 2a
+[AT2a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 2b
+[AT2b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 2c
+[AT2c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent
+[AT3a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent
+[AT3b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent
+[AT3c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 4a
+[AT4a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 4b
+[AT4b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 4c
+[AT4c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 5a
+[AT5a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 5b
+[AT5b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 5c
+[AT5c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 6a
+[AT6a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 6b
+[AT6b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Anya Talent Tier 6c
+[AT6c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 1a
+[BT1a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 1b
+[BT1b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 1c
+[BT1c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 2a
+[BT2a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 2b
+[BT2b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 2c
+[BT2c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent
+[BT3a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent
+[BT3b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent
+[BT3c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 4a
+[BT4a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 4b
+[BT4b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 4c
+[BT4c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 5a
+[BT5a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 5b
+[BT5b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 5c
+[BT5c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 6a
+[BT6a]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 6b
+[BT6b]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Leonid Talent Tier 6c
+[BT6c]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// On Basic Attack - Summon Lesser Skeleton
+[Aals]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+[Asas]
+Buttonpos=0,-11
+Unbuttonpos=0,-11
+
+// Kris Incinerate
+[AIki]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+order=incinerate
+Missilespeed=1000
+MissileHoming=1
+
+// Drunken Haze (Pint of Ale)
+[Apoa]
+Buttonpos=2,1
+Researchbuttonpos=2,1
+Missilespeed=1500
+MissileHoming=1
+Order=channel
+
+// Infectious Claws 
+[Auic]
+Buttonpos=0,2
+UnButtonpos=0,2
+Researchbuttonpos=0,2
+Missilespeed=0
+MissileHoming=1
+Order=channel
+
+// Summon Infectious Ghoul (Infectious Ghoul Charm Item)
+[Asic]
+Buttonpos=2,1
+Researchbuttonpos=2,1
+Order=channel
+
+// Sacred Aura - Ilastar
+[AHas]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+
+//apprehend single target
+[AHen]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Missilespeed=1500
+MissileHoming=1
+Order=apprehend
+
+// Apprehend talent 1
+[AHap]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Missilespeed=1500
+MissileHoming=1
+Order=apprehendaoe
+
+//apprehend talent 2
+[AHe2]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Missilespeed=1500
+MissileHoming=1
+Order=apprehend
+
+//apprehend talent 3
+[AHe3]
+Buttonpos=1,2
+Researchbuttonpos=1,0
+Missilespeed=1500
+MissileHoming=1
+Order=apprehend
+
+// Evasion Stackable
+[AHes]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Hardened Skin (Stacking)
+[AHss]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Thorny Shield (Stacking)
+[AUss]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Dark Ranger's Bracers Summon
+[AFRq]
+Buttonpos=2,1
+Researchbuttonpos=2,1
+Order=channel
+
+// Dark Ranger's Insignia Summon
+[AFRw]
+Buttonpos=2,1
+Researchbuttonpos=2,1
+Order=channel
+
+//Valiant Charge
+[AHch]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=valiantcharge
+
+//Valiant Charge - talent 1
+[AHc1]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=valiantcharge
+
+//Valiant Charge - talent 2
+[AHc2]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=valiantcharge
+
+//Valiant Charge - talent 3
+[AHc3]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+Order=valiantcharge
+
+// Withering Fire
+[AUwf]
+Buttonpos=0,2
+Reserachbuttonpos=0,0
+order=witheringfire
+
+// Withering Fire t1
+[AUw1]
+Buttonpos=0,2
+Reserachbuttonpos=0,0
+order=witheringfire
+
+// Withering Fire t2
+[AUw2]
+Buttonpos=0,2
+Reserachbuttonpos=0,0
+order=witheringfire
+
+// Withering Fire t3
+[AUw3]
+Buttonpos=0,2
+Reserachbuttonpos=0,0
+order=witheringfire
+
+// Banshee's Wail
+[AUwc]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=Locustswarm
+
+// Banshee's Wail t1
+[AUi1]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=Locustswarm
+ 
+// Banshee's Wail t2
+[AUi2]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=Locustswarm
+
+// Banshee's Wail t3
+[AUi3]
+Buttonpos=3,2
+Researchbuttonpos=3,0
+Order=Locustswarm
+
+// Deathseeker Arrows - Anya
+[AUdb]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+
+// Deathseeker Arrows - Anya t1
+[AUd1]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+
+// Deathseeker Arrows - Anya t2
+[AUd2]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+
+// Deathseeker Arrows - Anya t3
+[AUd3]
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+// Restoration (Endless Flask of Restoration)
+[Aefr]
+Buttonpos=2,1
+Researchbuttonpos=2,1
+Order=channel
+
+// Item Totem Ogre Magi Bloodlust
+[Aomb]
+Buttonpos=0,2
+Unbuttonpos=0,2
+Order=bloodlust
+OrderOn=bloodluston
+OrderOff=bloodlustoff
+
+// Garek Warcry Cleave
+[AGca]
+Buttonpos=0,-11
+
+//Garek Warcry Magic Immunity
+[AHw4]
+Buttonpos=0,-11
+
+//Garek Warcry Spell Crit
+[AHw5]
+Buttonpos=0,-11
+
+//Garek Warcry lifesteal super
+[AHw6]
+Buttonpos=0,-11
+
+//Garek Warcry damage 
+[AHw7]
+Buttonpos=0,-11
+
+//Garek Warcry super cleave
+[AHw8]
+Buttonpos=0,-11
+
+//Garek warcry ability speed
+[AHw9]
+Buttonpos=0,-11
+
+// Attribute Bonus rebirth
+[Aaml]
+Buttonpos=1,1
+Researchbuttonpos=3,1
+Order=attributemodskill
+
+// cleric Heal
+[Asea]
+Buttonpos=0,2
+Unbuttonpos=0,2
+Order=heal
+Orderon=healon
+Orderoff=healoff
+
+// cleric Dispel Magic
+[Asdi]
+Buttonpos=1,2
+Order=dispel
+
+// cleric Inner Fire
+[Asif]
+Buttonpos=2,2
+Unbuttonpos=2,2
+Order=innerfire
+Orderon=innerfireon
+Orderoff=innerfireoff
+
+//inquisitor Flame Strike
+[Asfs]
+Buttonpos=0,2
+Order=flamestrike
+// Beware art
+// Impact art
+
+//inquisitor Soul Burn
+[Assb]
+Buttonpos=0,2
+order=soulburn
+
+//apothecary Healing Spray
+[Afhs]
+Buttonpos=0,2
+Missilespeed=1200
+Order=healingspray
+
+// apothecary Acid Bomb
+[Afab]
+Buttonpos=2,2
+Missilespeed=700
+MissileHoming=1
+order=acidbomb
+
+// apothecary chemical Frenzy
+[Afuf]
+Buttonpos=1,2
+Order=unholyfrenzy
+
+[Bfcf]
+
+
+// Item Essencium Main Summon
+[Aes1]
+Buttonpos=2,1
+Order=channel
+
+// Item Handful of Throwing Knives
+[Ahtk]
+Buttonpos=2,1
+Order=channel
+Missilespeed=700
+
+// Item Mana Bauble
+[Atmb]
+Buttonpos=2,1
+UnButtonpos=2,1
+Order=channel
+Missilespeed=1500
+MissileHoming=1
+
+// Item Rune of Fire
+[Arof]
+Buttonpos=2,1
+Order=channel
+Missilespeed=1000
+MissileHoming=1
+
+// Item Nevermelting Ice
+[Anmi]
+Buttonpos=2,1
+UnButtonpos=2,1
+Missilespeed=1500
+MissileHoming=1
+
+// Item Agitating Totem
+[Aagt]
+Buttonpos=2,1
+UnButtonpos=2,1
+Order=channel
+OrderOn=frenzyon
+OrderOff=frenzyoff
+
+// Item Bottled Storm
+[Abos]
+Buttonpos=2,1
+Order=channel
+
+// Item Shepherd's Curse
+[Ashc]
+Buttonpos=2,1
+Order=channel
+
+// Item Restorative Balm
+[Arba]
+Buttonpos=2,1
+Order=channel
+
+// Item Deathbloom Leaves
+[Adbl]
+Buttonpos=2,1
+UnButtonpos=2,1
+Order=channel
+Orderon=raisedeadon
+Orderoff=raisedeadoff
+
+// Item Glacial Shard
+[Agsh]
+Buttonpos=2,1
+Order=channel
+
+// Item Forgotten Frost Lotus
+[Affl]
+Buttonpos=2,1
+UnButtonpos=2,1
+Order=channel
+Orderon=frostarmoron
+Orderoff=frostarmoroff
+
+// Item Flame of Al'ar
+[Afoa]
+Buttonpos=2,1
+Order=channel
+
+// Item Manuscript of the Forsaken
+[Amfs]
+Buttonpos=2,1
+Order=channel
+
+// Item Armor Corrupt Spell 2
+[Aas2]
+Buttonpos=2,1
+Missilespeed=10000
+MissileHoming=1
+order=acidbomb
+
+// Item Armor Corrupt Spell 3
+[Aas3]
+Buttonpos=2,1
+Missilespeed=10000
+MissileHoming=1
+order=acidbomb
+
+// Item Armor Corrupt Spell 5
+[Aas5]
+Buttonpos=2,1
+Missilespeed=10000
+MissileHoming=1
+order=acidbomb
+
+// Item Mark of the Phoenix BoF
+[Ampb]
+Buttonpos=2,1
+Order=channel
+
+// Item Deepsea Bag CW
+[Adbw]
+Buttonpos=2,1
+Order=channel
+
+// Item Manuscript of the Forsaken
+[Alfq]
+Buttonpos=2,1
+Order=channel
+
+// altar of darkness healing aura
+[ADhr]
+
+// altar of darkness mana regen
+[ADmr]
+
+[AVsb]
+Buttonpos=0,-11
+
+[AViq]
+Buttonpos=0,-11
+
+// Item Tiara of Kirin Tor
+[Atkt]
+Missilespeed=600
+Missilehoming=1
+
+// Item Arcane Spellblade
+[Aasb]
+Missilespeed=950
+Missilehoming=1
+
+// Item Lance of the Frozen Phoenix
+[Alfp]
+Missilespeed=1500
+Missilehoming=1
+
+// Item Spell Shield 15
+[Assq]
+Order=spellshield
+
+// Item Spell Shield 12
+[Assw]
+Order=spellshield

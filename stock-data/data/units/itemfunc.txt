@@ -1110,5 +1110,1802 @@ Buttonpos=0,2
 Requires=hcas
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfFire.blp
 
+//REBIRTH ITEMS
 
+//Guardsman Helmet
+[ecgh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGuardsmanHelmet.blp
 
+//Guardsman Chestplate
+[ecgc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMoonArmor.blp
+
+//Guardsman Boots
+[ecgb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBoots.blp
+
+//Steel Sword
+[ecss]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+
+//Deerskin Gloves
+[eclg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDeerskinGloves.blp
+
+//Amulet of Vitality
+[ecav]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt.blp
+
+//Ring of Regeneration Equipment
+[ecrr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+//Purifier Blade
+[erpb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNArcaniteMelee.blp
+
+//Captain's Helmet of Bravery (Valiant Lionhelm)
+[elvl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCaptainsHelmetofBravery.blp
+
+//Aegis
+[elae]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+
+//Honed Edge
+[erhe]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNThoriumMelee.blp
+
+//Ogre Gauntlets
+[erog]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGauntletsOfOgrePower.blp
+
+//Bettys Favor
+[ebtf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAliciasFavor.blp
+
+//Ring of Mana Efficiency
+[rmef]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingGreen.blp
+
+//Boots of Haste
+[rcdr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBootsOfSpeed.blp
+
+//Tome of Talent
+[ttal]
+Art=ReplaceableTextures\CommandButtons\BTNTomeRed.blp
+
+//Dalaran Signet Ring
+[rspa]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingLionHead.blp
+
+//Ring of Leeching
+[rspv]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingVioletSpider.blp
+
+//Lion's Heart
+[rrsl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLionsHeart.blp
+
+//Mordo's Club
+[ewbl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSpikedBarricades.blp
+
+//Zombie Arm
+[ezba]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNUnholyStrength.blp
+
+//Rusty Plated Boots
+[brpb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRustyPlatedBoots.blp
+
+//Skeletal Mage Mask
+[hsmm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSkeletonMage.blp
+
+//Bone Buckler
+[eobb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBoneBuckler.blp
+
+//Worn Sandals
+[ebws]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWornSandals.blp
+
+//Chipped Shield
+[eocs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNUnholyArmor.blp
+
+//Fractured Skull
+[eofs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNFracturedSkull.blp
+
+//Wand of the Apprentice
+[ewoa]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWandoftheApprentice.blp
+
+//Mundane Wand
+[epmw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMundaneWand.blp
+
+//Guardsman Dagger
+[epgd]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGuardsmanDagger.blp
+
+//Lesser Blade of the Cultist
+[elbc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLesserBladeoftheCultist.blp
+
+//Guardsman Longsword
+[epgl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGuardsmanLongsword.blp
+
+//Chipped Circlet of Clarity
+[eccc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCirclet.blp
+
+//Damaged Spellbreaker Helmet
+[edsh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDamagedSpellbreakerHelmet.blp
+
+//Frayed Headwear of the Magehunter
+[efhm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNFrayedHeadwearoftheMagehunter.blp
+
+//Frail Leather Armor
+[efla]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNFrailLeatherArmor.blp
+
+//Decrepit Sorcerer's Mantle
+[edsm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDecrepitSorcerersMantle.blp
+
+//Novice Rags
+[ecnr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNNoviceRags.blp
+
+//Worn Adventurer's Outfit
+[ewao]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWornAdventurersOutfit.blp
+
+//Rusty Bronze Gauntlets
+[erbg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRustyBronzeGauntlets.blp
+
+//Frayed Sorcerer's Handwraps
+[efsh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNFrayedSorcerersHandwraps.blp
+
+//Iron Grip Gauntlets
+[eigg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNIronGripGauntlets.blp
+
+//Gloves of Lesser Cunning
+[eglc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesofLesserCunning.blp
+
+//Heavyduty Boots
+[ebhb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHeavydutyBoots.blp
+
+//Ring of Lesser Restoration
+[erlr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingofLesserRestoration.blp
+
+//Ring of Agitated Fervor
+[eraf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingofAgitatedFervor.blp
+
+//Lesser Band of the Paladin
+[elbp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLesserBandofthePaladin.blp
+
+//Amulet of Minor Endurance
+[eame]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAmuletofMinorEndurance.blp
+
+//Ring of the Fortunate Adventurer
+[erfa]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingoftheFortunateAdventurer.blp
+
+//Talisman of Minor Insight
+[etmi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTalismanofMinorInsight.blp
+
+//Talisman of the Northern Winds
+[etnw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTalismanoftheNorthernWinds.blp
+
+//Band of the Skeletal Mage
+[ebsm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBandoftheSkeletalMage.blp
+
+//Gloves of Necromancy
+[eggn]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesofNecromancy.blp
+
+//Signet of Decay
+[ersd]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHeartOfSearinox.blp
+
+//Bone Cage Breastplate
+[ebcb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAdvancedCreatureCarapace.blp
+
+//Plaguebearer Shortsword
+[epbs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPlaguebearerShortsword.blp
+
+//Shamanistic Headwear (Tigerseye Bronze Helmet)
+[etbh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNShamanisticHeadwear.blp
+
+//Moonstone Circlet
+[ehmc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMoonstoneCirclet.blp
+
+//Tigerskin Helmet of Precision (Lionskin Helmet of Precision)
+[elhp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTigerskinHelmetofPrecision.blp
+
+//Spellbreaker Circlet (Spellbender Tiara)
+[esbt]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSpellbenderTiara.blp
+
+//Gilnean Headpiece
+[ehgh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGilneanHeadpiece.blp
+
+//Wildhammer Breastplate (Storminfused Breastplate)
+[esib]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWildhammerBreastplate.blp
+
+//Plaguebearer Cuirass
+[epbc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPlaguebearerCuirass.blp
+
+//Dreaded Chestplate
+[ecdc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDreadedChestplate.blp
+
+//Dalaran Sapphire Robes
+[edsr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDalaranSapphireRobes.blp
+
+//Mantle of the Highborne
+[emoh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMantleoftheHighborne.blp
+
+//Crusader's Gauntlets
+[egcg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCrusadersGauntlets.blp
+
+//Sucker Punch Gauntlets
+[espg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+
+//Magister's Handguards (Gloves of the Spellbinder)
+[egos]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesoftheSpellbinder.blp
+
+//Gloves of the Battlemage
+[egob]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSpellSteal.blp
+
+//Wayfarer Greaves
+[ebwg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWayfarerGreaves.blp
+
+//Citrine Adorned Boots
+[ecab]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCitrineAdornedBoots.blp
+
+//Overlord's Sabatons
+[ebos]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNOverlordsSabatons.blp
+
+//Boots of the Warm Hearth
+[ebwh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBootsoftheWarmHearth.blp
+
+//Monastery Mace
+[epmm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMonasteryMace2.blp
+
+//Gilnean Battleaxe
+[epgb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGilneasBattleaxe.blp
+
+//Silverpine Forest Shiv
+[esfs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSilverpineForestShiv.blp
+
+//Ghoulish Claw (Forsaken Claw)
+[epfc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNForsakenClaw.blp
+
+//Diamond Staff of Dalaran (Dalaran Diamond Staff)
+[edds]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDalaranDiamondStaff.blp
+
+//Twilight Opal Orb
+[etoo]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTwilightOpalOrb.blp
+
+//Grieving Blade
+[eogb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGrievingBlade.blp
+
+//Ironforge Defender
+[eoid]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNIronforgeDefender.blp
+
+//Malachite Shortsword
+[eoms]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMalachiteShortsword.blp
+
+//Jagged Jade Ring
+[ejjr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNJaggedJadeRing.blp
+
+//Intricate Emerald Pendant
+[eiep]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNIntricateEmeraldPendant.blp
+
+//Talisman of Nightmares
+[eton]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTalismanofNightmares.blp
+
+//Spellbreaker's Necklace
+[ersn]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSpellbreakersNecklace.blp
+
+//Ursoc's Gift
+[erug]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNUrsocsGift.blp
+
+//Farstrider's Amulet (Amulet of the Arcane Archer)
+[eaaa]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAmuletoftheArcaneArcher.blp
+
+//Heart of the Firelord (Heart of the Firebender)
+[erhf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHeartoftheFirebender.blp
+
+//Frenzied Ghoul Claws
+[efgc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGhoulFrenzy.blp
+
+//Butcher's Cleaver
+[ebut]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNOrcMeleeUpThree.blp
+
+//Lich Orb
+[eslo]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
+
+//Corrupted Greatsword
+[epcg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCorruptedGreatsword.blp
+
+//Helm of the Iron Guardian
+[ehig]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHelmoftheIronGuardian.blp
+
+//Vestments of the Wavespeaker (Vestments of the Waterlord)
+[evow]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNVestmentsoftheWaterlord.blp
+
+//Robes of the Kirin Tor
+[erkt]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRobesoftheKirinTor.blp
+
+//Tiara of the Kirin Tor
+[etkt]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTiaraoftheKirinTor.blp
+
+//Ring of the Runeweaver
+[errw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingoftheRuneweaver.blp
+
+//Staff of Arcane Hunger
+[esah]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNStaffofArcaneHunger.blp
+
+//Blue Dragon Figurine
+[ebdf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBlueDragonFigurine.blp
+
+//Seal of Sylvanas
+[esos]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSealofSylvanas.blp
+
+//Edric's Eye
+[etee]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEdricsEye.blp
+
+//Cursed Golden Ring
+[ecgr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCursedGoldenRing.blp
+
+//Quarry Pickaxe
+[epqp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNQuarryPickaxe.blp
+
+//Lesser Mark of the Forsaken
+[elmf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLesserMarkoftheForsaken.blp
+
+//Essence of the Spider Queen
+[eesq]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEssenceoftheSpiderQueen.blp
+
+//Webweaver's Gloves
+[ewwg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWebweaversGloves.blp
+
+//Equipment backpack
+[ebac]
+Art=ReplaceableTextures\CommandButtons\BTNbackpack.blp
+
+//Equipment backpack HGarek
+[ebhg]
+Art=ReplaceableTextures\CommandButtons\BTNbackpack.blp
+
+//Equipment backpack Landen
+[ebhl]
+Art=ReplaceableTextures\CommandButtons\BTNbackpack.blp
+
+//Equipment backpack Ilastar
+[ebhi]
+Art=ReplaceableTextures\CommandButtons\BTNbackpack.blp
+
+//Equipment backpack UGarek
+[ebug]
+Art=ReplaceableTextures\CommandButtons\BTNbackpack.blp
+
+//Equipment backpack Anya
+[ebua]
+Art=ReplaceableTextures\CommandButtons\BTNbackpack.blp
+
+//Equipment backpack Leonid
+[ebul]
+Art=ReplaceableTextures\CommandButtons\BTNbackpack.blp
+
+//Darkhound Blood
+[cdhb]
+Art=ReplaceableTextures\CommandButtons\BTNPotionRed.blp
+
+//Broodmother Venom
+[cbmv]
+Art=ReplaceableTextures\CommandButtons\BTNCorrosiveBreath.blp
+
+//Vile Fin Scale
+[cvfs]
+Art=ReplaceableTextures\CommandButtons\BTNNagaArmorUp1.blp
+
+//Mutated Rat's Whiptail
+[emrw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMutatedRatsWhiptail.blp
+
+//Sticky Slime Ring
+[essr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNStickySlimeRing.blp
+
+//Phalanx Shield
+[eops]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPhalanxShield.blp
+
+//Knight's Javelin
+[etkj]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNKnightsJavelin.blp
+
+//Undercity Chain Robes
+[eucr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNUndercityChainRobes.blp
+
+//Forsaken Fangs
+[etff]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCannibalize.blp
+
+//Deathwalkers
+[ebdw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDeathwalkers.blp
+
+//Deathwhisper
+[epdw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDeathwhisper.blp
+
+//Echoes of the Fallen
+[eref]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEchoesoftheFallen.blp
+
+//Ring of Stone Fortitude
+[ersf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingofStoneFortitude.blp
+
+//Talisman of Willpower
+[etow]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTalismanofWillpower.blp
+
+//Borelgore, the Corpulent One (Yl'ztoth, Maw of Oblivion)
+[eymo]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNIlztoth.blp
+
+//Mograine's Might
+[epmb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMograinesPummeler.blp
+
+//Flesh Golem Ribcage
+[efgh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNFleshGolemRibcage.blp
+
+//Crimson Helm of Opportunity
+[ehco]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCrimsonHelmofOpportunity.blp
+
+//Gloves of the Scarlet Crusade
+[egsc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesoftheScarletCrusade.blp
+
+//Boots of the Scarlet Crusade
+[ebsc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBootsoftheScarletCrusade.blp
+
+//Armor of the Scarlet Crusade
+[easc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNArmoroftheScarletCrusade.blp
+
+//Headpiece of the High Inquisitor
+[ehhi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHeadpieceoftheScarletCrusade.blp
+
+//Dungeon Key
+[ckdk]
+Art=ReplaceableTextures\CommandButtons\BTNMoonKey.blp
+
+//Captured Ghoul
+[cccg]
+Art=ReplaceableTextures\CommandButtons\BTNGhoul.blp
+
+//Very Very Deep Thoughts
+[cvdt]
+Art=ReplaceableTextures\CommandButtons\BTNTomeBrown.blp
+
+//Lesser Mark of Time
+[elmt]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLesserMarkofTime.blp
+
+//Bag of Dust
+[etbd]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDustOfAppearance.blp
+
+//Garithos' Head
+[cagh]
+Art=ReplaceableTextures\CommandButtons\BTNGarithos.blp
+
+//Paladin's Torso
+[cptz]
+Art=ReplaceableTextures\CommandButtons\BTNWornSteelPlate.blp
+
+//Bandit Lord's Limbs
+[cabl]
+Art=ReplaceableTextures\CommandButtons\BTNWirtsLeg.blp
+
+//glix's bombs
+[glxb]
+Art=ReplaceableTextures\CommandButtons\BTNFragmentationBombs.blp
+
+//The Kingbreaker (The Kingslayer)
+[eptk]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTheKingslayer.blp
+
+//Ravage, Herald of Obliteration
+[erho]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRavageHeraldofObliteration.blp
+
+//Kris, the Everburning
+[eske]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNKristheEverburning.blp
+
+//Painted Wooden Sword
+[epws]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPaintedWoodenSword.blp
+
+//Cork Shooter
+[escs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCorkShooter.blp
+
+//Suspicious Concoction (Pint of Ale)
+[epoa]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPintofAle.blp
+
+//Untakable Candle
+[eauc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNUntakableCandle.blp
+
+//Kobold Mining Helm
+[ekmh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNKoboldMiningHelm.blp
+
+//Lordaeron Shield
+[esls]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLordaeronShield.blp
+
+//Worn Steel Plate
+[ews1]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWornSteelPlate.blp
+
+//Forsaken Gauntlets
+[egfg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNForsakenGauntlets.blp
+
+//Desecrated Tower Shield
+[edts]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDesecratedTowerShield.blp
+
+//Wicked Fang Blade
+[ewfb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWickedFangBlade.blp
+
+//Ruby Necklace of Power
+[ernp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRubyNecklaceofPower.blp
+
+//Star of Elune
+[erse]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNStarofElune.blp
+
+//Bone Staff
+[esbs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBoneStaff.blp
+
+//Abomination's Hook
+[epah]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAbominationsHook.blp
+
+//Forsaken Champion's Helm
+[efch]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNForsakenChampionsHelm.blp
+
+//Infectious Ghoul Charm
+[eigc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNInfectiousGhoulCharm.blp
+
+//Necromancer's Plaguegreaves
+[ebnp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNNecromancersPlaguegreaves.blp
+
+//Demonic Warglaives
+[edwg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDemonicWarglaives.blp
+
+//Crown of the Resolute Monarch
+[ecrm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCrownoftheResoluteMonarch.blp
+
+//Overlord's Dreadplate
+[eodp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNOverlordsDreadplate.blp
+
+//Robes of the Battlemage
+[erbm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRobesoftheBattlemage.blp
+
+//Druidic Leafguard
+[ecdl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDruidicLeafguard.blp
+
+//Immortal Guardian's Chestplate
+[ecig]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNImmortalGuardiansChestplate.blp
+
+//The Impenetrable Fortress
+[etif]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTheImpenetrableFortress.blp
+
+//Necrolyte's March
+[esnm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNNecrolytesMarch.blp
+
+//Ring of Evasion
+[eroe]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingofEvasion.blp
+
+//Ring of Assassination
+[eroa]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingofAssassination.blp
+
+//Soulstealer
+[epss]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSoulstealer.blp
+
+//Thornguard Rapier
+[eptr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNThornguardRapier.blp
+
+//Poison Nettle
+[espn]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPoisonNettle.blp
+
+//Ring of the Sacred Grove
+[ersg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingoftheSacredGrove.blp
+
+//High Templar's Visage
+[ehtv]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHighTemplarsVisage.blp
+
+//High Templar's Conqueror
+[ehtc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHighTemplarsConqueror.blp
+
+//High Templar's Flame
+[ehtf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHighTemplarsFlame.blp
+
+//High Templar's March
+[ehtm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHighTemplarsMarch.blp
+
+//High Templar's Judgment
+[ehtj]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHighTemplarsJudgment.blp
+
+//Seal of the Red Court
+[esrc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSealoftheRedCourt.blp
+
+//Chronomaster's Gloves
+[ecmg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNChronomastersGloves.blp
+
+//Gnomish Zapper X-4000
+[egzx]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGnomishZapperX4000.blp
+
+//Vampiric Gargoyle Mask
+[evgm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNVampiricGargoyleMask.blp
+
+//Sage's Gloves
+[egsg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSagesGloves.blp
+
+//Skeletal Bow
+[epsb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSkeletalBow.blp
+
+//Energy Band
+[ereb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEnergyBand.blp
+
+//Crystal Sword
+[epcs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCrystalSword.blp
+
+//Staff of Jordan
+[epsj]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNStaffofJordan.blp
+
+//Ogre Warclub
+[epow]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNOgreWarclub.blp
+
+//Convergence of Fates
+[ecof]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNConvergenceofFates.blp
+
+//Diamond Adorned Chestplate
+[edac]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDiamondAdornedChestplate.blp
+
+//Diamond Tiara
+[ehdt]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDiamondTiara.blp
+
+//Colossal Battleaxe
+[ecba]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNColossalBattleaxe.blp
+
+//Dark Iron Helm
+[edih]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkIronHelm.blp
+
+//Dark Iron Breastplate
+[edib]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkIronBreastplate.blp
+
+//Dark Iron Gauntlets
+[edig]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkIronGauntlets.blp
+
+//Dark Iron Greaves
+[edif]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkIronGreaves.blp
+
+//Dark Iron Shield
+[edis]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkIronShield.blp
+
+//Arcane Spellblade
+[easb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNArcaneSpellblade.blp
+
+//Nexus Shiv
+[esns]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNNexusShiv.blp
+
+//Blade of Frozen Hunger
+[ebfh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBladeofFrozenHunger.blp
+
+//Ring of Greater Mana Efficiency
+[ergm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingofGreaterManaEfficiency.blp
+
+//Ring of the Firelands
+[erfl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingoftheFirelands.blp
+
+//Signet of Blood
+[ersb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSignetofBlood.blp
+
+//Band of the Sin'dorei
+[ebsd]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBandoftheSindorei.blp
+
+//Valve Wheel
+[ccvw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEngineeringUpgrade.blp
+
+//Vial of Plague Essence
+[cvpe]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNVialFull.blp
+
+// (Campaign) Tome of Agility +1
+[ctoa]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+
+// (Campaign) Tome of Intelligence +1
+[ctoi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+
+// (Campaign) Tome of Strength +1
+[ctos]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+
+//Dark Ranger's Hood
+[edrh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkRangersHood.blp
+
+//Dark Ranger's Chestguard
+[edrc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkRangersChestguard.blp
+
+//Dark Ranger's Bracers
+[edrb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkRangersBracers.blp
+
+//Dark Ranger's Shadows
+[edrs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkRangersShadows.blp
+
+//Dark Ranger's Insignia
+[edri]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDarkRangersInsignia.blp
+
+//Broken Skinning Knife
+[ebsk]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBrokenSkinningKnife.blp
+
+//Chestpiece of Lesser Cunning
+[eclc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNChestpieceofLesserCunning.blp
+
+//Worn Thief's Boots
+[ewtb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWornThievesBoots.blp
+
+//Lump of Meat
+[clom]
+Art=ReplaceableTextures\CommandButtons\BTNLumpofMeat.blp
+
+//Endless Flask of Restoration
+[eefr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEndlessFlaskofRestoration.blp
+
+//Caged Soul
+[ercs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCagedSoul.blp
+
+//Portable Lightning Rod
+[eplr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPortableLightningRod.blp
+
+//Earthen Signet
+[eres]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEarthenSignet.blp
+
+//Tome of Azjol-Nerub (Tome of the Spiderkind)
+[ersk]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTomeoftheSpiderkind.blp
+
+//Elixir of Cunning
+[ccec]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNElixirofCunning.blp
+
+//Elixir of the Monster Hunter
+[ccem]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNElixirofMonsterHunting.blp
+
+//Bracers of the Ogre Magi
+[ebom]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBracersoftheOgreMagi.blp
+
+//Totem of the Ogre Magi
+[etom]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTotemoftheOgreMagi.blp
+
+//Heart of the Lake
+[ehol]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHeartoftheLake.blp
+
+//Lance of the Dawn
+[elod]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLanceoftheDawn.blp
+
+//Daybreaker
+[epdb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDaybreaker.blp
+
+//Arcane Cleaver
+[epac]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNArcaneCleaver.blp
+
+//Sharpened Cleaver
+[epsc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSharpenedCleaver.blp
+
+//Boots of the Forsaken
+[ebof]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBootsoftheForsaken.blp
+
+//Forsaken Plaguebow
+[efpb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNForsakenPlaguebow.blp
+
+//Huge Flail
+[ephf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHugeFlail.blp
+
+//Gnoll Warlord Hide
+[egwh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGnollWarlordHide.blp
+
+//Gift of the Wilds
+[egow]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGiftoftheWilds.blp
+
+//Mysterious Twilight Opal
+[emto]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMysteriousTwilightOpal.blp
+
+//Golden Necklace of Serenity
+[egns]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGoldenNecklaceofSerenity.blp
+
+//Coldbringer's Reach
+[ecbr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNColdbringersReach.blp
+
+//Plaguewrought Blight Incarnate
+[epwb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPlaguewroughtBlightIncarnate.blp
+
+//Manuscript of the Forsaken
+[emof]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNManuscriptoftheForsaken.blp
+
+//Vial of Vampire Bat Blood
+[cvvb]
+Art=ReplaceableTextures\CommandButtons\BTNPotionRed.blp
+
+//Scepter of Darkness
+[esod]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNScepterofDarkness.blp
+
+//Zandalari Giantcrusher
+[ezgc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNZandalariGiantCrusher.blp
+
+//Helm of the Rimelord
+[ehrl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHelmoftheRimelord.blp
+
+//Kaldorei Moonglaive
+[ekmg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNKaldoreiMoonglaive.blp
+
+//Gift of Greed
+[ergg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGiftofGreed.blp
+
+//Gift of Sloth
+[ergs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGiftofSloth.blp
+
+//Gift of Wrath
+[ergw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGiftofWrath.blp
+
+//Gift of Pride
+[ergp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGiftofPride.blp
+
+//Mark of the Phoenix
+[etmp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMarkofthePhoenix.blp
+
+//Deepsea Bag
+[edbw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDeepseaBag.blp
+
+//Gloves of the Phoenix
+[eggp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesofthePhoenix.blp
+
+//Shredder's Left Arm
+[esla]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNShreddersLeftArm.blp
+
+//Sword of the Ghostlands
+[epsg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSwordoftheGhostlands.blp
+
+//Blade of the Scarlet Crusade
+[essc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBladeoftheScarletCrusade.blp
+
+//Shield of the Scarlet Crusade
+[eosc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNShieldoftheScarletCrusade.blp
+
+//Elixir of Lesser Intelligence
+[celi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNElixirofLesserIntelligence.blp
+
+//Elixir of Greater Intelligence
+[cegi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNElixirofGreaterIntelligence.blp
+
+//Pirate Hat
+[ehph]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPirateHat.blp
+
+//Hammer of the Silver Hand
+[ehsh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHammeroftheSilverHand.blp
+
+//Protector of the Silver Hand
+[epsh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNProtectoroftheSilverHand.blp
+
+//Sanctified Chestplate
+[esa1]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSanctifiedChestplate.blp
+
+//Sanctified Gauntlets
+[esa2]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSanctifiedGauntlets.blp
+
+//Boots of the Icewalker
+[eboi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBootsoftheIcewalker.blp
+
+//Blade of Corruption
+[eboc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBladeofCorruption.blp
+
+//Agus's Shambling Hand
+[eash]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAgussShamblingHand.blp
+
+//Blightweaver Boots
+[ebwb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBlightweaverBoots.blp
+
+//Giant Skeleton Bone
+[egsb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGiantSkeletonBone.blp
+
+//Ring of Sacred Magic
+[ersm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingofSacredMagic.blp
+
+//Murloc Costume Gloves
+[emcg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMurlocCostumeGloves.blp
+
+//Primal Ring of Magic
+[eprm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPrimalRingofMagic.blp
+
+//Bandit Mask
+[ehbm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBanditMask.blp
+
+//Blacksmith's Apron
+[eaba]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBlacksmithsApron.blp
+
+//Enchanted Inscription Tools
+[eeit]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEnchantedInscriptionTools.blp
+
+//Lesser Engineering Helmet
+[eeh1]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLesserEngineeringHelmet.blp
+
+//Greater Engineering Helmet
+[eeh2]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGreaterEngineeringHelmet.blp
+
+//Master Engineering Helmet
+[eeh3]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNMasterEngineeringHelmet.blp
+
+//Ice Cold Diamond
+[eicd]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNIceColdDiamond.blp
+
+//Signet of the Crypt Lord
+[escl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSignetoftheCryptLord.blp
+
+//Gloves of the Deathbringer
+[egdb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesoftheDeathbringer.blp
+
+//Staff of the Crimson Heart
+[ech1]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNStaffoftheCrimsonHeart.blp
+
+//Blade of the Crimson Heart
+[ech2]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBladeoftheCrimsonHeart.blp
+
+//Guardian of the Crimson Heart
+[ech3]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGuardianoftheCrimsonHeart.blp
+
+//Nerubian Necklace
+[ernn]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNNerubianNecklace.blp
+
+//Potion of Ultimate Healing
+[puhe]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPotionofUltimateHealing.blp
+
+//Potion of Ultimate Mana
+[puma]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNPotionofUltimateMana.blp
+
+//Essence of Undeath
+[peou]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEssenceofUndeath.blp
+
+//Consecrated Mixture
+[cccm]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNConsecratedMixture.blp
+
+//Helm of the Scarlet Captain
+[ehsc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHelmoftheScarletCaptain.blp
+
+//Staff of the Scarlet Inquisitor
+[essi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNStaffoftheScarletInquisitor.blp
+
+//Breastplate of the Scarlet Paladin
+[ebsp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBreastplateoftheScarletPaladin.blp
+
+//Blackrock Steel Plate
+[ebrp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBlackrockSteelPlate.blp
+
+//Drained Bloodstone
+[edbs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDrainedBloodstone.blp
+
+//Horn of the Lost Spirits
+[ehls]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHornoftheLostSpirits.blp
+
+//Bindings of Helya
+[eboh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBindingsofHelya.blp
+
+//Icecrown Ring
+[eicc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNIcecrownRing.blp
+
+//Edge of the Ruined City
+[eerc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEdgeoftheRuinedCity.blp
+
+//Vestments of the Storm King
+[evsk]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNVestmentsoftheStormKing.blp
+
+//Deathbringer's Boots
+[edbb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDeathbringersBoots.blp
+
+//Bone Commander's Skull
+[ebcs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBoneCommandersSkull.blp
+
+//Lost Forsaken Quiver
+[elfq]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLostForsakenQuiver.blp
+
+//Selene, Grand Scepter of Elune
+[egse]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSeleneGrandScepterofElune.blp
+
+//Razorice, Harbinger of Winter
+[erhw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRazoriceHarbingerofWinter.blp
+
+//Gravelight, the Echoing Flames
+[egef]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGravelighttheEchoingFlames.blp
+
+//Essencium, the Gathering of Elements
+[eege]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNEssenciumtheGatheringofElements.blp
+
+//Huge Citrine of the Fierce
+[ehcf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHugeCitrineoftheFierce.blp
+
+//Cardinal Ruby of the Necrolyte
+[ecrn]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNCardinalRubyoftheNecrolyte.blp
+
+//Nightfall
+[epnf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNNightfall.blp
+
+//The Screecher
+[escr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTheScreecher.blp
+
+//Scythe of Frost
+[esof]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNScytheofFrost.blp
+
+//Lance of the Frozen Phoenix
+[elfp]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNLanceoftheFrozenPhoenix.blp
+
+//Ring of Holy Fire
+[ehfi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingofHolyFire.blp
+
+//Gloves of the Flamewalker
+[egfw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesoftheFlamewalker.blp
+
+//Robes of Revenge
+[earr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRobesoftheFlamewalker.blp
+
+//Helm of the Dark Rider
+[ehdr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHelmoftheDarkRider.blp
+
+//Stormwalkers
+[ebsw]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNStormwalkers.blp
+
+//Blade of Inferno
+[einf]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBladeofInferno.blp
+
+//Aviana's Talons
+[egat]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAvianasTalons.blp
+
+//Armor of Reanimation
+[eaor]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNArmorofReanimation.blp
+
+//Diamond Ring
+[erdr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDiamondRing.blp
+
+//Shield of the Titans
+[esot]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNShieldoftheTitans.blp
+
+//Blackrock Chain Helm
+[ebr1]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBlackrockChainHelm.blp
+
+//Blademaster's Greatsword
+[ebr2]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBlademastersKatana.blp
+
+//Handful of Throwing Knives
+[ehtk]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHandfulofKnives.blp
+
+//Mana Bauble
+[etmb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNManaBauble.blp
+
+//Rune of Fire
+[erof]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRuneofFire.blp
+
+//Nevermelting Ice
+[enmi]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNNevermeltingIce.blp
+
+//Agitating Totem
+[eagt]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAgitatingTotem.blp
+
+//Bottled Storm
+[etbs]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBottledStorm.blp
+
+//Shepherd's Curse
+[eshc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNShepherdsCurse.blp
+
+//Restorative Balm
+[etrb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRestorativeBalm.blp
+
+//Deathbloom Leaves
+[edbl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNDeathbloomLeaves.blp
+
+//Glacial Shard
+[egsh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlacialShard.blp
+
+//Forgotten Frost Lotus
+[effl]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNForgottenFrostLotus.blp
+
+//Flame of Al'ar
+[efoa]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNFlameofAlar.blp
+
+//Tactician's Boots
+[ebtb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNTacticiansBoots.blp
+
+//Forest Ranger's Gloves
+[efrg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNForestRangersGloves.blp
+
+//Bramblethorn Vestments
+[ebtv]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBramblethornVestments.blp
+
+//Spell Parrying Buckler
+[espb]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNSpellParryingBuckler.blp
+
+//Vampiric Robes
+[eavr]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNVampiricRobes.blp
+
+//Gloves of Perfection
+[egop]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesofPerfection.blp
+
+//Ring of the Archdruid
+[erad]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNRingoftheArchdruid.blp
+
+//Gloves of Ultimate Vampirism
+[eguv]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNGlovesofUltimateVampirism.blp
+
+//Shattered Scourgelord's Crown
+[eslc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNShatteredScourgelordsCrown.blp
+
+//Shoddy Cap
+[ecap]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNShoddyCap.blp
+
+//Ancient Bronze Helmet
+[eabh]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNAncientBronzeHelmet.blp
+
+//Blade Dancer's Greaves
+[ebdg]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNBladeDancersGreaves.blp
+
+//Wand of the Battlemage
+[ewob]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNWandoftheBattlemage.blp
+
+//Helm of the Cenarion Circle
+[ehcc]
+Buttonpos=0,-1
+Art=ReplaceableTextures\CommandButtons\BTNHelmoftheCenarionWard.blp
+
+//Explosive Barrel
+[cexp]
+Art=ReplaceableTextures\CommandButtons\BTNBarrel.blp
+
+//Experimental Serum
+[cese]
+Art=ReplaceableTextures\CommandButtons\BTNEnvenomedSpear.blp
+
+//Key to the Chamber
+[ckcm]
+Art=ReplaceableTextures\CommandButtons\BTNBloodKey.blp
+
+//Magical Key
+[cmag]
+Art=ReplaceableTextures\CommandButtons\BTNGhostKey.blp
+
+//Prison Key
+[cprk]
+Art=ReplaceableTextures\CommandButtons\BTNMoonKey.blp
+
+//Portal Orb
+[cpor]
+Art=ReplaceableTextures\CommandButtons\BTNUsedSoulGem.blp
+
+//The Artifact
+[ctat]
+Art=ReplaceableTextures\CommandButtons\BTNEnchantedGemstone.blp

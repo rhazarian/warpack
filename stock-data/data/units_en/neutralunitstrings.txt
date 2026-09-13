@@ -2672,3 +2672,12 @@ Name:melee,V0=Dragon Roost
 Tip:custom,V0=Build Dragon Roost
 Tip:melee,V0=Build Dragon Roost
 Name:custom,V0=Dragon Roost
+
+[Npal]
+Name=Forsaken Paladin
+Propernames=Samuel Oathkeeper,Raphael Lightseeker,Kristoff Darkwarden,David Duskshield,Thaddeus Ashborne,Bruce Wightbane,Silas Ashlight,Seth Brighteye,Gideon the Just,Levi the Steadfast,Tobias the Triumphant,Xander the Proven,Alistair the Unbending,Roderic the Everburning,Ander the Watchful
+Hotkey=F
+Tip=Summon Forsaken Paladin
+Ubertip="Warrior Hero, adept at wielding the Light offensively and defensively. Can learn Consecration, Righteous Fury, Sacred Aura, and Cleansing Fire. |n|n|cffffcc00Attacks land units.|r"
+Revivetip=Revive Forsaken Paladin
+Awakentip=Revive Forsaken Paladin

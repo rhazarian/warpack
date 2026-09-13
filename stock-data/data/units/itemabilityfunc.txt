@@ -334,6 +334,11 @@ Order=inferno
 // target art played on hero carrying item
 // special art played on hero when ability fires
 
+// vampiric life steal ability stacking
+[AIvx]
+// target art played on hero carrying item
+// special art played on hero when ability fires
+
 // cloak of flames
 [AIcf]
 
@@ -548,6 +553,9 @@ MissileHoming=1
 
 // Spell Damage Reduction
 [AIsr]
+
+// Spell Damage Reduction Stacking
+[AIss]
 
 // Build Tiny Castle
 [AIbl]
@@ -792,3 +800,33 @@ order=berserk
 
 //Orb of Slow new
 [AIno]
+
+//Hardened Skin Item
+[AIhs]
+
+//Purifier Blade Holy Light
+[AEhl]
+
+//Purifier Blade Proc Chance
+[AEpb]
+
+//On Hit Lightning Attack
+[Aohl]
+
+//Glixs Bomb
+[Aglx]
+
+//On Basic Attack - Summon Lesser Skeleton
+[Aals]
+
+//On Spell Attack, Cast Spell
+[Asas]
+
+// Evasion Stackable
+[AHes]
+
+// Hardened Skin (Stacking)
+[AHss]
+
+// Thorny Shield (Stacking)
+[AUss]

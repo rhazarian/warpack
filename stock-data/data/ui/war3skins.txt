@@ -1,15 +1,18 @@
 [Main]
-Skins=Orc,Human,NightElf,Undead
+Skins=Orc,Human,NightElf,Undead,Forsaken
 
 [Human]
 // Note: List music files separated by a ';'
 // Example: Music=Sound\Music\mp3Music\Human1.mp3;Sound\Music\mp3Music\Human2.mp3
 Music_V0=HumanROC
 Music_V1=HumanTFT
+Music_V2=HumanTFT
 VictoryMusic_V0=HumanVictory
 VictoryMusic_V1=HumanVictory
+VictoryMusic_V2=HumanVictory
 DefeatMusic_V0=HumanDefeat
 DefeatMusic_V1=HumanDefeat
+DefeatMusic_V2=HumanDefeat
 
 ConeRangeIndicator=ReplaceableTextures\Selection\ConeRangeIndicator_Human.blp
 RectangleRangeIndicator=ReplaceableTextures\Selection\RectangleRangeIndicator_Human.blp
@@ -61,10 +64,13 @@ ScoreScreenVictory_V1Beta=UI\Glues\ScoreScreen\ScoreScreen-HumanVictory\ScoreScr
 [Orc]
 Music_V0=OrcROC
 Music_V1=OrcTFT
+Music_V2=OrcTFT
 VictoryMusic_V0=OrcVictory
 VictoryMusic_V1=OrcVictory
+VictoryMusic_V2=OrcVictory
 DefeatMusic_V0=OrcDefeat
 DefeatMusic_V1=OrcDefeat
+DefeatMusic_V2=OrcDefeat
 
 GoldMineCollapseSound=GoldMineCollapseOrc
 GoldMineLowSound=GoldMineLowOrc
@@ -115,6 +121,7 @@ RallyIndicatorDst=UI\Feedback\RallyPoint\OrcRallyFlag.mdl
 WaypointIndicator=UI\Feedback\WaypointFlags\OrcWaypointFlag.mdl
 IdlePeon=ReplaceableTextures\CommandButtons\BTNPeon.blp
 PlacementCursor=ReplaceableTextures\Selection\SpellAreaOfEffect_Orc.blp
+ExtendedInventoryEmptySlot=UI\Widgets\Console\Human\human-inventory-slotempty.blp
 
 CinematicBorder=UI\Widgets\EscMenu\Orc\orc-cinematic-border.blp
 
@@ -139,14 +146,16 @@ ScoreScreenVictory_V0=UI\Glues\ScoreScreen\ScoreScreen-OrcVictory\ScoreScreen-Or
 ScoreScreenVictory_V1=UI\Glues\ScoreScreen\ScoreScreen-OrcVictoryExpansion\ScoreScreen-OrcVictoryExpansion.mdl
 ScoreScreenVictory_V1Beta=UI\Glues\ScoreScreen\ScoreScreen-OrcVictory\ScoreScreen-OrcVictory.mdl
 
-
 [NightElf]
 Music_V0=NightElfROC
 Music_V1=NightElfTFT
+Music_V2=NightElfTFT
 VictoryMusic_V0=NightElfVictory
 VictoryMusic_V1=NightElfVictory
+VictoryMusic_V2=NightElfVictory
 DefeatMusic_V0=NightElfDefeat
 DefeatMusic_V1=NightElfDefeat
+DefeatMusic_V2=NightElfDefeat
 
 GoldMineCollapseSound=GoldMineCollapseNightElf
 GoldMineLowSound=GoldMineLowNightElf
@@ -202,6 +211,7 @@ RallyIndicatorDst=UI\Feedback\RallyPoint\NightElfRallyFlag.mdl
 WaypointIndicator=UI\Feedback\WaypointFlags\NightElfWaypointFlag.mdl
 IdlePeon=ReplaceableTextures\CommandButtons\BTNWisp.blp
 PlacementCursor=ReplaceableTextures\Selection\SpellAreaOfEffect_NE.blp
+ExtendedInventoryEmptySlot=UI\Widgets\Console\Human\human-inventory-slotempty.blp
 
 CinematicBorder=UI\Widgets\EscMenu\NightElf\nightelf-cinematic-border.blp
 
@@ -231,10 +241,13 @@ ScoreScreenVictory_V1Beta=UI\Glues\ScoreScreen\ScoreScreen-NightElfVictory\Score
 [Undead]
 Music_V0=UndeadROC
 Music_V1=UndeadTFT
+Music_V2=UndeadTFT
 VictoryMusic_V0=UndeadVictory
 VictoryMusic_V1=UndeadVictory
+VictoryMusic_V2=UndeadVictory
 DefeatMusic_V0=UndeadDefeat
 DefeatMusic_V1=UndeadDefeat
+DefeatMusic_V2=UndeadDefeat
 
 GoldMineCollapseSound=GoldMineCollapseUndead
 GoldMineLowSound=GoldMineLowUndead
@@ -290,6 +303,7 @@ RallyIndicatorDst=UI\Feedback\RallyPoint\UndeadRallyFlag.mdl
 WaypointIndicator=UI\Feedback\WaypointFlags\UndeadWaypointFlag.mdl
 IdlePeon=ReplaceableTextures\CommandButtons\BTNAcolyte.blp
 PlacementCursor=ReplaceableTextures\Selection\SpellAreaOfEffect_Undead.blp
+ExtendedInventoryEmptySlot=UI\Widgets\Console\Human\human-inventory-slotempty.blp
 
 CinematicBorder=UI\Widgets\EscMenu\Undead\undead-cinematic-border.blp
 
@@ -316,22 +330,116 @@ ScoreScreenVictory_V0=UI\Glues\ScoreScreen\ScoreScreen-UndeadVictory\ScoreScreen
 ScoreScreenVictory_V1=UI\Glues\ScoreScreen\ScoreScreen-UndeadVictoryExpansion\ScoreScreen-UndeadVictoryExpansion.mdl
 ScoreScreenVictory_V1Beta=UI\Glues\ScoreScreen\ScoreScreen-UndeadVictory\ScoreScreen-UndeadVictory.mdl
 
+[Forsaken]
+Music_V0=ForsakenFK
+Music_V1=ForsakenFK
+Music_V2=ForsakenFK
+VictoryMusic_V0=UndeadVictory
+VictoryMusic_V1=UndeadVictory
+VictoryMusic_V2=UndeadVictory
+DefeatMusic_V0=UndeadDefeat
+DefeatMusic_V1=UndeadDefeat
+DefeatMusic_V2=UndeadDefeat
+
+GoldMineCollapseSound=GoldMineCollapseUndead
+GoldMineLowSound=GoldMineLowUndead
+NoFoodSound=NoFoodUndead
+NoGoldSound=NoGoldUndead
+NoLumberSound=NoLumberUndead
+NoManaSound=NoManaUndead
+InventoryFullSound=InventoryFullUndead
+CantPlaceSound=CantPlaceUndead
+HeroDiesSound=HeroDiesUndead
+AllyHeroDiesSound=AllyHeroDiesUndead
+JobDoneSound=JobDoneSoundUndead
+UpgradeComplete=UpgradeCompleteUndead
+ResearchComplete=ResearchCompleteUndead
+UnderAttackSound=UnderAttackUndead
+TownAttackSound=TownAttackUndead
+AllyUnderAttackSound=AllyUnderAttackUndead
+AllyTownUnderAttackSound=AllyTownUnderAttackUndead
+ConstructingBuilding=ConstructingBuildingUndead
+
+ConeRangeIndicator=ReplaceableTextures\Selection\ConeRangeIndicator_Undead.blp
+RectangleRangeIndicator=ReplaceableTextures\Selection\RectangleRangeIndicator_Undead.blp
+HoverRangeIndicator=ReplaceableTextures\Selection\HoverRangeIndicator_Undead.blp
+RangeIndicator=ReplaceableTextures\Selection\RangeIndicator_Undead.blp
+MlineRangeIndicator=ReplaceableTextures\Selection\MlineRangeIndicator_Undead.blp
+
+SimpleConsole=ConsoleUI
+ConsoleTexture01=UI\Console\Forsaken\ForsakenUITile01
+ConsoleTexture02=UI\Console\Forsaken\ForsakenUITile02
+ConsoleTexture03=UI\Console\Forsaken\ForsakenUITile03
+ConsoleTexture04=UI\Console\Forsaken\ForsakenUITile04
+ConsoleTexture05=UI\Console\Forsaken\ForsakenUITile05
+ConsoleTexture06=UI\Console\Forsaken\ForsakenUITile06
+ConsoleInventoryCoverTexture=UI\Console\Forsaken\ForsakenUITile-InventoryCover.blp
+ConsoleInventoryNoCapacity=UI\Widgets\Console\Undead\undead-inventory-slotfiller.blp
+TimeOfDayIndicator=UI\Console\Forsaken\ForsakenUI-TimeIndicator.mdl
+Cursor=UI\Cursor\ForsakenCursor.mdl
+ClassicCursor=UI\Cursor\ForsakenCursor.mdl
+UpperMenuButtonTexture=UI\Widgets\Console\Forsaken\fk-console-buttonstates2.blp
+// CommandAttack=ReplaceableTextures\CommandButtons\BTNAttackUndead.blp
+// CommandAttackGround=ReplaceableTextures\CommandButtons\BTNAttackGroundUndead.blp
+CommandBasicStruct=ReplaceableTextures\CommandButtons\BTNScourgeBuild.blp
+// CommandCancel=ReplaceableTextures\CommandButtons\BTNCancelUndead.blp
+// CommandHoldPosition=ReplaceableTextures\CommandButtons\BTNHoldPositionUndead.blp
+// CommandMove=ReplaceableTextures\CommandButtons\BTNMoveUndead.blp
+// CommandNewSkill=ReplaceableTextures\CommandButtons\BTNSkillzUndead.blp
+// CommandPatrol=ReplaceableTextures\CommandButtons\BTNPatrolUndead.blp
+CommandRally=ReplaceableTextures\CommandButtons\BTNRallyPointUndead.blp
+// CommandStop=ReplaceableTextures\CommandButtons\BTNStopUndead.blp
+RallyIndicatorDst=UI\Feedback\RallyPoint\ForsakenRallyFlag.mdl
+WaypointIndicator=UI\Feedback\WaypointFlags\UndeadWaypointFlag.mdl
+IdlePeon=ReplaceableTextures\CommandButtons\BTNAcolyte.blp
+PlacementCursor=ReplaceableTextures\Selection\SpellAreaOfEffect_Undead.blp
+ExtendedInventoryEmptySlot=UI\Widgets\Console\Human\human-inventory-slotempty.blp
+
+CinematicBorder=UI\Widgets\EscMenu\Undead\undead-cinematic-border.blp
+
+ReplayPanelBackdropV1=UI\Widgets\Console\Undead\UndeadUI-ReplayCover.blp
+ReplayPanelBackdropV2=UI\Widgets\Console\Reforged\observer-replay-frame-full-no-blend_4k.blp
+ReplayCheckBoxPressed=UI\Widgets\EscMenu\Undead\undead-checkbox-depressible
+
+EscMenuBorder=UI\Widgets\EscMenu\Forsaken\fk-options-menu-border.blp
+EscMenuBackground=UI\Widgets\EscMenu\Forsaken\fk-options-menu-background.blp
+EscMenuButtonBackground=UI\Widgets\EscMenu\Forsaken\fk-options-button-background.blp
+EscMenuButtonPushedBackground=UI\Widgets\EscMenu\Forsaken\fk-options-button-background-down.blp
+EscMenuButtonDisabledBackground=UI\Widgets\EscMenu\Undead\undead-options-button-background-disabled
+EscMenuButtonDisabledBorder=UI\Widgets\EscMenu\Undead\undead-options-button-border-disabled.blp
+EscMenuButtonMouseOverHighlight=UI\Widgets\EscMenu\Forsaken\fk-options-button-highlight.blp
+EscMenuCheckBoxPushedBackground=UI\Widgets\EscMenu\Forsaken\fk-checkbox-depressed.blp
+EscMenuSliderThumbButton=UI\Widgets\EscMenu\Forsaken\fk-slider-knob.blp
+
+QuestDialogBorder=UI\Widgets\EscMenu\Undead\undead-options-menu-border.blp
+QuestDialogBackground=UI\Widgets\EscMenu\Undead\undead-options-menu-background.blp
+QuestDialogButtonMouseOverHighlight=UI\Widgets\EscMenu\Undead\undead-options-button-highlight.blp
+
+LoadingMeleeBackground=UI\Glues\Loading\Multiplayer\Load-Multiplayer-Undead.mdl
+ScoreScreenVictory_V0=UI\Glues\ScoreScreen\ScoreScreen-UndeadVictory\ScoreScreen-UndeadVictory.mdl
+ScoreScreenVictory_V1=UI\Glues\ScoreScreen\ScoreScreen-UndeadVictoryExpansion\ScoreScreen-UndeadVictoryExpansion.mdl
+ScoreScreenVictory_V1Beta=UI\Glues\ScoreScreen\ScoreScreen-UndeadVictory\ScoreScreen-UndeadVictory.mdl
 
 [Default]
 // Listing the same song twice causes the game to treat it as two songs with a 20 second delay between them
 // instead of a looping song.
 GlueMusic_V0=GlueMusicROC
 GlueMusic_V1=GlueMusicTFT
+GlueMusic_V2=GlueMusicTFT
 ChatMusic_V0=BattleNetChatMusicROC
 ChatMusic_V1=BattleNetChatMusicTFT
+ChatMusic_V2=BattleNetChatMusicTFT
 Music_V0=DefaultMusic
 Music_V1=DefaultMusic
+Music_V2=DefaultMusic
 
 GlueScreenLoop_V0=GlueScreenWind
 GlueScreenLoop_V1=ExpansionGlueScreenWind
+GlueScreenLoop_V2=ExpansionGlueScreenWind
 GlueScreenLoop_V1Beta=GlueScreenWind
 GlueScreenBnetLoop_V0=GlueScreenBnetWind
 GlueScreenBnetLoop_V1=ExpansionGlueScreenWind
+GlueScreenBnetLoop_V2=ExpansionGlueScreenWind
 GlueScreenBnetLoop_V1Beta=GlueScreenBnetWind
 
 JobDoneSound=JobDoneSoundGeneric
@@ -521,6 +629,8 @@ OrcExBackdrop=UI\Glues\SinglePlayer\Orc_Exp\Orc_Exp.mdl
 UndeadBackdrop=UI\Glues\SinglePlayer\UndeadCampaign3D\UndeadCampaign3D.mdl
 UndeadExBackdrop=UI\Glues\SinglePlayer\Undead3D_Exp\Undead3D_Exp.mdl
 TutorialBackdrop=UI\Glues\SinglePlayer\TutorialCampaign3D\TutorialCampaign3D.mdl
+HumanREBackdrop=UI\Glues\SinglePlayer\HumanRECampaign3D\HumanRECampaign3D.mdl
+UndeadREBackdrop=UI\Glues\SinglePlayer\UndeadRECampaign3D\UndeadRECampaign3D.mdl
 Cursor=UI\Cursor\GlueCursor.mdl
 ClassicCursor=UI\Cursor\GlueCursor.mdl
 CursorSD=UI\Cursor\HumanCursor.mdl
@@ -554,6 +664,7 @@ ManaBarConsoleSmall=UI\Feedback\ManaBarConsoleSmall\ManaBarConsoleSmall.mdl
 XpBarConsole=UI\Feedback\XpBar\XpBarConsole.mdl
 IdlePeon=ReplaceableTextures\CommandButtons\BTNPeon.blp
 PlacementCursor=ReplaceableTextures\Selection\SpellAreaOfEffect.blp
+ExtendedInventoryEmptySlot=UI\Widgets\Console\Human\human-inventory-slotempty.blp
 
 MinHudSimpleXpBarConsole=UI\Feedback\XPBar\min-hud-human-bigbar-fill.blp
 MinHudSimpleXpBarBorder=UI\Feedback\XPBar\min-hud-xpbar-border.blp
@@ -571,6 +682,16 @@ SimpleProgressBarConsole=UI\Feedback\XPBar\human-bigbar-fill.blp
 SimpleProgressBarBorder=UI\Feedback\XPBar\human-xpbar-border.blp
 SimpleHpBarConsoleSmall=UI\Feedback\HpBarConsole\human-healthbar-fill.blp
 SimpleManaBarConsoleSmall=UI\Feedback\HpBarConsole\human-healthbar-fill.blp
+
+EquipmentHead=UI\Console\Reforged\UI-PaperDoll-Slot-Head.blp
+EquipmentChest=UI\Console\Reforged\UI-PaperDoll-Slot-Chest.blp
+EquipmentGloves=UI\Console\Reforged\UI-PaperDoll-Slot-Hands.blp
+EquipmentBoots=UI\Console\Reforged\UI-PaperDoll-Slot-Feet.blp
+EquipmentRing=UI\Console\Reforged\UI-PaperDoll-Slot-Finger.blp
+EquipmentRingAlt=UI\Console\Reforged\UI-PaperDoll-Slot-Finger.blp
+EquipmentPrimary=UI\Console\Reforged\UI-PaperDoll-Slot-MainHand.blp
+EquipmentOffhand=UI\Console\Reforged\UI-PaperDoll-Slot-SecondaryHand.blp
+EquipmentTrinket=UI\Console\Reforged\UI-PaperDoll-Slot-Relic.blp
 
 HeroFrameBackground=UI\Feedback\HeroFrame\heroframe_background.blp
 HeroFrameLevelBackground=UI\Feedback\HeroFrame\heroframe_levelBackground.blp
@@ -1043,3 +1164,5 @@ ObserverStatisticsRaceBannerNightElf=UI\Console\Reforged\StatisticsPanel\RaceBan
 ObserverResourceGold=UI\Console\Reforged\StatisticsPanel\ResourceGold_alpha.blp
 ObserverResourceLumber=UI\Console\Reforged\StatisticsPanel\ResourceLumber_alpha.blp
 ObserverResourceSupply=UI\Console\Reforged\StatisticsPanel\ResourceSupply_alpha.blp
+
+// Equipment panel
