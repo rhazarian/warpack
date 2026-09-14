@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/package",
   "name": "warpack",
   "description": "A build system for Warcraft III maps.",
-  "version": "0.0.1-dev.f87edfb",
+  "version": "0.0.1-dev.4a5c19c",
   "keywords": [
     "warcraft",
     "warpack",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "execa": "^9.5.1",
-    "warpack-types": "0.0.5"
+    "warpack-types": "github:rhazarian/warpack-types#ad3b314"
   },
   "publishConfig": {
     "access": "public",
