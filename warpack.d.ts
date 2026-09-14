@@ -689,6 +689,74 @@ declare namespace WarMap {
         Outland = "O",
         BlackCitadel = "K",
     }
+
+    /** Player HUD skin selection (Warcraft III 3.0+). */
+    export type PlayerHud = "selected race" | "human" | "orc" | "undead" | "night elf" | "forsaken"
+
+    /**
+     * Map options (war3map.w3i flags).
+     *
+     * "Use custom forces" and "use terrain fog" are not part of this table: they are derived
+     * from `WarMap.forces` and `WarMap.terrainFog` respectively.
+     */
+    export interface Flags {
+        hideMinimapInPreview: boolean
+        modifyAllyPriorities: boolean
+        meleeMap: boolean
+        initialMapSizeLargeNeverModified: boolean
+        maskedAreasPartiallyVisible: boolean
+        fixedPlayerSettings: boolean
+        useCustomTechtree: boolean
+        useCustomAbilities: boolean
+        useCustomUpgrades: boolean
+        mapPropertiesMenuOpened: boolean
+        showWaterWavesOnCliffShores: boolean
+        showWaterWavesOnRollingShores: boolean
+        requiresExpansion: boolean
+        useItemClassificationSystem: boolean
+        useWaterTintingColor: boolean
+        useAccurateProbabilityForCalculations: boolean
+        useCustomAbilitySkins: boolean
+        disableDenyIcon: boolean
+        useForceDefaultCameraZoom: boolean
+        useForceMaxCameraZoom: boolean
+        useForceMinCameraZoom: boolean
+        /** Warcraft III 3.0+ */
+        useWaterOverrideColor: boolean
+    }
+
+    /** Supported graphics modes. */
+    export interface Graphics {
+        sd: boolean
+        hd: boolean
+        /** Warcraft III 3.0+ */
+        de: boolean
+    }
+
+    /** Terrain fog settings added in Warcraft III 3.0 (w3i version 39). */
+    export interface TerrainFogExtras {
+        style: number
+        drawOverSky: boolean
+        linearStart: number
+        linearEnd: number
+        maxOpacity: number
+        heightStart: number
+        heightEnd: number
+    }
+
+    /** Water settings added in Warcraft III 3.0 (w3i version 39). */
+    export interface Water {
+        minOpacity: number
+        maxOpacity: number
+        reflectivity: number
+        emissivity: number
+        edgeSoftness: number
+        wavesVertexDisplacement: number
+        wavesNormalMapStrength: number
+        overrideColor: number
+        envMapReflectivity: number
+        unknown: number
+    }
 }
 
 /**
@@ -709,9 +777,19 @@ declare interface WarMap {
             name: string
             race: "human" | "orc" | "undead" | "night elf"
             controller: "user" | "computer" | "neutral" | "rescuable"
+            /**
+             * HUD skin (Warcraft III 3.0+, w3i version 39). Unknown values are passed through as
+             * raw numbers. Defaults to "selected race" when writing.
+             */
+            hud?: WarMap.PlayerHud | number
             fixedStartLocation: boolean
             startLocationX: number
             startLocationY: number
+            /** Bit masks of players this player is allied with / hostile to, by priority. */
+            allyLow?: number
+            allyHigh?: number
+            enemyLow?: number
+            enemyHigh?: number
         }
     }
     forces: {
@@ -724,7 +802,20 @@ declare interface WarMap {
         players: number[]
     }[]
     dataSet: "default" | "custom" | "melee"
-    terrainFog:
+    flags: WarMap.Flags
+    /** Bits of the map flags not known to Warpack; written back unchanged. */
+    flagsUnknownBits: number
+    /** `undefined` for maps older than w3i version 31; defaults to SD + HD when writing. */
+    graphics: WarMap.Graphics | undefined
+    /** Bits of the graphics mask not known to Warpack; written back unchanged. */
+    graphicsUnknownBits: number
+    /** `undefined` for maps older than w3i version 31. */
+    gameDataVersion: number | undefined
+    /** Camera zoom limits, see `flags.useForce*CameraZoom`. `undefined` for maps older than w3i version 32/33. */
+    forceDefaultCameraZoom: number | undefined
+    forceMaxCameraZoom: number | undefined
+    forceMinCameraZoom: number | undefined
+    terrainFog: (
         | {
               type: "none"
           }
@@ -740,12 +831,23 @@ declare interface WarMap {
                   alpha: number
               }
           }
+    ) &
+        /** Only present for Warcraft III 3.0+ maps (w3i version 39). */
+        Partial<WarMap.TerrainFogExtras>
     waterTintingColor: {
         red: number
         green: number
         blue: number
         alpha: number
     }
+    /** Warcraft III 3.0+ (w3i version 39), `undefined` for older maps. */
+    alphaTileMinimapColor: number | undefined
+    /** Warcraft III 3.0+ (w3i version 39), `undefined` for older maps. */
+    skyDisplay: number | undefined
+    /** Warcraft III 3.0+ (w3i version 39), `undefined` for older maps. */
+    timeOfDay: number | undefined
+    /** Warcraft III 3.0+ (w3i version 39), `undefined` for older maps. */
+    water: WarMap.Water | undefined
     loadingScreen:
         | {
               type: "default"
