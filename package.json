@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "execa": "^9.5.1",
-    "warpack-types": "0.0.5"
+    "warpack-types": "github:rhazarian/warpack-types#ad3b314"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
