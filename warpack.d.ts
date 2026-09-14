@@ -528,6 +528,8 @@ declare interface WarObject {
      */
     clone(): WarObject
 
+    getFieldDefault(field: string): string | number | undefined
+
     /**
      * Gets a field on this object.
      *
