@@ -150,22 +150,16 @@ pub mod write {
     ) -> impl Iterator<Item = FlatFieldItem<'a>> {
         object.fields().flat_map(move |(id, field)| {
             let iter: Box<dyn Iterator<Item = FlatFieldItem>> = match &field.kind {
-                FieldKind::Simple { value, value_sd, value_hd } =>
+                FieldKind::Simple { .. } =>
                     Box::new(
-                        match value_kind {
-                            ValueKind::Common => value.iter(),
-                            ValueKind::SD => value_sd.iter(),
-                            ValueKind::HD => value_hd.iter(),
-                        }.map(move |value| (id.clone(), 0, 0, value))
+                        field.kind.simple_value_of(value_kind)
+                            .into_iter()
+                            .map(move |value| (id.clone(), 0, 0, value))
                     ),
                 FieldKind::Leveled { values } => {
                     if let Some(field_desc) = metadata.field_by_id(id.clone()) {
                         Box::new(values.iter().flat_map(move |leveled_value| {
-                            match value_kind {
-                                ValueKind::Common => leveled_value.value.iter(),
-                                ValueKind::SD => leveled_value.value_sd.iter(),
-                                ValueKind::HD => leveled_value.value_hd.iter(),
-                            }.map(move |value|
+                            leveled_value.value_of(value_kind).into_iter().map(move |value|
                                 (
                                     id.clone(),
                                     field_desc.variant.data_id().unwrap_or(0),
@@ -198,11 +192,10 @@ pub mod write {
                     false
                 };
                 match &field.kind {
-                    FieldKind::Simple { value, value_sd, value_hd } => match value_kind {
-                        ValueKind::Common => value.as_ref(),
-                        // Simple profile field overrides should be written to war3mapSkin.txt.
-                        ValueKind::SD => if !is_profile { value_sd.as_ref() } else { None },
-                        ValueKind::HD => if !is_profile { value_hd.as_ref() } else { None },
+                    FieldKind::Simple { .. } => match value_kind {
+                        ValueKind::Common => field.kind.simple_value_of(value_kind),
+                        // Simple profile field overrides (SD/HD/DE) should be written to war3mapSkin.txt.
+                        _ => if !is_profile { field.kind.simple_value_of(value_kind) } else { None },
                     }.map(|value| (id.clone(), value)),
                     FieldKind::Leveled { .. } => {
                         eprintln!(
@@ -223,32 +216,29 @@ pub mod write {
         object
             .fields()
             .flat_map(move |(id, field)| {
-                if let Some(field_desc) = metadata.field_by_id(id.clone()) {
-                    if !field_desc.is_profile {
-                        None.into_iter().chain(None.into_iter())
-                    } else {
-                        match &field.kind {
-                            FieldKind::Simple { value: _, value_sd, value_hd } => {
-                                value_sd.as_ref()
-                                    .map(|value| (format!("{}:sd", field_desc.variant.name()), value))
-                                    .into_iter()
-                                    .chain(value_hd.as_ref()
-                                        .map(|value|(format!("{}:hd", field_desc.variant.name()), value))
-                                        .into_iter())
-                            },
-                            FieldKind::Leveled { .. } => {
-                                eprintln!(
-                                    "unexpected data field in object {} for field {}",
-                                    object.id(),
-                                    field.id
-                                );
-                                None.into_iter().chain(None.into_iter())
-                            }
+                let iter: Box<dyn Iterator<Item = (String, &'a Value)>> = match metadata.field_by_id(id.clone()) {
+                    Some(field_desc) if field_desc.is_profile => match &field.kind {
+                        FieldKind::Simple { .. } => Box::new(
+                            ValueKind::GRAPHICS_MODES.iter().copied().flat_map(move |value_kind| {
+                                field.kind.simple_value_of(value_kind).map(move |value| (
+                                    format!("{}{}", field_desc.variant.name(), value_kind.suffix()),
+                                    value,
+                                ))
+                            })
+                        ),
+                        FieldKind::Leveled { .. } => {
+                            eprintln!(
+                                "unexpected data field in object {} for field {}",
+                                object.id(),
+                                field.id
+                            );
+                            Box::new(std::iter::empty())
                         }
-                    }
-                } else {
-                    None.into_iter().chain(None.into_iter())
-                }
+                    },
+                    _ => Box::new(std::iter::empty()),
+                };
+
+                iter
             })
     }
 
