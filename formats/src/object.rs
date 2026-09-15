@@ -52,6 +52,44 @@ pub enum ValueKind {
     Common,
     SD,
     HD,
+    DE,
+}
+
+impl ValueKind {
+    /// Graphics-mode suffix used in profile (`war3mapSkin.txt`) keys
+    /// and in Lua field names, e.g. `Art:hd`.
+    pub fn suffix(self) -> &'static str {
+        match self {
+            ValueKind::Common => "",
+            ValueKind::SD => ":sd",
+            ValueKind::HD => ":hd",
+            ValueKind::DE => ":de",
+        }
+    }
+
+    /// All graphics-mode-specific kinds, i.e. everything except `Common`.
+    pub const GRAPHICS_MODES: [ValueKind; 3] = [ValueKind::SD, ValueKind::HD, ValueKind::DE];
+
+    /// Parses a graphics-mode name such as `"sd"`, `"hd"` or `"de"` (case-insensitive).
+    pub fn from_mode_name(name: &str) -> Option<ValueKind> {
+        match name.to_ascii_lowercase().as_str() {
+            "sd" => Some(ValueKind::SD),
+            "hd" => Some(ValueKind::HD),
+            "de" => Some(ValueKind::DE),
+            _ => None,
+        }
+    }
+
+    /// Splits a field name with an optional graphics-mode suffix
+    /// (`Art:hd` -> (`Art`, `HD`)) into the bare name and the value kind.
+    pub fn split_field_name(key: &str) -> (&str, ValueKind) {
+        for kind in Self::GRAPHICS_MODES {
+            if let Some(name) = key.strip_suffix(kind.suffix()) {
+                return (name, kind);
+            }
+        }
+        (key, ValueKind::Common)
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -60,12 +98,42 @@ pub struct LeveledValue {
     pub value: Option<Value>,
     pub value_sd: Option<Value>,
     pub value_hd: Option<Value>,
+    pub value_de: Option<Value>,
+}
+
+impl LeveledValue {
+    /// Returns the value stored exactly for the given kind, without
+    /// falling back to the common value.
+    pub fn value_of(&self, value_kind: ValueKind) -> Option<&Value> {
+        match value_kind {
+            ValueKind::Common => self.value.as_ref(),
+            ValueKind::SD => self.value_sd.as_ref(),
+            ValueKind::HD => self.value_hd.as_ref(),
+            ValueKind::DE => self.value_de.as_ref(),
+        }
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum FieldKind {
-    Simple { value: Option<Value>, value_sd: Option<Value>, value_hd: Option<Value> },
+    Simple { value: Option<Value>, value_sd: Option<Value>, value_hd: Option<Value>, value_de: Option<Value> },
     Leveled { values: Vec<LeveledValue> },
+}
+
+impl FieldKind {
+    /// For a simple field, returns the value stored exactly for the given kind,
+    /// without falling back to the common value. Returns `None` for leveled fields.
+    pub fn simple_value_of(&self, value_kind: ValueKind) -> Option<&Value> {
+        match self {
+            FieldKind::Simple { value, value_sd, value_hd, value_de } => match value_kind {
+                ValueKind::Common => value.as_ref(),
+                ValueKind::SD => value_sd.as_ref(),
+                ValueKind::HD => value_hd.as_ref(),
+                ValueKind::DE => value_de.as_ref(),
+            },
+            FieldKind::Leveled { .. } => None,
+        }
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -153,11 +221,12 @@ impl Object {
 
     pub fn simple_field(&self, id: &ObjectId, value_kind: ValueKind) -> Option<&Value> {
         self.fields.get(id).and_then(|field| match &field.kind {
-            FieldKind::Simple { value, value_sd, value_hd } =>
+            FieldKind::Simple { value, value_sd, value_hd, value_de } =>
                 match value_kind {
                     ValueKind::Common => value.as_ref(),
                     ValueKind::SD => value_sd.as_ref().or(value.as_ref()),
                     ValueKind::HD => value_hd.as_ref().or(value.as_ref()),
+                    ValueKind::DE => value_de.as_ref().or(value.as_ref()),
                 }
             _ => None,
         })
@@ -171,7 +240,8 @@ impl Object {
                 .and_then(|value| match value_kind {
                     ValueKind::Common => value.value.as_ref(),
                     ValueKind::SD => value.value_sd.as_ref().or(value.value.as_ref()),
-                    ValueKind::HD =>  value.value_hd.as_ref().or(value.value.as_ref())
+                    ValueKind::HD => value.value_hd.as_ref().or(value.value.as_ref()),
+                    ValueKind::DE => value.value_de.as_ref().or(value.value.as_ref()),
                 }),
             _ => None,
         })
@@ -202,15 +272,17 @@ impl Object {
                 value: None,
                 value_sd: None,
                 value_hd: None,
+                value_de: None,
             },
         });
 
         match &mut field.kind {
-            FieldKind::Simple { value: value_ref, value_sd: value_sd_ref, value_hd: value_hd_ref } => {
+            FieldKind::Simple { value: value_ref, value_sd: value_sd_ref, value_hd: value_hd_ref, value_de: value_de_ref } => {
                 match value_kind {
                     ValueKind::Common => value_ref,
                     ValueKind::SD => value_sd_ref,
-                    ValueKind::HD => value_hd_ref
+                    ValueKind::HD => value_hd_ref,
+                    ValueKind::DE => value_de_ref,
                 }.replace(value);
             },
             FieldKind::Leveled { .. } => eprintln!(
@@ -240,7 +312,8 @@ impl Object {
                     match value_kind {
                         ValueKind::Common => leveled_value.value = Some(value),
                         ValueKind::SD => leveled_value.value_sd = Some(value),
-                        ValueKind::HD => leveled_value.value_hd = Some(value)
+                        ValueKind::HD => leveled_value.value_hd = Some(value),
+                        ValueKind::DE => leveled_value.value_de = Some(value),
                     }
                 } else {
                     values.push(
@@ -260,7 +333,12 @@ impl Object {
                                 Some(value.clone())
                             } else {
                                 None
-                            }
+                            },
+                            value_de: if value_kind == ValueKind::DE {
+                                Some(value.clone())
+                            } else {
+                                None
+                            },
                         }
                     );
                 }
@@ -310,9 +388,7 @@ impl Object {
         index: i8,
         metadata: &MetadataStore,
     ) -> Option<()> {
-        let hd = key.ends_with(":hd");
-        let value_kind = if hd { ValueKind::HD } else { ValueKind::Common };
-        let field_name = key.strip_suffix(":hd").unwrap_or(key);
+        let (field_name, value_kind) = ValueKind::split_field_name(key);
         let (field_meta, level) = metadata.query_profile_field(field_name, &self, index)?;
         let value = Value::from_str_and_ty(value, field_meta.value_ty)?;
 

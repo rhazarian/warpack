@@ -298,17 +298,8 @@ impl LuaObjectWrapper {
 
         let lua_key = LuaString::from_lua(key, ctx)?;
         let key = lua_key.to_str()?;
-        let sd_field_name = key.strip_suffix(":sd");
-        let hd_field_name = key.strip_suffix(":hd");
-        let field_name = hd_field_name.or(sd_field_name).unwrap_or(key);
+        let (field_name, value_kind) = ValueKind::split_field_name(key);
         let field_bytes = field_name.as_bytes();
-        let value_kind = if hd_field_name.is_some() {
-            ValueKind::HD
-        } else if sd_field_name.is_some() {
-            ValueKind::SD
-        } else {
-            ValueKind::Common
-        };
 
         // check if the field is in the form of 'XXXX' or 'XXXX+Y'
         let plus_position = field_bytes.iter().position(|&b| b == b'+');
@@ -460,11 +451,8 @@ impl LuaObjectStoreWrapper {
             ValueKind::Common
         } else {
             let value_kind = LuaString::from_lua(value_kind_lua, ctx)?.to_str()?.to_string();
-            match value_kind.to_lowercase().as_str() {
-                "sd" => ValueKind::SD,
-                "hd" => ValueKind::HD,
-                _ => Err(LuaError::external(anyhow!("unknown value kind '{}'", value_kind)))?,
-            }
+            ValueKind::from_mode_name(&value_kind)
+                .ok_or_else(|| LuaError::external(anyhow!("unknown value kind '{}'", value_kind)))?
         };
 
         w3obj::read::read_object_file(value.as_bytes(), data, kind, value_kind).map_err(LuaError::external)?;
@@ -484,11 +472,8 @@ impl LuaObjectStoreWrapper {
             ValueKind::Common
         } else {
             let value_kind = LuaString::from_lua(value_kind_lua, ctx)?.to_str()?.to_string();
-            match value_kind.to_lowercase().as_str() {
-                "sd" => ValueKind::SD,
-                "hd" => ValueKind::HD,
-                _ => Err(LuaError::external(anyhow!("unknown value kind '{}'", value_kind)))?,
-            }
+            ValueKind::from_mode_name(&value_kind)
+                .ok_or_else(|| LuaError::external(anyhow!("unknown value kind '{}'", value_kind)))?
         };
 
         let mut buf = Vec::new();

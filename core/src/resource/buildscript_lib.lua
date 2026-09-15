@@ -219,10 +219,19 @@ local objectExtensions = {
     "w3a", "w3t", "w3u", "w3b", "w3d", "w3h", "w3q"
 }
 
+-- Graphics modes that have their own skin object data.
+-- SD skin data lives in the map root, HD and DE data live in the corresponding .w3mod folders.
+local graphicsModeDirs = {
+    sd = "",
+    hd = "_HD.w3mod\\",
+    de = "_DE.w3mod\\",
+}
+
 function mapMeta:initObjectStorage(ext)
     local data = self:readFile("war3map." .. ext)
-    local dataSD = self:readFile("war3mapSkin." .. ext)
-    local dataHD = self:readFile("_HD.w3mod\\war3mapSkin." .. ext)
+    local dataSD = self:readFile(graphicsModeDirs.sd .. "war3mapSkin." .. ext)
+    local dataHD = self:readFile(graphicsModeDirs.hd .. "war3mapSkin." .. ext)
+    local dataDE = self:readFile(graphicsModeDirs.de .. "war3mapSkin." .. ext)
 
     local storage = objdata.newStore(ext)
 
@@ -230,10 +239,15 @@ function mapMeta:initObjectStorage(ext)
         storage:readFromString(data)
     end
     if dataSD then
-        storage:readFromString(dataSD, dataHD and "sd" or nil)
+        -- If there is no mode-specific skin data, the root skin file is
+        -- treated as common data rather than SD-only data.
+        storage:readFromString(dataSD, (dataHD or dataDE) and "sd" or nil)
     end
     if dataHD then
         storage:readFromString(dataHD, "hd")
+    end
+    if dataDE then
+        storage:readFromString(dataDE, "de")
     end
 
     return storage
@@ -259,17 +273,15 @@ end
 function mapMeta:commitObjectStorage(storage)
     if storage.isDirty then
         if storage.typestr == "lightning" then
-            local dataSD = storage:writeToString("sd")
-            self:addFileString("Splats\\LightningData.slk", dataSD)
-            local dataHD = storage:writeToString("hd")
-            self:addFileString("_HD.w3mod\\Splats\\LightningData.slk", dataHD)
+            for mode, dir in pairs(graphicsModeDirs) do
+                self:addFileString(dir .. "Splats\\LightningData.slk", storage:writeToString(mode))
+            end
         else
             local data = storage:writeToString()
             self:addFileString("war3map." .. storage.ext, data)
-            local dataSD = storage:writeToString("sd")
-            self:addFileString("war3mapSkin." .. storage.ext, dataSD)
-            local dataHD = storage:writeToString("hd")
-            self:addFileString("_HD.w3mod\\war3mapSkin." .. storage.ext, dataHD)
+            for mode, dir in pairs(graphicsModeDirs) do
+                self:addFileString(dir .. "war3mapSkin." .. storage.ext, storage:writeToString(mode))
+            end
             self:addFileString("war3mapSkin.txt", (self:readFile("war3mapSkin.txt") or "") .. storage:writeSkinToString())
         end
     end
