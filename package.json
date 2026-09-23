@@ -1,6 +1,6 @@
 {
     "name": "warpack-types",
-    "version": "0.0.6-dev.8dbea64",
+    "version": "0.0.6-dev.dd68248",
     "description": "TypeScript declaration files for Warpack.",
     "repository": {
         "type": "git",
