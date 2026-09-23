@@ -19,7 +19,10 @@ declare namespace warpack {
      * or return the function result if succeeded.
      * @runtime
      */
-    function safeCall<Args extends any[], R>(f: (...args: Args) => R, ...args: Args): LuaMultiReturn<[false] | [true, R]>
+    function safeCall<Args extends any[], R>(
+        f: (...args: Args) => R,
+        ...args: Args
+    ): LuaMultiReturn<[false] | [true, R]>
 
     /**
      * Wraps the provided function in a `safeCall`, such that
@@ -77,7 +80,7 @@ declare namespace warpack {
      */
     function addPreScriptBuildHook(
         name: string,
-        callback: (map: WarMap, mapScript: string) => void
+        callback: (map: WarMap, mapScript: string) => void,
     ): void
 
     /**
@@ -90,7 +93,7 @@ declare namespace warpack {
      */
     function addPostScriptBuildHook(
         name: string,
-        callback: (map: WarMap, compiledScript: string) => void
+        callback: (map: WarMap, compiledScript: string) => void,
     ): void
 
     /**
@@ -240,7 +243,10 @@ declare namespace fs {
      * Will only exit if an error occurs.
      * @compiletime
      */
-    function watchFile(path: string, callback: (data: string) => void): LuaMultiReturn<[false, string]>
+    function watchFile(
+        path: string,
+        callback: (data: string) => void,
+    ): LuaMultiReturn<[false, string]>
 
     /**
      * Removes a file,
@@ -400,7 +406,7 @@ declare interface MpqBuilder {
     addFromFile(
         archivePath: string,
         diskPath: string,
-        options?: MpqAddOptions
+        options?: MpqAddOptions,
     ): LuaMultiReturn<[true] | [false, string]>
 
     /**
@@ -867,6 +873,21 @@ declare interface WarMap {
     readonly mainTileSet: WarMap.TileSet
     readonly tileSet: ReadonlyArray<number>
 
+    /** Static W3E ground vertices, extracted during map loading. */
+    readonly terrainHeightMap: {
+        /** Vertex counts (tile counts plus one). */
+        readonly width: number
+        readonly height: number
+        /** World position of the southwest vertex; vertex spacing is 128. */
+        readonly offsetX: number
+        readonly offsetY: number
+        /** Rows from south to north, columns from west to east (zero-based in TS).
+         * Heights in world units include cliff layers, but exclude water, objects,
+         * rendered ramp geometry and runtime deformations.
+         */
+        readonly heights: ReadonlyArray<ReadonlyArray<number>>
+    }
+
     readonly strings: {
         includeFile(path: string): void
         loadTOC(path: string): void
@@ -987,10 +1008,10 @@ declare interface Compiletime<T> {
  */
 declare function compiletime<R>(arg: Compiletime<R> | (() => Compiletime<R>)): R
 declare function compiletime<R extends string | number | object | null | undefined | void>(
-    arg: R | (() => R)
+    arg: R | (() => R),
 ): R
 declare function postcompile<R extends string | number | object | null | undefined | void>(
-    arg: () => R
+    arg: () => R,
 ): R
 
 declare const enum Platform {
