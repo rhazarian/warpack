@@ -27,8 +27,27 @@ fn reads_static_terrain_vertices() {
             assert(terrain.heights[3][2] == 0)
             assert(not pcall(readTerrain, data:sub(1, -2)))
             assert(not pcall(readTerrain, 'BAD!' .. data:sub(5)))
-            assert(not pcall(readTerrain, header(12, 2, 3) .. vertices))
+            assert(not pcall(readTerrain, header(13, 2, 3) .. vertices))
             assert(not pcall(readTerrain, header(11, 0, 3) .. vertices))
+
+            -- High texture/flag bits must neither become the cliff layer nor
+            -- shift subsequent vertices (W3E 12 has 8-byte vertex records).
+            local function vertex12(ground, cliff)
+                return string.pack('<I2I2I2BB', ground, 65535, 0xABFF, 0xE7, cliff)
+            end
+            local data12 = header(12, 2, 3) .. vertex12(8192, 2) .. vertex12(8193, 0xF3)
+                .. vertex12(7680, 1) .. vertex12(8704, 4)
+                .. vertex12(8192, 2) .. vertex12(8192, 2)
+            local terrain12 = readTerrain(data12)
+            assert(terrain12.width == terrain.width and terrain12.height == terrain.height)
+            assert(terrain12.offsetX == terrain.offsetX and terrain12.offsetY == terrain.offsetY)
+            for y = 1, terrain.height do
+                for x = 1, terrain.width do
+                    assert(terrain12.heights[y][x] == terrain.heights[y][x])
+                end
+            end
+            assert(not pcall(readTerrain, data12:sub(1, -2)))
+            assert(not pcall(readTerrain, header(12, 2, 3) .. vertices))
         "#).exec().unwrap();
     });
 }
