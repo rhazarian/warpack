@@ -11,6 +11,8 @@ concurrency:
 
 env:
   NODE_PKGS: darwin-arm64 darwin-x64 linux-arm64 linux-x64 windows-arm64 windows-x64
+  # Trusted publishing (OIDC) requires npm 11.5.1+.
+  NODE_VERSION: 24
 
 jobs:
   build:
@@ -120,30 +122,51 @@ jobs:
           args: cargo-get
       - name: Determine version
         shell: bash
-        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
+        run: |
+          echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
+          echo "TYPES_VERSION=$(node -p 'require("./tstl-types/package.json").version')-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies and build
         run: npm ci
       - name: Download binaries
         uses: actions/download-artifact@v4
         with:
           path: bin
-      - name: Prepare release manifest
-        shell: bash
-        run: |
-          chmod +x bin/*/warpack*
-          npm version --no-git-tag-version ${{ env.VERSION }}
-          # dist and bin are committed, so installing only needs to drop the other platforms' binaries.
-          npm pkg delete scripts devDependencies
-          npm pkg set scripts.prepare="node npm-cli/scripts/prune-binaries.js"
-      - name: Commit and push
+      - name: Configure git
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Commit types to the release-types branch
+        shell: bash
+        run: |
+          # npm cannot install a package from a subdirectory of a git repository,
+          # so warpack-types gets its own branch rooted at tstl-types/.
+          (cd tstl-types && npm version --no-git-tag-version --no-workspaces-update ${{ env.TYPES_VERSION }})
+          parents=""
+          if git fetch --depth=1 origin release-types; then
+            parents="-p $(git rev-parse FETCH_HEAD)"
+          fi
+          export GIT_INDEX_FILE="${RUNNER_TEMP}/types-index"
+          tree=$(cd tstl-types && git --work-tree=. add -A && git write-tree)
+          commit=$(git commit-tree ${tree} ${parents} -m "Release warpack-types ${{ env.TYPES_VERSION }}: $(git log -1 --format=%s ${GITHUB_SHA})")
+          git push origin "${commit}:refs/heads/release-types"
+          echo "TYPES_COMMIT=${commit}" >> $GITHUB_ENV
+      - name: Prepare release manifest
+        shell: bash
+        run: |
+          chmod +x bin/*/warpack*
+          npm version --no-git-tag-version --no-workspaces-update ${{ env.VERSION }}
+          # dist and bin are committed, so installing only needs to drop the other platforms' binaries.
+          npm pkg delete scripts devDependencies workspaces
+          npm pkg set scripts.prepare="node npm-cli/scripts/prune-binaries.js"
+          npm pkg set "dependencies.warpack-types=github:${{ github.repository }}#${{ env.TYPES_COMMIT }}"
+      - name: Commit and push
+        shell: bash
+        run: |
           parents="-p ${GITHUB_SHA}"
           if git fetch --depth=1 origin release; then
             parents="-p $(git rev-parse FETCH_HEAD) ${parents}"
@@ -154,10 +177,41 @@ jobs:
           commit=$(git commit-tree ${tree} ${parents} -m "Release ${{ env.VERSION }}: $(git log -1 --format=%s ${GITHUB_SHA})")
           git push origin "${commit}:refs/heads/release"
 
+  # Publishing authenticates via npm trusted publishing (OIDC), so every publishing job
+  # needs `id-token: write` and every published package must list this workflow as its
+  # trusted publisher on npmjs.com.
+
+  publish-types:
+    name: Publish types to NPM
+    needs: build
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Determine version
+        shell: bash
+        run: echo "TYPES_VERSION=$(node -p 'require("./tstl-types/package.json").version')-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Publish to NPM
+        shell: bash
+        run: |
+          cd tstl-types
+          npm version --no-git-tag-version --no-workspaces-update ${{ env.TYPES_VERSION }}
+          npm publish --tag dev
+
   publish-binaries:
     name: Publish binaries
     needs: build
     runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      id-token: write
     strategy:
       fail-fast: false
       matrix:
@@ -187,8 +241,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+          node-version: ${{ env.NODE_VERSION }}
       - name: Download binary
         uses: actions/download-artifact@v4
         with:
@@ -208,13 +261,14 @@ jobs:
           cd "${node_pkg}"
           npm version --no-git-tag-version ${{ env.VERSION }}
           npm publish --tag dev
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-npm:
     name: Publish the base package to NPM
-    needs: publish-binaries
+    needs: [publish-binaries, publish-types]
     runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -229,26 +283,27 @@ jobs:
           args: cargo-get
       - name: Determine version
         shell: bash
-        run: echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
+        run: |
+          echo "VERSION=$(cargo-get workspace.package.version)-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
+          echo "TYPES_VERSION=$(node -p 'require("./tstl-types/package.json").version')-dev.$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+          node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
         run: npm ci --ignore-scripts
       - name: Set package version
         shell: bash
-        run: npm version --no-git-tag-version ${{ env.VERSION }}
-      - name: Pin binary packages
+        run: npm version --no-git-tag-version --no-workspaces-update ${{ env.VERSION }}
+      - name: Pin dependencies
         shell: bash
         run: |
           for node_pkg in ${{ env.NODE_PKGS }}; do
             npm pkg set "optionalDependencies.@warpack/${node_pkg}=${{ env.VERSION }}"
           done
+          npm pkg set "dependencies.warpack-types=${{ env.TYPES_VERSION }}"
+          npm pkg delete workspaces
       - name: Build
         run: npm run build
       - name: Publish to NPM
         run: npm publish --tag dev
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

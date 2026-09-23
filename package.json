@@ -21,6 +21,9 @@
   },
   "type": "module",
   "types": "dist/index.d.ts",
+  "workspaces": [
+    "tstl-types"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rhazarian/warpack.git"
@@ -29,11 +32,12 @@
     "lint": "eslint npm-cli",
     "lint:fix": "eslint npm-cli --fix",
     "build": "tsc -p npm-cli",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "check:types": "npm run check -w warpack-types"
   },
   "dependencies": {
     "execa": "^9.5.1",
-    "warpack-types": "github:rhazarian/warpack-types#ad3b314"
+    "warpack-types": "file:tstl-types"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
