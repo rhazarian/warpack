@@ -279,20 +279,11 @@ jobs:
           PLATFORMS: ${{ needs.platforms.outputs.matrix }}
         run: |
           # npm ci fails with "package.json and package-lock.json are not in sync" in every
-          # dependent project if an optional dependency does not exist in the registry, so
-          # refuse to publish unless each declared platform package is actually there.
+          # dependent project if an optional dependency does not exist in the registry. These
+          # are exactly the packages publish-binaries published, and this job only runs once
+          # all of them succeeded. The registry is not queried to confirm it: packuments are
+          # CDN-cached for up to 5 minutes, so a just-published version may not be visible yet.
           for node_pkg in $(jq -r '.[].PKG' <<< "${PLATFORMS}"); do
-            spec="@warpack/${node_pkg}@${{ env.VERSION }}"
-            for attempt in 1 2 3 4 5 6; do
-              if [ "$(npm view "${spec}" version 2>/dev/null)" = "${{ env.VERSION }}" ]; then
-                break
-              fi
-              if [ "${attempt}" = 6 ]; then
-                echo "::error::${spec} is not in the registry"
-                exit 1
-              fi
-              sleep 10
-            done
             npm pkg set "optionalDependencies.@warpack/${node_pkg}=${{ env.VERSION }}"
           done
           npm pkg set "dependencies.warpack-types=${{ env.TYPES_VERSION }}"
