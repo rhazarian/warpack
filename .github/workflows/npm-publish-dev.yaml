@@ -10,60 +10,45 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_PKGS: darwin-arm64 darwin-x64 linux-arm64 linux-x64 windows-arm64 windows-x64
   # Trusted publishing (OIDC) requires npm 11.5.1+.
   NODE_VERSION: 24
 
 jobs:
+  platforms:
+    name: List platforms
+    runs-on: ubuntu-22.04
+    outputs:
+      matrix: ${{ steps.list.outputs.matrix }}
+    steps:
+      - name: List platforms
+        id: list
+        shell: bash
+        # The single source of truth for the supported platforms: it drives the build and
+        # publish-binaries matrices and the optionalDependencies of the base package, so a
+        # platform package can never be declared without being built and published.
+        run: |
+          matrix=$(jq -c . <<'EOF'
+          [
+            { "NAME": "linux-x64", "PKG": "linux-x64", "OS": "ubuntu-22.04", "TARGET": "x86_64-unknown-linux-gnu" },
+            { "NAME": "linux-ia32", "PKG": "linux-ia32", "OS": "ubuntu-22.04", "TARGET": "i686-unknown-linux-gnu" },
+            { "NAME": "linux-arm64", "PKG": "linux-arm64", "OS": "ubuntu-22.04", "TARGET": "aarch64-unknown-linux-gnu" },
+            { "NAME": "win32-x64", "PKG": "windows-x64", "OS": "windows-2022", "TARGET": "x86_64-pc-windows-msvc" },
+            { "NAME": "win32-ia32", "PKG": "windows-ia32", "OS": "windows-2022", "TARGET": "i686-pc-windows-msvc" },
+            { "NAME": "win32-arm64", "PKG": "windows-arm64", "OS": "windows-2022", "TARGET": "aarch64-pc-windows-msvc" },
+            { "NAME": "darwin-arm64", "PKG": "darwin-arm64", "OS": "macos-latest", "TARGET": "aarch64-apple-darwin" }
+          ]
+          EOF
+          )
+          echo "matrix=${matrix}" >> $GITHUB_OUTPUT
+
   build:
     name: Build binaries
-    runs-on: ${{ matrix.build.os }}
+    needs: platforms
+    runs-on: ${{ matrix.build.OS }}
     strategy:
       fail-fast: false
       matrix:
-        build:
-          - {
-            NAME: linux-x64,
-            PKG: linux-x64,
-            OS: ubuntu-22.04,
-            TARGET: x86_64-unknown-linux-gnu,
-          }
-          - {
-            NAME: linux-ia32,
-            PKG: linux-ia32,
-            OS: ubuntu-22.04,
-            TARGET: i686-unknown-linux-gnu,
-          }
-          - {
-            NAME: linux-arm64,
-            PKG: linux-arm64,
-            OS: ubuntu-22.04,
-            TARGET: aarch64-unknown-linux-gnu,
-          }
-          - {
-            NAME: win32-x64,
-            PKG: windows-x64,
-            OS: windows-2022,
-            TARGET: x86_64-pc-windows-msvc,
-          }
-          - {
-            NAME: win32-ia32,
-            PKG: windows-ia32,
-            OS: windows-2022,
-            TARGET: i686-pc-windows-msvc,
-          }
-          - {
-            NAME: win32-arm64,
-            PKG: windows-arm64,
-            OS: windows-2022,
-            TARGET: aarch64-pc-windows-msvc,
-          }
-          - {
-            NAME: darwin-arm64,
-            PKG: darwin-arm64,
-            OS: macos-latest,
-            TARGET: aarch64-apple-darwin,
-          }
+        build: ${{ fromJSON(needs.platforms.outputs.matrix) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -207,7 +192,7 @@ jobs:
 
   publish-binaries:
     name: Publish binaries
-    needs: build
+    needs: [platforms, build]
     runs-on: ubuntu-22.04
     permissions:
       contents: read
@@ -215,14 +200,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        build:
-          - { NAME: linux-x64, PKG: linux-x64 }
-          - { NAME: linux-ia32, PKG: linux-ia32 }
-          - { NAME: linux-arm64, PKG: linux-arm64 }
-          - { NAME: win32-x64, PKG: windows-x64 }
-          - { NAME: win32-ia32, PKG: windows-ia32 }
-          - { NAME: win32-arm64, PKG: windows-arm64 }
-          - { NAME: darwin-arm64, PKG: darwin-arm64 }
+        build: ${{ fromJSON(needs.platforms.outputs.matrix) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -264,7 +242,7 @@ jobs:
 
   publish-npm:
     name: Publish the base package to NPM
-    needs: [publish-binaries, publish-types]
+    needs: [platforms, publish-binaries, publish-types]
     runs-on: ubuntu-22.04
     permissions:
       contents: read
@@ -297,8 +275,24 @@ jobs:
         run: npm version --no-git-tag-version --no-workspaces-update ${{ env.VERSION }}
       - name: Pin dependencies
         shell: bash
+        env:
+          PLATFORMS: ${{ needs.platforms.outputs.matrix }}
         run: |
-          for node_pkg in ${{ env.NODE_PKGS }}; do
+          # npm ci fails with "package.json and package-lock.json are not in sync" in every
+          # dependent project if an optional dependency does not exist in the registry, so
+          # refuse to publish unless each declared platform package is actually there.
+          for node_pkg in $(jq -r '.[].PKG' <<< "${PLATFORMS}"); do
+            spec="@warpack/${node_pkg}@${{ env.VERSION }}"
+            for attempt in 1 2 3 4 5 6; do
+              if [ "$(npm view "${spec}" version 2>/dev/null)" = "${{ env.VERSION }}" ]; then
+                break
+              fi
+              if [ "${attempt}" = 6 ]; then
+                echo "::error::${spec} is not in the registry"
+                exit 1
+              fi
+              sleep 10
+            done
             npm pkg set "optionalDependencies.@warpack/${node_pkg}=${{ env.VERSION }}"
           done
           npm pkg set "dependencies.warpack-types=${{ env.TYPES_VERSION }}"
