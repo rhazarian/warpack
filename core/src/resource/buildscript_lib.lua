@@ -679,6 +679,12 @@ function warpack.buildMap(buildCommand)
         end
         loadedMap.tileSet = tileSet
 
+        local terrainOk, terrain = pcall(warpack._readTerrainHeightMap, loadedEnv)
+        if not terrainOk then
+            return false, "Could not read terrain heights (war3map.w3e): " .. tostring(terrain)
+        end
+        loadedMap.terrainHeightMap = terrain
+
         local loadedInfo, errorMsg = loadedMap:readFile("war3map.w3i")
         if errorMsg ~= nil then
             return false, "Could not load map info file (war3map.w3i): "..errorMsg

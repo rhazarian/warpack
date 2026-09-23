@@ -31,6 +31,15 @@ pub fn setup_ceres_environ(ctx: LuaContext, run_mode: WarpackRunMode, script_arg
     let ceres_table = ctx.create_table().unwrap();
 
     ceres_table
+        .set(
+            "_readTerrainHeightMap",
+            ctx.load(include_str!("../resource/terrain.lua"))
+                .eval::<LuaFunction>()
+                .unwrap(),
+        )
+        .unwrap();
+
+    ceres_table
         .set("registerMacro", macros::get_register_luafn(ctx))
         .unwrap();
     ceres_table
