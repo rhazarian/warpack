@@ -1,0 +1,26 @@
+{
+    "name": "warpack-types",
+    "version": "0.0.6",
+    "description": "TypeScript declaration files for Warpack.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rhazarian/warpack.git",
+        "directory": "tstl-types"
+    },
+    "files": [
+        "**/*.d.ts"
+    ],
+    "scripts": {
+        "check": "tsc -p ."
+    },
+    "author": "rhazarian",
+    "license": "MIT",
+    "devDependencies": {
+        "prettier": "^3.3.3",
+        "typescript-to-lua": "^1.27.1"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    }
+}
