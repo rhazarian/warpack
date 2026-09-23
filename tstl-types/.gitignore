@@ -1,0 +1,10 @@
+/*
+!.github
+!.eslintrc.js
+!.gitignore
+!.prettierrc
+!LICENSE
+!package.json
+!package-lock.json
+!tsconfig.json
+!warpack.d.ts
