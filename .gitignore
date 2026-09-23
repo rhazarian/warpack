@@ -1,0 +1,7 @@
+/*
+!.gitignore
+!.prettierrc
+!LICENSE
+!package.json
+!tsconfig.json
+!warpack.d.ts
