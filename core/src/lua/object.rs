@@ -492,7 +492,7 @@ impl LuaObjectStoreWrapper {
         let data = &data.inner;
 
         let mut buf = Vec::new();
-        w3obj::write::write_skin_file(&mut buf, w3data::metadata(), &data, kind)
+        w3obj::write::write_skin_file(&mut buf, w3data::metadata(), w3data::data(), &data, kind)
             .map_err(LuaError::external)?;
 
         Ok(LuaValue::String(ctx.create_string(&buf)?))
