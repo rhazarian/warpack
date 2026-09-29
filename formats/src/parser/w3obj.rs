@@ -209,37 +209,56 @@ pub mod write {
             })
     }
 
-    fn object_flat_fields_skin<'a>(
-        object: &'a Object,
-        metadata: &'a MetadataStore,
-    ) -> impl Iterator<Item = (String, &'a Value)> {
-        object
-            .fields()
-            .flat_map(move |(id, field)| {
-                let iter: Box<dyn Iterator<Item = (String, &'a Value)>> = match metadata.field_by_id(id.clone()) {
-                    Some(field_desc) if field_desc.is_profile => match &field.kind {
-                        FieldKind::Simple { .. } => Box::new(
-                            ValueKind::GRAPHICS_MODES.iter().copied().flat_map(move |value_kind| {
-                                field.kind.simple_value_of(value_kind).map(move |value| (
-                                    format!("{}{}", field_desc.variant.name(), value_kind.suffix()),
-                                    value,
-                                ))
-                            })
-                        ),
-                        FieldKind::Leveled { .. } => {
-                            eprintln!(
-                                "unexpected data field in object {} for field {}",
-                                object.id(),
-                                field.id
-                            );
-                            Box::new(std::iter::empty())
+    /// The graphics-mode overrides of the object's profile fields, as `war3mapSkin.txt` lines.
+    ///
+    /// The game resolves a profile field in DE as `:de` -> `:hd` -> the common value, so an
+    /// `:hd` override would leak into DE, although it is meant for HD only (and HD-only
+    /// assets, e.g. those in the map's `_HD.w3mod`, are not even available in DE). To keep
+    /// every mode independent, a field with an `:hd` override but no `:de` one gets an
+    /// explicit `:de` equal to the value DE would use without the `:hd` override: the
+    /// object's common value, else its prototype's (stock) DE value.
+    fn object_flat_fields_skin(
+        object: &Object,
+        metadata: &MetadataStore,
+        stock_data: &ObjectStoreStock,
+    ) -> Vec<(String, Value)> {
+        let mut result = Vec::new();
+        for (id, field) in object.fields() {
+            let field_desc = match metadata.field_by_id(id.clone()) {
+                Some(field_desc) if field_desc.is_profile => field_desc,
+                _ => continue,
+            };
+            match &field.kind {
+                FieldKind::Simple { .. } => {
+                    let name = field_desc.variant.name();
+                    for value_kind in ValueKind::GRAPHICS_MODES {
+                        if let Some(value) = field.kind.simple_value_of(value_kind) {
+                            result.push((format!("{}{}", name, value_kind.suffix()), value.clone()));
                         }
-                    },
-                    _ => Box::new(std::iter::empty()),
-                };
-
-                iter
-            })
+                    }
+                    let has_hd = field.kind.simple_value_of(ValueKind::HD).is_some();
+                    let has_de = field.kind.simple_value_of(ValueKind::DE).is_some();
+                    if has_hd && !has_de {
+                        let base = field.kind.simple_value_of(ValueKind::Common).or_else(|| {
+                            stock_data
+                                .object_prototype(object)
+                                .and_then(|proto| proto.simple_field(id, ValueKind::DE))
+                        });
+                        if let Some(base) = base {
+                            result.push((format!("{}{}", name, ValueKind::DE.suffix()), base.clone()));
+                        }
+                    }
+                }
+                FieldKind::Leveled { .. } => {
+                    eprintln!(
+                        "unexpected data field in object {} for field {}",
+                        object.id(),
+                        field.id
+                    );
+                }
+            }
+        }
+        result
     }
 
     fn is_obj_kind_pred(kind: ObjectKind) -> impl Fn(&RwLockReadGuard<Object>) -> bool {
@@ -282,13 +301,14 @@ pub mod write {
         mut writer: W,
         object: &Object,
         metadata: &MetadataStore,
+        stock_data: &ObjectStoreStock,
     ) -> Result<(), IoError> {
-        let fields: Vec<_> = object_flat_fields_skin(object, metadata).collect();
+        let fields = object_flat_fields_skin(object, metadata, stock_data);
 
         if !fields.is_empty() {
             writer.write_all(format!("[{}]\r\n", object.id().to_string().unwrap()).as_bytes())?;
             for (name, value) in fields {
-                writer.write_all(format!("{}={}\r\n", name, value_to_string(value)).as_bytes())?;
+                writer.write_all(format!("{}={}\r\n", name, value_to_string(&value)).as_bytes())?;
             }
         }
 
@@ -340,6 +360,7 @@ pub mod write {
     pub fn write_skin_file<W: Write>(
         mut writer: W,
         metadata: &MetadataStore,
+        stock_data: &ObjectStoreStock,
         data: &ObjectStore,
         kind: ObjectKind,
     ) -> Result<(), IoError> {
@@ -351,7 +372,7 @@ pub mod write {
             .collect();
 
         for object in objects {
-            write_skin_fields(&mut writer, &object, metadata)?;
+            write_skin_fields(&mut writer, &object, metadata, stock_data)?;
         }
 
         Ok(())
