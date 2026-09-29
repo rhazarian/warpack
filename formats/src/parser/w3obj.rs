@@ -214,9 +214,12 @@ pub mod write {
     /// The game resolves a profile field in DE as `:de` -> `:hd` -> the common value, so an
     /// `:hd` override would leak into DE, although it is meant for HD only (and HD-only
     /// assets, e.g. those in the map's `_HD.w3mod`, are not even available in DE). To keep
-    /// every mode independent, a field with an `:hd` override but no `:de` one gets an
-    /// explicit `:de` equal to the value DE would use without the `:hd` override: the
-    /// object's common value, else its prototype's (stock) DE value.
+    /// every mode independent, a field whose `:hd` value the map changed (it differs from
+    /// the prototype's) but that has no `:de` one gets an explicit `:de` equal to the value
+    /// DE would use without the `:hd` override: the object's common value, else the
+    /// prototype's value as DE resolves it (`:de` -> `:hd` -> common). An `:hd` value
+    /// inherited from the stock data is left alone: the game's own data relies on the
+    /// fallback (many stock units have only `:hd` art meant for DE too).
     fn object_flat_fields_skin(
         object: &Object,
         metadata: &MetadataStore,
@@ -236,13 +239,19 @@ pub mod write {
                             result.push((format!("{}{}", name, value_kind.suffix()), value.clone()));
                         }
                     }
-                    let has_hd = field.kind.simple_value_of(ValueKind::HD).is_some();
+                    let prototype_field = stock_data
+                        .object_prototype(object)
+                        .and_then(|proto| proto.field(id.clone()));
+                    let prototype_value_of = |value_kind| {
+                        prototype_field.and_then(|field| field.kind.simple_value_of(value_kind))
+                    };
+                    let hd = field.kind.simple_value_of(ValueKind::HD);
                     let has_de = field.kind.simple_value_of(ValueKind::DE).is_some();
-                    if has_hd && !has_de {
+                    if hd.is_some() && !has_de && hd != prototype_value_of(ValueKind::HD) {
                         let base = field.kind.simple_value_of(ValueKind::Common).or_else(|| {
-                            stock_data
-                                .object_prototype(object)
-                                .and_then(|proto| proto.simple_field(id, ValueKind::DE))
+                            prototype_value_of(ValueKind::DE)
+                                .or_else(|| prototype_value_of(ValueKind::HD))
+                                .or_else(|| prototype_value_of(ValueKind::Common))
                         });
                         if let Some(base) = base {
                             result.push((format!("{}{}", name, ValueKind::DE.suffix()), base.clone()));
