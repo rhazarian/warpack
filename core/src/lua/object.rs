@@ -377,9 +377,9 @@ impl LuaObjectWrapper {
         if let Some((field_desc, level, hd)) = Self::translate_field_name(ctx, key, object)? {
             if let LuaValue::Nil = value {
                 if let Some(level) = level {
-                    object.unset_leveled_field(&field_desc.id, level)
+                    object.unset_leveled_field_value(&field_desc.id, level, hd)
                 } else {
-                    object.unset_simple_field(&field_desc.id)
+                    object.unset_simple_field_value(&field_desc.id, hd)
                 }
             } else {
                 let value = lvalue_to_value(ctx, value, field_desc)?;
