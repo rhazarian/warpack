@@ -263,6 +263,54 @@ impl Object {
         }
     }
 
+    /// Unsets only the value of one graphics mode (`Common` unsets the whole field, as
+    /// `unset_simple_field` does); the field goes away once no value is left.
+    pub fn unset_simple_field_value(&mut self, id: &ObjectId, value_kind: ValueKind) {
+        if value_kind == ValueKind::Common {
+            return self.unset_simple_field(id);
+        }
+        self.dirty = true;
+
+        if let Some(field) = self.fields.get_mut(id) {
+            if let FieldKind::Simple { value, value_sd, value_hd, value_de } = &mut field.kind {
+                match value_kind {
+                    ValueKind::SD => *value_sd = None,
+                    ValueKind::HD => *value_hd = None,
+                    ValueKind::DE => *value_de = None,
+                    ValueKind::Common => unreachable!(),
+                }
+                if value.is_none() && value_sd.is_none() && value_hd.is_none() && value_de.is_none() {
+                    self.fields.remove(id);
+                }
+            }
+        }
+    }
+
+    /// Unsets only the value of one graphics mode at a level (`Common` unsets the whole
+    /// level, as `unset_leveled_field` does).
+    pub fn unset_leveled_field_value(&mut self, id: &ObjectId, level: u32, value_kind: ValueKind) {
+        if value_kind == ValueKind::Common {
+            return self.unset_leveled_field(id, level);
+        }
+        self.dirty = true;
+
+        if let Some(field) = self.fields.get_mut(id) {
+            if let FieldKind::Leveled { values } = &mut field.kind {
+                if let Some(leveled_value) = values.iter_mut().find(|dv| dv.level == level) {
+                    match value_kind {
+                        ValueKind::SD => leveled_value.value_sd = None,
+                        ValueKind::HD => leveled_value.value_hd = None,
+                        ValueKind::DE => leveled_value.value_de = None,
+                        ValueKind::Common => unreachable!(),
+                    }
+                }
+                values.retain(|dv| {
+                    dv.value.is_some() || dv.value_sd.is_some() || dv.value_hd.is_some() || dv.value_de.is_some()
+                });
+            }
+        }
+    }
+
     pub fn set_simple_field(&mut self, id: &ObjectId, value: Value, value_kind: ValueKind) {
         self.dirty = true;
 
