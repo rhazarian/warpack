@@ -463,7 +463,7 @@ addon=Environment
 [NSct]
 addon=Environment
 
-[NSra]
+[NSr0]
 addon=Environment
 
 [NSr1]

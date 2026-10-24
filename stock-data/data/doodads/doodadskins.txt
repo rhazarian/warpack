@@ -4525,9 +4525,9 @@ version=0
 selSize=0
 defScale:hd=1.5
 
-[NSra]
+[NSr0]
 skinType=doodad
-skinnableID=NSra
+skinnableID=NSr0
 vertB=255,255,255,255,255,255,255,255,255,255
 maxScale=1.200
 useMMColor=0

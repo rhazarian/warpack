@@ -1291,7 +1291,7 @@ Name=Item Spell Resistance 5
 Name=Item Feedback 4
 
 [AIcq]
-Name=Item Aura Command 8
+Name=Item Aura Command 5
 
 [AADw]
 Name=Item Spell Damage 5
@@ -1441,7 +1441,7 @@ Name=Item Cursed Golden Ring Crit
 Name=Item Armor Bonus -2
 
 [AIBq]
-Name=Item Bash (15, 25, 1)
+Name=Item Bash (15%)
 
 [Almf]
 Name=Item Lesser Mark of the Forsaken
@@ -2191,7 +2191,7 @@ Buttonpos=0,-11
 Unbuttonpos=0,-11
 
 [AIBw]
-Name=Item Bash (10, 25, 2)
+Name=Item Bash (10%)
 
 [Apsx]
 Name=Item Protector SH Stun
@@ -2718,7 +2718,7 @@ Name=Item Spell Amp 26
 Name=Item Spell Damage 2
 
 [Ahf1]
-Name=Item Huge Flail WS
+Name=Item Huge Flail TC
 
 [Ahf2]
 Name=Item Huge Flail Attack
@@ -2747,6 +2747,31 @@ Name=Item Bottled Storm Attack
 
 [ASCs]
 Name=Item Spell Crit Chance 5
+
+[AIst]
+Name=Item Hero Stat Bonus
+EditorSuffix=(+2 Strength)
+
+[AIs2]
+Name=Item Attack Speed Bonus
+EditorSuffix= (Fix)
+
+[AHRg]
+Name=Item Health Regeneration 1
+
+// Tome of Talent Retraining
+[ATar]
+Name=Talent Retraining
+
+[ADN3]
+Name=Item Damage Bonus -3
+
+[Astt]
+Name=Item Shield of the Titans Aura
+
+[AIgs]
+Name=Garithos Squeek
+
 
 //----------------------------------------------------
 // Buffs with no in-game text

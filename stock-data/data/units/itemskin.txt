@@ -7128,3 +7128,14 @@ selSize=0
 colorR=255
 colorG=255
 colorB=255
+
+[cgah]
+skinType=item
+skinnableID=cgah
+armor=Wood
+file=Objects/InventoryItems/abominationhead/abominationhead.mdl
+scale=1
+selSize=0
+colorR=255
+colorG=255
+colorB=255

@@ -1,5 +1,5 @@
 ID;PWXL;N;E
-B;X19;Y43;D0
+B;X19;Y44;D0
 C;X1;Y1;K"ID"
 C;X2;K"field"
 C;X3;K"slk"
@@ -665,6 +665,20 @@ C;X5;K0
 C;X6;K"art"
 C;X7;K"WESTRING_DEVAL_DWAT"
 C;X8;K"c7e00"
+C;X9;K"bool"
+C;X12;K0
+C;X13;K0
+C;X14;K0
+C;X17;K0
+C;X18;K2
+C;X1;Y44;K"dcuw"
+C;X2;K"cullUnderwater"
+C;X3;K"DoodadData"
+C;X4;K0
+C;X5;K0
+C;X6;K"art"
+C;X7;K"WESTRING_DEVAL_DCUW"
+C;X8;K"c5b80"
 C;X9;K"bool"
 C;X12;K0
 C;X13;K0

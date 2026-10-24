@@ -738,7 +738,7 @@ Ubertip="Increases the maximum number of units controlled to <AHz3,DataC1>/<AHz3
 Name=Sacred Rebuke
 EditorSuffix= (IlastarTalent)
 Tip=Sacred Rebuke
-Ubertip="Sacred Aura now reduces enemy Magic Resistance by <AHa1,DataD1>%/<AHa1,DataD2>%/<AHa1,DataD3>%."
+Ubertip="Sacred Aura now reduces enemy Magic Resistance by <AHa1,DataD1,%>%/<AHa1,DataD2,%>%/<AHa1,DataD3,%>%."
 
 // IlastarTalent Tier 3b
 [IT3b]
@@ -752,7 +752,7 @@ Ubertip="Sacred Aura now grants affected friendly units <AHa2,DataC1>%/<AHa2,Dat
 Name=Spiritual Renewal
 EditorSuffix= (IlastarTalent)
 Tip=Spiritual Renewal
-Ubertip="Sacred Aura now grants affected friendly units <AHa3,DataG1>/<AHa3,DataG2>/<AHa3,DataG3> mana per second."
+Ubertip="Sacred Aura now grants affected friendly units <AHa3,DataG1,.>/<AHa3,DataG2,.>/<AHa3,DataG3,.> mana per second."
 
 // IlastarTalent Tier 4a
 [IT4a]
@@ -808,7 +808,7 @@ Ubertip="Undying Defiance now reflects <AUb1,DataF1>%/<AUb1,DataF2>%/<AUb1,DataF
 Name=Parry
 EditorSuffix= (UGarekTalent)
 Tip=Parry
-Ubertip="Undying Defiance's duration is reduced to <AUb2,Dur1> and cooldown to <AUb2,Cool1>/<AUb2,Cool2>/<AUb2,Cool3>/<AUb2,Cool4>/<AUb2,Cool5>, but now reduces damage by <AUb2,DataA1>%."
+Ubertip="Undying Defiance's duration is reduced to <AUb2,Dur1> and cooldown to <AUb2,Cool1>/<AUb2,Cool2>/<AUb2,Cool3>/<AUb2,Cool4>/<AUb2,Cool5>, but now reduces damage by <AUb2,DataA1>%. Reduces the Mana Cost of Undying Defiance to <AUb2,Cost1>."
 
 // UGarekTalent Tier 2c
 [UT2c]
@@ -941,7 +941,7 @@ Ubertip="Soul Lantern healing is now increased to <AUl2,DataB1>/<AUl2,DataB2>/<A
 Name=Guiding Light
 EditorSuffix= (AnyaTalent)
 Tip=Guiding Light
-Ubertip="Soul Lantern now also grants <AUl3,DataD1>%/<AUl3,DataD2>%/<AUl3,DataD3>%/<AUl3,DataD4>%/<AUl3,DataD5>% Spell Amp and <AUl3,DataE1>%/<AUl3,DataE2>%/<AUl3,DataE3>%/<AUl3,DataE4>%/<AUl3,DataE5>% Spell Critical chance, but also increases cost to <AUl3,DataA1>/<AUl3,DataA2>/<AUl3,DataA3>/<AUl3,DataA4>/<AUl3,DataA5> mana per second."
+Ubertip="Soul Lantern now also grants <AUl3,DataD1>%/<AUl3,DataD2>%/<AUl3,DataD3>%/<AUl3,DataD4>%/<AUl3,DataD5>% Spell Amp and <AUl3,DataE1>%/<AUl3,DataE2>%/<AUl3,DataE3>%/<AUl3,DataE4>%/<AUl3,DataE5>% Spell Critical chance, but also increases cost to <AUl3,DataA1> mana per second."
 
 // Anya Stat Talent
 [AT3a]
@@ -1032,7 +1032,7 @@ Ubertip="Gain <AT6c,DataA1,%>% Spell Amp."
 Name=Battle Fury
 EditorSuffix= (LeonidTalent)
 Tip=Battle Fury
-Ubertip="Killing an enemy with Headsplitter resets its cooldown."
+Ubertip="Killing an enemy with Headsplitter resets its cooldown. Reduces the mana cost of Headsplitter to <AHh1,Cost1>."
 
 // LeonidTalent Tier 1b
 [BT1b]
@@ -1047,7 +1047,7 @@ Ubertip="Headsplitter now causes the target to take <AHh2,DataF1>%/<AHh2,DataF2>
 Name=Meteor Strike
 EditorSuffix= (LeonidTalent)
 Tip=Meteor Strike
-Ubertip="Headsplitter now affects all targets in a small area."
+Ubertip="Headsplitter now affects all targets in a small area, but deals 75 less damage."
 
 // LeonidTalent Tier 2a
 [BT2a]
@@ -1110,7 +1110,7 @@ Ubertip="Guiding Hand no longer grants bonus Ability Speed, and instead grants <
 Name=Hand of Justice
 EditorSuffix= (LeonidTalent)
 Tip=Hand of Justice
-Ubertip="Guiding Hand no longer grants increased movement speed and instead slows nearby friendly units by <AHq3,DataB1>%/<AHq3,DataB2>%/<AHq3,DataB3>%, and grants <AHq3,DataC1>%/<AHq3,DataC2>%/<AHq3,DataC3>% Critical Strike chance."
+Ubertip="Guiding Hand no longer grants increased movement speed and instead modifies it by <AHq3,DataB1>%/<AHq3,DataB2>%/<AHq3,DataB3>%, and grants <AHq3,DataC1>%/<AHq3,DataC2>%/<AHq3,DataC3>% Critical Strike chance."
 
 // LeonidTalent Tier 5a
 [BT5a]
@@ -1486,10 +1486,10 @@ Researchhotkey=E
 Name=Sacred Aura
 EditorSuffix= (Talent 1)
 Tip=Sacred Aura - [|cffffcc00Level 1|r],Sacred Aura - [|cffffcc00Level 2|r],Sacred Aura - [|cffffcc00Level 3|r]
-UberTip="Gives <AHa1,DataA1,%>% Magic Resistance and <AHa1,DataB1>% increased healing received to nearby friendly units. Enemy units have their Magic Resistance reduced by <AHa1,DataD1>%.","Gives <AHa1,DataA2,%>% Magic Resistance and <AHa1,DataB2>% increased healing received to nearby friendly units. Enemy units have their Magic Resistance reduced by <AHa1,DataD2>%.","Gives <AHa1,DataA3,%>% Magic Resistance and <AHa1,DataB3>% increased healing recieved to nearby friendly units. Enemy units have their Magic Resistance reduced by <AHa1,DataD3>%."
+UberTip="Gives <AHa1,DataA1,%>% Magic Resistance and <AHa1,DataB1>% increased healing received to nearby friendly units. Enemy units have their Magic Resistance reduced by <AHa1,DataD1,%>%.","Gives <AHa1,DataA2,%>% Magic Resistance and <AHa1,DataB2>% increased healing received to nearby friendly units. Enemy units have their Magic Resistance reduced by <AHa1,DataD2,%>%.","Gives <AHa1,DataA3,%>% Magic Resistance and <AHa1,DataB3>% increased healing recieved to nearby friendly units. Enemy units have their Magic Resistance reduced by <AHa1,DataD3,%>%."
 Hotkey=E
 Researchtip="Learn Sacred Aura - [|cffffcc00Level %d|r]"
-Researchubertip="Gives additional Magic Resistance and increased healing received to nearby friendly units, reduces enemy Magic Resistance. |n|n|cffffcc00Level 1|r - <AHa1,DataA1,%>% Magic Resistance, <AHa1,DataB1>% increased healing received, <AHa1,DataD1>% Magic Resistance reduced. |n|cffffcc00Level 2|r - <AHa1,DataA2,%>% Magic Resistance, <AHa1,DataB2>% increased healing received, <AHa1,DataD2>% Magic Resistance reduced. |n|cffffcc00Level 3|r - <AHa1,DataA3,%>% Magic Resistance, <AHa1,DataB3>% increased healing received, <AHa1,DataD3>% Magic Resistance reduced."
+Researchubertip="Gives additional Magic Resistance and increased healing received to nearby friendly units, reduces enemy Magic Resistance. |n|n|cffffcc00Level 1|r - <AHa1,DataA1,%>% Magic Resistance, <AHa1,DataB1>% increased healing received, <AHa1,DataD1,%>% Magic Resistance reduced. |n|cffffcc00Level 2|r - <AHa1,DataA2,%>% Magic Resistance, <AHa1,DataB2>% increased healing received, <AHa1,DataD2,%>% Magic Resistance reduced. |n|cffffcc00Level 3|r - <AHa1,DataA3,%>% Magic Resistance, <AHa1,DataB3>% increased healing received, <AHa1,DataD3,%>% Magic Resistance reduced."
 Researchhotkey=E
 
 // Sacred Aura - ilastar
@@ -1508,10 +1508,10 @@ Researchhotkey=E
 Name=Sacred Aura
 EditorSuffix= (Talent 3)
 Tip=Sacred Aura - [|cffffcc00Level 1|r],Sacred Aura - [|cffffcc00Level 2|r],Sacred Aura - [|cffffcc00Level 3|r]
-UberTip="Gives <AHa3,DataA1,%>% Magic Resistance, <AHa3,DataB1>% increased healing received, and <AHa3,DataG1> mana regeneration per second to nearby friendly units.","Gives <AHa3,DataA2,%>% Magic Resistance, <AHa3,DataB2>% increased healing received, and <AHa3,DataG2> mana regeneration per second to nearby friendly units.","Gives <AHa3,DataA3,%>% Magic Resistance, <AHa3,DataB3>% increased healing recieved, and <AHa3,DataG3> mana regeneration per second to nearby friendly units."
+UberTip="Gives <AHa3,DataA1,%>% Magic Resistance, <AHa3,DataB1>% increased healing received, and <AHa3,DataG1,.> mana regeneration per second to nearby friendly units.","Gives <AHa3,DataA2,%>% Magic Resistance, <AHa3,DataB2>% increased healing received, and <AHa3,DataG2,.> mana regeneration per second to nearby friendly units.","Gives <AHa3,DataA3,%>% Magic Resistance, <AHa3,DataB3>% increased healing recieved, and <AHa3,DataG3,.> mana regeneration per second to nearby friendly units."
 Hotkey=E
 Researchtip="Learn Sacred Aura - [|cffffcc00Level %d|r]"
-Researchubertip="Gives additional Magic Resistance, increased healing received, and mana regeneration to nearby friendly units. |n|n|cffffcc00Level 1|r - <AHa3,DataA1,%>% Magic Resistance, <AHa3,DataB1>% increased healing received, <AHa3,DataB1> mana regeneration per second. |n|cffffcc00Level 2|r - <AHa3,DataA2,%>% Magic Resistance, <AHa3,DataB2>% increased healing received, <AHa3,DataB2> mana regeneration per second. |n|cffffcc00Level 3|r - <AHa3,DataA3,%>% Magic Resistance, <AHa3,DataB3>% increased healing received, <AHa3,DataB3> mana regeneration per second."
+Researchubertip="Gives additional Magic Resistance, increased healing received, and mana regeneration to nearby friendly units. |n|n|cffffcc00Level 1|r - <AHa3,DataA1,%>% Magic Resistance, <AHa3,DataB1>% increased healing received, <AHa3,DataG1,.> mana regeneration per second. |n|cffffcc00Level 2|r - <AHa3,DataA2,%>% Magic Resistance, <AHa3,DataB2>% increased healing received, <AHa3,DataG2,.> mana regeneration per second. |n|cffffcc00Level 3|r - <AHa3,DataA3,%>% Magic Resistance, <AHa3,DataG3,.>% increased healing received, <AHa3,DataB3> mana regeneration per second."
 Researchhotkey=E
 
 // Mind Control
@@ -1959,7 +1959,7 @@ Untip=Deactivate Guiding Hand - [|cffffcc00Level 1|r],Deactivate Guiding Hand - 
 UnUberTip="Deactivate Guiding Hand to stop draining mana."
 Unhotkey=R
 Researchtip="Learn Guiding Hand - [|cffffcc00Level %d|r]"
-Researchubertip="Leonid inspires nearby friendly units, granting several bonuses.|nDrains mana until deactivated. |n|n|cffffcc00Level 1|r - <AHgh,DataA1>% attack rate, <AHgh,DataG1>% Ability Speed, <AHgh,DataB1>% movement speed. |n|cffffcc00Level 2|r - <AHgh,DataA2>% attack rate, <AHgh,DataG2>% Ability Speed, <AHgh,DataB2>% movement speed. |n|cffffcc00Level 3|r - <AHgh,DataA3>% attack rate, <AHgh,DataG3>% Ability Speed, <AHgh,DataB3>% movement speed"
+Researchubertip="Leonid inspires nearby friendly units, granting several bonuses.|nDrains mana until deactivated. |n|n|cffffcc00Level 1|r - <AHgh,DataA1>% attack rate, <AHgh,DataG1>% Ability Speed, <AHgh,DataB1>% movement speed. |n|cffffcc00Level 2|r - <AHgh,DataA2>% attack rate, <AHgh,DataG2>% Ability Speed, <AHgh,DataB2>% movement speed. |n|cffffcc00Level 3|r - <AHgh,DataA3>% attack rate, <AHgh,DataG3>% Ability Speed, <AHgh,DataB3>% movement speed."
 Researchhotkey=R
 
 [AHq1]
@@ -1972,7 +1972,7 @@ Untip=Deactivate Guiding Hand - [|cffffcc00Level 1|r],Deactivate Guiding Hand - 
 UnUberTip="Deactivate Guiding Hand to stop draining mana."
 Unhotkey=R
 Researchtip="Learn Guiding Hand - [|cffffcc00Level %d|r]"
-Researchubertip="Leonid inspires nearby friendly units, granting several bonuses, and preventing them from falling below 1 hit point.|nDrains mana until deactivated. |n|n|cffffcc00Level 1|r - <AHq1,DataA1>% attack rate, <AHq1,DataG1>% Ability Speed, <AHq1,DataB1>% movement speed. |n|cffffcc00Level 2|r - <AHq1,DataA2>% attack rate, <AHq1,DataG2>% Ability Speed, <AHq1,DataB2>% movement speed. |n|cffffcc00Level 3|r - <AHq1,DataA3>% attack rate, <AHq1,DataG3>% Ability Speed, <AHq1,DataB3>% movement speed"
+Researchubertip="Leonid inspires nearby friendly units, granting several bonuses, and preventing them from falling below 1 hit point.|nDrains mana until deactivated. |n|n|cffffcc00Level 1|r - <AHq1,DataA1>% attack rate, <AHq1,DataG1>% Ability Speed, <AHq1,DataB1>% movement speed. |n|cffffcc00Level 2|r - <AHq1,DataA2>% attack rate, <AHq1,DataG2>% Ability Speed, <AHq1,DataB2>% movement speed. |n|cffffcc00Level 3|r - <AHq1,DataA3>% attack rate, <AHq1,DataG3>% Ability Speed, <AHq1,DataB3>% movement speed."
 Researchhotkey=R
 
 [AHq2]
@@ -1985,7 +1985,7 @@ Untip=Deactivate Guiding Hand - [|cffffcc00Level 1|r],Deactivate Guiding Hand - 
 UnUberTip="Deactivate Guiding Hand to stop draining mana."
 Unhotkey=R
 Researchtip="Learn Guiding Hand - [|cffffcc00Level %d|r]"
-Researchubertip="Leonid inspires nearby friendly units, granting several bonuses.|nDrains mana until deactivated. |n|n|cffffcc00Level 1|r - <AHq2,DataA1>% attack rate, <AHq2,DataD1>% Critical Damage, <AHq2,DataB1>% movement speed. |n|cffffcc00Level 2|r - <AHq2,DataA2>% attack rate, <AHq2,DataD2>% Critical Damage, <AHq2,DataB2>% movement speed. |n|cffffcc00Level 3|r - <AHq2,DataA3>% attack rate, <AHq2,DataD3>% Critical Damage, <AHq2,DataB3>% movement speed"
+Researchubertip="Leonid inspires nearby friendly units, granting several bonuses.|nDrains mana until deactivated. |n|n|cffffcc00Level 1|r - <AHq2,DataA1>% attack rate, <AHq2,DataD1>% Critical Damage, <AHq2,DataB1>% movement speed. |n|cffffcc00Level 2|r - <AHq2,DataA2>% attack rate, <AHq2,DataD2>% Critical Damage, <AHq2,DataB2>% movement speed. |n|cffffcc00Level 3|r - <AHq2,DataA3>% attack rate, <AHq2,DataD3>% Critical Damage, <AHq2,DataB3>% movement speed."
 Researchhotkey=R
 
 [AHq3]
@@ -1998,7 +1998,7 @@ Untip=Deactivate Guiding Hand - [|cffffcc00Level 1|r],Deactivate Guiding Hand - 
 UnUberTip="Deactivate Guiding Hand to stop draining mana."
 Unhotkey=R
 Researchtip="Learn Guiding Hand - [|cffffcc00Level %d|r]"
-Researchubertip="Leonid inspires nearby friendly units, granting several bonuses at the cost of movement speed.|nDrains mana until deactivated. |n|n|cffffcc00Level 1|r - <AHq3,DataA1>% attack rate, <AHq3,DataG1>% Ability Speed, <AHq3,DataC1>% Critical Strike chance, <AHq3,DataB1>% movement speed. |n|cffffcc00Level 2|r - <AHq3,DataA2>% attack rate, <AHq3,DataG2>% Ability Speed, <AHq3,DataC2>% Critical Strike chance, <AHq3,DataB2>% movement speed. |n|cffffcc00Level 3|r - <AHq3,DataA3>% attack rate, <AHq3,DataG3>% Ability Speed, <AHq3,DataC3>% Critical Strike chance, <AHq3,DataB3>% movement speed"
+Researchubertip="Leonid inspires nearby friendly units, granting several bonuses at the cost of movement speed.|nDrains mana until deactivated. |n|n|cffffcc00Level 1|r - <AHq3,DataA1>% attack rate, <AHq3,DataG1>% Ability Speed, <AHq3,DataC1>% Critical Strike chance, <AHq3,DataB1>% movement speed. |n|cffffcc00Level 2|r - <AHq3,DataA2>% attack rate, <AHq3,DataG2>% Ability Speed, <AHq3,DataC2>% Critical Strike chance, <AHq3,DataB2>% movement speed. |n|cffffcc00Level 3|r - <AHq3,DataA3>% attack rate, <AHq3,DataG3>% Ability Speed, <AHq3,DataC3>% Critical Strike chance, <AHq3,DataB3>% movement speed."
 Researchhotkey=R
 
 
@@ -2039,10 +2039,10 @@ Researchhotkey=Q
 Name=Relentless Cleave
 EditorSuffix= (Talent 2)
 Tip=Relentless Cleave - [|cffffcc00Level 1|r],Relentless Cleave - [|cffffcc00Level 2|r],Relentless Cleave - [|cffffcc00Level 3|r],Relentless Cleave - [|cffffcc00Level 4|r],Relentless Cleave - [|cffffcc00Level 5|r]
-UberTip="Strikes the target area, dealing <AUs2,DataA1> damage to enemy units, reducing their armor by <AUs2,DataG1>, and restoring <AUs2,DataE1> hit points per unit hit. Enemies hit take <AUs2,DataI1>% of their health as damage per second for <AUs2,DataM1> seconds.","Strikes the target area, dealing <AUs2,DataA2> damage to enemy units, reducing their armor by <AUs2,DataG2>, and restoring <AUs2,DataE2> hit points per unit hit. Enemies hit take <AUs2,DataI2>% of their health as damage per second for <AUs2,DataM2> seconds.","Strikes the target area, dealing <AUs2,DataA3> damage to enemy units, reducing their armor by <AUs2,DataG3>, and restoring <AUs2,DataE3> hit points per unit hit. Enemies hit take <AUs2,DataI3>% of their health as damage per second for <AUs2,DataM3> seconds.","Strikes the target area, dealing <AUs2,DataA4> damage to enemy units, reducing their armor by <AUs2,DataG4>, and restoring <AUs2,DataE4> hit points per unit hit. Enemies hit take <AUs2,DataI4>% of their health as damage per second for <AUs2,DataM4> seconds.","Strikes the target area, dealing <AUs2,DataA5> damage to enemy units, reducing their armor by <AUs2,DataG5>, and restoring <AUs2,DataE5> hit points per unit hit. Enemies hit take <AUs2,DataI5>% of their health as damage per second for <AUs2,DataM5> seconds."
+UberTip="Strikes the target area, dealing <AUs2,DataA1> damage to enemy units, reducing their armor by <AUs2,DataG1>, and restoring <AUs2,DataE1> hit points per unit hit. Enemies hit take <AUs2,DataI1,.>% of their health as damage per second for <AUs2,DataM1> seconds.","Strikes the target area, dealing <AUs2,DataA2> damage to enemy units, reducing their armor by <AUs2,DataG2>, and restoring <AUs2,DataE2> hit points per unit hit. Enemies hit take <AUs2,DataI2,.>% of their health as damage per second for <AUs2,DataM2> seconds.","Strikes the target area, dealing <AUs2,DataA3> damage to enemy units, reducing their armor by <AUs2,DataG3>, and restoring <AUs2,DataE3> hit points per unit hit. Enemies hit take <AUs2,DataI3,.>% of their health as damage per second for <AUs2,DataM3> seconds.","Strikes the target area, dealing <AUs2,DataA4> damage to enemy units, reducing their armor by <AUs2,DataG4>, and restoring <AUs2,DataE4> hit points per unit hit. Enemies hit take <AUs2,DataI4,.>% of their health as damage per second for <AUs2,DataM4> seconds.","Strikes the target area, dealing <AUs2,DataA5> damage to enemy units, reducing their armor by <AUs2,DataG5>, and restoring <AUs2,DataE5> hit points per unit hit. Enemies hit take <AUs2,DataI5,.>% of their health as damage per second for <AUs2,DataM5> seconds."
 Hotkey=Q
 Researchtip="Learn Relentless Cleave - [|cffffcc00Level %d|r]"
-Researchubertip="Strikes the target area, dealing damage, reducing armor and restoring hit points per unit hit. |n|n|cffffcc00Level 1|r - <AUs2,DataA1> damage, <AUs2,DataG1> armor reduction, <AUs2,DataE1> hit points, <AUs2,DataI1>% bleed for <AUs2,DataM1> seconds. |n|cffffcc00Level 2|r - <AUs2,DataA2> damage, <AUs2,DataG2> armor reduction, <AUs2,DataE2> hit points, <AUs2,DataI2>% bleed for <AUs2,DataM2> seconds. |n|cffffcc00Level 3|r - <AUs2,DataA3> damage, <AUs2,DataG3> armor reduction, <AUs2,DataE3> hit points, <AUs2,DataI3>% bleed for <AUs2,DataM3> seconds. |n|cffffcc00Level 4|r - <AUs2,DataA4> damage, <AUs2,DataG4> armor reduction, <AUs2,DataE4> hit points, <AUs2,DataI4>% bleed for <AUs2,DataM4> seconds. |n|cffffcc00Level 5|r - <AUs2,DataA5> damage, <AUs2,DataG5> armor reduction, <AUs2,DataE5> hit points, <AUs2,DataI5>% bleed for <AUs2,DataM5> seconds."
+Researchubertip="Strikes the target area, dealing damage, reducing armor and restoring hit points per unit hit. |n|n|cffffcc00Level 1|r - <AUs2,DataA1> damage, <AUs2,DataG1> armor reduction, <AUs2,DataE1> hit points, <AUs2,DataI1,.>% bleed for <AUs2,DataM1> seconds. |n|cffffcc00Level 2|r - <AUs2,DataA2> damage, <AUs2,DataG2> armor reduction, <AUs2,DataE2> hit points, <AUs2,DataI2,.>% bleed for <AUs2,DataM2> seconds. |n|cffffcc00Level 3|r - <AUs2,DataA3> damage, <AUs2,DataG3> armor reduction, <AUs2,DataE3> hit points, <AUs2,DataI3,.>% bleed for <AUs2,DataM3> seconds. |n|cffffcc00Level 4|r - <AUs2,DataA4> damage, <AUs2,DataG4> armor reduction, <AUs2,DataE4> hit points, <AUs2,DataI4,.>% bleed for <AUs2,DataM4> seconds. |n|cffffcc00Level 5|r - <AUs2,DataA5> damage, <AUs2,DataG5> armor reduction, <AUs2,DataE5> hit points, <AUs2,DataI5,.>% bleed for <AUs2,DataM5> seconds."
 Researchhotkey=Q
 
 [AUs3]
@@ -2052,7 +2052,7 @@ Tip=Relentless Cleave - [|cffffcc00Level 1|r],Relentless Cleave - [|cffffcc00Lev
 UberTip="Strikes the target area, dealing <AUs3,DataA1> damage to enemy units, reducing their armor by <AUs3,DataG1>, and restoring <AUs3,DataE1> hit points per unit hit. Garek’s attacks reduce the cooldown by <AUs3,DataJ1> seconds.","Strikes the target area, dealing <AUs3,DataA2> damage to enemy units, reducing their armor by <AUs3,DataG2>, and restoring <AUs3,DataE2> hit points per unit hit. Garek’s attacks reduce the cooldown by <AUs3,DataJ2> seconds.","Strikes the target area, dealing <AUs3,DataA3> damage to enemy units, reducing their armor by <AUs3,DataG3>, and restoring <AUs3,DataE3> hit points per unit hit. Garek’s attacks reduce the cooldown by <AUs3,DataJ3> seconds.","Strikes the target area, dealing <AUs3,DataA4> damage to enemy units, reducing their armor by <AUs3,DataG4>, and restoring <AUs3,DataE4> hit points per unit hit. Garek’s attacks reduce the cooldown by <AUs3,DataJ4> seconds.","Strikes the target area, dealing <AUs3,DataA5> damage to enemy units, reducing their armor by <AUs3,DataG5>, and restoring <AUs3,DataE5> hit points per unit hit. Garek’s attacks reduce the cooldown by <AUs3,DataJ5> seconds."
 Hotkey=Q
 Researchtip="Learn Relentless Cleave - [|cffffcc00Level %d|r]"
-Researchubertip="Strikes the target area, dealing damage, reducing armor and restoring hit points per unit hit. Garek’s attacks reduce the cooldown of this ability.. |n|n|cffffcc00Level 1|r - <AUs3,DataA1> damage, <AUs3,DataG1> armor reduction, <AUs3,DataE1> hit points, <AUs3,DataJ1> second cooldown reduction. |n|cffffcc00Level 2|r - <AUs3,DataA2> damage, <AUs3,DataG2> armor reduction, <AUs3,DataE2> hit points, <AUs3,DataJ2> second cooldown reduction. |n|cffffcc00Level 3|r - <AUs3,DataA3> damage, <AUs3,DataG3> armor reduction, <AUs3,DataE3> hit points, <AUs3,DataJ3> second cooldown reduction. |n|cffffcc00Level 4|r - <AUs3,DataA4> damage, <AUs3,DataG4> armor reduction, <AUs3,DataE4> hit points, <AUs3,DataJ4> second cooldown reduction. |n|cffffcc00Level 5|r - <AUs3,DataA5> damage, <AUs3,DataG5> armor reduction, <AUs3,DataE5> hit points, <AUs3,DataJ5> second cooldown reduction."
+Researchubertip="Strikes the target area, dealing damage, reducing armor and restoring hit points per unit hit. Garek’s attacks reduce the cooldown of this ability. |n|n|cffffcc00Level 1|r - <AUs3,DataA1> damage, <AUs3,DataG1> armor reduction, <AUs3,DataE1> hit points, <AUs3,DataJ1> second cooldown reduction. |n|cffffcc00Level 2|r - <AUs3,DataA2> damage, <AUs3,DataG2> armor reduction, <AUs3,DataE2> hit points, <AUs3,DataJ2> second cooldown reduction. |n|cffffcc00Level 3|r - <AUs3,DataA3> damage, <AUs3,DataG3> armor reduction, <AUs3,DataE3> hit points, <AUs3,DataJ3> second cooldown reduction. |n|cffffcc00Level 4|r - <AUs3,DataA4> damage, <AUs3,DataG4> armor reduction, <AUs3,DataE4> hit points, <AUs3,DataJ4> second cooldown reduction. |n|cffffcc00Level 5|r - <AUs3,DataA5> damage, <AUs3,DataG5> armor reduction, <AUs3,DataE5> hit points, <AUs3,DataJ5> second cooldown reduction."
 Researchhotkey=Q
 
 [Bder]
@@ -2072,7 +2072,7 @@ Tip=Undying Defiance - [|cffffcc00Level 1|r],Undying Defiance - [|cffffcc00Level
 UberTip="Enter a defensive stance, reducing incoming damage by <AUbd,DataA1>% and movement speed by <AUbd,DataB1>%. During this time, if Garek takes any damage, he gains <AUbd,DataC1>% attack rate for <AUbd,DataD1> seconds. |nLasts <AUbd,Dur1> seconds.","Enter a defensive stance, reducing incoming damage by <AUbd,DataA2>% and movement speed by <AUbd,DataB2>%. During this time, if Garek takes any damage, he gains <AUbd,DataC2>% attack rate for <AUbd,DataD2> seconds. |nLasts <AUbd,Dur2> seconds.","Enter a defensive stance, reducing incoming damage by <AUbd,DataA3>% and movement speed by <AUbd,DataB3>%. During this time, if Garek takes any damage, he gains <AUbd,DataC3>% attack rate for <AUbd,DataD3> seconds. |nLasts <AUbd,Dur3> seconds.","Enter a defensive stance, reducing incoming damage by <AUbd,DataA4>% and movement speed by <AUbd,DataB4>%. During this time, if Garek takes any damage, he gains <AUbd,DataC4>% attack rate for <AUbd,DataD4> seconds. |nLasts <AUbd,Dur4> seconds.","Enter a defensive stance, reducing incoming damage by <AUbd,DataA5>% and movement speed by <AUbd,DataB5>%. During this time, if Garek takes any damage, he gains <AUbd,DataC5>% attack rate for <AUbd,DataD5> seconds. |nLasts <AUbd,Dur5> seconds."
 Hotkey=W
 Researchtip="Learn Undying Defiance - [|cffffcc00Level %d|r]"
-Researchubertip="Take reduced damage, at the cost of movement speed. Taking damage grants increased attack rate. |n|n|cffffcc00Level 1|r - <AUbd,DataA1>% reduced damage, <AUbd,DataB1>% reduced movement speed, <AUbd,DataC1>% attack rate for <AUbd,DataD1> seconds. Lasts <AUbd,Dur1> seconds. |n|cffffcc00Level 2|r - <AUbd,DataA2>% reduced damage, <AUbd,DataB2>% reduced movement speed, <AUbd,DataC2>% attack rate for <AUbd,DataD2> seconds. Lasts <AUbd,Dur2> seconds. |n|cffffcc00Level 3|r - <AUbd,DataA3>% reduced damage, <AUbd,DataB3>% reduced movement speed, <AUbd,DataC3>% attack rate for <AUbd,DataD3> seconds. Lasts <AUbd,Dur3> seconds. |n|cffffcc00Level 4|r - <AUbd,DataA4>% reduced damage, <AUbd,DataB4>% reduced movement speed, <AUbd,DataC4>% attack rate for <AUbd,DataD4> seconds. Lasts <AUbd,Dur4> seconds." |n|cffffcc00Level 5|r - <AUbd,DataA5>% reduced damage, <AUbd,DataB5>% reduced movement speed, <AUbd,DataC5>% attack rate for <AUbd,DataD5> seconds. Lasts <AUbd,Dur5> seconds."
+Researchubertip="Take reduced damage, at the cost of movement speed. Taking damage grants increased attack rate. |n|n|cffffcc00Level 1|r - <AUbd,DataA1>% reduced damage, <AUbd,DataB1>% reduced movement speed, <AUbd,DataC1>% attack rate for <AUbd,DataD1> seconds. Lasts <AUbd,Dur1> seconds. |n|cffffcc00Level 2|r - <AUbd,DataA2>% reduced damage, <AUbd,DataB2>% reduced movement speed, <AUbd,DataC2>% attack rate for <AUbd,DataD2> seconds. Lasts <AUbd,Dur2> seconds. |n|cffffcc00Level 3|r - <AUbd,DataA3>% reduced damage, <AUbd,DataB3>% reduced movement speed, <AUbd,DataC3>% attack rate for <AUbd,DataD3> seconds. Lasts <AUbd,Dur3> seconds. |n|cffffcc00Level 4|r - <AUbd,DataA4>% reduced damage, <AUbd,DataB4>% reduced movement speed, <AUbd,DataC4>% attack rate for <AUbd,DataD4> seconds. Lasts <AUbd,Dur4> seconds. |n|cffffcc00Level 5|r - <AUbd,DataA5>% reduced damage, <AUbd,DataB5>% reduced movement speed, <AUbd,DataC5>% attack rate for <AUbd,DataD5> seconds. Lasts <AUbd,Dur5> seconds."
 Researchhotkey=W
 
 [AUb1]
@@ -2082,7 +2082,7 @@ Tip=Undying Defiance - [|cffffcc00Level 1|r],Undying Defiance - [|cffffcc00Level
 UberTip="Enter a defensive stance, reducing incoming damage by <AUb1,DataA1>% and movement speed by <AUb1,DataB1>%. Reflects <AUb1,DataF1>% melee damage back to the attacker. During this time, if Garek takes any damage, he gains <AUb1,DataC1>% attack rate for <AUb1,DataD1> seconds. |nLasts <AUb1,Dur1> seconds.","Enter a defensive stance, reducing incoming damage by <AUb1,DataA2>% and movement speed by <AUb1,DataB2>%. Reflects <AUb1,DataF2>% melee damage back to the attacker. During this time, if Garek takes any damage, he gains <AUb1,DataC2>% attack rate for <AUb1,DataD2> seconds. |nLasts <AUb1,Dur2> seconds.","Enter a defensive stance, reducing incoming damage by <AUb1,DataA3>% and movement speed by <AUb1,DataB3>%. Reflects <AUb1,DataF3>% melee damage back to the attacker. During this time, if Garek takes any damage, he gains <AUb1,DataC3>% attack rate for <AUb1,DataD3> seconds. |nLasts <AUb1,Dur3> seconds.","Enter a defensive stance, reducing incoming damage by <AUb1,DataA4>% and movement speed by <AUb1,DataB4>%. Reflects <AUb1,DataF4>% melee damage back to the attacker. During this time, if Garek takes any damage, he gains <AUb1,DataC4>% attack rate for <AUb1,DataD4> seconds. |nLasts <AUb1,Dur4> seconds.","Enter a defensive stance, reducing incoming damage by <AUb1,DataA5>% and movement speed by <AUb1,DataB5>%. Reflects <AUb1,DataF5>% melee damage back to the attacker. During this time, if Garek takes any damage, he gains <AUb1,DataC5>% attack rate for <AUb1,DataD5> seconds. |nLasts <AUb1,Dur5> seconds."
 Hotkey=W
 Researchtip="Learn Undying Defiance - [|cffffcc00Level %d|r]"
-Researchubertip="Take reduced damage, and reflecting damage, at the cost of movement speed. Taking damage grants increased attack rate. |n|n|cffffcc00Level 1|r - <AUb1,DataA1>% reduced damage, <AUb1,DataB1>% reduced movement speed, <AUb1,DataF1>% melee damage reflected, <AUb1,DataC1>% attack rate for <AUb1,DataD1> seconds. Lasts <AUb1,Dur1> seconds. |n|cffffcc00Level 2|r - <AUb1,DataA2>% reduced damage, <AUb1,DataB2>% reduced movement speed, <AUb1,DataF2>% melee damage reflected, <AUb1,DataC2>% attack rate for <AUb1,DataD2> seconds. Lasts <AUb1,Dur2> seconds. |n|cffffcc00Level 3|r - <AUb1,DataA3>% reduced damage, <AUb1,DataB3>% reduced movement speed, <AUb1,DataF3>% melee damage reflected, <AUb1,DataC3>% attack rate for <AUb1,DataD3> seconds. Lasts <AUb1,Dur3> seconds. |n|cffffcc00Level 4|r - <AUb1,DataA4>% reduced damage, <AUb1,DataB4>% reduced movement speed, <AUb1,DataF4>% melee damage reflected, <AUb1,DataC4>% attack rate for <AUb1,DataD4> seconds. Lasts <AUb1,Dur4> seconds." |n|cffffcc00Level 5|r - <AUb1,DataA5>% reduced damage, <AUb1,DataB5>% reduced movement speed, <AUb1,DataF5>% melee damage reflected, <AUb1,DataC5>% attack rate for <AUb1,DataD5> seconds. Lasts <AUb1,Dur5> seconds."
+Researchubertip="Take reduced damage, and reflecting damage, at the cost of movement speed. Taking damage grants increased attack rate. |n|n|cffffcc00Level 1|r - <AUb1,DataA1>% reduced damage, <AUb1,DataB1>% reduced movement speed, <AUb1,DataF1>% melee damage reflected, <AUb1,DataC1>% attack rate for <AUb1,DataD1> seconds. Lasts <AUb1,Dur1> seconds. |n|cffffcc00Level 2|r - <AUb1,DataA2>% reduced damage, <AUb1,DataB2>% reduced movement speed, <AUb1,DataF2>% melee damage reflected, <AUb1,DataC2>% attack rate for <AUb1,DataD2> seconds. Lasts <AUb1,Dur2> seconds. |n|cffffcc00Level 3|r - <AUb1,DataA3>% reduced damage, <AUb1,DataB3>% reduced movement speed, <AUb1,DataF3>% melee damage reflected, <AUb1,DataC3>% attack rate for <AUb1,DataD3> seconds. Lasts <AUb1,Dur3> seconds. |n|cffffcc00Level 4|r - <AUb1,DataA4>% reduced damage, <AUb1,DataB4>% reduced movement speed, <AUb1,DataF4>% melee damage reflected, <AUb1,DataC4>% attack rate for <AUb1,DataD4> seconds. Lasts <AUb1,Dur4> seconds. |n|cffffcc00Level 5|r - <AUb1,DataA5>% reduced damage, <AUb1,DataB5>% reduced movement speed, <AUb1,DataF5>% melee damage reflected, <AUb1,DataC5>% attack rate for <AUb1,DataD5> seconds. Lasts <AUb1,Dur5> seconds."
 Researchhotkey=W
 
 [AUb2]
@@ -2092,7 +2092,7 @@ Tip=Undying Defiance - [|cffffcc00Level 1|r],Undying Defiance - [|cffffcc00Level
 UberTip="Enter a defensive stance, reducing incoming damage by <AUb2,DataA1>% and movement speed by <AUb2,DataB1>%. During this time, if Garek takes any damage, he gains <AUb2,DataC1>% attack rate for <AUb2,DataD1> seconds. |nLasts <AUb2,Dur1> seconds.","Enter a defensive stance, reducing incoming damage by <AUb2,DataA2>% and movement speed by <AUb2,DataB2>%. During this time, if Garek takes any damage, he gains <AUb2,DataC2>% attack rate for <AUb2,DataD2> seconds. |nLasts <AUb2,Dur2> seconds.","Enter a defensive stance, reducing incoming damage by <AUb2,DataA3>% and movement speed by <AUb2,DataB3>%. During this time, if Garek takes any damage, he gains <AUb2,DataC3>% attack rate for <AUb2,DataD3> seconds. |nLasts <AUb2,Dur3> seconds.","Enter a defensive stance, reducing incoming damage by <AUb2,DataA4>% and movement speed by <AUb2,DataB4>%. During this time, if Garek takes any damage, he gains <AUb2,DataC4>% attack rate for <AUb2,DataD4> seconds. |nLasts <AUb2,Dur4> seconds.","Enter a defensive stance, reducing incoming damage by <AUb2,DataA5>% and movement speed by <AUb2,DataB5>%. During this time, if Garek takes any damage, he gains <AUb2,DataC5>% attack rate for <AUb2,DataD5> seconds. |nLasts <AUb2,Dur5> seconds."
 Hotkey=W
 Researchtip="Learn Undying Defiance - [|cffffcc00Level %d|r]"
-Researchubertip="Take reduced damage, at the cost of movement speed. Taking damage grants increased attack rate. |n|n|cffffcc00Level 1|r - <AUb2,DataA1>% reduced damage, <AUb2,DataB1>% reduced movement speed, <AUb2,DataC1>% attack rate for <AUb2,DataD1> seconds. Lasts <AUb2,Dur1> seconds. |n|cffffcc00Level 2|r - <AUb2,DataA2>% reduced damage, <AUb2,DataB2>% reduced movement speed, <AUb2,DataC2>% attack rate for <AUb2,DataD2> seconds. Lasts <AUb2,Dur2> seconds. |n|cffffcc00Level 3|r - <AUb2,DataA3>% reduced damage, <AUb2,DataB3>% reduced movement speed, <AUb2,DataC3>% attack rate for <AUb2,DataD3> seconds. Lasts <AUb2,Dur3> seconds. |n|cffffcc00Level 4|r - <AUb2,DataA4>% reduced damage, <AUb2,DataB4>% reduced movement speed, <AUb2,DataC4>% attack rate for <AUb2,DataD4> seconds. Lasts <AUb2,Dur4> seconds." |n|cffffcc00Level 5|r - <AUb2,DataA5>% reduced damage, <AUb2,DataB5>% reduced movement speed, <AUb2,DataC5>% attack rate for <AUb2,DataD5> seconds. Lasts <AUb2,Dur5> seconds."
+Researchubertip="Take reduced damage, at the cost of movement speed. Taking damage grants increased attack rate. |n|n|cffffcc00Level 1|r - <AUb2,DataA1>% reduced damage, <AUb2,DataB1>% reduced movement speed, <AUb2,DataC1>% attack rate for <AUb2,DataD1> seconds. Lasts <AUb2,Dur1> seconds. |n|cffffcc00Level 2|r - <AUb2,DataA2>% reduced damage, <AUb2,DataB2>% reduced movement speed, <AUb2,DataC2>% attack rate for <AUb2,DataD2> seconds. Lasts <AUb2,Dur2> seconds. |n|cffffcc00Level 3|r - <AUb2,DataA3>% reduced damage, <AUb2,DataB3>% reduced movement speed, <AUb2,DataC3>% attack rate for <AUb2,DataD3> seconds. Lasts <AUb2,Dur3> seconds. |n|cffffcc00Level 4|r - <AUb2,DataA4>% reduced damage, <AUb2,DataB4>% reduced movement speed, <AUb2,DataC4>% attack rate for <AUb2,DataD4> seconds. Lasts <AUb2,Dur4> seconds. |n|cffffcc00Level 5|r - <AUb2,DataA5>% reduced damage, <AUb2,DataB5>% reduced movement speed, <AUb2,DataC5>% attack rate for <AUb2,DataD5> seconds. Lasts <AUb2,Dur5> seconds."
 Researchhotkey=W
 
 [AUb3]
@@ -2102,7 +2102,7 @@ Tip=Undying Defiance - [|cffffcc00Level 1|r],Undying Defiance - [|cffffcc00Level
 UberTip="Enter a defensive stance, reducing movement speed by <AUb3,DataB1>%. During this time, if Garek takes any damage, he gains <AUb3,DataC1>% attack rate and <AUb3,DataH1>% Ability Speed for <AUb3,DataD1> seconds. |nLasts <AUb3,Dur1> seconds.","Enter a defensive stance, reducing movement speed by <AUb3,DataB2>%. During this time, if Garek takes any damage, he gains <AUb3,DataC2>% attack rate and <AUb3,DataH2>% Ability Speed for <AUb3,DataD2> seconds. |nLasts <AUb3,Dur2> seconds.","Enter a defensive stance, reducing movement speed by <AUb3,DataB3>%. During this time, if Garek takes any damage, he gains <AUb3,DataC3>% attack rate and <AUb3,DataH3>% Ability Speed for <AUb3,DataD3> seconds. |nLasts <AUb3,Dur3> seconds.","Enter a defensive stance, reducing movement speed by <AUb3,DataB4>%. During this time, if Garek takes any damage, he gains <AUb3,DataC4>% attack rate and <AUb3,DataH4>% Ability Speed for <AUb3,DataD4> seconds. |nLasts <AUb3,Dur4> seconds.","Enter a defensive stance, reducing movement speed by <AUb3,DataB5>%. During this time, if Garek takes any damage, he gains <AUb3,DataC5>% attack rate and <AUb3,DataH5>% Ability Speed for <AUb3,DataD5> seconds. |nLasts <AUb3,Dur5> seconds."
 Hotkey=W
 Researchtip="Learn Undying Defiance - [|cffffcc00Level %d|r]"
-Researchubertip="Reduce movement speed. Taking damage grants increased attack rate and Ability Speed. |n|n|cffffcc00Level 1|r - <AUb3,DataB1>% reduced movement speed, <AUb3,DataC1>% attack rate, and <AUb3,DataH1>% Ability Speed for <AUb3,DataD1> seconds. Lasts <AUb3,Dur1> seconds. |n|cffffcc00Level 2|r - <AUb3,DataB2>% reduced movement speed, <AUb3,DataC2>% attack rate, and <AUb3,DataH2>% Ability Speed for <AUb3,DataD2> seconds. Lasts <AUb3,Dur2> seconds. |n|cffffcc00Level 3|r - <AUb3,DataB3>% reduced movement speed, <AUb3,DataC3>% attack rate, and <AUb3,DataH3>% Ability Speed for <AUb3,DataD3> seconds. Lasts <AUb3,Dur3> seconds. |n|cffffcc00Level 4|r - <AUb3,DataB4>% reduced movement speed, <AUb3,DataC4>% attack rate, and <AUb3,DataH4>% Ability Speed for <AUb3,DataD4> seconds. Lasts <AUb3,Dur4> seconds." |n|cffffcc00Level 5|r - <AUb3,DataB5>% reduced movement speed, <AUb3,DataC5>% attack rate, and <AUb3,DataH5>% Ability Speed for <AUb3,DataD5> seconds. Lasts <AUb3,Dur5> seconds."
+Researchubertip="Reduce movement speed. Taking damage grants increased attack rate and Ability Speed. |n|n|cffffcc00Level 1|r - <AUb3,DataB1>% reduced movement speed, <AUb3,DataC1>% attack rate, and <AUb3,DataH1>% Ability Speed for <AUb3,DataD1> seconds. Lasts <AUb3,Dur1> seconds. |n|cffffcc00Level 2|r - <AUb3,DataB2>% reduced movement speed, <AUb3,DataC2>% attack rate, and <AUb3,DataH2>% Ability Speed for <AUb3,DataD2> seconds. Lasts <AUb3,Dur2> seconds. |n|cffffcc00Level 3|r - <AUb3,DataB3>% reduced movement speed, <AUb3,DataC3>% attack rate, and <AUb3,DataH3>% Ability Speed for <AUb3,DataD3> seconds. Lasts <AUb3,Dur3> seconds. |n|cffffcc00Level 4|r - <AUb3,DataB4>% reduced movement speed, <AUb3,DataC4>% attack rate, and <AUb3,DataH4>% Ability Speed for <AUb3,DataD4> seconds. Lasts <AUb3,Dur4> seconds. |n|cffffcc00Level 5|r - <AUb3,DataB5>% reduced movement speed, <AUb3,DataC5>% attack rate, and <AUb3,DataH5>% Ability Speed for <AUb3,DataD5> seconds. Lasts <AUb3,Dur5> seconds."
 Researchhotkey=W
 
 //Undying Defiance aka Blade Dance Buff
@@ -2141,10 +2141,10 @@ Researchhotkey=E
 Name=Battering Ram
 EditorSuffix= (Talent 2)
 Tip=Battering Ram - [|cffffcc00Level 1|r],Battering Ram - [|cffffcc00Level 2|r],Battering Ram - [|cffffcc00Level 3|r],Battering Ram - [|cffffcc00Level 4|r],Battering Ram - [|cffffcc00Level 5|r]
-UberTip="Dashes towards a target point, dealing <AUr2,DataB1> damage to enemy units hit along the way, and gaining <AUr2,DataG1> bonus damage and <AUr2,DataD1>% Critical Strike chance for every enemy unit hit.|nLasts <AUr2,DataH1> seconds.","Dashes towards a target point, dealing <AUr2,DataB2> damage to enemy units hit along the way, and gaining <AUr2,DataG2> bonus damage and <AUr2,DataD2>% Critical Strike chance  for every enemy unit hit.|nLasts <AUr2,DataH2> seconds.","Dashes towards a target point, dealing <AUr2,DataB3> damage to enemy units hit along the way, and gaining <AUr2,DataG3> bonus damage and <AUr2,DataD3>% Critical Strike chance for every enemy unit hit.|nLasts <AUr2,DataH3> seconds.","Dashes towards a target point, dealing <AUr2,DataB4> damage to enemy units hit along the way, and gaining <AUr2,DataG4> bonus damage and <AUr2,DataD4>% Critical Strike chance for every enemy unit hit.|nLasts <AUr2,DataH4> seconds.","Dashes towards a target point, dealing <AUr2,DataB5> damage to enemy units hit along the way, and gaining <AUr2,DataG5> bonus damage and <AUr2,DataD5>% Critical Strike chance for every enemy unit hit.|nLasts <AUr2,DataH5> seconds."
+UberTip="Dashes towards a target point, dealing <AUr2,DataB1> damage to enemy units hit along the way, and gaining <AUr2,DataG1> bonus damage and <AUr2,DataC1>% Critical Strike chance for every enemy unit hit.|nLasts <AUr2,DataH1> seconds.","Dashes towards a target point, dealing <AUr2,DataB2> damage to enemy units hit along the way, and gaining <AUr2,DataG2> bonus damage and <AUr2,DataC2>% Critical Strike chance  for every enemy unit hit.|nLasts <AUr2,DataH2> seconds.","Dashes towards a target point, dealing <AUr2,DataB3> damage to enemy units hit along the way, and gaining <AUr2,DataG3> bonus damage and <AUr2,DataC3>% Critical Strike chance for every enemy unit hit.|nLasts <AUr2,DataH3> seconds.","Dashes towards a target point, dealing <AUr2,DataB4> damage to enemy units hit along the way, and gaining <AUr2,DataG4> bonus damage and <AUr2,DataC4>% Critical Strike chance for every enemy unit hit.|nLasts <AUr2,DataH4> seconds.","Dashes towards a target point, dealing <AUr2,DataB5> damage to enemy units hit along the way, and gaining <AUr2,DataG5> bonus damage and <AUr2,DataC5>% Critical Strike chance for every enemy unit hit.|nLasts <AUr2,DataH5> seconds."
 Hotkey=E
 Researchtip="Learn Battering Ram - [|cffffcc00Level %d|r]"
-Researchubertip="Dash towards a target point, dealing damage, gaining bonus attack damage and Critical Strike chance.|n|n|cffffcc00Level 1|r - <AUr2,DataB1> damage, <AUr2,DataG1> bonus damage and <AUr2,DataD1>% Critical Strike chance per enemy unit hit. |n|cffffcc00Level 2|r - <AUr2,DataB2> damage, <AUr2,DataG2> bonus damage and <AUr2,DataD2>% Critical Strike chance  per enemy unit hit. |n|cffffcc00Level 3|r - <AUr2,DataB3> damage, <AUr2,DataG3> bonus damage and <AUr2,DataD3>% Critical Strike chance per enemy unit hit.|n|cffffcc00Level 4|r - <AUr2,DataB4> damage, <AUr2,DataG4> bonus damage and <AUr2,DataD4>% Critical Strike chance per enemy unit hit.|n|cffffcc00Level 5|r - <AUr2,DataB5> damage, <AUr2,DataG5> bonus damage and <AUr2,DataD5>% Critical Strike chance per enemy unit hit."
+Researchubertip="Dash towards a target point, dealing damage, gaining bonus attack damage and Critical Strike chance.|n|n|cffffcc00Level 1|r - <AUr2,DataB1> damage, <AUr2,DataG1> bonus damage and <AUr2,DataC1>% Critical Strike chance per enemy unit hit. |n|cffffcc00Level 2|r - <AUr2,DataB2> damage, <AUr2,DataG2> bonus damage and <AUr2,DataC2>% Critical Strike chance  per enemy unit hit. |n|cffffcc00Level 3|r - <AUr2,DataB3> damage, <AUr2,DataG3> bonus damage and <AUr2,DataC3>% Critical Strike chance per enemy unit hit.|n|cffffcc00Level 4|r - <AUr2,DataB4> damage, <AUr2,DataG4> bonus damage and <AUr2,DataC4>% Critical Strike chance per enemy unit hit.|n|cffffcc00Level 5|r - <AUr2,DataB5> damage, <AUr2,DataG5> bonus damage and <AUr2,DataC5>% Critical Strike chance per enemy unit hit."
 Researchhotkey=E
 
 
@@ -2152,10 +2152,10 @@ Researchhotkey=E
 Name=Battering Ram
 EditorSuffix= (Talent 3)
 Tip=Battering Ram - [|cffffcc00Level 1|r],Battering Ram - [|cffffcc00Level 2|r],Battering Ram - [|cffffcc00Level 3|r],Battering Ram - [|cffffcc00Level 4|r],Battering Ram - [|cffffcc00Level 5|r]
-UberTip="Dashes towards a target point, dealing <AUr3,DataB1> damage to enemy units hit along the way, and gaining <AUr3,DataG1> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,DataC1> seconds. |nLasts <AUr3,DataH1> seconds.","Dashes towards a target point, dealing <AUr3,DataB2> damage to enemy units hit along the way, and gaining <AUr3,DataG2> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,DataC2> seconds.|nLasts <AUr3,DataH2> seconds.","Dashes towards a target point, dealing <AUr3,DataB3> damage to enemy units hit along the way, and gaining <AUr3,DataG3> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,DataC3> seconds.|nLasts <AUr3,DataH3> seconds.","Dashes towards a target point, dealing <AUr3,DataB4> damage to enemy units hit along the way, and gaining <AUr3,DataG4> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,DataC4> seconds.|nLasts <AUr3,DataH4> seconds.","Dashes towards a target point, dealing <AUr3,DataB5> damage to enemy units hit along the way, and gaining <AUr3,DataG5> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,DataC5> seconds.|nLasts <AUr3,DataH5> seconds."
+UberTip="Dashes towards a target point, dealing <AUr3,DataB1> damage to enemy units hit along the way, and gaining <AUr3,DataG1> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,Dur1,.> seconds. |nLasts <AUr3,DataH1> seconds.","Dashes towards a target point, dealing <AUr3,DataB2> damage to enemy units hit along the way, and gaining <AUr3,DataG2> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,Dur2,.> seconds.|nLasts <AUr3,DataH2> seconds.","Dashes towards a target point, dealing <AUr3,DataB3> damage to enemy units hit along the way, and gaining <AUr3,DataG3> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,Dur3,.> seconds.|nLasts <AUr3,DataH3> seconds.","Dashes towards a target point, dealing <AUr3,DataB4> damage to enemy units hit along the way, and gaining <AUr3,DataG4> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,Dur4,.> seconds.|nLasts <AUr3,DataH4> seconds.","Dashes towards a target point, dealing <AUr3,DataB5> damage to enemy units hit along the way, and gaining <AUr3,DataG5> bonus damage for every enemy unit hit. Enemies hit are stunned for <AUr3,Dur5,.> seconds.|nLasts <AUr3,DataH5> seconds."
 Hotkey=E
 Researchtip="Learn Battering Ram - [|cffffcc00Level %d|r]"
-Researchubertip="Dash towards a target point, dealing damage, gaining bonus attack damage and stunning enemy units.|n|n|cffffcc00Level 1|r - <AUr3,DataB1> damage, <AUr3,DataG1> bonus damage per enemy unit hit, <AUr3,DataC1> second stun. |n|cffffcc00Level 2|r - <AUr3,DataB2> damage, <AUr3,DataG2> bonus damage per enemy unit hit, <AUr3,DataC2> second stun. |n|cffffcc00Level 3|r - <AUr3,DataB3> damage, <AUr3,DataG3> bonus damage per enemy unit hit, <AUr3,DataC3> second stun.|n|cffffcc00Level 4|r - <AUr3,DataB4> damage, <AUr3,DataG4> bonus damage per enemy unit hit, <AUr3,DataC4> second stun.|n|cffffcc00Level 5|r - <AUr3,DataB5> damage, <AUr3,DataG5> bonus damage per enemy unit hit, <AUr3,DataC5> second stun."
+Researchubertip="Dash towards a target point, dealing damage, gaining bonus attack damage and stunning enemy units.|n|n|cffffcc00Level 1|r - <AUr3,DataB1> damage, <AUr3,DataG1> bonus damage per enemy unit hit, <AUr3,Dur1,.> second stun. |n|cffffcc00Level 2|r - <AUr3,DataB2> damage, <AUr3,DataG2> bonus damage per enemy unit hit, <AUr3,Dur2,.> second stun. |n|cffffcc00Level 3|r - <AUr3,DataB3> damage, <AUr3,DataG3> bonus damage per enemy unit hit, <AUr3,Dur3,.> second stun.|n|cffffcc00Level 4|r - <AUr3,DataB4> damage, <AUr3,DataG4> bonus damage per enemy unit hit, <AUr3,Dur4,.> second stun.|n|cffffcc00Level 5|r - <AUr3,DataB5> damage, <AUr3,DataG5> bonus damage per enemy unit hit, <AUr3,Dur5,.> second stun."
 Researchhotkey=E
 
 
@@ -2361,7 +2361,7 @@ Tip=Banshee's Wail - [|cffffcc00Level 1|r],Banshee's Wail - [|cffffcc00Level 2|r
 Ubertip="Anya summons <AUwc,DataA1> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUwc,HeroDur1> seconds.","Anya summons <AUwc,DataA2> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUwc,HeroDur2> seconds.","Anya summons <AUwc,DataA3> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUwc,HeroDur3> seconds."
 Hotkey=R
 Researchtip="Learn Banshee's Wail - [|cffffcc00Level %d|r]"
-Researchubertip="Anya summons Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%.|n|n|cffffcc00Level 1|r - <AUwc,DataA1> Banshees |n|cffffcc00Level 2|r - <AUwc,DataA2> Banshees |n|cffffcc00Level 3|r - <AUwc,DataA3> Banshees"
+Researchubertip="Anya summons Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%.|n|n|cffffcc00Level 1|r - <AUwc,DataA1> Banshees. |n|cffffcc00Level 2|r - <AUwc,DataA2> Banshees. |n|cffffcc00Level 3|r - <AUwc,DataA3> Banshees."
 Researchhotkey=R
 
 [AUi1]
@@ -2371,7 +2371,7 @@ Tip=Banshee's Wail - [|cffffcc00Level 1|r],Banshee's Wail - [|cffffcc00Level 2|r
 Ubertip="Anya summons <AUi1,DataA1> Banshees to attack nearby enemies. Banshee attacks will restore <AUi1,DataD1,%>% of the damage dealt as hit points to all nearby friendly units and apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUi1,HeroDur1> seconds.","Anya summons <AUi1,DataA2> Banshees to attack nearby enemies. Banshee attacks will restore <AUi1,DataD2,%>% of the damage dealt as hit points to all nearby friendly units and apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUi1,HeroDur2> seconds.","Anya summons <AUi1,DataA3> Banshees to attack nearby enemies. Banshee attacks will restore <AUi1,DataD3,%>% of the damage dealt as hit points to all nearby friendly units and apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUi1,HeroDur3> seconds."
 Hotkey=R
 Researchtip="Learn Banshee's Wail - [|cffffcc00Level %d|r]"
-Researchubertip="Anya summons Banshees to attack nearby enemies. Banshee attacks restore some of the damage dealt as hit points to all nearby friendly units and apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%.|n|n|cffffcc00Level 1|r - <AUi1,DataA1> Banshees, <AUi1,DataD1,%>% damage dealt |n|cffffcc00Level 2|r - <AUi1,DataA2> Banshees, <AUi1,DataD2,%>% damage dealt |n|cffffcc00Level 3|r - <AUi1,DataA3> Banshees, <AUi1,DataD3,%>% damage dealt"
+Researchubertip="Anya summons Banshees to attack nearby enemies. Banshee attacks restore some of the damage dealt as hit points to all nearby friendly units and apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%.|n|n|cffffcc00Level 1|r - <AUi1,DataA1> Banshees, <AUi1,DataD1,%>% damage dealt. |n|cffffcc00Level 2|r - <AUi1,DataA2> Banshees, <AUi1,DataD2,%>% damage dealt. |n|cffffcc00Level 3|r - <AUi1,DataA3> Banshees, <AUi1,DataD3,%>% damage dealt."
 Researchhotkey=R
 
 [AUi2]
@@ -2381,7 +2381,7 @@ Tip=Banshee's Wail - [|cffffcc00Level 1|r],Banshee's Wail - [|cffffcc00Level 2|r
 Ubertip="Anya summons <AUi2,DataA1> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>% and causes enemies to have a <Aacr,DataA1,%> chance to miss on an attack. |nLasts <AUi2,HeroDur1> seconds.","Anya summons <AUi2,DataA2> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>% and causes enemies to have a <Aacr,DataA1,%> chance to miss on an attack. |nLasts <AUi2,HeroDur2> seconds.","Anya summons <AUi2,DataA3> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>% and causes enemies to have a <Aacr,DataA1,%> chance to miss on an attack. |nLasts <AUi2,HeroDur3> seconds."
 Hotkey=R
 Researchtip="Learn Banshee's Wail - [|cffffcc00Level %d|r]"
-Researchubertip="Anya summons Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>% and causes enemies to have a <Aacr,DataA1,%>%  chance to miss on an attack .|n|n|cffffcc00Level 1|r - <AUi2,DataA1> Banshees |n|cffffcc00Level 2|r - <AUi2,DataA2> Banshees |n|cffffcc00Level 3|r - <AUi2,DataA3> Banshees"
+Researchubertip="Anya summons Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>% and causes enemies to have a <Aacr,DataA1,%>%  chance to miss on an attack.|n|n|cffffcc00Level 1|r - <AUi2,DataA1> Banshees. |n|cffffcc00Level 2|r - <AUi2,DataA2> Banshees. |n|cffffcc00Level 3|r - <AUi2,DataA3> Banshees."
 Researchhotkey=R
 
 [AUi3]
@@ -2391,7 +2391,7 @@ Tip=Banshee's Wail - [|cffffcc00Level 1|r],Banshee's Wail - [|cffffcc00Level 2|r
 Ubertip="Anya summons <AUi3,DataA1> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUi3,HeroDur1> seconds.","Anya summons <AUi3,DataA2> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUi3,HeroDur2> seconds.","Anya summons <AUi3,DataA3> Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken by <Amda,DataA1,%>%. |nLasts <AUi3,HeroDur3> seconds."
 Hotkey=R
 Researchtip="Learn Banshee's Wail - [|cffffcc00Level %d|r]"
-Researchubertip="Anya summons Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken .|n|n|cffffcc00Level 1|r - <AUi3,DataA1> Banshees |n|cffffcc00Level 2|r - <AUi3,DataA2> Banshees |n|cffffcc00Level 3|r - <AUi3,DataA3> Banshees."
+Researchubertip="Anya summons Banshees to attack nearby enemies. Banshee attacks apply a debuff that increases Magic Damage taken .|n|n|cffffcc00Level 1|r - <AUi3,DataA1> Banshees. |n|cffffcc00Level 2|r - <AUi3,DataA2> Banshees. |n|cffffcc00Level 3|r - <AUi3,DataA3> Banshees."
 Researchhotkey=R
 
 
@@ -2457,6 +2457,14 @@ Researchhotkey=E
 Bufftip=Deathseeker Arrows
 Buffubertip="This unit is being targeted by Anya, it will take bonus damage after several attacks."
 EditorSuffix= (Target)
+
+
+// Deathseeker Bow Buff
+[BUda]
+Bufftip=Flow State
+Buffubertip="This unit has increased attack rate while attacking the same target."
+EditorSuffix= 
+
 
 // Dark Commander's Aura (Buff)
 [BDCa]
@@ -2867,3 +2875,8 @@ EditorSuffix = (VFX)
 [AVsb]
 Name=Shop Indicator
 EditorSuffix = (VFX)
+
+// Shield of the Titans (Buff)
+[Bsot]
+Bufftip=Titan Defense
+Buffubertip="This unit has increased Magic Resistance."

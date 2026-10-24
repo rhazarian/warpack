@@ -1545,8 +1545,11 @@ showUI1=1
 showUI2=1
 launchZ=60
 launchZ:hd=110
+launchZ:de=60
 projectileVisOffsetX:hd=0
+projectileVisOffsetX:de=0
 projectileVisOffsetY:hd=65
+projectileVisOffsetY:de=0
 
 [Nbst]
 impactSwimZ=0
@@ -6139,8 +6142,11 @@ showUI1=1
 showUI2=1
 launchZ=60
 launchZ:hd=70
+launchZ:de=60
 projectileVisOffsetX:hd=-50
+projectileVisOffsetX:de=0
 projectileVisOffsetY:hd=150
+projectileVisOffsetY:de=0
 
 [Osam]
 impactSwimZ=0
@@ -7990,7 +7996,7 @@ launchZ=60
 [scru]
 impactSwimZ=0
 impactZ=60
-weapType1=MetalMediumSlice
+weapType1=MetalHeavyBash
 launchSwimZ=0
 showUI1=1
 showUI2=1

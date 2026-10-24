@@ -1790,7 +1790,7 @@ Art=ReplaceableTextures\CommandButtons\BTNHealthStone.blp
 
 [AIs2]
 skinType=ability
-Art=ReplaceableTextures\CommandButtons\BTNGauntletsOfOgrePower.blp
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
 
 [AIs6]
 skinType=ability
@@ -7337,7 +7337,7 @@ Targetattach=overhead
 // Aura - Raise the Banner 
 [Aaca]
 skinType=ability
-Targetart=Abilities\Spells\Human\DevotionAura\DevotionAura.mdl
+Targetart=Abilities\Spells\Human\KingsguardAura\KingsguardAura.mdl
 Targetattach=origin
 Animnames=spell,two
 
@@ -7545,8 +7545,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
 // Band of the Skeletal Mage Orb
 [Asmo]
 skinType=ability
-UnitSkinID=Asmn
-Art=ReplaceableTextures\CommandButtons\BTNOrbOfFrost.blp
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
 
 // Band of the Skeletal Mage Frost Nova
 [Asmn]
@@ -7623,7 +7622,7 @@ skinType=ability
 Art=ReplaceableTextures\PassiveButtons\PASBTNFeedBack.blp
 Specialart=Abilities\Spells\Human\Feedback\SpellBreakerAttack.mdl
 
-// Item Aura Command 8
+// Item Aura Command 5
 [AIcq]
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNDrum.blp
@@ -7724,8 +7723,7 @@ Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
 // Malachite Sword Orb
 [Amso]
 skinType=ability
-UnitSkinID=Amsc
-Art=ReplaceableTextures\CommandButtons\BTNMalachiteShortsword.blp
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
 
 // Malachite Sword Curse
 [Amsc]
@@ -7770,11 +7768,10 @@ Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
 skinType=ability
 Art=ReplaceableTextures\PassiveButtons\PASBTNCriticalStrike.blp
 
-// Heart of the Firebender Orb
+// Heart of the Firebender Attack
 [Ahfo]
 skinType=ability
-UnitSkinID=Ahfb
-Art=ReplaceableTextures\CommandButtons\BTNOrbOfFire.blp
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
 
 // Heart of the Firebender BoF
 [Ahfb]
@@ -7782,7 +7779,6 @@ skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNBreathOfFire.blp
 Researchart=ReplaceableTextures\CommandButtons\BTNBreathOfFire.blp
 Missileart=Abilities\Spells\Other\BreathOfFire\BreathOfFireMissile.mdl
-Missilespeed=1050
 Animnames=spell,slam
 
 // Item Attack Speed Bonus 25
@@ -8176,7 +8172,7 @@ Casterart=Abilities\Spells\Human\Slow\SlowCaster.mdl
 [Atbd]
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNBagofDust.blp
-Unart=ReplaceableTextures\CommandButtonsDisabled\DISBTNBagofDust.blp
+Unart=ReplaceableTextures\CommandButtons\BTNBagofDust.blp
 
 // Bag of Dust (Buff)
 [Btbd]
@@ -9309,7 +9305,7 @@ Art=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
 Researchart=ReplaceableTextures\CommandButtons\BTNRelentlessCleave.blp
 Casterart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleave.mdl
 Casterattach=origin
-Targetart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleave.mdl
+Targetart=Abilities\Spells\Undead\RelentlessCleave\RelentlessCleaveTarget.mdl
 Targetattachcount=1
 Targetattach=chest
 Effectart=
@@ -9947,6 +9943,8 @@ Researchart=ReplaceableTextures\CommandButtons\BTNSurgeofLight.blp
 Casterart=Abilities\Spells\Human\SurgeOfLight\SurgeOfLightCast.mdl
 Casterattach=origin
 Targetart=Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl
+Specialart=Abilities\Spells\Human\SurgeOfLight\SurgeOfLightPassive.mdl
+Specialattach=chest
 
 // Surge of Light talent 1
 [AHl1]
@@ -10240,6 +10238,10 @@ Targetattach=chest
 Targetattach1=origin
 Targetattach2=origin
 Targetattach3=origin
+
+[BUda]
+skinType=buff
+Buffart=ReplaceableTextures\CommandButtons\BTNDeathSeekerArrows.blp
 
 // Endless Flask Rejuvenation
 [Aefr]
@@ -10645,7 +10647,6 @@ skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNBreathOfFire.blp
 Researchart=ReplaceableTextures\CommandButtons\BTNBreathOfFire.blp
 Missileart=Abilities\Spells\Other\BreathOfFire\BreathOfFireMissile.mdl
-Missilespeed=1050
 Animnames=spell,slam
 
 // Item Deepsea Bag CW
@@ -10654,7 +10655,6 @@ skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
 Researchart=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
 Missileart=Abilities\Spells\Other\CrushingWave\CrushingWaveMissile.mdl
-Missilespeed=900
 Specialart=Abilities\Spells\Other\CrushingWave\CrushingWaveDamage.mdl
 Animnames=attack,slam
 
@@ -10908,7 +10908,6 @@ skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
 Researchart=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
 Missileart=Abilities\Spells\Other\CrushingWave\CrushingWaveMissile.mdl
-Missilespeed=900
 Specialart=Abilities\Spells\Other\CrushingWave\CrushingWaveDamage.mdl
 Animnames=attack,slam
 
@@ -11190,7 +11189,6 @@ LightningEffect=CLPB,CLSB
 skinType=ability
 Art=ReplaceableTextures\CommandButtons\BTNCrushingWave.blp
 Missileart=Abilities\Spells\Other\CrushingWave\CrushingWaveMissile.mdl
-Missilespeed=900
 Specialart=Abilities\Spells\Other\CrushingWave\CrushingWaveDamage.mdl
 Animnames=attack,slam
 
@@ -11574,9 +11572,9 @@ skinType=buff
 Buffart=ReplaceableTextures\CommandButtons\BTNStormBolt.blp
 Targetart=Abilities\Spells\Orc\StasisTrap\StasisTotemTarget.mdl,Abilities\Spells\Orc\StasisTrap\StasisTotemTarget.mdl,Abilities\Spells\Orc\StasisTrap\StasisTotemTarget.mdl
 Targetattachcount=3
-Targetattach=origin
-Targetattach1=origin
-Targetattach2=origin
+Targetattach=overhead
+Targetattach1=overhead
+Targetattach2=overhead
 
 // Item Mordo's Club
 [Amcx]
@@ -11818,12 +11816,13 @@ skinType=ability
 Art=ReplaceableTextures\PassiveButtons\PASBTNPlagueCloud.blp
 Targetart=Abilities\Spells\Undead\PlagueCloud\PlagueCloudCaster.mdl
 
-// Item Huge Flail WS
+// Item Huge Flail TC
 [Ahf1]
 skinType=ability
-Art=ReplaceableTextures\CommandButtons\BTNWarStomp.blp
-Casterart=Abilities\Spells\Orc\WarStomp\WarStompCaster.mdl
-Animnames=slam
+Art=ReplaceableTextures\CommandButtons\BTNThunderclap.blp
+Casterart=Abilities\Spells\Human\Thunderclap\ThunderClapCaster.mdl
+Casterattach=origin
+Animnames=spell,slam
 
 // Item Huge Flail Attack
 [Ahf2]
@@ -11877,3 +11876,37 @@ Targetart=Abilities\Spells\Other\Parasite\ParasiteTarget.mdl
 //On Hit Simple Spell
 [Aals]
 Art=ReplaceableTextures\CommandButtons\BTNTomeBrown.blp
+
+[AIst]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNBelt.blp
+
+// Item Health Regeneration 1
+[AHRg]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+
+//Attack Bonus -3
+[ADN3]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+
+// Item Shield of the Titans Aura
+[Astt]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNShieldoftheTitans.blp
+Targetart=Abilities/Spells/Other/SacredAura/SacredAura.mdl
+Targetattach=origin
+
+// Item Shield of the Titans Buff
+[Bsot]
+skinType=buff
+Targetart=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
+Targetattach=origin
+Buffart=ReplaceableTextures\CommandButtons\BTNShieldoftheTitans.blp
+
+// Garithos squeek
+[AIgs]
+skinType=ability
+Art=ReplaceableTextures\CommandButtons\BTNGarithosAbomination.blp
+Effectsound=GarithosPissed

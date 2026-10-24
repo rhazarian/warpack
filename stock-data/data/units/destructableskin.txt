@@ -5888,7 +5888,7 @@ colorB=255
 skinType=destructable
 numVar=1
 skinnableID=BTsk
-file:Doodads\LordaeronFall\Structures\LordaeronCityMainGateColumn\LordaeronCityMainGateColumn
+file=Doodads\LordaeronFall\Terrain\LordaeronCityMainGateColumn\LordaeronCityMainGateColumn.mdl
 lightweight=0
 lightweight:hd=0
 texID=-
