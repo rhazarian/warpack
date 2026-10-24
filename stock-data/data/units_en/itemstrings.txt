@@ -835,7 +835,7 @@ Description=Grants immunity to magic.
 [lhst]
 Name=The Lion Horn of Stormwind
 Tip=Purchase the Lion Horn of Stormwind
-Ubertip="Grants the Hero and friendly nearby units <AIad,DataA1> bonus armor. |nDoes not stack with Devotion Aura."
+Ubertip="Grants the Hero and friendly nearby units <AIad,DataA1,.> bonus armor. |nDoes not stack with Devotion Aura."
 Description=Generates a protective aura around the Hero.
 
 [kpin]
@@ -1731,7 +1731,7 @@ Description="|cff8b00ffUnique|r|nThis helm makes you crave combat."
 Name=Bladebane Armor
 Hotkey=A
 Tip=Purchase Bladebane Armor
-Ubertip="Grants nearby units <AIad,DataA1> bonus defense. Enhances the Hero's armor by <AId7,DataA1>."
+Ubertip="Grants nearby units <AIad,DataA1,.> bonus defense. Enhances the Hero's armor by <AId7,DataA1>."
 Description="Increases armor."
 
 [rugt]
@@ -2052,13 +2052,13 @@ Description="|cffaeaeaeCommon Accessoryn|r|nA lovely little amulet with a touch 
 [ecrr]
 Name=|cffaeaeaeRing of Regeneration|r
 Tip=Purchase |cffaeaeaeRing of Regeneration|r
-Ubertip="|cffaeaeaeCommon Accessory|r|n|n+<Arel,DataA1> Hit Points Regeneration|n|n|cffffcc00A soothing warmth pulses from this ring's core.|r"
+Ubertip="|cffaeaeaeCommon Accessory|r|n|n+<AHRg,DataA1> Hit Points Regeneration|n|n|cffffcc00A soothing warmth pulses from this ring's core.|r"
 Description="|cffaeaeaeCommon Accessoryn|r|nA soothing warmth pulses from this ring's core."
 
 [erpb]
 Name=|cff6295E3Purifier Blade|r
 Tip=Purchase |cff6295E3Purifier Blade|r
-Ubertip="|cff6295E3Rare Primary Weapon|r|n|n+<AItc,DataA1> Damage|n+<AIs2,DataC1> Strength|n+<AIi2,DataB1> Intelligence|n|c005ddf26Equip: Grants your attacks a 50% chance to deal 100 bonus damage to summoned Undead units.|r|n|n|cffffcc00A sanctified weapon that once belonged to a paladin of the Silver Hand.|r"
+Ubertip="|cff6295E3Rare Primary Weapon|r|n|n+<AItc,DataA1> Damage|n+<AIst,DataC1> Strength|n+<AIi2,DataB1> Intelligence|n|c005ddf26Equip: Grants your attacks a 50% chance to deal 100 bonus damage to summoned Undead units.|r|n|n|cffffcc00A sanctified weapon that once belonged to a paladin of the Silver Hand.|r"
 Description="|cff6295E3Rare Primary Weapon|r|nA sanctified weapon that once belonged to a paladin of the Silver Hand."
 
 [elvl]
@@ -2082,7 +2082,7 @@ Description="|cff40da00Uncommon Primary Weapon|r|nThis sword's unnaturally sharp
 [erog]
 Name=|cff40da00Ogre Gauntlets|r
 Tip=Purchase |cff40da00Ogre Gauntlets|r
-Ubertip="|cff40da00Uncommon Gloves|r|n|n+<AIs4,DataC1> Strength|n|c005ddf26Equip: Grants your basic attacks a 15% chance to deal 25 bonus damage and stun the target for 2 seconds.|r|n|n|cffffcc00These gauntlets grant their wearer the brute strength of their namesake.|r"
+Ubertip="|cff40da00Uncommon Gloves|r|n|n+<AIs4,DataC1> Strength|r|n|n|cffffcc00These gauntlets grant their wearer the brute strength of their namesake.|r"
 Description="|cff40da00Uncommon Gloves|r|nThese gauntlets grant their wearer the brute strength of their namesake."
 
 [ebtf]
@@ -2155,7 +2155,7 @@ Description="|cffaeaeaeCommon Helm|r|nTaken from a skeleton who made the wrong e
 [eobb]
 Name=|cffaeaeaeBone Buckler|r
 Tip=Purchase |cffaeaeaeBone Buckler|r
-Ubertip="|cffaeaeaeCommon Secondary Weapon|r|n|n+<AId1,DataA1> Armor|n+<AIs2,DataC1> Strength|n|n|cffffcc00Better than wood, cheaper than metal. A plentiful resource in times of war.|r"
+Ubertip="|cffaeaeaeCommon Secondary Weapon|r|n|n+<AId1,DataA1> Armor|n+<AIst,DataC1> Strength|n|n|cffffcc00Better than wood, cheaper than metal. A plentiful resource in times of war.|r"
 Description="|cffaeaeaeCommon Secondary Weapon|r|nBetter than wood, cheaper than metal. A plentiful resource in times of war."
 
 [ebws]
@@ -2293,7 +2293,7 @@ Description="|cffaeaeaeCommon Accessory|r|nAdorned with a ruby the color of bloo
 [elbp]
 Name=|cffaeaeaeLesser Band of the Paladin|r
 Tip=Purchase |cffaeaeaeLesser Band of the Paladin|r
-Ubertip="|cffaeaeaeCommon Accessory|r|n|n+<AIs2,DataC1> Strength|n+<AAPe,DataA1,%>% Ability Amplification|n|n|cffffcc00A signet worn by those who answer the Light's call.|r"
+Ubertip="|cffaeaeaeCommon Accessory|r|n|n+<AIst,DataC1> Strength|n+<AAPe,DataA1,%>% Ability Amplification|n|n|cffffcc00A signet worn by those who answer the Light's call.|r"
 Description="|cffaeaeaeCommon Accessory|r|nA signet worn by those who answer the Light's call."
 
 [eame]
@@ -2323,7 +2323,7 @@ Description="|cffaeaeaeCommon Accessory|r|nThis talisman imbues its wearer with 
 [ebsm]
 Name=|cffaeaeaeBand of the Skeletal Mage|r
 Tip=Purchase |cffaeaeaeBand of the Skeletal Mage|r
-Ubertip="|cffaeaeaeCommon Accessory|r|n|n+<AAPe,DataA1,%>% Ability Amplification|n|c005ddf26Equip: Grants your attacks a <Asmo,DataB1>% chance to conjure a powerful Frost Nova on the target, dealing <Asmn,DataA1> damage to all enemy units in a small radius around the target and chilling them for <Asmn,Dur1> seconds.|r|n|n|cffffcc00Touched by dark magic, this ring grants those who wear it a small echo of a lich's power.|r"
+Ubertip="|cffaeaeaeCommon Accessory|r|n|n+<AAPe,DataA1,%>% Ability Amplification|n|c005ddf26Equip: Grants your attacks a <Asmo,DataD1>% chance to conjure a powerful Frost Nova on the target, dealing <Asmn,DataA1> damage to all enemy units in a small radius around the target and chilling them for <Asmn,Dur1> seconds.|r|n|n|cffffcc00Touched by dark magic, this ring grants those who wear it a small echo of a lich's power.|r"
 Description="|cffaeaeaeCommon Accessory|r|nTouched by dark magic, this ring grants those who wear it a small echo of a lich's power."
 
 [eggn]
@@ -2389,7 +2389,7 @@ Description="|cff40da00Uncommon Armor|r|nForged by dwarven smiths who infuse the
 [epbc]
 Name=|cff40da00Plaguebearer Cuirass|r
 Tip=Purchase |cff40da00Plaguebearer Cuirass|r
-Ubertip="|cff40da00Uncommon Armor|r|n|n+<AHRa,DataA1> Hit Points Regeneration|n+<AADo,DataA1> Ability Damage|n|c005ddf26Equip: Surrounds the wearer in a disease cloud, which infects nearby enemy living units for <ADCq,DataA1> seconds. Infected units take <ADCq,DataB1> damage per second.|r|n|n|cffffcc00Made of parts ripped from an abomination and crafted into crude but effective armor.|r"
+Ubertip="|cff40da00Uncommon Armor|r|n|n+<AHRw,DataA1> Hit Points Regeneration|n+<AADo,DataA1> Ability Damage|n|c005ddf26Equip: Surrounds the wearer in a disease cloud, which infects nearby enemy living units for <ADCq,DataA1> seconds. Infected units take <ADCq,DataB1> damage per second.|r|n|n|cffffcc00Made of parts ripped from an abomination and crafted into crude but effective armor.|r"
 Description="|cff40da00Uncommon Armor|r|nMade of parts ripped from an abomination and crafted into crude but effective armor."
 
 [ecdc]
@@ -2509,7 +2509,7 @@ Description="|cff40da00Uncommon Secondary Weapon|r|nMade from the finest steel i
 [eoms]
 Name=|cff40da00Malachite Shortsword|r
 Tip=Purchase |cff40da00Malachite Shortsword|r
-Ubertip="|cff40da00Uncommon Secondary Weapon|r|n|n+<AIa6,DataA1> Agility|n|c005ddf26Equip: Grants your basic attacks a <Amso,DataB1>% chance to blind the target hit for <Amsc,Dur1> seconds, reducing their chance to hit by <Amsc,DataA1,%>%.|r|n|n|cffffcc00The gleaming gem set into the sword's crossguard tends to catch the light and blind those who look upon it.|r"
+Ubertip="|cff40da00Uncommon Secondary Weapon|r|n|n+<AIa6,DataA1> Agility|n|c005ddf26Equip: Grants your basic attacks a <Amso,DataD1>% chance to blind the target hit for <Amsc,Dur1> seconds, reducing their chance to hit by <Amsc,DataA1,%>%.|r|n|n|cffffcc00The gleaming gem set into the sword's crossguard tends to catch the light and blind those who look upon it.|r"
 Description="|cff40da00Uncommon Secondary Weapon|r|nThe gleaming gem set into the sword's crossguard tends to catch the light and blind those who look upon it."
 
 [ejjr]
@@ -2521,13 +2521,13 @@ Description="|cff40da00Uncommon Accessory|r|nThe edges of this ring's gemstone a
 [eiep]
 Name=|cff40da00Intricate Emerald Pendant|r
 Tip=Purchase |cff40da00Intricate Emerald Pendant|r
-Ubertip="|cff40da00Uncommon Accessory|r|n|n+<AASi,DataA1,%>% Attack Rate|n+<AHRw,DataA1> Hit Points Regeneration|n|n|cffffcc00An Amani necklace imbued with the power of the loa.|r"
+Ubertip="|cff40da00Uncommon Accessory|r|n|n+<AASi,DataA1,%>% Attack Rate|n+<Arel,DataA1> Hit Points Regeneration|n|n|cffffcc00An Amani necklace imbued with the power of the loa.|r"
 Description="|cff40da00Uncommon Accessory|r|nAn Amani necklace imbued with the power of the loa."
 
 [eton]
 Name=|cff40da00Talisman of Nightmares|r
 Tip=Purchase |cff40da00Talisman of Nightmares|r
-Ubertip="|cff40da00Uncommon Accessory|r|n|n|cffff0000<ADN5,DataA1> Damage|r|n+<AAPw,DataA1,%>% Ability Amplification|n+<AIi5,DataB1> Intelligence|n|n|cffffcc00A cursed talisman that draws the worst fears from its wearer's mind.|r"
+Ubertip="|cff40da00Uncommon Accessory|r|n|n|cffff0000<ADN3,DataA1> Damage|r|n+<AAPw,DataA1,%>% Ability Amplification|n+<AIi5,DataB1> Intelligence|n|n|cffffcc00A cursed talisman that draws the worst fears from its wearer's mind.|r"
 Description="|cff40da00Uncommon Accessory|r|nA cursed talisman that draws the worst fears from its wearer's mind."
 
 [ersn]
@@ -2539,7 +2539,7 @@ Description="|cff40da00Uncommon Accessory|r|nImbued with protective magic to aid
 [erug]
 Name=|cff40da00Ursoc's Gift|r
 Tip=Purchase |cff40da00Ursoc's Gift|r
-Ubertip="|cff40da00Uncommon Accessory|r|n|n+<AIlf,DataA1> Hit Points|n+<AIs2,DataC1> Strength|n|n|cffffcc00Those who worship the bear god Ursoc are granted the strength and ferocity of the wilds.|r"
+Ubertip="|cff40da00Uncommon Accessory|r|n|n+<AIlf,DataA1> Hit Points|n+<AIst,DataC1> Strength|n|n|cffffcc00Those who worship the bear god Ursoc are granted the strength and ferocity of the wilds.|r"
 Description="|cff40da00Uncommon Accessory|r|nThose who worship the bear god Ursoc are granted the strength and ferocity of the wilds."
 
 [eaaa]
@@ -2551,7 +2551,7 @@ Description="|cff40da00Uncommon Accessory|r|nThe Farstriders of Quel'Thalas comb
 [erhf]
 Name=|cff40da00Heart of the Firelord|r
 Tip=Purchase |cff40da00Heart of the Firelord|r
-Ubertip="|cff40da00Uncommon Accessory|r|n|n+<AASe,DataA1,%>% Attack Rate|n+<AAPi,DataA1,%>% Ability Amplification|n|c005ddf26Equip: Grants your basic attacks a <Ahfo,DataB1>% chance to cast Breath of Fire, dealing <Ahfb,DataA1> damage to nearby enemy units in a cone facing the target hit.|r|n|n|cffffcc00Relentless anger burns with blazing fury inside this pendant.|r"
+Ubertip="|cff40da00Uncommon Accessory|r|n|n+<AASe,DataA1,%>% Attack Rate|n+<AAPi,DataA1,%>% Ability Amplification|n|c005ddf26Equip: Grants your basic attacks a <Ahfo,DataD1>% (<Ahfo,DataG1>% for critical hits) chance to cast Breath of Fire, dealing <Ahfb,DataA1> damage to nearby enemy units in a cone facing the target hit.|r|n|n|cffffcc00Relentless anger burns with blazing fury inside this pendant.|r"
 Description="|cff40da00Uncommon Accessory|r|nRelentless anger burns with blazing fury inside this pendant."
 
 [efgc]
@@ -2587,7 +2587,7 @@ Description="|cff6295E3Rare Helm|r|nThe runes engraved on this helmet dampen the
 [evow]
 Name=|cff6295E3Vestments of the Wavespeaker|r
 Tip=Purchase |cff6295E3Vestments of the Wavespeaker|r
-Ubertip="|cff6295E3Rare Armor|r|n|n+<AHRy,DataA1> Hit Points Regeneration|n+<AMRq,DataA1,%>% Mana Regeneration|n|c005ddf26Equip: Casting a spell causes up to <Avm1,DataB1> nearby allied units to restore <Avm1,DataA1> Hit Points.|n|n|cffffcc00Shaman who commune with the element of water wield powerful restorative magic.|r"
+Ubertip="|cff6295E3Rare Armor|r|n|n+<AHRw,DataA1> Hit Points Regeneration|n+<AMRq,DataA1,%>% Mana Regeneration|n|c005ddf26Equip: Casting a spell causes up to <Avm1,DataB1> nearby allied units to restore <Avm1,DataA1> Hit Points.|n|n|cffffcc00Shaman who commune with the element of water wield powerful restorative magic.|r"
 Description="|cff6295E3Rare Armor|r|nShaman who commune with the element of water wield powerful restorative magic."
 
 [erkt]
@@ -2756,7 +2756,7 @@ Description="|cff6295E3Rare Trinket|r|nSharp and evenly weighted, this javelin i
 [eucr]
 Name=|cff40da00Undercity Chain Robes|r
 Tip=Purchase |cff40da00Undercity Chain Robes|r
-Ubertip="|cff40da00Uncommon Armor|r|n|n+<AAPw,DataA1,%>% Ability Amplification|n+<AIRq,DataA1,%>% Resolve|n|n|cffffcc00Fashioned from fabric and metal salvaged from the ruins of the Capital City.|r"
+Ubertip="|cff40da00Uncommon Armor|r|n|n+<AAPs,DataA1,%>% Ability Amplification|n+<AIRq,DataA1,%>% Resolve|n|n|cffffcc00Fashioned from fabric and metal salvaged from the ruins of the Capital City.|r"
 Description="|cff40da00Uncommon Armor|r|nFashioned from fabric and metal salvaged from the ruins of the Capital City."
 
 [etff]
@@ -2828,13 +2828,13 @@ Description="|cff40da00Uncommon Gloves|r|nImbued with the fervor of the Scarlet 
 [ebsc]
 Name=|cff6295E3Boots of the Scarlet Crusade|r
 Tip=Purchase |cff6295E3Boots of the Scarlet Crusade|r
-Ubertip="|cff6295E3Rare Boots|r|n|n+<AId2,DataA1> Armor|n+<AIs2,DataC1> Strength|n+<AIi2,DataB1> Intelligence|n|n|cffffcc00Imbued with the righteousness of the Scarlet Crusade.|r"
+Ubertip="|cff6295E3Rare Boots|r|n|n+<AId2,DataA1> Armor|n+<AIst,DataC1> Strength|n+<AIi2,DataB1> Intelligence|n|n|cffffcc00Imbued with the righteousness of the Scarlet Crusade.|r"
 Description="|cff6295E3Rare Boots|r|nImbued with the righteousness of the Scarlet Crusade."
 
 [easc]
 Name=|cff40da00Armor of the Scarlet Crusade|r
 Tip=Purchase |cff40da00Armor of the Scarlet Crusade|r
-Ubertip="|cff40da00Uncommon Armor|r|n|n+<AHRu,DataA1> Hit Points Regeneration|n+<AIs3,DataC1> Strength|n|c005ddf26Equip: Causes basic attacks against the wearer to have a <Aac2,DataB1>% chance to restore <Aac1,DataA1> health to the wearer.|r|n|n|cffffcc00Imbued with the fortitude of the Scarlet Crusade.|r"
+Ubertip="|cff40da00Uncommon Armor|r|n|n+<AHRy,DataA1> Hit Points Regeneration|n+<AIs3,DataC1> Strength|n|c005ddf26Equip: Causes basic attacks against the wearer to have a <Aac2,DataB1>% chance to restore <Aac1,DataA1> health to the wearer.|r|n|n|cffffcc00Imbued with the fortitude of the Scarlet Crusade.|r"
 Description="|cff40da00Uncommon Armor|r|nImbued with the fortitude of the Scarlet Crusade."
 
 [ehhi]
@@ -2949,7 +2949,7 @@ Description="|cff40da00Uncommon Helm|r|nKobolds wear candles on their helmets no
 [esls]
 Name=|cff6295E3Lordaeron Shield|r
 Tip=Purchase |cff6295E3Lordaeron Shield|r
-Ubertip="|cff6295E3Rare Secondary Weapon|r|n|n+<AId4,DataA1> Armor|n|c005ddf26Equip: Increases the Armor of friendly units within <AIad,Area1> range by <AIad,DataA1>.|r|n|n|cffffcc00Polished and pristine, this shield clearly once belonged to a soldier to who took their duties seriously.|r"
+Ubertip="|cff6295E3Rare Secondary Weapon|r|n|n+<AId4,DataA1> Armor|n|c005ddf26Equip: Increases the Armor of friendly units within <AIad,Area1> range by <AIad,DataA1,.>.|r|n|n|cffffcc00Polished and pristine, this shield clearly once belonged to a soldier to who took their duties seriously.|r"
 Description="|cff6295E3Rare Secondary Weapon|r|nPolished and pristine, this shield clearly once belonged to a soldier to who took their duties seriously."
 
 [ews1]
@@ -2961,19 +2961,19 @@ Description="|cffaeaeaeCommon Armor|r|nDespite its rust, this breastplate still 
 [egfg]
 Name=|cff40da00Forsaken Gauntlets|r
 Tip=Purchase |cff40da00Forsaken Gauntlets|r
-Ubertip="|cff40da00Uncommon Gloves|r|n|n+<AASe,DataA1,%>% Attack Rate|n+<Arel,DataA1> Hit Points Regeneration|n|n|cffffcc00Crafted by Forsaken blacksmiths for defense of the Undercity.|r"
+Ubertip="|cff40da00Uncommon Gloves|r|n|n+<AASe,DataA1,%>% Attack Rate|n+<AIst,DataC1> Strength|n|n|cffffcc00Crafted by Forsaken blacksmiths for defense of the Undercity.|r"
 Description="|cff40da00Uncommon Gloves|r|nCrafted by Forsaken blacksmiths for defense of the Undercity."
 
 [edts]
 Name=|cff40da00Desecrated Tower Shield|r
 Tip=Purchase |cff40da00Desecrated Tower Shield|r
-Ubertip="|cff40da00Uncommon Secondary Weapon|r|n|n+<ASRi,DataB1,%>% Magic Resistance|n+<AId1,DataA1> Armor|n|n|cffffcc00Recovered from the ruins of the Capital City and repurposed for the Forsaken's deathguards.|r"
+Ubertip="|cff40da00Uncommon Secondary Weapon|r|n|n+<AId2,DataA1> Armor|n+<ASRi,DataB1,%>% Magic Resistance|n|n|cffffcc00Recovered from the ruins of the Capital City and repurposed for the Forsaken's deathguards.|r"
 Description="|cff40da00Uncommon Secondary Weapon|r|nRecovered from the ruins of the Capital City and repurposed for the Forsaken's deathguards."
 
 [ewfb]
 Name=|cff40da00Wicked Fang Blade|r
 Tip=Purchase |cff40da00Wicked Fang Blade|r
-Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n+<AItn,DataA1> Damage|n+<ALs3,DataA1,%>% Lifesteal|n|n|cffffcc00A double-edged blade with fangs on one side, carved from the jaw of a terrible beast.|r"
+Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n+<AItn,DataA1> Damage|n+<ALs3,DataA1,%>% Lifesteal|n|c005ddf26Equip: Causes your basic attacks to reduce the Armor of enemies hit by <Aas2,DataC1> for <Aas2,Dur1> seconds.|r|n|n|cffffcc00A double-edged blade with fangs on one side, carved from the jaw of a terrible beast.|r"
 Description="|cff40da00Uncommon Primary Weapon|r|nA double-edged blade with fangs on one side, carved from the jaw of a terrible beast."
 
 [ernp]
@@ -2991,7 +2991,7 @@ Description="|cff6295E3Rare Accessory|r|nA rare gem that glows a beautiful cerul
 [esbs]
 Name=|cff40da00Bone Staff|r
 Tip=Purchase |cff40da00Bone Staff|r
-Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n+<ACDd,DataA1,%>% Ability Speed|n+<AHRw,DataA1> Hit Points Regeneration|n|n|cffffcc00Commonly used by necromancers who traffic in stolen souls.|r"
+Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n+<ACDd,DataA1,%>% Ability Speed|n+<Arel,DataA1> Hit Points Regeneration|n|n|cffffcc00Commonly used by necromancers who traffic in stolen souls.|r"
 Description="|cff40da00Uncommon Primary Weapon|r|nCommonly used by necromancers who traffic in stolen souls."
 
 [epah]
@@ -3003,7 +3003,7 @@ Description="|cff40da00Uncommon Primary Weapon|r|nFreshly cleaned, ready for ano
 [efch]
 Name=|cff40da00Forsaken Champion's Helm|r
 Tip=Purchase |cff40da00Forsaken Champion's Helm|r
-Ubertip="|cff40da00Uncommon Helm|r|n|n+<AHRa,DataA1> Hit Points Regeneration|n+<AIs3,DataC1> Strength|n|n|cffffcc00Those who wear this indicate their loyalty to the Forsaken.|r"
+Ubertip="|cff40da00Uncommon Helm|r|n|n+<AItl,DataA1> Damage|n+<AIs3,DataC1> Strength|n|n|cffffcc00Those who wear this indicate their loyalty to the Forsaken.|r"
 Description="|cff40da00Uncommon Helm|r|nThose who wear this indicate their loyalty to the Forsaken."
 
 [eigc]
@@ -3231,7 +3231,7 @@ Description="|cff6295E3Rare Armor|r|nThis scale mail armor still burns with heat
 [edig]
 Name=|cff6295E3Dark Iron Gauntlets|r
 Tip=Purchase |cff6295E3Dark Iron Gauntlets|r
-Ubertip="|cff6295E3Rare Gloves|r|n|n+<AIs2,DataC1> Strength|n+<AId2,DataA1> Armor|n|c005ddf26Equip: Your basic attacks deal <Abr1,DataD1> extra spell damage to enemy units around the target.|r|n|n|cffffcc00These gauntles are engraved with runes used by Dark Iron sorcerers to harness the element of fire.|r"
+Ubertip="|cff6295E3Rare Gloves|r|n|n+<AIst,DataC1> Strength|n+<AId2,DataA1> Armor|n|c005ddf26Equip: Your basic attacks deal <Abr1,DataD1> extra spell damage to enemy units around the target.|r|n|n|cffffcc00These gauntles are engraved with runes used by Dark Iron sorcerers to harness the element of fire.|r"
 Description="|cff6295E3Rare Gloves|r|nThese gauntles are engraved with runes used by Dark Iron sorcerers to harness the element of fire."
 
 [edif]
@@ -3339,8 +3339,8 @@ Description="|cff6295E3Rare Gloves|r|nTailored to fit elven arms, these bracers 
 [edrs]
 Name=|cff6295E3Dark Ranger's Shadows|r
 Tip=Purchase |cff6295E3Dark Ranger's Shadows|r
-Ubertip="|cff6295E3Rare Boots|r|n|n+<AIa3,DataA1> Agility|n+<ASRi,DataB1,%>% Magic Resistance|n|c005ddf26Equip: Grants you the Dark Mistress' Aura, which increases the Attack and Movement Speeds of nearby friendly units by <ADMa,DataA1,%>%.|r|n|n|cffffcc00A dark ranger's familiarty with the wilds allows them to guide others to paths unseen.|r"
-Description="|cff6295E3Rare Boots|r|nA dark ranger's familiarty with the wilds allows them to guide others to paths unseen."
+Ubertip="|cff6295E3Rare Boots|r|n|n+<AIa3,DataA1> Agility|n+<ASRi,DataB1,%>% Magic Resistance|n|c005ddf26Equip: Grants you the Dark Mistress' Aura, which increases the Attack and Movement Speeds of nearby friendly units by <ADMa,DataA1,%>%.|r|n|n|cffffcc00A dark ranger's familiarity with the wilds allows them to guide others to paths unseen.|r"
+Description="|cff6295E3Rare Boots|r|nA dark ranger's familiarity with the wilds allows them to guide others to paths unseen."
 
 [edri]
 Name=|cff6295E3Dark Ranger's Insignia|r
@@ -3459,19 +3459,19 @@ Description="|cff6295E3Rare Primary Weapon|r|nA sharp cleaver that gets the job 
 [ebof]
 Name=|cff40da00Boots of the Forsaken|r
 Tip=Purchase |cff40da00Boots of the Forsaken|r
-Ubertip="|cff40da00Uncommon Boots|r|n|n+<AHRw,DataA1> Hit Points Regeneration|n+<ASCt,DataA1>% Spell Critical Chance|n|n|cffffcc00A pair of boots specially crafted for the Forsaken, to help those whose feet did not survive decomposition intact.|r"
+Ubertip="|cff40da00Uncommon Boots|r|n|n+<AASe,DataA1,%>% Attack Rate|n+<ASCt,DataA1>% Spell Critical Chance|n|n|cffffcc00A pair of boots specially crafted for the Forsaken, to help those whose feet did not survive decomposition intact.|r"
 Description="|cff40da00Uncommon Boots|r|nA pair of boots specially crafted for the Forsaken, to help those whose feet did not survive decomposition intact."
 
 [efpb]
 Name=|cff40da00Forsaken Plaguebow|r
 Tip=Purchase |cff40da00Forsaken Plaguebow|r
-Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n+<AHRw,DataA1> Hit Points Regeneration|n+<AIa5,DataA1> Agility|n+<ASCw,DataA1>% Spell Critical Chance|n|n|cffffcc00A powerful bow with unerring aim for both spells and arrows.|r"
+Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n+<AIa8,DataA1> Agility|n+<ASCw,DataA1>% Spell Critical Chance|n|n|cffffcc00A powerful bow with unerring aim for both spells and arrows.|r"
 Description="|cff40da00Uncommon Primary Weapon|r|nA powerful bow with unerring aim for both spells and arrows."
 
 [ephf]
 Name=|cff40da00Huge Flail|r
 Tip=Purchase |cff40da00Huge Flail|r
-Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n|cffff0000<AASa,DataA1,%>% Attack Rate|r|n+<ACSx,DataA1>% Critical Chance|n|c005ddf26Equip: Your basic attack critical strikes also cast Lesser War Stomp, dealing <Ahf1,DataA1> damage to nearby enemy units and stunning them for <Ahf1,Dur1> second.|r|n|n|cffffcc00A massive weapon that trades finesse for raw brutality.|r"
+Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n|cffff0000<AASa,DataA1,%>% Attack Rate|r|n+<ACSx,DataA1>% Critical Chance|n|c005ddf26Equip: Your basic attack critical strikes also cast a Lesser Thunder Clap, dealing <Ahf1,DataA1> damage to nearby enemy units and reducing their attack and movement speeds by <Ahf1,DataC1,%>% for <Ahf1,Dur1> second. This effect has a <Ahf2,Cool1> seconds cooldown.|r|n|n|cffffcc00A massive weapon that trades finesse for raw brutality.|r"
 Description="|cff40da00Uncommon Primary Weapon|r|nA massive weapon that trades finesse for raw brutality."
 
 [egwh]
@@ -3543,7 +3543,7 @@ Description="|cff6295E3Rare Helm|r|nThe revenants that haunt the distant contine
 [ekmg]
 Name=|cff7c2abbKaldorei Moonglaive|r
 Tip=Purchase |cff7c2abbKaldorei Moonglaive|r
-Ubertip="|cff7c2abbEpic Primary Weapon|r|n|n+<AASo,DataA1,%>% Attack Rate|n+<ACSb,DataA1>% Critical Chance|n|c005ddf26Equip: Your basic attack critical strikes also throw a Moonglaive towards a nearby enemy unit, dealing 75 physical damage. The glaive bounces on to nearby enemies, dealing 20% less damage with each bounce and hitting a total of 3 targets.|r|n|n|cffffcc00The chosen weapon of the kaldorei Sentinels, who have guarded the forests of Ashenvale against intruders for ten thousand years.|r"
+Ubertip="|cff7c2abbEpic Primary Weapon|r|n|n+<AASo,DataA1,%>% Attack Rate|n+<ACSb,DataA1>% Critical Chance|n|c005ddf26Equip: Your basic attack critical strikes also throw a Moonglaive towards a nearby enemy unit, dealing 45 physical damage. The glaive bounces on to nearby enemies, dealing 20% less damage with each bounce and hitting a total of 3 targets.|r|n|n|cffffcc00The chosen weapon of the kaldorei Sentinels, who have guarded the forests of Ashenvale against intruders for ten thousand years.|r"
 Description="|cff7c2abbEpic Primary Weapon|r|nThe chosen weapon of the kaldorei Sentinels, who have guarded the forests of Ashenvale against intruders for ten thousand years."
 
 [ergg]
@@ -3555,7 +3555,7 @@ Description="|cff40da00Uncommon Accessory|r|nThe pursuit of wealth and the pursu
 [ergs]
 Name=|cff6295E3Gift of Sloth|r
 Tip=Purchase |cff6295E3Gift of Sloth|r
-Ubertip="|cff6295E3Rare Accessory|r|n|n+<AHRs,DataA1> Hit Points Regeneration|n|c005ddf26Equip: Grants you the Sloth Aura, reducing the movement speed of nearby enemy units by 15%.|r|n|n|cffffcc00Sloth is the absence of interest in exertion. Those who walk this path tailor their time to rest and relaxation.|r"
+Ubertip="|cff6295E3Rare Accessory|r|n|n+<AHRa,DataA1> Hit Points Regeneration|n|c005ddf26Equip: Grants you the Sloth Aura, reducing the movement speed of nearby enemy units by 15%.|r|n|n|cffffcc00Sloth is the absence of interest in exertion. Those who walk this path tailor their time to rest and relaxation.|r"
 Description="|cff6295E3Rare Accessory|r|nSloth is the absence of interest in exertion. Those who walk this path tailor their time to rest and relaxation."
 
 [ergw]
@@ -3633,7 +3633,7 @@ Description="|cff6295E3Rare Helm|r|nLet's plunderrrrrrr!"
 [ehsh]
 Name=|cff40da00Hammer of the Silver Hand|r
 Tip=Purchase |cff40da00Hammer of the Silver Hand|r
-Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n+<AItj,DataA1> Damage|n+<AIi5,DataB1> Intelligence|n|c005ddf26Equip: Your basic attacks restore <Ahsh,DataA1> hit points to you and have a <AIBw,DataA1>% chance to deal <AIBw,DataC1> additional damage and stun the target hit for <AIBw,Dur1> seconds.|r|n|n|cffffcc00A holy weapon wielded by the Knights of the Silver Hand before they were disbanded by Prince Arthas.|r"
+Ubertip="|cff40da00Uncommon Primary Weapon|r|n|n+<AIt6,DataA1> Damage|n+<AIi6,DataB1> Intelligence|n|c005ddf26Equip: Your basic attacks restore <Ahsh,DataA1> hit points to you and have a <AIBw,DataA1>% chance to deal <AIBw,DataC1> additional damage and stun the target hit for <AIBw,Dur1> seconds.|r|n|n|cffffcc00A holy weapon wielded by the Knights of the Silver Hand before they were disbanded by Prince Arthas.|r"
 Description="|cff40da00Uncommon Primary Weapon|r|nA holy weapon wielded by the Knights of the Silver Hand before they were disbanded by Prince Arthas."
 
 [epsh]
@@ -3723,19 +3723,19 @@ Description="|cff6295E3Rare Accessory|r|nCrafted with care and precision, for th
 [eeh1]
 Name=|cff40da00Lesser Engineering Goggles|r
 Tip=Purchase |cff40da00Lesser Engineering Goggles|r
-Ubertip="|cff40da00Uncommon Helm|r|n|n+<ACDi,DataA1,%>% Ability Speed|n+<AMSe,DataA1> Movement Speed|n|n|cffffcc00A simple piece of headgear that confers modest benefits to its wearer.|r"
+Ubertip="|cff40da00Uncommon Helm|r|n|n+<AAPw,DataA1,%>% Ability Amplification|n+<ACDt,DataA1,%>% Ability Speed|n+<AMSe,DataA1> Movement Speed|n|n|cffffcc00A simple piece of headgear that confers modest benefits to its wearer.|r"
 Description="|cff40da00Uncommon Helm|r|nA simple piece of headgear that confers modest benefits to its wearer."
 
 [eeh2]
 Name=|cff6295E3Greater Engineering Goggles|r
 Tip=Purchase |cff6295E3Greater Engineering Goggles|r
-Ubertip="|cff6295E3Rare Helm|r|n|n+<ACDd,DataA1,%>% Ability Speed|n+<AMSr,DataA1> Movement Speed|n|n|cffffcc00A quality piece of headgear that makes complex tasks significantly easier to handle.|r"
+Ubertip="|cff6295E3Rare Helm|r|n|n+<AAPr,DataA1,%>% Ability Amplification|n+<ACDi,DataA1,%>% Ability Speed|n+<AMSr,DataA1> Movement Speed|n|n|cffffcc00A quality piece of headgear that makes complex tasks significantly easier to handle.|r"
 Description="|cff6295E3Rare Helm|r|nA quality piece of headgear that makes complex tasks significantly easier to handle."
 
 [eeh3]
 Name=|cff7c2abbMaster Engineering Goggles|r
 Tip=Purchase |cff7c2abbMaster Engineering Goggles|r
-Ubertip="|cff7c2abbEpic Helm|r|n|n+<ACDf,DataA1,%>% Ability Speed|n+<AMSt,DataA1> Movement Speed|n+<AIi5,DataB1> Intelligence|n|n|cffffcc00A masterwork piece of headgear endorsed and coveted by the brightest engineers across Azeroth.|r"
+Ubertip="|cff7c2abbEpic Helm|r|n|n+<AAPp,DataA1,%>% Ability Amplification|n+<ACDo,DataA1,%>% Ability Speed|n+<AMSt,DataA1> Movement Speed|n|n|cffffcc00A masterwork piece of headgear endorsed and coveted by the brightest engineers across Azeroth.|r"
 Description="|cff7c2abbEpic Helm|r|nA masterwork piece of headgear endorsed and coveted by the brightest engineers across Azeroth."
 
 [eicd]
@@ -3759,7 +3759,7 @@ Description="|cff6295E3Rare Gloves|r|nWorn by elite death knights as they carry 
 [ech1]
 Name=|cff7c2abbStaff of the Crimson Heart|r
 Tip=Purchase |cff7c2abbStaff of the Crimson Heart|r
-Ubertip="|cff7c2abbEpic Primary Weapon|r|n|n+<AAPp,DataA1,%>% Ability Amplification|n+<AHRo,DataA1> Hit Points Regeneration|n|c005ddf26Equip: Your spell casts have a <Ach2,DataB1>% chance to create an explosion of blood centered on you, dealing <Ach1,DataA1> spell damage to nearby enemy units.|r|n|n|cffffcc00This ancient staff grants its wielder mastery over forbidden blood magic, allowing them to steal the vitality of their opponents.|r"
+Ubertip="|cff7c2abbEpic Primary Weapon|r|n|n+<AAPp,DataA1,%>% Ability Amplification|n+<AHRu,DataA1> Hit Points Regeneration|n|c005ddf26Equip: Your spell casts have a <Ach2,DataB1>% chance to create an explosion of blood centered on you, dealing <Ach1,DataA1> spell damage to nearby enemy units.|r|n|n|cffffcc00This ancient staff grants its wielder mastery over forbidden blood magic, allowing them to steal the vitality of their opponents.|r"
 Description="|cff7c2abbEpic Primary Weapon|r|nThis ancient staff grants its wielder mastery over forbidden blood magic, allowing them to steal the vitality of their opponents."
 
 [ech2]
@@ -3825,13 +3825,13 @@ Description="|cff6295E3Rare Armor|r|nPolished until it glints in the morning lig
 [ebrp]
 Name=|cff7c2abbBlackrock Steel Plate|r
 Tip=Purchase |cff7c2abbBlackrock Steel Plate|r
-Ubertip="|cff7c2abbEpic Armor|r|n|n+<AId8,DataA1> Armor|n+<AS12,DataC1> Strength|n|n|cffffcc00Forged by the Blackrock clan, this orcish armor can withstand an incredible amount of punishment.|r"
+Ubertip="|cff7c2abbEpic Armor|r|n|n+<AId6,DataA1> Armor|n+<AS12,DataC1> Strength|n|n|cffffcc00Forged by the Blackrock clan, this orcish armor can withstand an incredible amount of punishment.|r"
 Description="|cff7c2abbEpic Armor|r|nForged by the Blackrock clan, this orcish armor can withstand an incredible amount of punishment."
 
 [edbs]
 Name=|cff6295E3Drained Bloodstone|r
 Tip=Purchase |cff6295E3Drained Bloodstone|r
-Ubertip="|cff6295E3Rare Accessory|r|n|n+<AHRs,DataA1> Hit Points Regeneration|n|c005ddf26Equip: Your basic attacks restore <Avs1,DataA1> Hit Points to up to <Avs1,DataB1> nearby allied units.|r|n|n|cffffcc00Despite having been drained of its true power, the latent magic of this bloodstone continues to benefit the one who holds it.|r"
+Ubertip="|cff6295E3Rare Accessory|r|n|n+<AHRa,DataA1> Hit Points Regeneration|n|c005ddf26Equip: Your basic attacks restore <Avs1,DataA1> Hit Points to up to <Avs1,DataB1> nearby allied units.|r|n|n|cffffcc00Despite having been drained of its true power, the latent magic of this bloodstone continues to benefit the one who holds it.|r"
 Description="|cff6295E3Rare Accessory|r|nDespite having been drained of its true power, the latent magic of this bloodstone continues to benefit the one who holds it."
 
 [ehls]
@@ -3969,7 +3969,7 @@ Description="|cff7c2abbEpic Helm|r|nTo supply the Lich King's death knights with
 [ebsw]
 Name=|cff7c2abbStormwalkers|r
 Tip=Purchase |cff7c2abbStormwalkers|r
-Ubertip="|cff7c2abbEpic Boots|r|n|n+<AMSr,DataA1> Movement Speed|n+<AAPs,DataA1,%>% Ability Amplification|n|c005ddf26Equip: Casting a spell also casts a lesser Thunderclap, dealing <Asw1,DataA1> spell damage to nearby enemy units and reducing their attack rate and movement speed by <Asw1,DataC1,%>% for <Asw1,Dur1> seconds. This effect drains <Asw1,Cost1> mana on triggering.|r|n|n|cffffcc00Enchanted with fierce storm magic, these boots grant their wearer the speed of lightning and the fury of thunder.|r"
+Ubertip="|cff7c2abbEpic Boots|r|n|n+<AMSr,DataA1> Movement Speed|n+<AAPs,DataA1,%>% Ability Amplification|n|c005ddf26Equip: Casting a spell also casts a Lesser Thunder Clap, dealing <Asw1,DataA1> spell damage to nearby enemy units and reducing their attack rate and movement speed by <Asw1,DataC1,%>% for <Asw1,Dur1> seconds. This effect drains <Asw1,Cost1> mana on triggering.|r|n|n|cffffcc00Enchanted with fierce storm magic, these boots grant their wearer the speed of lightning and the fury of thunder.|r"
 Description="|cff7c2abbEpic Boots|r|nEnchanted with fierce storm magic, these boots grant their wearer the speed of lightning and the fury of thunder."
 
 [einf]
@@ -3981,13 +3981,13 @@ Description="|cff7c2abbEpic Secondary Weapon|r|nForged in Hellfire Citadel, fel 
 [egat]
 Name=|cff7c2abbAviana's Talons|r
 Tip=Purchase |cff7c2abbAviana's Talons|r
-Ubertip="|cff7c2abbEpic Gloves|r|n|n+<AIa4,DataA1> Agility|n+<AIi3,DataB1> Intelligence|n+<AMRp,DataA1,%>% Mana Regeneration|n|c005ddf26Equip: Your basic attacks restore cause <AFDe,DataC1> spell damage and restore <Aat1,DataA1> mana.|r|n|n|cffffcc00Graced with the power of the mother of harpies, these feathered gloves offer both restoration and ruin.|r"
+Ubertip="|cff7c2abbEpic Gloves|r|n|n+<AIa4,DataA1> Agility|n+<AIi3,DataB1> Intelligence|n+<AMRp,DataA1,%>% Mana Regeneration|n|c005ddf26Equip: Your basic attacks cause <AFDe,DataC1> spell damage and restore <Aat1,DataA1> mana.|r|n|n|cffffcc00Graced with the power of the mother of harpies, these feathered gloves offer both restoration and ruin.|r"
 Description="|cff7c2abbEpic Gloves|r|nGraced with the power of the mother of harpies, these feathered gloves offer both restoration and ruin."
 
 [eaor]
 Name=|cff7c2abbArmor of Reanimation|r
 Tip=Purchase |cff7c2abbArmor of Reanimation|r
-Ubertip="|cff7c2abbEpic Armor|r|n|n+<AHRf,DataA1> Hit Points Regeneration|n|c005ddf26Equip: Attacks against the wearer have a <Aar2,DataB1>% chance to summon a skeleton marksman behind the wearer that fights for you for <Aar1,Dur1> seconds.|r|n|n|cffffcc00Every man lives. Not every man truly dies.|r"
+Ubertip="|cff7c2abbEpic Armor|r|n|n+<AHRd,DataA1> Hit Points Regeneration|n|c005ddf26Equip: Attacks against the wearer have a <Aar2,DataB1>% chance to summon a skeleton marksman behind the wearer that fights for you for <Aar1,Dur1> seconds.|r|n|n|cffffcc00Every man lives. Not every man truly dies.|r"
 Description="|cff7c2abbEpic Armor|r|nEvery man lives. Not every man truly dies."
 
 [erdr]
@@ -3999,7 +3999,7 @@ Description="|cff7c2abbEpic Accessory|r|nA beautiful and valuable ring that insp
 [esot]
 Name=|cff7c2abbShield of the Titans|r
 Tip=Purchase |cff7c2abbShield of the Titans|r
-Ubertip="|cff7c2abbEpic Secondary Weapon|r|n|n+<ASRp,DataB1,%>% Magic Resistance|n|n|cffffcc00Hailing from the Great Dark Beyond, the titans reshaped Azeroth and brought order to a world embroiled in chaos.|r"
+Ubertip="|cff7c2abbEpic Secondary Weapon|r|n|n+<ASRo,DataB1,%>% Magic Resistance|n|c005ddf26Equip: Grants you the Titan Defense Aura, which increases the Magic Resistance of nearby allied units by <Astt,DataA1,%>%.|r|n|n|cffffcc00Hailing from the Great Dark Beyond, the titans reshaped Azeroth and brought order to a world embroiled in chaos.|r"
 Description="|cff7c2abbEpic Secondary Weapon|r|nHailing from the Great Dark Beyond, the titans reshaped Azeroth and brought order to a world embroiled in chaos."
 
 [ebr1]
@@ -4211,3 +4211,9 @@ Name=|cffffff00The Artifact|r
 Tip=Purchase |cffffff00The Artifact|r
 Ubertip="|cffffff00Quest Item|r|n|n|cffffcc00An artifact of great power...|r"
 Description="|cffffff00Quest Item|r|nAn artifact of great power..."
+
+[cgah]
+Name=|cffed6de0Garithos's Head|r
+Tip=Purchase |cffed6de0Garithos's Head|r
+Ubertip="|cffed6de0Secret Item|r|n|n|cffffcc00Even the hungriest of beasts will not devour this grotesque head. Even in this state it continues to talk when prompted.|r"
+Description="|cffed6de0Secret Item|r|nEven the hungriest of beasts will not devour this grotesque head. Even in this state it continues to talk when prompted."

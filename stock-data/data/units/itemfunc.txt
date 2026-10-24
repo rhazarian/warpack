@@ -2909,3 +2909,7 @@ Art=ReplaceableTextures\CommandButtons\BTNUsedSoulGem.blp
 //The Artifact
 [ctat]
 Art=ReplaceableTextures\CommandButtons\BTNEnchantedGemstone.blp
+
+//Garithos Abomination Head
+[cgah]
+Art=ReplaceableTextures\CommandButtons\BTNGarithosAbomination.blp

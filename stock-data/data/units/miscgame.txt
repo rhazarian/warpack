@@ -25,6 +25,8 @@ IllusionsCanRestoreLife=1
 IllusionsCanRestoreMana=1
 IllusionsBestowAuras=0
 IllusionsGetAutocast=0
+IllusionsGetHealingBonus=1
+IllusionsGetMagicResist=1
 InvisibleUnitsBestowAuras=0
 PolymorphedUnitsBestowAuras=0
 BurrowedUnitsBestowAuras=0
@@ -63,6 +65,7 @@ ItemSaleAggroRange=0
 UnitSaleAggroRange=600
 AbilSaleAggroRange=0
 AbolishMagicDispelSmart=1
+CanInterruptByZeroDurationBuffs=1
 UpgradeInProgressIdChange=0
 
 GlobalExperience=1

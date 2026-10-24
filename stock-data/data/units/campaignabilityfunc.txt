@@ -1673,11 +1673,13 @@ order=acidbomb
 [Ampb]
 Buttonpos=2,1
 Order=channel
+Missilespeed=1050
 
 // Item Deepsea Bag CW
 [Adbw]
 Buttonpos=2,1
 Order=channel
+Missilespeed=900
 
 // Item Manuscript of the Forsaken
 [Alfq]
@@ -1718,3 +1720,15 @@ Order=spellshield
 // Item Spell Shield 12
 [Assw]
 Order=spellshield
+
+// Heart of the Firebender BoF
+[Ahfb]
+Missilespeed=1050
+
+// Item Bindings of Helya CW
+[Abh1]
+Missilespeed=900
+
+// Item Essencium Crushing Wave
+[Aes5]
+Missilespeed=900
